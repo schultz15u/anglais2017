@@ -9,10 +9,11 @@ CREATE TABLE RULE (
 CREATE TABLE SENTENCE (
 	id_sen INTEGER,
 	detail VARCHAR(50),
-	ok VARCHAR(50),
-	nope TEXT,
+	prop_ok VARCHAR(50),
+	prop_no TEXT,
 	id_rule INTEGER,
 	PRIMARY KEY (id_sen)
 );
 
 INSERT INTO RULE(ID_RULE, NAME) VALUES (1, 'TOTO');
+INSERT INTO SENTENCE(ID_SEN, DETAIL, PROP_OK, PROP_NO, ID_RULE) VALUES (22,'hello', 'you', 'you,they', 1);

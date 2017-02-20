@@ -50,4 +50,9 @@ public class RuleModel {
 		this.pack = pack;
 	}
 
+	@Override
+	public String toString() {
+		return "RuleModel [idRule=" + idRule + ", name=" + name + ", detail=" + detail + ", pack=" + pack + "]";
+	}
+
 }
