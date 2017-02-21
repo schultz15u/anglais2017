@@ -137,7 +137,7 @@ public abstract class GenericDAOJDBC<T> implements GenericDAO<T> {
 
 	private T getUniqueResult(List<T> tmp) throws DAOException {
 		if (tmp != null && tmp.size() == 1) {
-			return tmp.get(1);
+			return tmp.get(0);
 		} else {
 			throw new DAOException("Invalid number of results");
 		}
