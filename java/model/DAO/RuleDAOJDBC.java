@@ -3,10 +3,21 @@ package model.DAO;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import model.object.RuleModel;
 
 public class RuleDAOJDBC extends GenericDAOJDBC<RuleModel> implements RuleDAO {
+
+	@Override
+	public List<RuleModel> getByPack(Integer pack) throws DAOException {
+		return getByProperty("pack", () -> pack, true);
+	}
+
+	@Override
+	public List<RuleModel> getByName(String partOfName) throws DAOException {
+		return getByProperty("name", () -> "%" + partOfName + "%", false);
+	}
 
 	@Override
 	protected RuleModel map(ResultSet rs) throws SQLException {
@@ -45,6 +56,4 @@ public class RuleDAOJDBC extends GenericDAOJDBC<RuleModel> implements RuleDAO {
 	protected int getId(RuleModel rm) {
 		return rm.getIdRule();
 	}
-
-	// TODO : getRulesByName & getRulesByPack (retourner liste)
 }

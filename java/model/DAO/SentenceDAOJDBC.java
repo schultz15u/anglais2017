@@ -3,10 +3,17 @@ package model.DAO;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import model.object.SentenceModel;
 
 public class SentenceDAOJDBC extends GenericDAOJDBC<SentenceModel> implements SentenceDAO {
+
+	@Override
+	public List<SentenceModel> getByIdRule(int idRule) throws DAOException {
+		return getByProperty("id_rule", () -> idRule, true);
+	}
+
 	@Override
 	protected SentenceModel map(ResultSet rs) throws SQLException {
 		SentenceModel s = new SentenceModel();
@@ -46,6 +53,4 @@ public class SentenceDAOJDBC extends GenericDAOJDBC<SentenceModel> implements Se
 	protected int getId(SentenceModel rm) {
 		return rm.getIdSen();
 	}
-
-	// TODO : getRulesByName & getRulesByPack (retourner liste)
 }
