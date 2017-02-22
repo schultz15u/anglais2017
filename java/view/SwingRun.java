@@ -38,7 +38,7 @@ public class SwingRun {
 		} catch (DAOException e) {
 			e.printStackTrace();
 		}
-		// new MainScreen();
+		 new MainScreen();
 	}
 
 }

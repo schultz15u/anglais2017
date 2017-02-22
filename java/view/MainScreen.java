@@ -83,6 +83,7 @@ public class MainScreen extends JFrame {
 		this.setContentPane(box);
 
 		JPanel authentification = new NvelleRegle(this);
+		JPanel sentences = new Sentences(this);
 		// JPanel profil = new ProfileJPanel();
 		JPanel defaut = new JPanel();
 		JLabel bienvenue = new JLabel("Bienvenue sur Shake's Pear !");
@@ -94,6 +95,7 @@ public class MainScreen extends JFrame {
 		content.setLayout(cl);
 		// On ajoute les cartes à la pile avec un nom pour les retrouver
 		content.add(authentification, listContent[0]);
+		content.add(sentences, listContent[2]);
 		content.add(defaut, listContent[listContent.length - 1]);
 
 		// diversPannel.add(boutonPane, BorderLayout.NORTH);
@@ -150,6 +152,9 @@ public class MainScreen extends JFrame {
 		if (o instanceof Menu) {
 			if (arg.equals("Nouvelle regle")) {
 				cl.show(content, listContent[0]);
+			}
+			else if (arg.equals("Phrases")) {
+				cl.show(content, listContent[2]);
 			}
 		} else if (o instanceof LogoButton) {
 			cl.show(content, listContent[listContent.length - 1]);
