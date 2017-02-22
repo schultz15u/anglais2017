@@ -1,46 +1,35 @@
 package view;
 
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridLayout;
-import java.awt.Point;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import javax.accessibility.AccessibleText;
-import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
+import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-
-import model.object.RuleModel;
 
 
-public class Sentences extends JPanel {
+public class SentencesPanel extends JPanel {
 
 	private JLabel sentenceLabel;
 	private JLabel informationLabel;
-	private MainScreen screen;
 
-	public Sentences(MainScreen screen) {
+	public SentencesPanel(MainScreen screen) {
 		super();
 		
-		this.screen = screen;
-		
 		Font font = new Font("Consolas", Font.BOLD, 30);
-		sentenceLabel = new JLabel("Ma phrase !");
+		sentenceLabel = new JLabel("There is an error in this sentance !");
 		sentenceLabel.setFont(font);
 		sentenceLabel.addMouseListener(new SentenceLabelListener());
 		
+		
+		sentenceLabel.setBackground(Color.orange);
+		sentenceLabel.setOpaque(true);
+		
 		informationLabel = new JLabel("Informations");
 		
-		setLayout(new FlowLayout(FlowLayout.CENTER, 200, 200));
+		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		add(sentenceLabel);
 		add(informationLabel);
 		

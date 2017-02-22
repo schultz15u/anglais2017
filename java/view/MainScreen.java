@@ -83,7 +83,7 @@ public class MainScreen extends JFrame {
 		this.setContentPane(box);
 
 		JPanel authentification = new NvelleRegle(this);
-		JPanel sentences = new Sentences(this);
+		JPanel sentences = new SentencesPanel(this);
 		// JPanel profil = new ProfileJPanel();
 		JPanel defaut = new JPanel();
 		JLabel bienvenue = new JLabel("Bienvenue sur Shake's Pear !");

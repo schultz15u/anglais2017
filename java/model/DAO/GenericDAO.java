@@ -1,5 +1,7 @@
 package model.DAO;
 
+import java.util.List;
+
 /**
  * @author Claire
  *
@@ -13,6 +15,8 @@ public interface GenericDAO<T> {
 	 * @throws DAOException
 	 */
 	T getById(int id) throws DAOException;
+	
+	List<T> getAll() throws DAOException;
 
 	/**
 	 * Insert a new object

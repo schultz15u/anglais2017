@@ -50,7 +50,7 @@ public abstract class GenericDAOJDBC<T> implements GenericDAO<T> {
 			ResultSet rs = ps.executeQuery();
 			List<T> ret = new ArrayList<>();
 			while (rs.next()) {
-				// il existe un résultat
+				// il existe un rï¿½sultat
 				T t = map(rs);
 				ret.add(t);
 			}
@@ -58,6 +58,27 @@ public abstract class GenericDAOJDBC<T> implements GenericDAO<T> {
 		} catch (SQLException e) {
 			throw new DAOException(e);
 		}
+	}
+	
+	@Override
+	public List<T> getAll() throws DAOException
+	{
+		try {
+			String sql = "SELECT " + getColumns()  + "," + getColumnId() + " FROM " + getTableName();
+			PreparedStatement ps = prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			List<T> ret = new ArrayList<>();
+			while (rs.next()) {
+				T t = map(rs);
+				ret.add(t);
+			}
+			
+			return ret;
+		}
+		catch (SQLException e) {
+			throw new DAOException(e);
+		}
+		
 	}
 
 	@Override

@@ -1,17 +1,11 @@
 package view;
 
-import model.DAO.DAOException;
-import model.DAO.RuleDAO;
-import model.DAO.RuleDAOJDBC;
-import model.DAO.SentenceDAO;
-import model.DAO.SentenceDAOJDBC;
-import model.object.RuleModel;
-import model.object.SentenceModel;
+import model.Sentences;
 
 public class SwingRun {
 
 	public static void main(String[] args) {
-		try {
+		/*try {
 			RuleDAO rd = new RuleDAOJDBC();
 			RuleModel rm = rd.getById(1);
 			System.out.println(rm);
@@ -37,8 +31,19 @@ public class SwingRun {
 			System.out.println(rd.getByName("bi"));
 		} catch (DAOException e) {
 			e.printStackTrace();
-		}
-		 new MainScreen();
+		}*/
+		
+		new MainScreen();
+		
+		System.out.println("==============================");
+		
+		Sentences sentences = new Sentences();
+		sentences.initialize();
+		System.out.println("Wrong : " + sentences.getWrongSentence());
+		System.out.println("Correct : " + sentences.getCorrectSentence());
+		sentences.validateSentence(true);
+		System.out.println("Wrong : " + sentences.getWrongSentence());
+		System.out.println("Correct : " + sentences.getCorrectSentence());
 	}
 
 }

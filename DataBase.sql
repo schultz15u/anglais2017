@@ -16,4 +16,6 @@ CREATE TABLE SENTENCE (
 );
 
 INSERT INTO RULE(ID_RULE, NAME) VALUES (1, 'TOTO');
-INSERT INTO SENTENCE(ID_SEN, DETAIL, PROP_OK, PROP_NO, ID_RULE) VALUES (22,'hello', 'you', 'you,they', 1);
+
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule) VALUES (21, 'There is an error in this ¤', 'sentence', 'sentance,santence', 1);
+INSERT INTO SENTENCE(ID_SEN, DETAIL, PROP_OK, PROP_NO, ID_RULE) VALUES (22,'hello ¤', 'bibi', 'you,they', 1);
