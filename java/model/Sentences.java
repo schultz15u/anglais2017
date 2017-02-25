@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import model.DAO.DAOException;
@@ -31,21 +32,50 @@ public class Sentences {
 			sentences = null;
 		}
 		
-		generateWrongWord();
 		currentSentenceId = 0;
 		score = 0;
+		generateWrongWord();
+		
+		// Random sort of the sentences list
+		ArrayList<SentenceModel> sentencesTemp = new ArrayList<SentenceModel>();
+		while (sentences.size() > 0) {
+			int sentenceIdToTransfer = (int) (Math.random() * sentences.size());
+			sentencesTemp.add(sentences.get(sentenceIdToTransfer));
+			sentences.remove(sentenceIdToTransfer);
+		}
+		
+		sentences = sentencesTemp;
+	}
+	
+	public boolean isFinished() {
+		return currentSentenceId >= sentences.size();
 	}
 	
 	public String getWrongSentence() {
-		return sentences.get(currentSentenceId).getDetail().replaceAll("¤", currentWrongWord);
+		if (!isFinished())
+			return sentences.get(currentSentenceId).getDetail().replaceAll("¤", currentWrongWord);
+		return "";
 	}
 	
 	public String getCorrectSentence() {
-		return sentences.get(currentSentenceId).getDetail().replaceAll("¤", sentences.get(currentSentenceId).getPropOk());
+		if (!isFinished())
+			return sentences.get(currentSentenceId).getDetail().replaceAll("¤", sentences.get(currentSentenceId).getPropOk());
+		return "";
 	}
 	
 	public int getScore() {
 		return score;
+	}
+	
+	public boolean characterIsFromWrongWord(int characterId) {
+		if (!isFinished()) {
+			int wrongWordFirstIndex = sentences.get(currentSentenceId).getDetail().split("¤")[0].length();
+			int wrongWordLastIndex = wrongWordFirstIndex + currentWrongWord.length() - 1;
+			
+			return characterId >= wrongWordFirstIndex && characterId <= wrongWordLastIndex;
+		}
+		
+		return false;
 	}
 	
 	public void validateSentence(boolean answerIsCorrect) {
@@ -59,9 +89,14 @@ public class Sentences {
 	
 	private void generateWrongWord()
 	{
-		String[] badChoices = sentences.get(currentSentenceId).getPropNo().split(",");
-		int badChoiceId = (int) (Math.random() * badChoices.length);
-		
-		currentWrongWord = badChoices[badChoiceId];
+		if (!isFinished()) {
+			String[] badChoices = sentences.get(currentSentenceId).getPropNo().split(",");
+			int badChoiceId = (int) (Math.random() * badChoices.length);
+			
+			currentWrongWord = badChoices[badChoiceId];
+		}
+		else {
+			currentWrongWord = "";
+		}
 	}
 }

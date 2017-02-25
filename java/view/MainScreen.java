@@ -18,6 +18,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import model.Menu;
+import model.Sentences;
 
 @SuppressWarnings("serial")
 public class MainScreen extends JFrame {
@@ -27,6 +28,8 @@ public class MainScreen extends JFrame {
 	private GridBagConstraints gbc;
 	private JPanel box;
 	private boolean stateConnection = false;
+	private Sentences sentences;
+	private SentencesPanel sentencesPanel;
 
 	CardLayout cl = new CardLayout();
 	JPanel content = new JPanel();
@@ -38,6 +41,8 @@ public class MainScreen extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
+		
+		sentences = new Sentences();
 
 		// Initialisation de la vue
 		box = new JPanel();
@@ -46,7 +51,7 @@ public class MainScreen extends JFrame {
 		box.setLayout(new GridBagLayout()); // objet pour le positionnement
 		gbc = new GridBagConstraints();
 
-		// Initialisation des différents panels
+		// Initialisation des diffï¿½rents panels
 		JPanel logoPannel = new JPanel();
 		logoPannel.setBackground(Color.cyan);
 		logoPannel.setPreferredSize(new Dimension(150, 150));
@@ -61,7 +66,7 @@ public class MainScreen extends JFrame {
 		diversPannel.setBackground(Color.cyan);
 		diversPannel.setPreferredSize(new Dimension(750, 450));
 
-		// Positionnement dans la fenêtre
+		// Positionnement dans la fenï¿½tre
 		// ligne 0 : logo -> Recherche
 		gbc.gridx = 0;
 		gbc.gridy = 0;
@@ -72,7 +77,7 @@ public class MainScreen extends JFrame {
 		gbc.gridx = 1;
 
 		// ligne 1 : Menu, on laisse l'espace vide pour les divers afin de le
-		// "remplir" dans les différentes classes
+		// "remplir" dans les diffï¿½rentes classes
 		gbc.gridx = 0;
 		gbc.gridy = 1;
 		box.add(menuPanel, gbc);
@@ -83,7 +88,7 @@ public class MainScreen extends JFrame {
 		this.setContentPane(box);
 
 		JPanel authentification = new NvelleRegle(this);
-		JPanel sentences = new SentencesPanel(this);
+		sentencesPanel = new SentencesPanel(this, sentences);
 		// JPanel profil = new ProfileJPanel();
 		JPanel defaut = new JPanel();
 		JLabel bienvenue = new JLabel("Bienvenue sur Shake's Pear !");
@@ -91,11 +96,11 @@ public class MainScreen extends JFrame {
 		bienvenue.setFont(police);
 		defaut.add(bienvenue);
 
-		// On définit le layout
+		// On dï¿½finit le layout
 		content.setLayout(cl);
-		// On ajoute les cartes à la pile avec un nom pour les retrouver
+		// On ajoute les cartes ï¿½ la pile avec un nom pour les retrouver
 		content.add(authentification, listContent[0]);
-		content.add(sentences, listContent[2]);
+		content.add(sentencesPanel, listContent[2]);
 		content.add(defaut, listContent[listContent.length - 1]);
 
 		// diversPannel.add(boutonPane, BorderLayout.NORTH);
@@ -155,6 +160,8 @@ public class MainScreen extends JFrame {
 			}
 			else if (arg.equals("Phrases")) {
 				cl.show(content, listContent[2]);
+				sentences.initialize();
+				sentencesPanel.reset();
 			}
 		} else if (o instanceof LogoButton) {
 			cl.show(content, listContent[listContent.length - 1]);
