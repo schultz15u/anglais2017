@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.DAO.DAOException;
+import model.DAO.RuleDAO;
+import model.DAO.RuleDAOJDBC;
 import model.DAO.SentenceDAO;
 import model.DAO.SentenceDAOJDBC;
+import model.object.RuleModel;
 import model.object.SentenceModel;
 
 public class Sentences {
@@ -51,6 +54,26 @@ public class Sentences {
 		return currentSentenceId >= sentences.size();
 	}
 	
+	public String getRule() {
+		
+		try
+		{
+			RuleDAO ruleTable = new RuleDAOJDBC();
+			RuleModel ruleModel = ruleTable.getById(sentences.get(currentSentenceId).getIdRule());
+			
+			return ruleModel.getDetail();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return "";
+		}
+	}
+	
+	public String getIncompleteWrongSentence() {
+		return sentences.get(currentSentenceId).getDetail().replaceAll("¤", "---");
+	}
+	
 	public String getWrongSentence() {
 		if (!isFinished())
 			return sentences.get(currentSentenceId).getDetail().replaceAll("¤", currentWrongWord);
@@ -61,6 +84,10 @@ public class Sentences {
 		if (!isFinished())
 			return sentences.get(currentSentenceId).getDetail().replaceAll("¤", sentences.get(currentSentenceId).getPropOk());
 		return "";
+	}
+	
+	public String[] getChoices() {
+		return sentences.get(currentSentenceId).getPropNo().split(",");
 	}
 	
 	public int getScore() {
