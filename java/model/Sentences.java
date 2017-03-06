@@ -1,20 +1,18 @@
 package model;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import model.DAO.DAOException;
-import model.DAO.RuleDAO;
-import model.DAO.RuleDAOJDBC;
-import model.DAO.SentenceDAO;
-import model.DAO.SentenceDAOJDBC;
-import model.object.RuleModel;
-import model.object.SentenceModel;
+import model.database.entries.RuleEntry;
+import model.database.entries.SentenceEntry;
+import model.database.tables.RuleTable;
+import model.database.tables.SentenceTable;
 
 public class Sentences {
 	
-	private List<SentenceModel> sentences;
+	private List<SentenceEntry> sentences;
 	private int currentSentenceId;
 	private String currentWrongWord;
 	private int score;
@@ -28,10 +26,10 @@ public class Sentences {
 	
 	public void initialize() {		
 		try {
-			SentenceDAO sentenceTable = new SentenceDAOJDBC();
+			SentenceTable sentenceTable = new SentenceTable();
 			sentences = sentenceTable.getAll();
 		}
-		catch (DAOException e) {
+		catch (SQLException e) {
 			e.printStackTrace();
 			sentences = null;
 		}
@@ -41,7 +39,7 @@ public class Sentences {
 		generateWrongWord();
 		
 		// Random sort of the sentences list
-		ArrayList<SentenceModel> sentencesTemp = new ArrayList<SentenceModel>();
+		ArrayList<SentenceEntry> sentencesTemp = new ArrayList<SentenceEntry>();
 		while (sentences.size() > 0) {
 			int sentenceIdToTransfer = (int) (Math.random() * sentences.size());
 			sentencesTemp.add(sentences.get(sentenceIdToTransfer));
@@ -59,8 +57,8 @@ public class Sentences {
 		
 		try
 		{
-			RuleDAO ruleTable = new RuleDAOJDBC();
-			RuleModel ruleModel = ruleTable.getById(sentences.get(currentSentenceId).getIdRule());
+			RuleTable ruleTable = new RuleTable();
+			RuleEntry ruleModel = ruleTable.getById(sentences.get(currentSentenceId).getIdRule());
 			
 			return ruleModel.getDetail();
 		}
@@ -84,7 +82,9 @@ public class Sentences {
 	}
 	
 	public String getCorrectWord() {
-		return sentences.get(currentSentenceId).getPropOk();
+		if (!isFinished())
+			return sentences.get(currentSentenceId).getPropOk();
+		return "";
 	}
 	
 	public String getCorrectSentence() {
@@ -94,16 +94,18 @@ public class Sentences {
 	}
 	
 	public ArrayList<String> getChoices() {
-		
-		String[] choices = (getCorrectWord() + "," + sentences.get(currentSentenceId).getPropNo()).split(",");
-		ArrayList<String> choicesList = new ArrayList<String>(Arrays.asList(choices));
 		ArrayList<String> sortedChoices = new ArrayList<String>();
 		
-		for (int i = 0; i < choices.length; ++i) {
-			int index = (int) (Math.random() * choicesList.size());
+		if (!isFinished()) {
+			String[] choices = (getCorrectWord() + "," + sentences.get(currentSentenceId).getPropNo()).split(",");
+			ArrayList<String> choicesList = new ArrayList<String>(Arrays.asList(choices));
 			
-			sortedChoices.add(choicesList.get(index));
-			choicesList.remove(index);
+			for (int i = 0; i < choices.length; ++i) {
+				int index = (int) (Math.random() * choicesList.size());
+				
+				sortedChoices.add(choicesList.get(index));
+				choicesList.remove(index);
+			}
 		}
 		
 		return sortedChoices;

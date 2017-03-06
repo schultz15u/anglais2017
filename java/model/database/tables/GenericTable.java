@@ -1,4 +1,4 @@
-package model.DAO;
+package model.database.tables;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,14 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
-import model.DataBase.ConnectionManager;
+import model.database.ConnectionManager;
 
-public abstract class GenericDAOJDBC<T> implements GenericDAO<T> {
+public abstract class GenericTable<T> {
 
 	private boolean debug = true;
 
-	@Override
-	public T getById(int id) throws DAOException {
+	public T getById(int id) throws SQLException {
 		return getUniqueResult(getByProperty(getColumnId(), () -> id, true));
 	}
 
@@ -28,10 +27,10 @@ public abstract class GenericDAOJDBC<T> implements GenericDAO<T> {
 	 *            equality or like
 	 * @return list of the objects whose property <code>sqlPropertyName</code>
 	 *         matches the <code>lambda</code> return value.
-	 * @throws DAOException
+	 * @throws SQLException
 	 */
 	public List<T> getByProperty(String sqlPropertyName, Supplier<Object> lambda, boolean exactMatch)
-			throws DAOException {
+			throws SQLException {
 		try {
 			Object expectedValue = lambda.get();
 			String sql = "SELECT " + getColumns() + "," + getColumnId() + " FROM " + getTableName() + " WHERE "
@@ -56,12 +55,11 @@ public abstract class GenericDAOJDBC<T> implements GenericDAO<T> {
 			}
 			return ret;
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new SQLException(e);
 		}
 	}
 	
-	@Override
-	public List<T> getAll() throws DAOException
+	public List<T> getAll() throws SQLException
 	{
 		try {
 			String sql = "SELECT " + getColumns()  + "," + getColumnId() + " FROM " + getTableName();
@@ -76,13 +74,12 @@ public abstract class GenericDAOJDBC<T> implements GenericDAO<T> {
 			return ret;
 		}
 		catch (SQLException e) {
-			throw new DAOException(e);
+			throw new SQLException(e);
 		}
 		
 	}
 
-	@Override
-	public void insert(T t) throws DAOException {
+	public void insert(T t) throws SQLException {
 		try {
 			String columns = getColumns() + ", " + getColumnId();
 			String sql = "INSERT INTO " + getTableName() + "(" + columns + ") VALUES ("
@@ -91,13 +88,12 @@ public abstract class GenericDAOJDBC<T> implements GenericDAO<T> {
 			unmap(t, ps);
 			ps.execute();
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new SQLException(e);
 		}
 
 	}
 
-	@Override
-	public void update(T toUpdate) throws DAOException {
+	public void update(T toUpdate) throws SQLException {
 		try {
 			String sql = "UPDATE " + getTableName() + " SET " + getColumns().replace(",", " = ?,") + " = ? WHERE "
 					+ getColumnId() + "= ?";
@@ -105,19 +101,18 @@ public abstract class GenericDAOJDBC<T> implements GenericDAO<T> {
 			unmap(toUpdate, ps);
 			ps.execute();
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new SQLException(e);
 		}
 	}
 
-	@Override
-	public void delete(T toDelete) throws DAOException {
+	public void delete(T toDelete) throws SQLException {
 		try {
 			String sql = "DELETE FROM " + getTableName() + " WHERE " + getColumnId() + " = ?";
 			PreparedStatement ps = prepareStatement(sql);
 			ps.setInt(1, getId(toDelete));
 			ps.execute();
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new SQLException(e);
 		}
 
 	}
@@ -156,11 +151,11 @@ public abstract class GenericDAOJDBC<T> implements GenericDAO<T> {
 		return ps;
 	}
 
-	private T getUniqueResult(List<T> tmp) throws DAOException {
+	private T getUniqueResult(List<T> tmp) throws SQLException {
 		if (tmp != null && tmp.size() == 1) {
 			return tmp.get(0);
 		} else {
-			throw new DAOException("Invalid number of results");
+			throw new SQLException("Invalid number of results");
 		}
 	}
 }

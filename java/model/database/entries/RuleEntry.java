@@ -1,20 +1,20 @@
-package model.object;
+package model.database.entries;
 
-public class RuleModel {
+public class RuleEntry {
 
 	private int idRule;
 	private String name;
 	private String detail;
 	private int pack;
 
-	public RuleModel(int id, String nom, String detail, int pack) {
+	public RuleEntry(int id, String nom, String detail, int pack) {
 		this.idRule = id;
 		this.name = nom;
 		this.pack = pack;
 		this.detail = detail;
 	}
 
-	public RuleModel() {
+	public RuleEntry() {
 
 	}
 

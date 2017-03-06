@@ -1,22 +1,21 @@
-package model.DAO;
+package model.database.tables;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import model.object.SentenceModel;
+import model.database.entries.SentenceEntry;
 
-public class SentenceDAOJDBC extends GenericDAOJDBC<SentenceModel> implements SentenceDAO {
+public class SentenceTable extends GenericTable<SentenceEntry> {
 
-	@Override
-	public List<SentenceModel> getByIdRule(int idRule) throws DAOException {
+	public List<SentenceEntry> getByIdRule(int idRule) throws SQLException {
 		return getByProperty("id_rule", () -> idRule, true);
 	}
 
 	@Override
-	protected SentenceModel map(ResultSet rs) throws SQLException {
-		SentenceModel s = new SentenceModel();
+	protected SentenceEntry map(ResultSet rs) throws SQLException {
+		SentenceEntry s = new SentenceEntry();
 		s.setDetail(rs.getString(1));
 		s.setPropOk(rs.getString(2));
 		s.setPropNo(rs.getString(3));
@@ -26,7 +25,7 @@ public class SentenceDAOJDBC extends GenericDAOJDBC<SentenceModel> implements Se
 	}
 
 	@Override
-	protected void unmap(SentenceModel sentence, PreparedStatement ps) throws SQLException {
+	protected void unmap(SentenceEntry sentence, PreparedStatement ps) throws SQLException {
 		ps.setString(1, sentence.getDetail());
 		ps.setString(2, sentence.getPropOk());
 		ps.setString(3, sentence.getPropNo());
@@ -50,7 +49,7 @@ public class SentenceDAOJDBC extends GenericDAOJDBC<SentenceModel> implements Se
 	}
 
 	@Override
-	protected int getId(SentenceModel rm) {
+	protected int getId(SentenceEntry rm) {
 		return rm.getIdSen();
 	}
 }

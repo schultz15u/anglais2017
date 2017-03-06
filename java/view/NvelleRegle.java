@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
-import model.object.RuleModel;
+import model.database.entries.RuleEntry;
 
 /**
  * @author Claire
@@ -85,7 +85,7 @@ public class NvelleRegle extends JPanel {
 	class BoutonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if ((JButton) e.getSource() == coButton) {
-				RuleModel r = new RuleModel();
+				RuleEntry r = new RuleEntry();
 				System.out.println("regle : " + r.getName() + " | detail : " + r.getDetail());
 				System.out.println("bonjour");
 				screen.getCl().show(screen.getContent(), screen.getListContent()[screen.getListContent().length - 1]);

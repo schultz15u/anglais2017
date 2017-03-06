@@ -1,27 +1,25 @@
-package model.DAO;
+package model.database.tables;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import model.object.RuleModel;
+import model.database.entries.RuleEntry;
 
-public class RuleDAOJDBC extends GenericDAOJDBC<RuleModel> implements RuleDAO {
+public class RuleTable extends GenericTable<RuleEntry> {
 
-	@Override
-	public List<RuleModel> getByPack(Integer pack) throws DAOException {
+	public List<RuleEntry> getByPack(Integer pack) throws SQLException {
 		return getByProperty("pack", () -> pack, true);
 	}
 
-	@Override
-	public List<RuleModel> getByName(String partOfName) throws DAOException {
+	public List<RuleEntry> getByName(String partOfName) throws SQLException {
 		return getByProperty("name", () -> "%" + partOfName + "%", false);
 	}
 
 	@Override
-	protected RuleModel map(ResultSet rs) throws SQLException {
-		RuleModel r = new RuleModel();
+	protected RuleEntry map(ResultSet rs) throws SQLException {
+		RuleEntry r = new RuleEntry();
 		r.setName(rs.getString(1));
 		r.setDetail(rs.getString(2));
 		r.setPack(rs.getInt(3));
@@ -30,7 +28,7 @@ public class RuleDAOJDBC extends GenericDAOJDBC<RuleModel> implements RuleDAO {
 	}
 
 	@Override
-	protected void unmap(RuleModel rule, PreparedStatement ps) throws SQLException {
+	protected void unmap(RuleEntry rule, PreparedStatement ps) throws SQLException {
 		ps.setString(1, rule.getName());
 		ps.setString(2, rule.getDetail());
 		ps.setInt(3, rule.getPack());
@@ -53,7 +51,7 @@ public class RuleDAOJDBC extends GenericDAOJDBC<RuleModel> implements RuleDAO {
 	}
 
 	@Override
-	protected int getId(RuleModel rm) {
+	protected int getId(RuleEntry rm) {
 		return rm.getIdRule();
 	}
 }

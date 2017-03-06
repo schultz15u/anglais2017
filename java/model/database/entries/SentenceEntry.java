@@ -1,6 +1,6 @@
-package model.object;
+package model.database.entries;
 
-public class SentenceModel {
+public class SentenceEntry {
 
 	private int idSen;
 	private String detail;
@@ -8,11 +8,11 @@ public class SentenceModel {
 	private String propNo;
 	private int idRule;
 
-	public SentenceModel() {
+	public SentenceEntry() {
 
 	}
 
-	public SentenceModel(int idSen, String detail, String prop_ok, String prop_no, int idRule) {
+	public SentenceEntry(int idSen, String detail, String prop_ok, String prop_no, int idRule) {
 		super();
 		this.idSen = idSen;
 		this.detail = detail;
