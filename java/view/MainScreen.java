@@ -87,7 +87,7 @@ public class MainScreen extends JFrame {
 
 		this.setContentPane(box);
 
-		JPanel authentification = new NvelleRegle(this);
+		JPanel sentencesManagerPanel = new SentencesManagerPanel();
 		sentencesPanel = new SentencesPanel(this, sentences);
 		// JPanel profil = new ProfileJPanel();
 		JPanel defaut = new JPanel();
@@ -99,7 +99,7 @@ public class MainScreen extends JFrame {
 		// On d�finit le layout
 		content.setLayout(cl);
 		// On ajoute les cartes � la pile avec un nom pour les retrouver
-		content.add(authentification, listContent[0]);
+		content.add(sentencesManagerPanel, listContent[0]);
 		content.add(sentencesPanel, listContent[2]);
 		content.add(defaut, listContent[listContent.length - 1]);
 

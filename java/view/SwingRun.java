@@ -1,7 +1,5 @@
 package view;
 
-import model.Sentences;
-
 public class SwingRun {
 
 	public static void main(String[] args) {
@@ -35,7 +33,7 @@ public class SwingRun {
 		
 		new MainScreen();
 		
-		System.out.println("==============================");
+		/*System.out.println("==============================");
 		
 		Sentences sentences = new Sentences();
 		sentences.initialize();
@@ -43,7 +41,7 @@ public class SwingRun {
 		System.out.println("Correct : " + sentences.getCorrectSentence());
 		sentences.validateSentence(true);
 		System.out.println("Wrong : " + sentences.getWrongSentence());
-		System.out.println("Correct : " + sentences.getCorrectSentence());
+		System.out.println("Correct : " + sentences.getCorrectSentence());*/
 	}
 
 }

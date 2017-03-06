@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -55,7 +56,9 @@ public class SentencesPanel extends JPanel {
 		add(ruleLabel);
 		
 		goToNextQuestion();
+		
 		setVisible(true);
+		setPreferredSize(new Dimension(750, 500));
 	}
 	
 	public void reset() {
