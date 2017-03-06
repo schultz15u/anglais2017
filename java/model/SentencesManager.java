@@ -5,6 +5,7 @@ public class SentencesManager {
 	public SentencesManager() {
 	}
 	
-	public void addSentence() {	
+	public boolean addSentence() {
+		return false;
 	}
 }

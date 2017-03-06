@@ -19,6 +19,7 @@ import javax.swing.JPanel;
 
 import model.Menu;
 import model.Sentences;
+import model.SentencesManager;
 
 @SuppressWarnings("serial")
 public class MainScreen extends JFrame {
@@ -29,6 +30,7 @@ public class MainScreen extends JFrame {
 	private JPanel box;
 	private boolean stateConnection = false;
 	private Sentences sentences;
+	private SentencesManager sentencesManager;
 	private SentencesPanel sentencesPanel;
 
 	CardLayout cl = new CardLayout();
@@ -87,7 +89,8 @@ public class MainScreen extends JFrame {
 
 		this.setContentPane(box);
 
-		JPanel sentencesManagerPanel = new SentencesManagerPanel();
+		sentencesManager = new SentencesManager();
+		JPanel sentencesManagerPanel = new SentencesManagerPanel(sentencesManager);
 		sentencesPanel = new SentencesPanel(this, sentences);
 		// JPanel profil = new ProfileJPanel();
 		JPanel defaut = new JPanel();
