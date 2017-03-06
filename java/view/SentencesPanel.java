@@ -75,21 +75,29 @@ public class SentencesPanel extends JPanel {
 		ruleLabel.setText("");
 		
 		if (!isMCQ) {
-			sentenceLabel.setText(sentences.getWrongSentence());	
+			sentenceLabel.setText(sentences.getWrongSentence());
 		}
 		else {
+			if (choicesRadio != null)
+				for (JRadioButton radio : choicesRadio)
+					remove(radio);
+			
 			sentenceLabel.setText(sentences.getIncompleteWrongSentence());
 			choicesRadio = new ArrayList<JRadioButton>();
 			
-			String[] choices = sentences.getChoices();
+			ArrayList<String> choices = sentences.getChoices();
 			radioGroup = new ButtonGroup();
 			
-			for (String choice : choices)
-			{
+			int i = 1;
+			
+			for (String choice : choices) {
+				
 				JRadioButton radio = new JRadioButton(choice);
+				radio.addMouseListener(new ChoiceListener(radio));
 				
 				choicesRadio.add(radio);
-				add(radio);
+				radioGroup.add(radio);
+				add(radio, i++);
 			}
 		}
 	}
@@ -141,6 +149,50 @@ public class SentencesPanel extends JPanel {
 			
 			sentences.validateSentence(sentenceIsCorrect == 1);
 			goToNextQuestion();
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent event) {
+		}
+
+		@Override
+		public void mouseExited(MouseEvent event) {
+		}
+
+		@Override
+		public void mousePressed(MouseEvent event) {
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent event) {			
+		}
+	}
+	
+	public class ChoiceListener implements MouseListener
+	{
+		JRadioButton button;
+		
+		public ChoiceListener(JRadioButton button) {
+			this.button = button;
+		}
+		
+		@Override
+		public void mouseClicked(MouseEvent event) {
+			
+			if (sentenceIsCorrect == 2) {
+				
+				if (sentences.getCorrectWord().equals(button.getText())) {
+					informationLabel.setText("Correct !");
+					sentenceIsCorrect = 1;
+				}
+				else {
+					informationLabel.setText("Wrong !");
+					sentenceIsCorrect = 0;
+				}
+				
+				ruleLabel.setText("Rule : " + sentences.getRule());
+				nextButton.setVisible(true);
+			}
 		}
 
 		@Override

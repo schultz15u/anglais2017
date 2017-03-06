@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import model.DAO.DAOException;
@@ -71,7 +72,9 @@ public class Sentences {
 	}
 	
 	public String getIncompleteWrongSentence() {
-		return sentences.get(currentSentenceId).getDetail().replaceAll("¤", "---");
+		if (!isFinished())
+			return sentences.get(currentSentenceId).getDetail().replaceAll("¤", "---");
+		return "";
 	}
 	
 	public String getWrongSentence() {
@@ -80,14 +83,30 @@ public class Sentences {
 		return "";
 	}
 	
+	public String getCorrectWord() {
+		return sentences.get(currentSentenceId).getPropOk();
+	}
+	
 	public String getCorrectSentence() {
 		if (!isFinished())
 			return sentences.get(currentSentenceId).getDetail().replaceAll("¤", sentences.get(currentSentenceId).getPropOk());
 		return "";
 	}
 	
-	public String[] getChoices() {
-		return sentences.get(currentSentenceId).getPropNo().split(",");
+	public ArrayList<String> getChoices() {
+		
+		String[] choices = (getCorrectWord() + "," + sentences.get(currentSentenceId).getPropNo()).split(",");
+		ArrayList<String> choicesList = new ArrayList<String>(Arrays.asList(choices));
+		ArrayList<String> sortedChoices = new ArrayList<String>();
+		
+		for (int i = 0; i < choices.length; ++i) {
+			int index = (int) (Math.random() * choicesList.size());
+			
+			sortedChoices.add(choicesList.get(index));
+			choicesList.remove(index);
+		}
+		
+		return sortedChoices;
 	}
 	
 	public int getScore() {
