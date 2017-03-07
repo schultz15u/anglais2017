@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import controller.DefaultMouseListener;
 import model.Sentences;
 
 
@@ -105,12 +105,12 @@ public class SentencesPanel extends JPanel {
 		}
 	}
 	
-	public class SentenceLabelListener implements MouseListener
+	public class SentenceLabelListener extends DefaultMouseListener
 	{
 		@Override
 		public void mouseClicked(MouseEvent event) {
 			
-			if (sentenceIsCorrect == 2) {
+			if (sentenceIsCorrect == 2 && !isMCQ) {
 				int characterWidth = sentenceLabel.getWidth() / sentenceLabel.getText().length();
 				int index = event.getX() / characterWidth;	// ID of the clicked character
 				
@@ -127,25 +127,9 @@ public class SentencesPanel extends JPanel {
 				nextButton.setVisible(true);
 			}
 		}
-
-		@Override
-		public void mouseEntered(MouseEvent event) {
-		}
-
-		@Override
-		public void mouseExited(MouseEvent event) {
-		}
-
-		@Override
-		public void mousePressed(MouseEvent event) {
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent event) {			
-		}
 	}
 	
-	public class NextButtonListener implements MouseListener
+	public class NextButtonListener extends DefaultMouseListener
 	{
 		@Override
 		public void mouseClicked(MouseEvent event) {
@@ -153,36 +137,21 @@ public class SentencesPanel extends JPanel {
 			sentences.validateSentence(sentenceIsCorrect == 1);
 			goToNextQuestion();
 		}
-
-		@Override
-		public void mouseEntered(MouseEvent event) {
-		}
-
-		@Override
-		public void mouseExited(MouseEvent event) {
-		}
-
-		@Override
-		public void mousePressed(MouseEvent event) {
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent event) {			
-		}
 	}
 	
-	public class ChoiceListener implements MouseListener
+	public class ChoiceListener extends DefaultMouseListener
 	{
 		JRadioButton button;
 		
 		public ChoiceListener(JRadioButton button) {
+			super();
 			this.button = button;
 		}
 		
 		@Override
 		public void mouseClicked(MouseEvent event) {
 			
-			if (sentenceIsCorrect == 2) {
+			if (sentenceIsCorrect == 2 && isMCQ) {
 				
 				if (sentences.getCorrectWord().equals(button.getText())) {
 					informationLabel.setText("Correct !");
@@ -196,22 +165,6 @@ public class SentencesPanel extends JPanel {
 				ruleLabel.setText("Rule : " + sentences.getRule());
 				nextButton.setVisible(true);
 			}
-		}
-
-		@Override
-		public void mouseEntered(MouseEvent event) {
-		}
-
-		@Override
-		public void mouseExited(MouseEvent event) {
-		}
-
-		@Override
-		public void mousePressed(MouseEvent event) {
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent event) {			
 		}
 	}
 }

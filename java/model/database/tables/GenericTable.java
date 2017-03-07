@@ -14,6 +14,11 @@ public abstract class GenericTable<T> {
 
 	private boolean debug = true;
 
+	/**
+	 * @param id
+	 * @return the object corresponding to the id, null if none
+	 * @throws SQLException
+	 */	
 	public T getById(int id) throws SQLException {
 		return getUniqueResult(getByProperty(getColumnId(), () -> id, true));
 	}
@@ -78,33 +83,56 @@ public abstract class GenericTable<T> {
 		}
 		
 	}
-
+	
+	/**
+	  * Insert a new object
+ 	 * 
+ 	 * @param toInsert
+ 	 *            the object to insert
+ 	 * 
+ 	 * @throws SQLException
+ 	 */
 	public void insert(T t) throws SQLException {
 		try {
-			String columns = getColumns() + ", " + getColumnId();
+			String columns = getColumns()/* + ", " + getColumnId()*/;
 			String sql = "INSERT INTO " + getTableName() + "(" + columns + ") VALUES ("
 					+ columns.replaceAll("[^,]+", "?") + ")";
 			PreparedStatement ps = prepareStatement(sql);
-			unmap(t, ps);
+			unmap(t, ps, false);
 			ps.execute();
 		} catch (SQLException e) {
 			throw new SQLException(e);
 		}
 
 	}
-
+	
+	/**
+	 * Update an object
+	 * 
+	 * @param toUpdate
+	 *            the object to update
+	 * 
+	 * @throws SQLException
+	 */
 	public void update(T toUpdate) throws SQLException {
 		try {
 			String sql = "UPDATE " + getTableName() + " SET " + getColumns().replace(",", " = ?,") + " = ? WHERE "
 					+ getColumnId() + "= ?";
 			PreparedStatement ps = prepareStatement(sql);
-			unmap(toUpdate, ps);
+			unmap(toUpdate, ps, true);
 			ps.execute();
 		} catch (SQLException e) {
 			throw new SQLException(e);
 		}
 	}
-
+	
+	/**
+	 * Delete an object
+	 * 
+	 * @param toDelete
+	 *            the object to delete
+	 * @throws SQLException
+	 */
 	public void delete(T toDelete) throws SQLException {
 		try {
 			String sql = "DELETE FROM " + getTableName() + " WHERE " + getColumnId() + " = ?";
@@ -116,10 +144,21 @@ public abstract class GenericTable<T> {
 		}
 
 	}
+	
+	public void deleteAll() throws SQLException {
+		try {
+			String sql = "DELETE FROM " + getTableName();
+			PreparedStatement ps = prepareStatement(sql);
+			ps.execute();
+		} catch (SQLException e) {
+			throw new SQLException(e);
+		}
+
+	}
 
 	protected abstract T map(ResultSet rs) throws SQLException;
 
-	protected abstract void unmap(T rule, PreparedStatement ps) throws SQLException;
+	protected abstract void unmap(T rule, PreparedStatement ps, boolean idShouldBeInserted) throws SQLException;
 
 	protected abstract String getColumns();
 

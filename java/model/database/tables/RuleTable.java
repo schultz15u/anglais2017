@@ -9,10 +9,23 @@ import model.database.entries.RuleEntry;
 
 public class RuleTable extends GenericTable<RuleEntry> {
 
+	/**
+	 * @param pack
+	 *            pack's id
+	 * @return matching rules
+	 * @throws SQLException
+	 */
 	public List<RuleEntry> getByPack(Integer pack) throws SQLException {
 		return getByProperty("pack", () -> pack, true);
 	}
 
+	/**
+	 * 
+	 * @param partOfName
+	 *            String contained in the rule's name
+	 * @return the matching rules
+	 * @throws SQLException
+	 */
 	public List<RuleEntry> getByName(String partOfName) throws SQLException {
 		return getByProperty("name", () -> "%" + partOfName + "%", false);
 	}
@@ -28,11 +41,12 @@ public class RuleTable extends GenericTable<RuleEntry> {
 	}
 
 	@Override
-	protected void unmap(RuleEntry rule, PreparedStatement ps) throws SQLException {
+	protected void unmap(RuleEntry rule, PreparedStatement ps, boolean idShouldBeInserted) throws SQLException {
 		ps.setString(1, rule.getName());
 		ps.setString(2, rule.getDetail());
 		ps.setInt(3, rule.getPack());
-		ps.setInt(4, rule.getIdRule());
+		if (idShouldBeInserted)
+			ps.setInt(4, rule.getIdRule());
 	}
 
 	@Override

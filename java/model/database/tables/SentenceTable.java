@@ -25,12 +25,13 @@ public class SentenceTable extends GenericTable<SentenceEntry> {
 	}
 
 	@Override
-	protected void unmap(SentenceEntry sentence, PreparedStatement ps) throws SQLException {
+	protected void unmap(SentenceEntry sentence, PreparedStatement ps, boolean idShouldBeInserted) throws SQLException {
 		ps.setString(1, sentence.getDetail());
 		ps.setString(2, sentence.getPropOk());
 		ps.setString(3, sentence.getPropNo());
 		ps.setInt(4, sentence.getIdRule());
-		ps.setInt(5, sentence.getIdSen());
+		if (idShouldBeInserted)
+			ps.setInt(5, sentence.getIdSen());
 	}
 
 	@Override
