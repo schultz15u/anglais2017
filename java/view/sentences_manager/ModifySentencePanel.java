@@ -5,6 +5,7 @@ import model.SentencesManager;
 import model.database.entries.RuleEntry;
 import model.database.entries.SentenceEntry;
 import view.DefaultGridPanel;
+import view.customized_widgets.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,21 +17,21 @@ import java.awt.event.MouseEvent;
 public class ModifySentencePanel extends DefaultGridPanel {
 
 	private SentencesManager sentencesManager;
-	private JLabel sentenceChoiceLabel;
-	private JComboBox sentenceChoiceCombo;
-	private JLabel sentenceLabel;
-	private JTextField sentenceField;
-	private JLabel correctAnswerLabel;
-	private JTextField correctAnswerField;
-	private JLabel wrongAnswersLabel;
-	private JTextField wrongAnswersField;
-	private JLabel ruleNameLabel;
-	private JTextField ruleNameField;
-	private JLabel ruleDetailsLabel;
-	private JTextArea ruleDetailsField;
-	private JLabel ruleComboLabel;
-	private JComboBox ruleCombo;
-	private JButton validationButton;
+	private CustomizedLabel sentenceChoiceLabel;
+	private CustomizedComboBox sentenceChoiceCombo;
+	private CustomizedLabel sentenceLabel;
+	private CustomizedTextField sentenceField;
+	private CustomizedLabel correctAnswerLabel;
+	private CustomizedTextField correctAnswerField;
+	private CustomizedLabel wrongAnswersLabel;
+	private CustomizedTextField wrongAnswersField;
+	private CustomizedLabel ruleNameLabel;
+	private CustomizedTextField ruleNameField;
+	private CustomizedLabel ruleDetailsLabel;
+	private CustomizedTextArea ruleDetailsField;
+	private CustomizedLabel ruleComboLabel;
+	private CustomizedComboBox ruleCombo;
+	private CustomizedButton validationButton;
 	private JLabel messageLabel;
 	private String packageName;
 	private String ruleName;
@@ -43,25 +44,25 @@ public class ModifySentencePanel extends DefaultGridPanel {
 		this.messageLabel = messageLabel;
 		packageName = "";
 		ruleName = "-";
+		setBackground(new Color(30, 30, 30));
 
-		sentenceChoiceLabel = new JLabel("Sentence to modify : ");
-		sentenceChoiceCombo = new JComboBox(sentencesManager.getSentenceNames(packageName).toArray());
+		sentenceChoiceLabel = new CustomizedLabel("Sentence to modify : ");
+		sentenceChoiceCombo = new CustomizedComboBox(sentencesManager.getSentenceNames(packageName).toArray());
 		sentenceChoiceCombo.addActionListener(new SentenceChoiceListener());
-		sentenceLabel = new JLabel("Sentence (add \"@\" where the wrong word is placed) : ");
-		sentenceField = new JTextField("", 30);
-		correctAnswerLabel = new JLabel("Correct answer : ");
-		correctAnswerField = new JTextField("", 30);
-		wrongAnswersLabel = new JLabel("Wrong answers (separated with commas) : ");
-		wrongAnswersField = new JTextField("", 30);
-		ruleNameLabel = new JLabel("Rule name : ");
-		ruleNameField = new JTextField("", 30);
-		ruleDetailsLabel = new JLabel("Rule details : ");
-		ruleDetailsField = new JTextArea("", 5, 30);
-		JScrollPane scrollPane = new JScrollPane( ruleDetailsField );
-		ruleComboLabel = new JLabel("Existing rule : ");
-		ruleCombo = new JComboBox(sentencesManager.getRulesNames(packageName).toArray());
+		sentenceLabel = new CustomizedLabel("Sentence (add \"@\" where the wrong word is placed) : ");
+		sentenceField = new CustomizedTextField("", 30);
+		correctAnswerLabel = new CustomizedLabel("Correct answer : ");
+		correctAnswerField = new CustomizedTextField("", 30);
+		wrongAnswersLabel = new CustomizedLabel("Wrong answers (separated with commas) : ");
+		wrongAnswersField = new CustomizedTextField("", 30);
+		ruleNameLabel = new CustomizedLabel("Rule name : ");
+		ruleNameField = new CustomizedTextField("", 30);
+		ruleDetailsLabel = new CustomizedLabel("Rule details : ");
+		ruleDetailsField = new CustomizedTextArea("", 5, 30);
+		ruleComboLabel = new CustomizedLabel("Existing rule : ");
+		ruleCombo = new CustomizedComboBox(sentencesManager.getRulesNames(packageName).toArray());
 		ruleCombo.addActionListener(new RulesNamesListener());
-		validationButton = new JButton("Update");
+		validationButton = new CustomizedButton("Update");
 		validationButton.addMouseListener(new ValidationListener());
 
 		addComponent(sentenceChoiceLabel, 0, 0, 1, 1);
@@ -75,7 +76,7 @@ public class ModifySentencePanel extends DefaultGridPanel {
 		addComponent(ruleNameLabel, 0, 4, 1, 1);
 		addComponent(ruleNameField, 1, 4, 1, 1);
 		addComponent(ruleDetailsLabel, 0, 5, 1, 1);
-		addComponent(scrollPane, 1, 5, 1, 1);
+		addComponent(ruleDetailsField.getScrollPane(), 1, 5, 1, 1);
 		addComponent(ruleComboLabel, 0, 6, 1, 1);
 		addComponent(ruleCombo, 1, 6, 1, 1);
 		addComponent(validationButton, 0, 7, 2, 1);
@@ -92,11 +93,11 @@ public class ModifySentencePanel extends DefaultGridPanel {
 
 
 		remove(sentenceChoiceCombo);
-		sentenceChoiceCombo = new JComboBox(sentencesManager.getSentenceNames(packageName).toArray());
+		sentenceChoiceCombo = new CustomizedComboBox(sentencesManager.getSentenceNames(packageName).toArray());
 		sentenceChoiceCombo.addActionListener(new SentenceChoiceListener());
 
 		remove(ruleCombo);
-		ruleCombo = new JComboBox(sentencesManager.getRulesNames(packageName).toArray());
+		ruleCombo = new CustomizedComboBox(sentencesManager.getRulesNames(packageName).toArray());
 		ruleCombo.addActionListener(new RulesNamesListener());
 
 		addComponent(sentenceChoiceCombo, 1, 0, 1, 1);

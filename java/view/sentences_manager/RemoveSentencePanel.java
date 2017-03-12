@@ -5,6 +5,9 @@ import model.SentencesManager;
 import model.database.entries.RuleEntry;
 import model.database.entries.SentenceEntry;
 import view.DefaultGridPanel;
+import view.customized_widgets.CustomizedButton;
+import view.customized_widgets.CustomizedComboBox;
+import view.customized_widgets.CustomizedLabel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,26 +19,27 @@ import java.awt.event.MouseEvent;
 public class RemoveSentencePanel extends DefaultGridPanel {
 
 	private SentencesManager sentencesManager;
-	private JLabel sentenceChoiceLabel;
-	private JComboBox sentenceChoiceCombo;
-	private JButton validationButton;
+	private CustomizedLabel sentenceChoiceLabel;
+	private CustomizedComboBox sentenceChoiceCombo;
+	private CustomizedButton validationButton;
 	private JLabel messageLabel;
 	private String packageName;
 	private String sentence;
 
 	public RemoveSentencePanel(SentencesManager sentencesManager, JLabel messageLabel) {
-		
+
 		super();
 		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
 		this.messageLabel = messageLabel;
 		packageName = "";
 		sentence = "";
+		setBackground(new Color(30, 30, 30));
 
-		sentenceChoiceLabel = new JLabel("Sentence to remove : ");
-		sentenceChoiceCombo = new JComboBox(sentencesManager.getSentenceNames(packageName).toArray());
+		sentenceChoiceLabel = new CustomizedLabel("Sentence to remove : ");
+		sentenceChoiceCombo = new CustomizedComboBox(sentencesManager.getSentenceNames(packageName).toArray());
 		sentenceChoiceCombo.addActionListener(new SentenceChoiceListener());
-		validationButton = new JButton("Update");
+		validationButton = new CustomizedButton("Remove");
 		validationButton.addMouseListener(new ValidationListener());
 
 		addComponent(sentenceChoiceLabel, 0, 0, 1, 1);
@@ -52,7 +56,7 @@ public class RemoveSentencePanel extends DefaultGridPanel {
 	public void update() {
 
 		remove(sentenceChoiceCombo);
-		sentenceChoiceCombo = new JComboBox(sentencesManager.getSentenceNames(packageName).toArray());
+		sentenceChoiceCombo = new CustomizedComboBox(sentencesManager.getSentenceNames(packageName).toArray());
 		sentenceChoiceCombo.addActionListener(new SentenceChoiceListener());
 
 		addComponent(sentenceChoiceCombo, 1, 0, 1, 1);

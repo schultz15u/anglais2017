@@ -1,7 +1,6 @@
 package view.sentences_manager;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -11,15 +10,17 @@ import javax.swing.*;
 
 import model.SentencesManager;
 import view.DefaultGridPanel;
+import view.customized_widgets.CustomizedButton;
+import view.customized_widgets.CustomizedComboBox;
 
 
 public class ModifyPackagePanel extends DefaultGridPanel {
 	
 	private SentencesManager sentencesManager;
-	private JComboBox packagesCombo;
-	private JButton addSentenceButton;
-	private JButton modifySentenceButton;
-	private JButton removeSentenceButton;
+	private CustomizedComboBox packagesCombo;
+	private CustomizedButton addSentenceButton;
+	private CustomizedButton modifySentenceButton;
+	private CustomizedButton removeSentenceButton;
 	private AddSentencePanel addSentencePanel;
 	private ModifySentencePanel modifySentencePanel;
 	private RemoveSentencePanel removeSentencePanel;
@@ -32,14 +33,15 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
 		this.messageLabel = messageLabel;
+		setBackground(new Color(30, 30, 30));
 
-		packagesCombo = new JComboBox(sentencesManager.getPackagesNames().toArray());
+		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames().toArray());
 		packagesCombo.addActionListener(new PackagesComboListener());
-		addSentenceButton = new JButton("Add sentence");
+		addSentenceButton = new CustomizedButton("Add sentence");
 		addSentenceButton.addActionListener(new AddSentenceListener());
-		modifySentenceButton = new JButton("Modify sentence");
+		modifySentenceButton = new CustomizedButton("Modify sentence");
 		modifySentenceButton.addActionListener(new ModifySentenceListener());
-		removeSentenceButton = new JButton("Remove sentence");
+		removeSentenceButton = new CustomizedButton("Remove sentence");
 		removeSentenceButton.addActionListener(new RemoveSentenceListener());
 
 		addSentencePanel = new AddSentencePanel(sentencesManager, messageLabel);
@@ -58,11 +60,13 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		addComponent(modifySentenceButton, 1, 1, 1, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 		addComponent(removeSentenceButton, 2, 1, 1, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 		addComponent(addSentencePanel, 0, 2, 3, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
+
+		addSentenceButton.setNormalColor(new Color(80, 80, 80));
 	}
 
 	public void update() {
 		remove(packagesCombo);
-		packagesCombo = new JComboBox(sentencesManager.getPackagesNames().toArray());
+		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames().toArray());
 		packagesCombo.addActionListener(new PackagesComboListener());
 		addComponent(packagesCombo, 0, 0, 3, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 
@@ -110,6 +114,11 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 			addSentencePanel.update();
 			modifySentencePanel.update();
 			removeSentencePanel.update();
+
+			addSentenceButton.setNormalColor(new Color(50, 50, 50));
+			modifySentenceButton.setNormalColor(new Color(50, 50, 50));
+			removeSentenceButton.setNormalColor(new Color(50, 50, 50));
+			addSentenceButton.setNormalColor(new Color(80, 80, 80));
 		}
 	}
 
@@ -123,6 +132,11 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 			addSentencePanel.update();
 			modifySentencePanel.update();
 			removeSentencePanel.update();
+
+			addSentenceButton.setNormalColor(new Color(50, 50, 50));
+			modifySentenceButton.setNormalColor(new Color(50, 50, 50));
+			removeSentenceButton.setNormalColor(new Color(50, 50, 50));
+			modifySentenceButton.setNormalColor(new Color(80, 80, 80));
 		}
 	}
 
@@ -136,6 +150,11 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 			addSentencePanel.update();
 			modifySentencePanel.update();
 			removeSentencePanel.update();
+
+			addSentenceButton.setNormalColor(new Color(50, 50, 50));
+			modifySentenceButton.setNormalColor(new Color(50, 50, 50));
+			removeSentenceButton.setNormalColor(new Color(50, 50, 50));
+			removeSentenceButton.setNormalColor(new Color(80, 80, 80));
 		}
 	}
 }

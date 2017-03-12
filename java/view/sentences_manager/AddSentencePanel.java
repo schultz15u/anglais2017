@@ -11,52 +11,53 @@ import javax.swing.*;
 import controller.DefaultMouseListener;
 import model.SentencesManager;
 import view.DefaultGridPanel;
+import view.customized_widgets.*;
 
 
 public class AddSentencePanel extends DefaultGridPanel {
 	
 	private SentencesManager sentencesManager;
-	private JLabel sentenceLabel;
-	private JTextField sentenceField;
-	private JLabel correctAnswerLabel;
-	private JTextField correctAnswerField;
-	private JLabel wrongAnswersLabel;
-	private JTextField wrongAnswersField;
-	private JLabel ruleNameLabel;
-	private JTextField ruleNameField;
-	private JLabel ruleDetailsLabel;
-	private JTextArea ruleDetailsField;
-	private JLabel ruleComboLabel;
-	private JComboBox ruleCombo;
-	private JButton validationButton;
+	private CustomizedLabel sentenceLabel;
+	private CustomizedTextField sentenceField;
+	private CustomizedLabel correctAnswerLabel;
+	private CustomizedTextField correctAnswerField;
+	private CustomizedLabel wrongAnswersLabel;
+	private CustomizedTextField wrongAnswersField;
+	private CustomizedLabel ruleNameLabel;
+	private CustomizedTextField ruleNameField;
+	private CustomizedLabel ruleDetailsLabel;
+	private CustomizedTextArea ruleDetailsField;
+	private CustomizedLabel ruleComboLabel;
+	private CustomizedComboBox ruleCombo;
+	private CustomizedButton validationButton;
 	private JLabel messageLabel;
 	private String packageName;
 	private String ruleName;
 	
 	public AddSentencePanel(SentencesManager sentencesManager, JLabel messageLabel) {
-		
+
 		super();
 		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
 		this.messageLabel = messageLabel;
 		packageName = "";
 		ruleName = "-";
-		
-		sentenceLabel = new JLabel("Sentence (add \"@\" where the wrong word is placed) : ");
-		sentenceField = new JTextField("", 30);
-		correctAnswerLabel = new JLabel("Correct answer : ");
-		correctAnswerField = new JTextField("", 30);
-		wrongAnswersLabel = new JLabel("Wrong answers (separated with commas) : ");
-		wrongAnswersField = new JTextField("", 30);
-		ruleNameLabel = new JLabel("Rule name : ");
-		ruleNameField = new JTextField("", 30);
-		ruleDetailsLabel = new JLabel("Rule details : ");
-		ruleDetailsField = new JTextArea("", 5, 30);
-		JScrollPane scrollPane = new JScrollPane( ruleDetailsField );
-		ruleComboLabel = new JLabel("Existing rule : ");
-		ruleCombo = new JComboBox(sentencesManager.getRulesNames(packageName).toArray());
+		setBackground(new Color(30, 30, 30));
+
+		sentenceLabel = new CustomizedLabel("Sentence (add \"@\" where the wrong word is placed) : ");
+		sentenceField = new CustomizedTextField("", 30);
+		correctAnswerLabel = new CustomizedLabel("Correct answer : ");
+		correctAnswerField = new CustomizedTextField("", 30);
+		wrongAnswersLabel = new CustomizedLabel("Wrong answers (separated with commas) : ");
+		wrongAnswersField = new CustomizedTextField("", 30);
+		ruleNameLabel = new CustomizedLabel("Rule name : ");
+		ruleNameField = new CustomizedTextField("", 30);
+		ruleDetailsLabel = new CustomizedLabel("Rule details : ");
+		ruleDetailsField = new CustomizedTextArea("", 5, 30);
+		ruleComboLabel = new CustomizedLabel("Existing rule : ");
+		ruleCombo = new CustomizedComboBox(sentencesManager.getRulesNames(packageName).toArray());
 		ruleCombo.addActionListener(new RulesNamesListener());
-		validationButton = new JButton("Add");
+		validationButton = new CustomizedButton("Add");
 		validationButton.addMouseListener(new ValidationListener());
 
 		addComponent(sentenceLabel, 0, 0, 1, 1);
@@ -68,7 +69,7 @@ public class AddSentencePanel extends DefaultGridPanel {
 		addComponent(ruleNameLabel, 0, 3, 1, 1);
 		addComponent(ruleNameField, 1, 3, 1, 1);
 		addComponent(ruleDetailsLabel, 0, 4, 1, 1);
-		addComponent(scrollPane, 1, 4, 1, 1);
+		addComponent(ruleDetailsField.getScrollPane(), 1, 4, 1, 1);
 		addComponent(ruleComboLabel, 0, 5, 1, 1);
 		addComponent(ruleCombo, 1, 5, 1, 1);
 		addComponent(validationButton, 0, 6, 2, 1);
@@ -82,7 +83,7 @@ public class AddSentencePanel extends DefaultGridPanel {
 	public void update() {
 
 		remove(ruleCombo);
-		ruleCombo = new JComboBox(sentencesManager.getRulesNames(packageName).toArray());
+		ruleCombo = new CustomizedComboBox(sentencesManager.getRulesNames(packageName).toArray());
 		ruleCombo.addActionListener(new RulesNamesListener());
 
 		addComponent(ruleCombo, 1, 5, 1, 1);

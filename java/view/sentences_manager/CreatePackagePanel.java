@@ -7,17 +7,21 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import model.SentencesManager;
+import view.customized_widgets.CustomizedButton;
+import view.customized_widgets.CustomizedCheckBox;
+import view.customized_widgets.CustomizedLabel;
 import view.DefaultGridPanel;
+import view.customized_widgets.CustomizedTextField;
 
 
 public class CreatePackagePanel extends DefaultGridPanel {
 	
 	private SentencesManager sentencesManager;
 	private JLabel messageLabel;
-	private JLabel nameLabel;
-	private JTextField nameField;
-	private JCheckBox canBeModifyCheckBox;
-	private JButton validationButton;
+	private CustomizedLabel nameLabel;
+	private CustomizedTextField nameField;
+	private CustomizedCheckBox canBeModifyCheckBox;
+	private CustomizedButton validationButton;
 	
 	public CreatePackagePanel(SentencesManager sentencesManager, JLabel messageLabel) {
 		
@@ -25,12 +29,14 @@ public class CreatePackagePanel extends DefaultGridPanel {
 		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
 		this.messageLabel = messageLabel;
+		setBackground(new Color(30, 30, 30));
 		
-		nameLabel = new JLabel("Package name : ");
-		nameField = new JTextField("", 30);
-		canBeModifyCheckBox = new JCheckBox("Package can be modified by someone else");
-		validationButton = new JButton("Create");
+		nameLabel = new CustomizedLabel("Package name : ");
+		nameField = new CustomizedTextField("", 30);
+		canBeModifyCheckBox = new CustomizedCheckBox("Package can be modified by someone else");
+		validationButton = new CustomizedButton("Create");
 		validationButton.addActionListener(new CreateListener());
+		validationButton.setNormalColor(new Color(50, 50, 50));
 		
 		addComponent(nameLabel, 0, 0, 1, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.NONE);
 		addComponent(nameField, 1, 0, 1, 1, 1,1, GridBagConstraints.NORTH, GridBagConstraints.NONE);

@@ -1,4 +1,4 @@
-package model;
+package view.customized_widgets;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -8,13 +8,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
-import javax.swing.JButton;
-import javax.swing.Timer;
+import javax.swing.*;
+import javax.swing.border.LineBorder;
 
 import controller.DefaultMouseListener;
 
 public class CustomizedButton extends JButton {
-	
+
+	private Color normalColor;
+	private Color selectedColor;
+	private Color clickedColor;
+
 	private Color oldBackgroundColor;
 	private Color newBackgroundColor;
 	private Timer timer;
@@ -25,20 +29,23 @@ public class CustomizedButton extends JButton {
 	
 	public CustomizedButton(String text){
 		super(text);
+
+		normalColor = new Color(50, 50, 50);
+		selectedColor = Color.gray;
+		clickedColor = Color.lightGray;
 		
-		oldBackgroundColor = Color.black;
+		oldBackgroundColor = normalColor;
 		newBackgroundColor = oldBackgroundColor;
 		startTime = 0;
-		
-		setPreferredSize(new Dimension(200, 50));
+
 		setBackground(newBackgroundColor);
 		setForeground(new Color(255, 255, 255));
 		setFocusPainted(false);
-		setBorderPainted(false);
         setContentAreaFilled(false);
         setOpaque(true);
-		setFont(new Font("Arial", Font.BOLD, 20));
+		setFont(new Font("Arial", Font.BOLD, 15));
 		addMouseListener(new ButtonListener());
+		setBorderPainted(false);
 		
 		timer = new Timer(DELAY, new ActionListener() {
 			
@@ -73,6 +80,24 @@ public class CustomizedButton extends JButton {
 			}
         });
 	}
+
+	public void setNormalColor(Color color) {
+		normalColor = color;
+		newBackgroundColor = color;
+		startTimer();
+	}
+
+	public void setSelectedColor(Color color) {
+		selectedColor = color;
+		newBackgroundColor = color;
+		startTimer();
+	}
+
+	public void setClickedColor(Color color) {
+		clickedColor = color;
+		newBackgroundColor = color;
+		startTimer();
+	}
 	
 	private void startTimer() {
 		startTime = System.nanoTime();
@@ -98,25 +123,25 @@ public class CustomizedButton extends JButton {
 
 		@Override
 		public void mouseEntered(MouseEvent arg0) {
-			newBackgroundColor = new Color(0, 128, 255);
+			newBackgroundColor = selectedColor;
 			startTimer();
 		}
 
 		@Override
 		public void mouseExited(MouseEvent arg0) {
-			newBackgroundColor = Color.black;
+			newBackgroundColor = normalColor;
 			startTimer();
 		}
 
 		@Override
 		public void mousePressed(MouseEvent arg0) {
-			newBackgroundColor = Color.cyan;
+			newBackgroundColor = clickedColor;
 			startTimer();
 		}
 
 		@Override
 		public void mouseReleased(MouseEvent arg0) {
-			newBackgroundColor = new Color(0, 128, 255);
+			newBackgroundColor = selectedColor;
 			startTimer();
 		}
 		
