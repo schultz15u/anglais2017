@@ -33,7 +33,7 @@ public class SentencesManager {
 			
 			if (ruleEntry.getIdRule() != 0) {
 				SentenceTable sentenceTable = new SentenceTable();
-				SentenceEntry sentenceEntry = new SentenceEntry(0, sentence.replace('@', '¤').replaceAll("\"", "\'\'"), correctAnswer.replaceAll("\"", "\'\'"), wrongAnswer.replaceAll("\"", "\'\'"), ruleEntry.getIdRule());
+				SentenceEntry sentenceEntry = new SentenceEntry(0, sentence.replace('@', '¤').replaceAll("\"", "\'\'"), correctAnswer.replaceAll("\"", "\'\'"), wrongAnswer.replaceAll("\"", "\'\'"), ruleEntry.getIdRule(), packageId);
 				sentenceTable.insert(sentenceEntry);
 			}
 			else {

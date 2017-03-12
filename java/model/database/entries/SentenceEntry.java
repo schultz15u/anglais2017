@@ -7,18 +7,20 @@ public class SentenceEntry {
 	private String propOk;
 	private String propNo;
 	private int idRule;
+	private int pack;
 
 	public SentenceEntry() {
 
 	}
 
-	public SentenceEntry(int idSen, String detail, String prop_ok, String prop_no, int idRule) {
+	public SentenceEntry(int idSen, String detail, String prop_ok, String prop_no, int idRule, int pack) {
 		super();
 		this.idSen = idSen;
 		this.detail = detail;
 		this.propOk = prop_ok;
 		this.propNo = prop_no;
 		this.idRule = idRule;
+		this.pack = pack;
 	}
 
 	public int getIdSen() {
@@ -60,11 +62,20 @@ public class SentenceEntry {
 	public void setIdRule(int idRule) {
 		this.idRule = idRule;
 	}
+	
+	public int getPack() {
+		return pack;
+	}
+
+	public void setPack(int pack) {
+		this.pack = pack;
+	}
+
 
 	@Override
 	public String toString() {
 		return "SentenceModel [idSen=" + idSen + ", detail=" + detail + ", propOk=" + propOk + ", propNo=" + propNo
-				+ ", idRule=" + idRule + "]";
+				+ ", idRule=" + idRule + ", pack=" + pack + "]";
 	}
 
 }

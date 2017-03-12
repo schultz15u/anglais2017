@@ -1,24 +1,22 @@
-package view;
+package view.sentences_manager;
 
 import java.awt.Color;
-import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import controller.DefaultMouseListener;
+import model.CustomizedButton;
 import model.SentencesManager;
+import view.DefaultGridPanel;
 
 
-public class SentencesManagerPanel extends JPanel {
+public class AddSentencePanel extends DefaultGridPanel {
 	
 	private SentencesManager sentencesManager;
-	private GridBagConstraints gbc;
 	private JLabel sentenceLabel;
 	private JTextField sentenceField;
 	private JLabel correctAnswerLabel;
@@ -31,13 +29,12 @@ public class SentencesManagerPanel extends JPanel {
 	private JButton removeAllSentencesButton;
 	private JLabel messageLabel;
 	
-	public SentencesManagerPanel(SentencesManager sentencesManager) {
+	public AddSentencePanel(SentencesManager sentencesManager) {
 		
 		super();
 		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
 		
-		gbc = new GridBagConstraints();
 		sentenceLabel = new JLabel("Sentence (add \"@\" where the wrong word is placed) : ");
 		sentenceField = new JTextField("", 30);
 		correctAnswerLabel = new JLabel("Correct answer : ");
@@ -46,7 +43,7 @@ public class SentencesManagerPanel extends JPanel {
 		wrongAnswersField = new JTextField("", 30);
 		ruleLabel = new JLabel("Rule : ");
 		ruleField = new JTextField("", 30);
-		validationButton = new JButton("Ajouter");
+		validationButton = new JButton("Add");
 		validationButton.addMouseListener(new ValidationListener());
 		removeAllSentencesButton = new JButton("Remove all sentences");
 		removeAllSentencesButton.setBackground(Color.red);
@@ -65,14 +62,8 @@ public class SentencesManagerPanel extends JPanel {
 		addComponent(validationButton, 0, 4, 2, 1);
 		addComponent(removeAllSentencesButton, 0, 5, 2, 1);
 		addComponent(messageLabel, 0, 6, 2, 1);
-	}
-	
-	private void addComponent(JComponent component, int gridX, int gridY, int sizeX, int sizeY) {
-		gbc.gridx = gridX;
-		gbc.gridy = gridY;
-		gbc.gridwidth = sizeX;
-		gbc.gridheight = sizeY;
-		add(component, gbc);
+		addComponent(new CustomizedButton("Label"), 0, 7, 2, 1);
+		addComponent(new CreatePackagePanel(sentencesManager), 0, 8, 2, 1);
 	}
 	
 	public class ValidationListener extends DefaultMouseListener

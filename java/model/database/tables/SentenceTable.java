@@ -20,7 +20,8 @@ public class SentenceTable extends GenericTable<SentenceEntry> {
 		s.setPropOk(rs.getString(2));
 		s.setPropNo(rs.getString(3));
 		s.setIdRule(rs.getInt(4));
-		s.setIdSen(rs.getInt(5));
+		s.setPack(rs.getInt(5));
+		s.setIdSen(rs.getInt(6));
 		return s;
 	}
 
@@ -30,13 +31,14 @@ public class SentenceTable extends GenericTable<SentenceEntry> {
 		ps.setString(2, sentence.getPropOk());
 		ps.setString(3, sentence.getPropNo());
 		ps.setInt(4, sentence.getIdRule());
+		ps.setInt(5, sentence.getPack());
 		if (idShouldBeInserted)
-			ps.setInt(5, sentence.getIdSen());
+			ps.setInt(6, sentence.getIdSen());
 	}
 
 	@Override
 	protected String getColumns() {
-		return "detail, prop_ok, prop_no, id_rule";
+		return "detail, prop_ok, prop_no, id_rule, pack";
 	}
 
 	@Override

@@ -20,6 +20,7 @@ import javax.swing.JPanel;
 import model.Menu;
 import model.Sentences;
 import model.SentencesManager;
+import view.sentences_manager.SentencesManagerPanel;
 
 @SuppressWarnings("serial")
 public class MainScreen extends JFrame {
