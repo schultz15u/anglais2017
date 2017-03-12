@@ -45,10 +45,10 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 		removePackagePanel = new RemovePackagePanel(sentencesManager, messageLabel);
 		currentPanel = createPackagePanel;
 		
-		addComponent(importPackageButton, 0, 0, 1, 1, 1, 0.1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
-		addComponent(createPackageButton, 1, 0, 1, 1, 1, 0.1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
-		addComponent(modifyPackageButton, 2, 0, 1, 1, 1, 0.1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
-		addComponent(removePackageButton, 3, 0, 1, 1, 1, 0.1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(importPackageButton, 0, 0, 1, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(createPackageButton, 1, 0, 1, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(modifyPackageButton, 2, 0, 1, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(removePackageButton, 3, 0, 1, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 		addComponent(createPackagePanel, 0, 1, 4, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
 		addComponent(messageLabel, 0, 2, 4, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.NONE);
 
