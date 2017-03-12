@@ -44,7 +44,7 @@ public class ModifySentencePanel extends DefaultGridPanel {
 		packageName = "";
 		ruleName = "-";
 
-		sentenceChoiceLabel = new JLabel("Sentence to modify");
+		sentenceChoiceLabel = new JLabel("Sentence to modify : ");
 		sentenceChoiceCombo = new JComboBox(sentencesManager.getSentenceNames(packageName).toArray());
 		sentenceChoiceCombo.addActionListener(new SentenceChoiceListener());
 		sentenceLabel = new JLabel("Sentence (add \"@\" where the wrong word is placed) : ");

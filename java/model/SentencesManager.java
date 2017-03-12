@@ -151,7 +151,10 @@ public class SentencesManager {
 			return false;
 		}
 	}
-	
+
+	/*
+		sentence : with @
+	*/
 	public boolean addSentence(String sentence, String correctAnswer, String wrongAnswer, String ruleName, String ruleDetails, String packageName) {
 		
 		try {
@@ -205,6 +208,9 @@ public class SentencesManager {
 		return true;
 	}
 
+	/*
+		sentence : with @
+	*/
 	public boolean setSentence(String sentence, String correctAnswer, String wrongAnswer, String ruleName, String ruleDetails, String packageName) {
 
 		try {
@@ -239,21 +245,28 @@ public class SentencesManager {
 
 			// Sentence creation
 			if (ruleEntry != null && ruleEntry.getIdRule() != 0) {
+
 				SentenceTable sentenceTable = new SentenceTable();
 				List<SentenceEntry> sentencesEntries = sentenceTable.getByProperty("detail", () -> sentence.replace('@', '¤'), true);
+				SentenceEntry sentenceEntry = null;
 
-				if (sentencesEntries.size() > 0) {
-					SentenceEntry sentenceEntry = sentencesEntries.get(0);
-					sentenceEntry.setDetail(sentence.replace('@', '¤').replaceAll("\"", "\'\'"));
-					sentenceEntry.setIdRule(ruleEntry.getIdRule());
-					sentenceEntry.setPropOk(correctAnswer.replaceAll("\"", "\'\'"));
-					sentenceEntry.setPropNo(wrongAnswer.replaceAll("\"", "\'\'"));
-					sentenceTable.update(sentenceEntry);
+				for (SentenceEntry entry : sentencesEntries) {
+					if (entry.getPack() == packageId) {
+						sentenceEntry = entry;
+						break;
+					}
 				}
-				else {
+
+				if (sentenceEntry == null) {
 					System.err.println("setSentence : sentence not found");
 					return false;
 				}
+
+				sentenceEntry.setDetail(sentence.replace('@', '¤').replaceAll("\"", "\'\'"));
+				sentenceEntry.setIdRule(ruleEntry.getIdRule());
+				sentenceEntry.setPropOk(correctAnswer.replaceAll("\"", "\'\'"));
+				sentenceEntry.setPropNo(wrongAnswer.replaceAll("\"", "\'\'"));
+				sentenceTable.update(sentenceEntry);
 			}
 			else {
 				System.err.println("setSentence : rule not found");
@@ -269,12 +282,76 @@ public class SentencesManager {
 
 		return true;
 	}
-	
-	public boolean removeAllSentences() {
-		
+
+	/*
+		sentence : with ¤
+	*/
+	public boolean removeSentence(String sentence, String packageName) {
+
 		try {
-			(new RuleTable()).deleteAll();
-			(new SentenceTable()).deleteAll();
+			// Package retrieval
+			int packageId = 0;
+			PackageTable packageTable = new PackageTable();
+			List<PackageEntry> packages = packageTable.getByProperty("name", () -> packageName, true);
+
+			if (packages.size() > 0)
+				packageId = packages.get(0).getIdPack();
+			else {
+				System.err.println("removeSentence : package not found");
+				return false;
+			}
+
+			SentenceTable sentenceTable = new SentenceTable();
+			List<SentenceEntry> sentencesEntries = sentenceTable.getByProperty("detail", () -> sentence, true);
+			SentenceEntry sentenceEntry = null;
+			System.err.println(sentence);
+
+			for (SentenceEntry entry : sentencesEntries) {
+				if (entry.getPack() == packageId) {
+					sentenceEntry = entry;
+					break;
+				}
+			}
+
+			if (sentenceEntry == null) {
+				System.err.println("removeSentence : sentence not found");
+				return false;
+			}
+
+			sentenceTable.delete(sentenceEntry);
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+
+
+		return true;
+	}
+	
+	public boolean removePackage(String packageName) {
+
+		try {
+			PackageTable packageTable = new PackageTable();
+			List<PackageEntry> packages = packageTable.getByProperty("name", () -> packageName, true);
+
+			if (packages.size() == 0) {
+				System.err.println("removeSentence : package not found");
+				return false;
+			}
+
+			SentenceTable sentenceTable = new SentenceTable();
+			List<SentenceEntry> sentencesEntries = sentenceTable.getByProperty("pack", () -> packages.get(0).getIdPack(), true);
+			for (SentenceEntry entry : sentencesEntries)
+				sentenceTable.delete(entry);
+
+			RuleTable ruleTable = new RuleTable();
+			List<RuleEntry> rulesEntries = ruleTable.getByProperty("pack", () -> packages.get(0).getIdPack(), true);
+			for (RuleEntry entry : rulesEntries)
+				ruleTable.delete(entry);
+
+			packageTable.delete(packages.get(0));
+
 			return true;
 		}
 		catch (SQLException e) {

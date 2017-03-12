@@ -19,6 +19,7 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 	private JButton removePackageButton;
 	private CreatePackagePanel createPackagePanel;
 	private ModifyPackagePanel modifyPackagePanel;
+	private RemovePackagePanel removePackagePanel;
 	private JPanel currentPanel;
 	private JLabel messageLabel;
 	
@@ -34,10 +35,12 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 		modifyPackageButton = new JButton("Modify package");
 		modifyPackageButton.addActionListener(new ModifyPackageListener());
 		removePackageButton = new JButton("Remove package");
+		removePackageButton.addActionListener(new RemovePackageListener());
 		messageLabel = new JLabel("");
 
 		createPackagePanel = new CreatePackagePanel(sentencesManager, messageLabel);
 		modifyPackagePanel = new ModifyPackagePanel(sentencesManager, messageLabel);
+		removePackagePanel = new RemovePackagePanel(sentencesManager, messageLabel);
 		currentPanel = createPackagePanel;
 		
 		addComponent(importPackageButton, 0, 0, 1, 1, 1, 0.1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
@@ -74,6 +77,16 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 
 			changePanel(modifyPackagePanel, GridBagConstraints.BOTH);
 			modifyPackagePanel.update();
+		}
+	}
+
+	private class RemovePackageListener implements ActionListener  {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+
+			changePanel(removePackagePanel, GridBagConstraints.BOTH);
+			removePackagePanel.update();
 		}
 	}
 }

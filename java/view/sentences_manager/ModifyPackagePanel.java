@@ -22,6 +22,7 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 	private JButton removeSentenceButton;
 	private AddSentencePanel addSentencePanel;
 	private ModifySentencePanel modifySentencePanel;
+	private RemoveSentencePanel removeSentencePanel;
 	private JPanel currentPanel;
 	private JLabel messageLabel;
 	
@@ -39,12 +40,18 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		modifySentenceButton = new JButton("Modify sentence");
 		modifySentenceButton.addActionListener(new ModifySentenceListener());
 		removeSentenceButton = new JButton("Remove sentence");
+		removeSentenceButton.addActionListener(new RemoveSentenceListener());
 
 		addSentencePanel = new AddSentencePanel(sentencesManager, messageLabel);
-		addSentencePanel.setPackageName(packagesCombo.getItemAt(0).toString());
 		modifySentencePanel = new ModifySentencePanel(sentencesManager, messageLabel);
-		modifySentencePanel.setPackageName(packagesCombo.getItemAt(0).toString());
+		removeSentencePanel = new RemoveSentencePanel(sentencesManager, messageLabel);
 		currentPanel = addSentencePanel;
+
+		if (packagesCombo.getSelectedItem() != null) {
+			addSentencePanel.setPackageName(packagesCombo.getItemAt(0).toString());
+			modifySentencePanel.setPackageName(packagesCombo.getItemAt(0).toString());
+			removeSentencePanel.setPackageName(packagesCombo.getItemAt(0).toString());
+		}
 
 		addComponent(packagesCombo, 0, 0, 3, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 		addComponent(addSentenceButton, 0, 1, 1, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
@@ -64,6 +71,7 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 
 		addSentencePanel.update();
 		modifySentencePanel.update();
+		removeSentencePanel.update();
 	}
 
 	private void changePanel(JPanel newPanel, int fill) {
@@ -80,12 +88,15 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (packagesCombo.getSelectedItem() != null)
+			if (packagesCombo.getSelectedItem() != null) {
 				addSentencePanel.setPackageName(packagesCombo.getSelectedItem().toString());
-			if (packagesCombo.getSelectedItem() != null)
 				modifySentencePanel.setPackageName(packagesCombo.getSelectedItem().toString());
+				removeSentencePanel.setPackageName(packagesCombo.getSelectedItem().toString());
+			}
+
 			addSentencePanel.update();
 			modifySentencePanel.update();
+			removeSentencePanel.update();
 		}
 	}
 
@@ -96,6 +107,9 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 
 			changePanel(addSentencePanel, GridBagConstraints.NONE);
 			messageLabel.setText("");
+			addSentencePanel.update();
+			modifySentencePanel.update();
+			removeSentencePanel.update();
 		}
 	}
 
@@ -106,6 +120,22 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 
 			changePanel(modifySentencePanel, GridBagConstraints.NONE);
 			messageLabel.setText("");
+			addSentencePanel.update();
+			modifySentencePanel.update();
+			removeSentencePanel.update();
+		}
+	}
+
+	private class RemoveSentenceListener implements ActionListener  {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+
+			changePanel(removeSentencePanel, GridBagConstraints.NONE);
+			messageLabel.setText("");
+			addSentencePanel.update();
+			modifySentencePanel.update();
+			removeSentencePanel.update();
 		}
 	}
 }
