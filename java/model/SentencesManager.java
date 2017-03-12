@@ -204,6 +204,71 @@ public class SentencesManager {
 		
 		return true;
 	}
+
+	public boolean setSentence(String sentence, String correctAnswer, String wrongAnswer, String ruleName, String ruleDetails, String packageName) {
+
+		try {
+			// Package retrieval
+			int packageId = 0;
+			PackageTable packageTable = new PackageTable();
+			List<PackageEntry> packages = packageTable.getByProperty("name", () -> packageName, true);
+
+			if (packages.size() > 0)
+				packageId = packages.get(0).getIdPack();
+			else {
+				System.err.println("setSentence : package not found");
+				return false;
+			}
+
+			// Rule creation or retrieval
+			RuleTable ruleTable = new RuleTable();
+			List<RuleEntry> rules = ruleTable.getByProperty("name", () -> ruleName, true);
+			RuleEntry ruleEntry = null;
+
+			if (rules.size() == 0)
+				ruleTable.insert(new RuleEntry(0, ruleName, ruleDetails, packageId));
+
+			rules = ruleTable.getByProperty("name", () -> ruleName, true);
+
+			for (RuleEntry entry : rules) {
+				if (entry.getPack() == packageId) {
+					ruleEntry = entry;
+					break;
+				}
+			}
+
+			// Sentence creation
+			if (ruleEntry != null && ruleEntry.getIdRule() != 0) {
+				SentenceTable sentenceTable = new SentenceTable();
+				List<SentenceEntry> sentencesEntries = sentenceTable.getByProperty("detail", () -> sentence.replace('@', '¤'), true);
+
+				if (sentencesEntries.size() > 0) {
+					SentenceEntry sentenceEntry = sentencesEntries.get(0);
+					sentenceEntry.setDetail(sentence.replace('@', '¤').replaceAll("\"", "\'\'"));
+					sentenceEntry.setIdRule(ruleEntry.getIdRule());
+					sentenceEntry.setPropOk(correctAnswer.replaceAll("\"", "\'\'"));
+					sentenceEntry.setPropNo(wrongAnswer.replaceAll("\"", "\'\'"));
+					sentenceTable.update(sentenceEntry);
+				}
+				else {
+					System.err.println("setSentence : sentence not found");
+					return false;
+				}
+			}
+			else {
+				System.err.println("setSentence : rule not found");
+				return false;
+			}
+
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+
+
+		return true;
+	}
 	
 	public boolean removeAllSentences() {
 		

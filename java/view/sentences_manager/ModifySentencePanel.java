@@ -104,6 +104,7 @@ public class ModifySentencePanel extends DefaultGridPanel {
 		validate();
 		repaint();
 
+		if (sentenceChoiceCombo.getItemAt(0) != null)
 		updateFields(sentenceChoiceCombo.getItemAt(0).toString());
 	}
 
@@ -163,13 +164,13 @@ public class ModifySentencePanel extends DefaultGridPanel {
 				messageLabel.setText("The sentence must include only one \"@\".");
 				messageLabel.setForeground(Color.red);
 			}
-			else if (!sentencesManager.addSentence(sentenceField.getText(), correctAnswerField.getText(), wrongAnswersField.getText(),
+			else if (!sentencesManager.setSentence(sentenceField.getText(), correctAnswerField.getText(), wrongAnswersField.getText(),
 					!ruleName.equals("-") ? ruleName : ruleNameField.getText(), ruleDetailsField.getText(), packageName)) {
 				messageLabel.setText("Error with database.");
 				messageLabel.setForeground(Color.red);
 			}
 			else {
-				messageLabel.setText("Sentence has been added.");
+				messageLabel.setText("Sentence has been updated.");
 				messageLabel.setForeground(Color.green);
 				sentenceField.setText("");
 				correctAnswerField.setText("");
