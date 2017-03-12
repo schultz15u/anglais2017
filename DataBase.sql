@@ -24,6 +24,6 @@ CREATE TABLE SENTENCE (
 );
 
 INSERT INTO PACKAGE(id_pack, name, can_be_modified_outside) VALUES (1, 'Default package', 1);
-INSERT INTO RULE(id_rule, name, detail) VALUES (1, 'Default rule', 'Details of the default rule');
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (1, 'Default rule', 'Details of the default rule', 1);
 INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (21, 'There is an error in this ¤', 'sentence', 'sentance,santence', 1, 1);
 INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (22,'hello ¤', 'bibi', 'you,they', 1, 1);

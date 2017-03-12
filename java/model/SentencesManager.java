@@ -65,6 +65,77 @@ public class SentencesManager {
 		}
 	}
 
+	public RuleEntry getRule(int ruleId) {
+
+		try {
+			RuleTable ruleTable = new RuleTable();
+			return ruleTable.getById(ruleId);
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public List<String> getSentenceNames(String packageName) {
+
+		try {
+			// Package retrieval
+			PackageTable packageTable = new PackageTable();
+			List<PackageEntry> packages = packageTable.getByProperty("name", () -> packageName, true);
+
+			if (packages.size() == 0) {
+				System.err.println("getSentenceNames : package not found");
+				return new ArrayList<>();
+			}
+
+
+			// Sentence retrieval
+			SentenceTable sentenceTable = new SentenceTable();
+			List<SentenceEntry> sentences = sentenceTable.getByProperty("pack", () -> packages.get(0).getIdPack(), true);
+
+			ArrayList<String> sentencesNames = new ArrayList<>();
+			for (SentenceEntry entry : sentences)
+				sentencesNames.add(entry.getDetail());
+
+			return sentencesNames;
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			return new ArrayList<>();
+		}
+	}
+
+	public SentenceEntry getSentence(String packageName, String sentence) {
+
+		try {
+			// Package retrieval
+			PackageTable packageTable = new PackageTable();
+			List<PackageEntry> packages = packageTable.getByProperty("name", () -> packageName, true);
+
+			if (packages.size() == 0) {
+				System.err.println("getSentenceNames : package not found");
+				return null;
+			}
+
+
+			// Sentence retrieval
+			SentenceTable sentenceTable = new SentenceTable();
+			List<SentenceEntry> sentences = sentenceTable.getByProperty("detail", () -> sentence, true);
+
+			for (SentenceEntry entry : sentences)
+				if (entry.getPack() == packages.get(0).getIdPack())
+					return entry;
+
+			System.err.println("getSentenceNames : no sentence found");
+			return null;
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
 	public boolean addPackage(String name, boolean canBeModifiedOutside) {
 
 		try {

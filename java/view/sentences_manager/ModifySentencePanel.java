@@ -1,21 +1,23 @@
 package view.sentences_manager;
 
-import java.awt.Color;
-import java.awt.GridBagLayout;
+import controller.DefaultMouseListener;
+import model.SentencesManager;
+import model.database.entries.RuleEntry;
+import model.database.entries.SentenceEntry;
+import view.DefaultGridPanel;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
-import javax.swing.*;
 
-import controller.DefaultMouseListener;
-import model.SentencesManager;
-import view.DefaultGridPanel;
+public class ModifySentencePanel extends DefaultGridPanel {
 
-
-public class AddSentencePanel extends DefaultGridPanel {
-	
 	private SentencesManager sentencesManager;
+	private JLabel sentenceChoiceLabel;
+	private JComboBox sentenceChoiceCombo;
 	private JLabel sentenceLabel;
 	private JTextField sentenceField;
 	private JLabel correctAnswerLabel;
@@ -32,8 +34,8 @@ public class AddSentencePanel extends DefaultGridPanel {
 	private JLabel messageLabel;
 	private String packageName;
 	private String ruleName;
-	
-	public AddSentencePanel(SentencesManager sentencesManager, JLabel messageLabel) {
+
+	public ModifySentencePanel(SentencesManager sentencesManager, JLabel messageLabel) {
 		
 		super();
 		this.sentencesManager = sentencesManager;
@@ -41,7 +43,10 @@ public class AddSentencePanel extends DefaultGridPanel {
 		this.messageLabel = messageLabel;
 		packageName = "";
 		ruleName = "-";
-		
+
+		sentenceChoiceLabel = new JLabel("Sentence to modify");
+		sentenceChoiceCombo = new JComboBox(sentencesManager.getSentenceNames(packageName).toArray());
+		sentenceChoiceCombo.addActionListener(new SentenceChoiceListener());
 		sentenceLabel = new JLabel("Sentence (add \"@\" where the wrong word is placed) : ");
 		sentenceField = new JTextField("", 30);
 		correctAnswerLabel = new JLabel("Correct answer : ");
@@ -56,38 +61,78 @@ public class AddSentencePanel extends DefaultGridPanel {
 		ruleComboLabel = new JLabel("Existing rule : ");
 		ruleCombo = new JComboBox(sentencesManager.getRulesNames(packageName).toArray());
 		ruleCombo.addActionListener(new RulesNamesListener());
-		validationButton = new JButton("Add");
+		validationButton = new JButton("Update");
 		validationButton.addMouseListener(new ValidationListener());
 
-		addComponent(sentenceLabel, 0, 0, 1, 1);
-		addComponent(sentenceField, 1, 0, 1, 1);
-		addComponent(correctAnswerLabel, 0, 1, 1, 1);
-		addComponent(correctAnswerField, 1, 1, 1, 1);
-		addComponent(wrongAnswersLabel, 0, 2, 1, 1);
-		addComponent(wrongAnswersField, 1, 2, 1, 1);
-		addComponent(ruleNameLabel, 0, 3, 1, 1);
-		addComponent(ruleNameField, 1, 3, 1, 1);
-		addComponent(ruleDetailsLabel, 0, 4, 1, 1);
-		addComponent(scrollPane, 1, 4, 1, 1);
-		addComponent(ruleComboLabel, 0, 5, 1, 1);
-		addComponent(ruleCombo, 1, 5, 1, 1);
-		addComponent(validationButton, 0, 6, 2, 1);
+		addComponent(sentenceChoiceLabel, 0, 0, 1, 1);
+		addComponent(sentenceChoiceCombo, 1, 0, 1, 1);
+		addComponent(sentenceLabel, 0, 1, 1, 1);
+		addComponent(sentenceField, 1, 1, 1, 1);
+		addComponent(correctAnswerLabel, 0, 2, 1, 1);
+		addComponent(correctAnswerField, 1, 2, 1, 1);
+		addComponent(wrongAnswersLabel, 0, 3, 1, 1);
+		addComponent(wrongAnswersField, 1, 3, 1, 1);
+		addComponent(ruleNameLabel, 0, 4, 1, 1);
+		addComponent(ruleNameField, 1, 4, 1, 1);
+		addComponent(ruleDetailsLabel, 0, 5, 1, 1);
+		addComponent(scrollPane, 1, 5, 1, 1);
+		addComponent(ruleComboLabel, 0, 6, 1, 1);
+		addComponent(ruleCombo, 1, 6, 1, 1);
+		addComponent(validationButton, 0, 7, 2, 1);
 	}
 
 	public void setPackageName(String packageName) {
 
+		System.out.println(packageName);
 		this.packageName = packageName;
 	}
 
 	public void update() {
 
+
+
+		remove(sentenceChoiceCombo);
+		sentenceChoiceCombo = new JComboBox(sentencesManager.getSentenceNames(packageName).toArray());
+		sentenceChoiceCombo.addActionListener(new SentenceChoiceListener());
+
 		remove(ruleCombo);
 		ruleCombo = new JComboBox(sentencesManager.getRulesNames(packageName).toArray());
 		ruleCombo.addActionListener(new RulesNamesListener());
 
-		addComponent(ruleCombo, 1, 5, 1, 1);
+		addComponent(sentenceChoiceCombo, 1, 0, 1, 1);
+		addComponent(ruleCombo, 1, 6, 1, 1);
 		validate();
 		repaint();
+
+		updateFields(sentenceChoiceCombo.getItemAt(0).toString());
+	}
+
+	private void updateFields(String sentenceName) {
+
+		SentenceEntry sentence = sentencesManager.getSentence(packageName, sentenceName);
+		sentenceField.setText(sentence.getDetail().replace('¤', '@'));
+		correctAnswerField.setText(sentence.getPropOk());
+		wrongAnswersField.setText(sentence.getPropNo());
+		ruleNameField.setText("");
+		ruleDetailsField.setText("");
+
+		RuleEntry rule = sentencesManager.getRule(sentence.getIdRule());
+
+		for (int i = 0; i < ruleCombo.getItemCount(); ++i) {
+			if (rule.getName().equals(ruleCombo.getItemAt(i).toString())) {
+				ruleCombo.setSelectedItem(ruleCombo.getItemAt(i));
+				break;
+			}
+		}
+	}
+
+	public class SentenceChoiceListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			JComboBox cb = (JComboBox) e.getSource();
+			updateFields(cb.getSelectedItem().toString());
+		}
 	}
 
 	public class RulesNamesListener implements ActionListener {

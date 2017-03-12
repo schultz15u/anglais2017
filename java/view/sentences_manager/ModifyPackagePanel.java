@@ -21,6 +21,8 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 	private JButton modifySentenceButton;
 	private JButton removeSentenceButton;
 	private AddSentencePanel addSentencePanel;
+	private ModifySentencePanel modifySentencePanel;
+	private JPanel currentPanel;
 	private JLabel messageLabel;
 	
 	public ModifyPackagePanel(SentencesManager sentencesManager, JLabel messageLabel) {
@@ -33,11 +35,16 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		packagesCombo = new JComboBox(sentencesManager.getPackagesNames().toArray());
 		packagesCombo.addActionListener(new PackagesComboListener());
 		addSentenceButton = new JButton("Add sentence");
+		addSentenceButton.addActionListener(new AddSentenceListener());
 		modifySentenceButton = new JButton("Modify sentence");
+		modifySentenceButton.addActionListener(new ModifySentenceListener());
 		removeSentenceButton = new JButton("Remove sentence");
 
 		addSentencePanel = new AddSentencePanel(sentencesManager, messageLabel);
 		addSentencePanel.setPackageName(packagesCombo.getItemAt(0).toString());
+		modifySentencePanel = new ModifySentencePanel(sentencesManager, messageLabel);
+		modifySentencePanel.setPackageName(packagesCombo.getItemAt(0).toString());
+		currentPanel = addSentencePanel;
 
 		addComponent(packagesCombo, 0, 0, 3, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 		addComponent(addSentenceButton, 0, 1, 1, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
@@ -56,6 +63,17 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		repaint();
 
 		addSentencePanel.update();
+		modifySentencePanel.update();
+	}
+
+	private void changePanel(JPanel newPanel, int fill) {
+		remove(currentPanel);
+		currentPanel = newPanel;
+		addComponent(currentPanel, 0, 2, 3, 1, 1, 1, GridBagConstraints.CENTER, fill);
+		messageLabel.setText("");
+
+		revalidate();
+		repaint();
 	}
 
 	private class PackagesComboListener implements ActionListener {
@@ -64,7 +82,30 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		public void actionPerformed(ActionEvent e) {
 			if (packagesCombo.getSelectedItem() != null)
 				addSentencePanel.setPackageName(packagesCombo.getSelectedItem().toString());
+			if (packagesCombo.getSelectedItem() != null)
+				modifySentencePanel.setPackageName(packagesCombo.getSelectedItem().toString());
 			addSentencePanel.update();
+			modifySentencePanel.update();
+		}
+	}
+
+	private class AddSentenceListener implements ActionListener  {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+
+			changePanel(addSentencePanel, GridBagConstraints.NONE);
+			messageLabel.setText("");
+		}
+	}
+
+	private class ModifySentenceListener implements ActionListener  {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+
+			changePanel(modifySentencePanel, GridBagConstraints.NONE);
+			messageLabel.setText("");
 		}
 	}
 }
