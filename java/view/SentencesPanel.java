@@ -102,6 +102,9 @@ public class SentencesPanel extends JPanel {
 				radioGroup.add(radio);
 				add(radio, i++);
 			}
+
+			validate();
+			repaint();
 		}
 	}
 	

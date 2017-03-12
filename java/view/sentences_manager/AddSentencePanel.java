@@ -2,14 +2,13 @@ package view.sentences_manager;
 
 import java.awt.Color;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 import controller.DefaultMouseListener;
-import model.CustomizedButton;
 import model.SentencesManager;
 import view.DefaultGridPanel;
 
@@ -23,17 +22,26 @@ public class AddSentencePanel extends DefaultGridPanel {
 	private JTextField correctAnswerField;
 	private JLabel wrongAnswersLabel;
 	private JTextField wrongAnswersField;
-	private JLabel ruleLabel;
-	private JTextField ruleField;
+	private JLabel ruleNameLabel;
+	private JTextField ruleNameField;
+	private JLabel ruleDetailsLabel;
+	private JTextArea ruleDetailsField;
+	private JLabel ruleComboLabel;
+	private JComboBox ruleCombo;
 	private JButton validationButton;
 	private JButton removeAllSentencesButton;
 	private JLabel messageLabel;
+	private String packageName;
+	private String ruleName;
 	
-	public AddSentencePanel(SentencesManager sentencesManager) {
+	public AddSentencePanel(SentencesManager sentencesManager, JLabel messageLabel) {
 		
 		super();
 		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
+		this.messageLabel = messageLabel;
+		packageName = "";
+		ruleName = "-";
 		
 		sentenceLabel = new JLabel("Sentence (add \"@\" where the wrong word is placed) : ");
 		sentenceField = new JTextField("", 30);
@@ -41,50 +49,97 @@ public class AddSentencePanel extends DefaultGridPanel {
 		correctAnswerField = new JTextField("", 30);
 		wrongAnswersLabel = new JLabel("Wrong answers (separated with commas) : ");
 		wrongAnswersField = new JTextField("", 30);
-		ruleLabel = new JLabel("Rule : ");
-		ruleField = new JTextField("", 30);
+		ruleNameLabel = new JLabel("Rule name : ");
+		ruleNameField = new JTextField("", 30);
+		ruleDetailsLabel = new JLabel("Rule details : ");
+		ruleDetailsField = new JTextArea("", 5, 30);
+		JScrollPane scrollPane = new JScrollPane( ruleDetailsField );
+		ruleComboLabel = new JLabel("Existing rule : ");
+		ruleCombo = new JComboBox(sentencesManager.getRulesNames(packageName).toArray());
+		ruleCombo.addActionListener(new RulesNamesListener());
 		validationButton = new JButton("Add");
 		validationButton.addMouseListener(new ValidationListener());
 		removeAllSentencesButton = new JButton("Remove all sentences");
 		removeAllSentencesButton.setBackground(Color.red);
 		removeAllSentencesButton.setForeground(Color.white);
 		removeAllSentencesButton.addMouseListener(new RemoveAllSentencesListener());
-		messageLabel = new JLabel("");
-		
+
 		addComponent(sentenceLabel, 0, 0, 1, 1);
 		addComponent(sentenceField, 1, 0, 1, 1);
 		addComponent(correctAnswerLabel, 0, 1, 1, 1);
 		addComponent(correctAnswerField, 1, 1, 1, 1);
 		addComponent(wrongAnswersLabel, 0, 2, 1, 1);
 		addComponent(wrongAnswersField, 1, 2, 1, 1);
-		addComponent(ruleLabel, 0, 3, 1, 1);
-		addComponent(ruleField, 1, 3, 1, 1);
-		addComponent(validationButton, 0, 4, 2, 1);
-		addComponent(removeAllSentencesButton, 0, 5, 2, 1);
-		addComponent(messageLabel, 0, 6, 2, 1);
-		addComponent(new CustomizedButton("Label"), 0, 7, 2, 1);
-		addComponent(new CreatePackagePanel(sentencesManager), 0, 8, 2, 1);
+		addComponent(ruleNameLabel, 0, 3, 1, 1);
+		addComponent(ruleNameField, 1, 3, 1, 1);
+		addComponent(ruleDetailsLabel, 0, 4, 1, 1);
+		addComponent(scrollPane, 1, 4, 1, 1);
+		addComponent(ruleComboLabel, 0, 5, 1, 1);
+		addComponent(ruleCombo, 1, 5, 1, 1);
+		addComponent(validationButton, 0, 6, 2, 1);
+		addComponent(removeAllSentencesButton, 0, 7, 2, 1);
+		addComponent(messageLabel, 0, 8, 2, 1);
+	}
+
+	public void setPackageName(String packageName) {
+
+		this.packageName = packageName;
+	}
+
+	public void update() {
+
+		remove(ruleCombo);
+		ruleCombo = new JComboBox(sentencesManager.getRulesNames(packageName).toArray());
+		ruleCombo.addActionListener(new RulesNamesListener());
+
+		addComponent(ruleCombo, 1, 5, 1, 1);
+		validate();
+		repaint();
+	}
+
+	public class RulesNamesListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			JComboBox cb = (JComboBox) e.getSource();
+			ruleName = cb.getSelectedItem().toString();
+		}
 	}
 	
 	public class ValidationListener extends DefaultMouseListener
 	{
 		@Override
 		public void mouseClicked(MouseEvent event) {
-			
-			if (sentenceField.getText().isEmpty() || correctAnswerField.getText().isEmpty() || wrongAnswersField.getText().isEmpty())
-				messageLabel.setText("One field is missing");
-			else if (sentenceField.getText().length() - sentenceField.getText().replace("@", "").length() == 0)	// zero "@" in the sentence
-				messageLabel.setText("The sentence must include one \"@\"");
-			else if (sentenceField.getText().length() - sentenceField.getText().replace("@", "").length() > 1)	// more than one "@" in the sentence
-				messageLabel.setText("The sentence must include only one \"@\"");
-			else if (!sentencesManager.addSentence(sentenceField.getText(), correctAnswerField.getText(), wrongAnswersField.getText(), ruleField.getText()))
-				messageLabel.setText("Error with database");
+
+			System.out.println(ruleCombo.getSelectedItem());
+			if (sentenceField.getText().isEmpty() || correctAnswerField.getText().isEmpty() || wrongAnswersField.getText().isEmpty()
+					|| ((ruleNameField.getText().isEmpty() || ruleDetailsField.getText().isEmpty()) && ruleName.equals("-"))) {
+				messageLabel.setText("One field is missing.");
+				messageLabel.setForeground(Color.red);
+			}
+			else if (sentenceField.getText().length() - sentenceField.getText().replace("@", "").length() == 0) {    // zero "@" in the sentence
+				messageLabel.setText("The sentence must include one \"@\".");
+				messageLabel.setForeground(Color.red);
+			}
+			else if (sentenceField.getText().length() - sentenceField.getText().replace("@", "").length() > 1) {    // more than one "@" in the sentence
+				messageLabel.setText("The sentence must include only one \"@\".");
+				messageLabel.setForeground(Color.red);
+			}
+			else if (!sentencesManager.addSentence(sentenceField.getText(), correctAnswerField.getText(), wrongAnswersField.getText(),
+					!ruleName.equals("-") ? ruleName : ruleNameField.getText(), ruleDetailsField.getText(), packageName)) {
+				messageLabel.setText("Error with database.");
+				messageLabel.setForeground(Color.red);
+			}
 			else {
-				messageLabel.setText("Sentence has been added");
+				messageLabel.setText("Sentence has been added.");
+				messageLabel.setForeground(Color.green);
 				sentenceField.setText("");
 				correctAnswerField.setText("");
 				wrongAnswersField.setText("");
-				ruleField.setText("");
+				ruleNameField.setText("");
+				ruleDetailsField.setText("");
+
+				update();
 			}
 		}
 	}

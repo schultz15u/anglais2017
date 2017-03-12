@@ -1,12 +1,10 @@
 package view.sentences_manager;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 import model.SentencesManager;
 import view.DefaultGridPanel;
@@ -22,6 +20,7 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 	private CreatePackagePanel createPackagePanel;
 	private ModifyPackagePanel modifyPackagePanel;
 	private JPanel currentPanel;
+	private JLabel messageLabel;
 	
 	public SentencesManagerPanel(SentencesManager sentencesManager) {
 		
@@ -35,16 +34,28 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 		modifyPackageButton = new JButton("Modify package");
 		modifyPackageButton.addActionListener(new ModifyPackageListener());
 		removePackageButton = new JButton("Remove package");
-		
-		createPackagePanel = new CreatePackagePanel(sentencesManager);
-		modifyPackagePanel = new ModifyPackagePanel(sentencesManager);
+		messageLabel = new JLabel("");
+
+		createPackagePanel = new CreatePackagePanel(sentencesManager, messageLabel);
+		modifyPackagePanel = new ModifyPackagePanel(sentencesManager, messageLabel);
 		currentPanel = createPackagePanel;
 		
 		addComponent(importPackageButton, 0, 0, 1, 1, 1, 0.1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 		addComponent(createPackageButton, 1, 0, 1, 1, 1, 0.1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 		addComponent(modifyPackageButton, 2, 0, 1, 1, 1, 0.1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 		addComponent(removePackageButton, 3, 0, 1, 1, 1, 0.1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
-		addComponent(createPackagePanel, 0, 1, 4, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(createPackagePanel, 0, 1, 4, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
+		addComponent(messageLabel, 0, 2, 4, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.NONE);
+	}
+
+	private void changePanel(JPanel newPanel, int fill) {
+		remove(currentPanel);
+		currentPanel = newPanel;
+		addComponent(currentPanel, 0, 1, 4, 1, 1, 1, GridBagConstraints.CENTER, fill);
+		messageLabel.setText("");
+
+		revalidate();
+		repaint();
 	}
 	
 	private class CreatePackageListener implements ActionListener  {
@@ -52,11 +63,7 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
-			remove(currentPanel);
-			currentPanel = createPackagePanel;
-			addComponent(currentPanel, 0, 1, 4, 1);
-			revalidate();
-			repaint();
+			changePanel(createPackagePanel, GridBagConstraints.NONE);
 		}
 	}
 	
@@ -64,12 +71,9 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
-			remove(currentPanel);
-			currentPanel = modifyPackagePanel;
-			addComponent(currentPanel, 0, 1, 4, 1);
-			revalidate();
-			repaint();
+
+			changePanel(modifyPackagePanel, GridBagConstraints.BOTH);
+			modifyPackagePanel.update();
 		}
 	}
 }

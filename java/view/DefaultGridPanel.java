@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 public abstract class DefaultGridPanel extends JPanel {
 
-	private static final Insets insets = new Insets(0, 0, 0, 0);
+	private Insets insets = new Insets(0, 0, 0, 0);
 	
 	protected void addComponent(JComponent component, int gridX, int gridY, int sizeX, int sizeY, double weightX, double weightY, int anchor, int fill) {
 		
