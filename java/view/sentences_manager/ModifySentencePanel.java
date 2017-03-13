@@ -112,7 +112,7 @@ public class ModifySentencePanel extends DefaultGridPanel {
 	private void updateFields(String sentenceName) {
 
 		SentenceEntry sentence = sentencesManager.getSentence(packageName, sentenceName);
-		sentenceField.setText(sentence.getDetail().replace('¤', '@'));
+		sentenceField.setText(sentence.getDetail());
 		correctAnswerField.setText(sentence.getPropOk());
 		wrongAnswersField.setText(sentence.getPropNo());
 		ruleNameField.setText("");
