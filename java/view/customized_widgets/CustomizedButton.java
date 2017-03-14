@@ -81,9 +81,15 @@ public class CustomizedButton extends JButton {
 	}
 
 	public void setNormalColor(Color color) {
-		normalColor = color;
+		/*normalColor = color;
 		newBackgroundColor = color;
-		startTimer();
+		startTimer();*/
+
+
+		normalColor = color;
+		oldBackgroundColor = color;
+		newBackgroundColor = color;
+		setBackground(color);
 	}
 
 	public void setSelectedColor(Color color) {

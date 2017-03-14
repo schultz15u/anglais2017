@@ -31,6 +31,7 @@ public class MainMenuPanel extends DefaultGridPanel {
 		mcqModeButton.addActionListener(new McqModeListener());
 		mistakesModeButton = new CustomizedButton("Mistakes mode");
 		mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+		mistakesModeButton.addActionListener(new MistakesModeListener());
 		emptyPanel = new JPanel();
 		emptyPanel.setBackground(getBackground());
 
@@ -40,6 +41,8 @@ public class MainMenuPanel extends DefaultGridPanel {
 		addComponent(emptyPanel, 0, 10, 1, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
 
 		sentencesManagerButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+		mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+		mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 	}
 
 	@Override
@@ -67,10 +70,9 @@ public class MainMenuPanel extends DefaultGridPanel {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			mainPanel.showSentencesManagerPanel();
-			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 			mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 			mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
-			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 		}
 	}
 
@@ -80,9 +82,20 @@ public class MainMenuPanel extends DefaultGridPanel {
 		public void actionPerformed(ActionEvent e) {
 			mainPanel.showMcqModePanel();
 			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
-			mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
-			mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 			mcqModeButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+			mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+
+		}
+	}
+
+	private class MistakesModeListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			mainPanel.showMistakesModePanel();
+			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+			mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+			mistakesModeButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 		}
 	}
 }

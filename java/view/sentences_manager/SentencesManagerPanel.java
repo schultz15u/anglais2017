@@ -57,7 +57,10 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 		addComponent(createPackagePanel, 0, 1, 4, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
 		addComponent(messageLabel, 0, 2, 4, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.NONE);
 
+		importPackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 		createPackageButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
+		modifyPackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+		removePackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 	}
 
 	private void changePanel(JPanel newPanel, int fill) {
@@ -78,10 +81,9 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 			changePanel(createPackagePanel, GridBagConstraints.NONE);
 
 			importPackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
-			createPackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+			createPackageButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
 			modifyPackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 			removePackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
-			createPackageButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
 		}
 	}
 	
@@ -95,9 +97,8 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 
 			importPackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 			createPackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
-			modifyPackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
-			removePackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 			modifyPackageButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
+			removePackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 		}
 	}
 
@@ -112,7 +113,6 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 			importPackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 			createPackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 			modifyPackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
-			removePackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 			removePackageButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
 		}
 	}

@@ -1,0 +1,12 @@
+-> Export de packages
+-> Import de packages
+-> Mettre en forme la partie questions
+	-> Page de démarrage (pour rappeler le fonctionnement, le choix du package et le meilleur score)
+	-> Page de question à remettre en forme
+	-> Page finale qui résume le score, rappelle le meilleur score, et affiche les règles apprises et à revoir 
+-> Choix du thème comme option
+-> Page d'accueil
+	-> Reprend le menu de gauche mais avec des plus gros boutons et des icones
+	-> Pourcentage moyen de réussite
+	-> Systèmes de succès ? (genre : vous avez obtenu 100% à un test, vous avez effectué 20 tests, ...)
+-> Mode lecture de règles seulement (catégorie en plus dans le menu de gauche)

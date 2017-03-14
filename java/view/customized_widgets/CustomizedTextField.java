@@ -21,6 +21,6 @@ public class CustomizedTextField extends JTextField {
 		setCaretColor(StyleParameters.defaultTextColor);
 		setForeground(StyleParameters.defaultTextColor);
 		setBackground(StyleParameters.defaultWidgetBackgroundColor);
-		setBorder(BorderFactory.createLineBorder(StyleParameters.defaultBackgroundColor, 5));
+		setBorder(BorderFactory.createLineBorder(StyleParameters.defaultWidgetBackgroundColor, 2));
 	}
 }

@@ -1,13 +1,13 @@
 CREATE TABLE PACKAGE (
 	id_pack INTEGER,
-	name VARCHAR(50),
+	name STRING,
 	can_be_modified_outside INTEGER,
 	PRIMARY KEY (id_pack)
 );
 
 CREATE TABLE RULE (
 	id_rule INTEGER,
-	name VARCHAR(50),
+	name STRING,
 	detail TEXT,
 	pack INTEGER,
 	PRIMARY KEY (id_rule)
@@ -15,8 +15,8 @@ CREATE TABLE RULE (
 
 CREATE TABLE SENTENCE (
 	id_sen INTEGER,
-	detail VARCHAR(50),
-	prop_ok VARCHAR(50),
+	detail STRING,
+	prop_ok STRING,
 	prop_no TEXT,
 	id_rule INTEGER,
 	pack INTEGER,

@@ -71,13 +71,13 @@ public class Sentences {
 	
 	public String getIncompleteWrongSentence() {
 		if (!isFinished())
-			return sentences.get(currentSentenceId).getDetail().replaceAll("¤", "---");
+			return sentences.get(currentSentenceId).getDetail().replaceAll("@", "---");
 		return "";
 	}
 	
 	public String getWrongSentence() {
 		if (!isFinished())
-			return sentences.get(currentSentenceId).getDetail().replaceAll("¤", currentWrongWord);
+			return sentences.get(currentSentenceId).getDetail().replaceAll("@", currentWrongWord);
 		return "";
 	}
 	
@@ -89,7 +89,7 @@ public class Sentences {
 	
 	public String getCorrectSentence() {
 		if (!isFinished())
-			return sentences.get(currentSentenceId).getDetail().replaceAll("¤", sentences.get(currentSentenceId).getPropOk());
+			return sentences.get(currentSentenceId).getDetail().replaceAll("@", sentences.get(currentSentenceId).getPropOk());
 		return "";
 	}
 	
@@ -117,7 +117,7 @@ public class Sentences {
 	
 	public boolean characterIsFromWrongWord(int characterId) {
 		if (!isFinished()) {
-			int wrongWordFirstIndex = sentences.get(currentSentenceId).getDetail().split("¤")[0].length();
+			int wrongWordFirstIndex = sentences.get(currentSentenceId).getDetail().split("@")[0].length();
 			int wrongWordLastIndex = wrongWordFirstIndex + currentWrongWord.length() - 1;
 			
 			return characterId >= wrongWordFirstIndex && characterId <= wrongWordLastIndex;

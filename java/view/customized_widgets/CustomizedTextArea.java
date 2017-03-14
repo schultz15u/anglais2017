@@ -27,7 +27,7 @@ public class CustomizedTextArea extends JTextArea {
 		setBackground(StyleParameters.defaultWidgetBackgroundColor);
 
 		scrollPane = new JScrollPane( this );
-		scrollPane.setBorder(BorderFactory.createLineBorder(StyleParameters.defaultBackgroundColor, 5));
+		scrollPane.setBorder(BorderFactory.createLineBorder(StyleParameters.defaultWidgetBackgroundColor, 2));
 		scrollPane.getVerticalScrollBar().setUI(new MyScrollBarUI());
 		scrollPane.getHorizontalScrollBar().setUI(new MyScrollBarUI());
 		scrollPane.setBackground(StyleParameters.defaultWidgetBackgroundColor);

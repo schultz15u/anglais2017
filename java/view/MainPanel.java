@@ -18,18 +18,22 @@ public class MainPanel extends DefaultGridPanel {
 
 	MainMenuPanel mainMenuPanel;
 	SentencesManagerPanel sentenceManagerPanel;
-	SentencesPanel sentencePanel;
+	Sentences sentences;
+	SentencesPanel mcqModePanel;
+	SentencesPanel mistakesModePanel;
 	JPanel currentPanel;
 
 	public MainPanel(Sentences sentences, SentencesManager sentencesManager) {
 
 		super();
 		setLayout(new GridBagLayout());
-		setBackground(new Color(30, 30, 30));
+		setBackground(StyleParameters.defaultBackgroundColor);
+		this.sentences = sentences;
 
 		mainMenuPanel = new MainMenuPanel(this);
 		sentenceManagerPanel = new SentencesManagerPanel(sentencesManager);
-		sentencePanel = new SentencesPanel(sentences);
+		mcqModePanel = new SentencesPanel(sentences, true);
+		mistakesModePanel = new SentencesPanel(sentences, false);
 		currentPanel = sentenceManagerPanel;
 
 		addComponent(mainMenuPanel, 0, 0, 1,  1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
@@ -52,6 +56,21 @@ public class MainPanel extends DefaultGridPanel {
 
 	public void showMcqModePanel() {
 
-		changePanel(sentencePanel);
+		if (currentPanel != mcqModePanel) {
+
+			sentences.initialize();
+			mcqModePanel.reset();
+			changePanel(mcqModePanel);
+		}
+	}
+
+	public void showMistakesModePanel() {
+
+		if (currentPanel != mistakesModePanel) {
+
+			sentences.initialize();
+			mistakesModePanel.reset();
+			changePanel(mistakesModePanel);
+		}
 	}
 }

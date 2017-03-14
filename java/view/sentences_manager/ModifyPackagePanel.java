@@ -66,10 +66,9 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		addComponent(removeSentenceButton, 2, 1, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 		addComponent(addSentencePanel, 0, 2, 3, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
 
-		addSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+		addSentenceButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
 		modifySentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 		removeSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
-		addSentenceButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
 	}
 
 	public void update() {
@@ -79,7 +78,7 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		packagesCombo.setPreferredSize(new Dimension(packagesCombo.getWidth(), 40));
 		addComponent(packagesCombo, 0, 0, 3, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 
-		validate();
+		revalidate();
 		repaint();
 
 		addSentencePanel.update();
@@ -124,10 +123,9 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 			modifySentencePanel.update();
 			removeSentencePanel.update();
 
-			addSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+			addSentenceButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
 			modifySentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 			removeSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
-			addSentenceButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
 		}
 	}
 
@@ -143,9 +141,8 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 			removeSentencePanel.update();
 
 			addSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
-			modifySentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
-			removeSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 			modifySentenceButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
+			removeSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 		}
 	}
 
@@ -162,7 +159,6 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 
 			addSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 			modifySentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
-			removeSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 			removeSentenceButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
 		}
 	}
