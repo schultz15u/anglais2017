@@ -19,7 +19,7 @@ public class Menu extends Observable {
 	private MainScreen screen;
 
 	public Menu(MainScreen screen) {
-		menuButtons = new LinkedList<JButton>();
+		/*menuButtons = new LinkedList<JButton>();
 		this.screen = screen;
 
 		JButton nvelleRegle = new JButton();
@@ -32,7 +32,7 @@ public class Menu extends Observable {
 
 		JButton phrases = new JButton();
 		phrases.setText("Phrases");
-		menuButtons.add(phrases);
+		menuButtons.add(phrases);*/
 	}
 
 	public LinkedList<JButton> getMenuButtons() {
@@ -45,11 +45,11 @@ public class Menu extends Observable {
 
 	public void switchScreen(String arg) {
 		setChanged();
-		screen.update(this, arg);
+		//screen.update(this, arg);
 		notifyObservers();
 	}
 
-	public void setDeco() {
+	/*public void setDeco() {
 		screen.setStateConnection(false);
-	}
+	}*/
 }

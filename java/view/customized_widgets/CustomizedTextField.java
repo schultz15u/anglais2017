@@ -1,8 +1,9 @@
 package view.customized_widgets;
 
-import javax.swing.*;
-import javax.swing.border.Border;
-import java.awt.*;
+import java.awt.Color;
+
+import javax.swing.BorderFactory;
+import javax.swing.JTextField;
 
 public class CustomizedTextField extends JTextField {
 
@@ -21,7 +22,7 @@ public class CustomizedTextField extends JTextField {
 	private void initialize() {
 		setCaretColor(new Color(255, 255, 255));
 		setForeground(new Color(255, 255, 255));
-		setBackground(new Color(50, 50, 50));
+		setBackground(new Color(75, 75, 75));
 		setBorder(BorderFactory.createLineBorder(new Color(30, 30, 30), 5));
 	}
 }

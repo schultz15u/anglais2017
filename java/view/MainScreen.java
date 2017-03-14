@@ -22,8 +22,35 @@ import model.Sentences;
 import model.SentencesManager;
 import view.sentences_manager.SentencesManagerPanel;
 
-@SuppressWarnings("serial")
 public class MainScreen extends JFrame {
+
+	Sentences sentences;
+	SentencesManager sentencesManager;
+	MainPanel panel;
+
+	public MainScreen() {
+
+		super();
+		setTitle("Shake's Pear");
+		setSize(1000, 700);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setVisible(true);
+
+		sentences = new Sentences();
+		sentencesManager = new SentencesManager();
+
+		panel = new MainPanel(sentencesManager);
+		panel.setSize(1000, 700);
+
+		add(panel);
+	}
+}
+
+
+
+/*public class MainScreen extends JFrame {
 
 	private MenuDisplay menuPanel;
 	private JPanel diversPannel;
@@ -174,3 +201,4 @@ public class MainScreen extends JFrame {
 	}
 
 }
+*/

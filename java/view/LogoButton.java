@@ -14,13 +14,13 @@ public class LogoButton extends JButton {
 	public LogoButton(MainScreen screen, BufferedImage im) {
 		super(new ImageIcon(im));
 		LogoButton tmp = this;
-		this.addActionListener(new ActionListener() {
+		/*this.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				screen.update(tmp, null);
 			}
-		});
+		});*/
 		this.setPreferredSize(new Dimension(160, 160));
 	}
 

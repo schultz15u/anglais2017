@@ -10,7 +10,6 @@ import model.database.entries.SentenceEntry;
 import model.database.tables.PackageTable;
 import model.database.tables.RuleTable;
 import model.database.tables.SentenceTable;
-import sun.plugin.com.Packager;
 
 public class SentencesManager {
 	
