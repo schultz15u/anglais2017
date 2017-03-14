@@ -189,7 +189,7 @@ public class SentencesManager {
 			// Sentence creation
 			if (ruleEntry != null && ruleEntry.getIdRule() != 0) {
 				SentenceTable sentenceTable = new SentenceTable();
-				SentenceEntry sentenceEntry = new SentenceEntry(0, sentence.replace('@', '¤').replaceAll("\"", "\'\'"), correctAnswer.replaceAll("\"", "\'\'"), wrongAnswer.replaceAll("\"", "\'\'"), ruleEntry.getIdRule(), packageId);
+				SentenceEntry sentenceEntry = new SentenceEntry(0, sentence.replaceAll("\"", "\'\'"), correctAnswer.replaceAll("\"", "\'\'"), wrongAnswer.replaceAll("\"", "\'\'"), ruleEntry.getIdRule(), packageId);
 				sentenceTable.insert(sentenceEntry);
 			}
 			else {
@@ -246,7 +246,7 @@ public class SentencesManager {
 			if (ruleEntry != null && ruleEntry.getIdRule() != 0) {
 
 				SentenceTable sentenceTable = new SentenceTable();
-				List<SentenceEntry> sentencesEntries = sentenceTable.getByProperty("detail", () -> sentence.replace('@', '¤'), true);
+				List<SentenceEntry> sentencesEntries = sentenceTable.getByProperty("detail", () -> sentence, true);
 				SentenceEntry sentenceEntry = null;
 
 				for (SentenceEntry entry : sentencesEntries) {
@@ -261,7 +261,7 @@ public class SentencesManager {
 					return false;
 				}
 
-				sentenceEntry.setDetail(sentence.replace('@', '¤').replaceAll("\"", "\'\'"));
+				sentenceEntry.setDetail(sentence.replaceAll("\"", "\'\'"));
 				sentenceEntry.setIdRule(ruleEntry.getIdRule());
 				sentenceEntry.setPropOk(correctAnswer.replaceAll("\"", "\'\'"));
 				sentenceEntry.setPropNo(wrongAnswer.replaceAll("\"", "\'\'"));
@@ -283,7 +283,7 @@ public class SentencesManager {
 	}
 
 	/*
-		sentence : with ¤
+		sentence : with @
 	*/
 	public boolean removeSentence(String sentence, String packageName) {
 
