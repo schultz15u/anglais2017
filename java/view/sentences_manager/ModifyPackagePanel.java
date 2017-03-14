@@ -37,12 +37,16 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 
 		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames().toArray());
 		packagesCombo.addActionListener(new PackagesComboListener());
+		packagesCombo.setPreferredSize(new Dimension(packagesCombo.getWidth(), 40));
 		addSentenceButton = new CustomizedButton("Add sentence");
 		addSentenceButton.addActionListener(new AddSentenceListener());
+		addSentenceButton.setPreferredSize(new Dimension(addSentenceButton.getWidth(), 40));
 		modifySentenceButton = new CustomizedButton("Modify sentence");
 		modifySentenceButton.addActionListener(new ModifySentenceListener());
+		modifySentenceButton.setPreferredSize(new Dimension(modifySentenceButton.getWidth(), 40));
 		removeSentenceButton = new CustomizedButton("Remove sentence");
 		removeSentenceButton.addActionListener(new RemoveSentenceListener());
+		removeSentenceButton.setPreferredSize(new Dimension(removeSentenceButton.getWidth(), 40));
 
 		addSentencePanel = new AddSentencePanel(sentencesManager, messageLabel);
 		modifySentencePanel = new ModifySentencePanel(sentencesManager, messageLabel);
@@ -55,10 +59,10 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 			removeSentencePanel.setPackageName(packagesCombo.getItemAt(0).toString());
 		}
 
-		addComponent(packagesCombo, 0, 0, 3, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
-		addComponent(addSentenceButton, 0, 1, 1, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
-		addComponent(modifySentenceButton, 1, 1, 1, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
-		addComponent(removeSentenceButton, 2, 1, 1, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(packagesCombo, 0, 0, 3, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(addSentenceButton, 0, 1, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(modifySentenceButton, 1, 1, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(removeSentenceButton, 2, 1, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 		addComponent(addSentencePanel, 0, 2, 3, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
 
 		addSentenceButton.setNormalColor(new Color(80, 80, 80));
@@ -68,6 +72,7 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		remove(packagesCombo);
 		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames().toArray());
 		packagesCombo.addActionListener(new PackagesComboListener());
+		packagesCombo.setPreferredSize(new Dimension(packagesCombo.getWidth(), 40));
 		addComponent(packagesCombo, 0, 0, 3, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 
 		validate();

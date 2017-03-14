@@ -30,7 +30,7 @@ public class SentencesPanel extends JPanel {
 	private ButtonGroup radioGroup;
 	private List<JRadioButton> choicesRadio;
 
-	public SentencesPanel(MainScreen screen, Sentences sentences) {
+	public SentencesPanel(Sentences sentences) {
 		super();
 		
 		this.sentences = sentences;

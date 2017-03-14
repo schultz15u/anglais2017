@@ -32,12 +32,16 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 		setBackground(new Color(30, 30, 30));
 
 		importPackageButton = new CustomizedButton("Import package");
+		importPackageButton.setPreferredSize(new Dimension(importPackageButton.getWidth(), 40));
 		createPackageButton = new CustomizedButton("Create package");
 		createPackageButton.addActionListener(new CreatePackageListener());
+		createPackageButton.setPreferredSize(new Dimension(createPackageButton.getWidth(), 40));
 		modifyPackageButton = new CustomizedButton("Modify package");
 		modifyPackageButton.addActionListener(new ModifyPackageListener());
+		modifyPackageButton.setPreferredSize(new Dimension(modifyPackageButton.getWidth(), 40));
 		removePackageButton = new CustomizedButton("Remove package");
 		removePackageButton.addActionListener(new RemovePackageListener());
+		removePackageButton.setPreferredSize(new Dimension(removePackageButton.getWidth(), 40));
 		messageLabel = new JLabel("");
 
 		createPackagePanel = new CreatePackagePanel(sentencesManager, messageLabel);
@@ -45,10 +49,10 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 		removePackagePanel = new RemovePackagePanel(sentencesManager, messageLabel);
 		currentPanel = createPackagePanel;
 		
-		addComponent(importPackageButton, 0, 0, 1, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
-		addComponent(createPackageButton, 1, 0, 1, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
-		addComponent(modifyPackageButton, 2, 0, 1, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
-		addComponent(removePackageButton, 3, 0, 1, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(importPackageButton, 0, 0, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(createPackageButton, 1, 0, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(modifyPackageButton, 2, 0, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(removePackageButton, 3, 0, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 		addComponent(createPackagePanel, 0, 1, 4, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
 		addComponent(messageLabel, 0, 2, 4, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.NONE);
 

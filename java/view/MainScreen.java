@@ -32,19 +32,20 @@ public class MainScreen extends JFrame {
 
 		super();
 		setTitle("Shake's Pear");
-		setSize(1000, 700);
+		setMinimumSize(new Dimension(850, 500));
+		setSize(getMinimumSize());
+		setPreferredSize(getMinimumSize());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
-		setResizable(false);
-		setVisible(true);
 
 		sentences = new Sentences();
 		sentencesManager = new SentencesManager();
-
-		panel = new MainPanel(sentencesManager);
-		panel.setSize(1000, 700);
+		panel = new MainPanel(sentences, sentencesManager);
 
 		add(panel);
+
+		pack();
+		setVisible(true);
 	}
 }
 

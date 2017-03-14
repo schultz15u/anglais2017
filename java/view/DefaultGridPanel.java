@@ -1,7 +1,6 @@
 package view;
 
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
+import java.awt.*;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -9,6 +8,12 @@ import javax.swing.JPanel;
 public abstract class DefaultGridPanel extends JPanel {
 
 	private Insets insets = new Insets(0, 0, 0, 0);
+
+	public DefaultGridPanel() {
+
+		super();
+		setLayout(new GridBagLayout());
+	}
 	
 	protected void addComponent(JComponent component, int gridX, int gridY, int sizeX, int sizeY, double weightX, double weightY, int anchor, int fill) {
 		
