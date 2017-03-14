@@ -1,6 +1,5 @@
 package view.sentences_manager;
 
-import controller.DefaultMouseListener;
 import model.SentencesManager;
 import model.database.entries.RuleEntry;
 import model.database.entries.SentenceEntry;
@@ -64,7 +63,7 @@ public class ModifySentencePanel extends DefaultGridPanel {
 		ruleCombo = new CustomizedComboBox(sentencesManager.getRulesNames(packageName).toArray());
 		ruleCombo.addActionListener(new RulesNamesListener());
 		validationButton = new CustomizedButton("Update");
-		validationButton.addMouseListener(new ValidationListener());
+		validationButton.addActionListener(new ValidationListener());
 
 		addComponent(sentenceChoiceLabel, 0, 0, 1, 1);
 		addComponent(sentenceChoiceCombo, 1, 0, 1, 1);
@@ -147,10 +146,11 @@ public class ModifySentencePanel extends DefaultGridPanel {
 		}
 	}
 	
-	public class ValidationListener extends DefaultMouseListener
+	public class ValidationListener implements ActionListener
 	{
+
 		@Override
-		public void mouseClicked(MouseEvent event) {
+		public void actionPerformed(ActionEvent e) {
 
 			System.out.println(ruleCombo.getSelectedItem());
 			if (sentenceField.getText().isEmpty() || correctAnswerField.getText().isEmpty() || wrongAnswersField.getText().isEmpty()

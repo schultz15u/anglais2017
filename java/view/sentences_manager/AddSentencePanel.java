@@ -5,10 +5,10 @@ import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.*;
 
-import controller.DefaultMouseListener;
 import model.SentencesManager;
 import view.DefaultGridPanel;
 import view.StyleParameters;
@@ -59,7 +59,7 @@ public class AddSentencePanel extends DefaultGridPanel {
 		ruleCombo = new CustomizedComboBox(sentencesManager.getRulesNames(packageName).toArray());
 		ruleCombo.addActionListener(new RulesNamesListener());
 		validationButton = new CustomizedButton("Add");
-		validationButton.addMouseListener(new ValidationListener());
+		validationButton.addActionListener(new ValidationListener());
 
 		addComponent(sentenceLabel, 0, 0, 1, 1);
 		addComponent(sentenceField, 1, 0, 1, 1);
@@ -101,12 +101,11 @@ public class AddSentencePanel extends DefaultGridPanel {
 		}
 	}
 	
-	public class ValidationListener extends DefaultMouseListener
+	public class ValidationListener implements ActionListener
 	{
 		@Override
-		public void mouseClicked(MouseEvent event) {
+		public void actionPerformed(ActionEvent e) {
 
-			System.out.println(ruleCombo.getSelectedItem());
 			if (sentenceField.getText().isEmpty() || correctAnswerField.getText().isEmpty() || wrongAnswersField.getText().isEmpty()
 					|| ((ruleNameField.getText().isEmpty() || ruleDetailsField.getText().isEmpty()) && ruleName.equals("-"))) {
 				messageLabel.setText("One field is missing.");

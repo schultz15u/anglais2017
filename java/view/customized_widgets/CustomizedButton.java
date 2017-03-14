@@ -1,15 +1,14 @@
 package view.customized_widgets;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.*;
 
-import controller.DefaultMouseListener;
 import view.StyleParameters;
 
 public class CustomizedButton extends JButton {
@@ -119,7 +118,7 @@ public class CustomizedButton extends JButton {
         super.paintComponent(g);
     }
 	
-	class ButtonListener extends DefaultMouseListener {
+	class ButtonListener implements MouseListener {
 
 		@Override
 		public void mouseClicked(MouseEvent arg0) {

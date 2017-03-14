@@ -4,9 +4,10 @@
 	-> Page de démarrage (pour rappeler le fonctionnement, le choix du package et le meilleur score)
 	-> Page de question à remettre en forme
 	-> Page finale qui résume le score, rappelle le meilleur score, et affiche les règles apprises et à revoir 
+	-> Cacher le menu de gauche quand on est sur une page de question (on peut le laisser lors de la page du début et de fin)
 -> Choix du thème comme option
 -> Page d'accueil
-	-> Reprend le menu de gauche mais avec des plus gros boutons et des icones
+	-> Reprendre le menu de gauche mais avec des plus gros boutons et des icones
 	-> Pourcentage moyen de réussite
-	-> Systèmes de succès ? (genre : vous avez obtenu 100% à un test, vous avez effectué 20 tests, ...)
+	-> Système de succès ? (genre : vous avez obtenu 100% à un test, vous avez effectué 20 tests, ...)
 -> Mode lecture de règles seulement (catégorie en plus dans le menu de gauche)

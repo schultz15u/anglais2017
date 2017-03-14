@@ -1,4 +1,4 @@
-package view;
+package view.sentences;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-import controller.DefaultMouseListener;
 import model.Sentences;
 
 
@@ -111,8 +111,7 @@ public class SentencesPanel extends JPanel {
 		}
 	}
 	
-	public class SentenceLabelListener extends DefaultMouseListener
-	{
+	public class SentenceLabelListener implements MouseListener {
 		@Override
 		public void mouseClicked(MouseEvent event) {
 			
@@ -132,6 +131,22 @@ public class SentencesPanel extends JPanel {
 				ruleLabel.setText("Rule : " + sentences.getRule());
 				nextButton.setVisible(true);
 			}
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
 		}
 	}
 	

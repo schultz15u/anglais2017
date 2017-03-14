@@ -1,9 +1,6 @@
 package view.sentences_manager;
 
-import controller.DefaultMouseListener;
 import model.SentencesManager;
-import model.database.entries.RuleEntry;
-import model.database.entries.SentenceEntry;
 import view.DefaultGridPanel;
 import view.StyleParameters;
 import view.customized_widgets.CustomizedButton;
@@ -41,7 +38,7 @@ public class RemoveSentencePanel extends DefaultGridPanel {
 		sentenceChoiceCombo = new CustomizedComboBox(sentencesManager.getSentenceNames(packageName).toArray());
 		sentenceChoiceCombo.addActionListener(new SentenceChoiceListener());
 		validationButton = new CustomizedButton("Remove");
-		validationButton.addMouseListener(new ValidationListener());
+		validationButton.addActionListener(new ValidationListener());
 
 		addComponent(sentenceChoiceLabel, 0, 0, 1, 1);
 		addComponent(sentenceChoiceCombo, 1, 0, 1, 1);
@@ -74,10 +71,10 @@ public class RemoveSentencePanel extends DefaultGridPanel {
 		}
 	}
 	
-	public class ValidationListener extends DefaultMouseListener
-	{
+	public class ValidationListener implements ActionListener {
+
 		@Override
-		public void mouseClicked(MouseEvent event) {
+		public void actionPerformed(ActionEvent e) {
 
 			if (!sentencesManager.removeSentence(sentence, packageName)) {
 				messageLabel.setText("Error with database.");
