@@ -1,5 +1,7 @@
 package view.customized_widgets;
 
+import view.StyleParameters;
+
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 import java.awt.*;
@@ -19,15 +21,16 @@ public class CustomizedTextArea extends JTextArea {
 	}
 
 	private void initialize() {
-		setCaretColor(new Color(255, 255, 255));
-		setForeground(new Color(255, 255, 255));
-		setBackground(new Color(50, 50, 50));
+		setFont(StyleParameters.defaultNormalFont);
+		setCaretColor(StyleParameters.defaultTextColor);
+		setForeground(StyleParameters.defaultTextColor);
+		setBackground(StyleParameters.defaultWidgetBackgroundColor);
 
 		scrollPane = new JScrollPane( this );
-		scrollPane.setBorder(BorderFactory.createLineBorder(new Color(30, 30, 30), 5));
+		scrollPane.setBorder(BorderFactory.createLineBorder(StyleParameters.defaultBackgroundColor, 5));
 		scrollPane.getVerticalScrollBar().setUI(new MyScrollBarUI());
 		scrollPane.getHorizontalScrollBar().setUI(new MyScrollBarUI());
-		scrollPane.setBackground(new Color(70, 70, 70));
+		scrollPane.setBackground(StyleParameters.defaultWidgetBackgroundColor);
 
 	}
 
@@ -40,14 +43,17 @@ public class CustomizedTextArea extends JTextArea {
 
 		@Override
 		protected void paintTrack(Graphics g, JComponent c, Rectangle r) {
-			g.setColor(new Color(30, 30, 30));
+			g.setColor(StyleParameters.defaultWidgetBackgroundColor);
 			g.fillRect(r.x, r.y, r.width, r.height);
 		}
 
 		@Override
 		protected void paintThumb(Graphics g, JComponent c, Rectangle r) {
-			g.setColor(new Color(100, 100, 100));
-			g.fillRect(r.x, r.y, r.width, r.height);
+			g.setColor(StyleParameters.defaultClickedWidgetBackgroundColor);
+			if (r.width > r.height)
+				g.fillRect(r.x + r.height / 4, r.y + r.height / 4, r.width - r.height / 2, r.height / 2);
+			else
+				g.fillRect(r.x + r.width / 4, r.y + r.height / 4, r.width / 2, r.height - r.width / 2);
 		}
 
 		protected JButton createDecreaseButton(int orientation) {

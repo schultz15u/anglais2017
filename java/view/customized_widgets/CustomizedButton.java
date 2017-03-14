@@ -1,7 +1,6 @@
 package view.customized_widgets;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -9,9 +8,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 
 import controller.DefaultMouseListener;
+import view.StyleParameters;
 
 public class CustomizedButton extends JButton {
 
@@ -30,20 +29,20 @@ public class CustomizedButton extends JButton {
 	public CustomizedButton(String text){
 		super(text);
 
-		normalColor = new Color(50, 50, 50);
-		selectedColor = Color.gray;
-		clickedColor = Color.lightGray;
+		normalColor = StyleParameters.defaultWidgetBackgroundColor;
+		selectedColor = StyleParameters.defaultSelectedWidgetBackgroundColor;
+		clickedColor = StyleParameters.defaultClickedWidgetBackgroundColor;
 		
 		oldBackgroundColor = normalColor;
 		newBackgroundColor = oldBackgroundColor;
 		startTime = 0;
 
 		setBackground(newBackgroundColor);
-		setForeground(new Color(255, 255, 255));
+		setForeground(StyleParameters.defaultTextColor);
 		setFocusPainted(false);
         setContentAreaFilled(false);
         setOpaque(true);
-		setFont(new Font("Arial", Font.BOLD, 15));
+		setFont(StyleParameters.defaultImportantFont);
 		addMouseListener(new ButtonListener());
 		setBorderPainted(false);
 		

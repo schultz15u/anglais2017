@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import model.SentencesManager;
+import view.StyleParameters;
 import view.customized_widgets.CustomizedButton;
 import view.customized_widgets.CustomizedCheckBox;
 import view.customized_widgets.CustomizedLabel;
@@ -29,14 +30,13 @@ public class CreatePackagePanel extends DefaultGridPanel {
 		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
 		this.messageLabel = messageLabel;
-		setBackground(new Color(30, 30, 30));
+		setBackground(StyleParameters.defaultBackgroundColor);
 		
 		nameLabel = new CustomizedLabel("Package name : ");
 		nameField = new CustomizedTextField("", 30);
 		canBeModifyCheckBox = new CustomizedCheckBox("Package can be modified by someone else");
 		validationButton = new CustomizedButton("Create");
 		validationButton.addActionListener(new CreateListener());
-		validationButton.setNormalColor(new Color(50, 50, 50));
 		
 		addComponent(nameLabel, 0, 0, 1, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.NONE);
 		addComponent(nameField, 1, 0, 1, 1, 1,1, GridBagConstraints.NORTH, GridBagConstraints.NONE);

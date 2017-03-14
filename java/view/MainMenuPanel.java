@@ -20,17 +20,17 @@ public class MainMenuPanel extends DefaultGridPanel {
 	public MainMenuPanel(MainPanel mainPanel) {
 
 		super();
-		setBackground(new Color(80, 80, 80));
+		setBackground(StyleParameters.mainMenuNormalButtonColor);
 		this.mainPanel = mainPanel;
 
 		sentencesManagerButton = new CustomizedButton("Sentence manager");
-		sentencesManagerButton.setNormalColor(new Color(80, 80, 80));
+		sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 		sentencesManagerButton.addActionListener(new SentenceManagerListener());
 		mcqModeButton = new CustomizedButton("MCQ mode");
-		mcqModeButton.setNormalColor(new Color(80, 80, 80));
+		mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 		mcqModeButton.addActionListener(new McqModeListener());
 		mistakesModeButton = new CustomizedButton("Mistakes mode");
-		mistakesModeButton.setNormalColor(new Color(80, 80, 80));
+		mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 		emptyPanel = new JPanel();
 		emptyPanel.setBackground(getBackground());
 
@@ -39,7 +39,7 @@ public class MainMenuPanel extends DefaultGridPanel {
 		addComponent(mistakesModeButton, 0, 2, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
 		addComponent(emptyPanel, 0, 10, 1, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
 
-		sentencesManagerButton.setNormalColor(new Color(60, 60, 60));
+		sentencesManagerButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 	}
 
 	@Override
@@ -67,10 +67,10 @@ public class MainMenuPanel extends DefaultGridPanel {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			mainPanel.showSentencesManagerPanel();
-			sentencesManagerButton.setNormalColor(new Color(80, 80, 80));
-			mcqModeButton.setNormalColor(new Color(80, 80, 80));
-			mistakesModeButton.setNormalColor(new Color(80, 80, 80));
-			sentencesManagerButton.setNormalColor(new Color(60, 60, 60));
+			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+			mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+			mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 		}
 	}
 
@@ -79,10 +79,10 @@ public class MainMenuPanel extends DefaultGridPanel {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			mainPanel.showMcqModePanel();
-			sentencesManagerButton.setNormalColor(new Color(80, 80, 80));
-			mcqModeButton.setNormalColor(new Color(80, 80, 80));
-			mistakesModeButton.setNormalColor(new Color(80, 80, 80));
-			mcqModeButton.setNormalColor(new Color(60, 60, 60));
+			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+			mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+			mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+			mcqModeButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 		}
 	}
 }

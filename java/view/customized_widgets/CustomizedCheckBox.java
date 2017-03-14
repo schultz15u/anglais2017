@@ -1,6 +1,7 @@
 package view.customized_widgets;
 
 import controller.DefaultMouseListener;
+import view.StyleParameters;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,11 +13,12 @@ public class CustomizedCheckBox extends JCheckBox {
 
 	public CustomizedCheckBox(String text){
 		super(text);
-		setBackground(new Color(30, 30, 30));
-		setForeground(new Color(255, 255, 255));
+		setBackground(StyleParameters.defaultBackgroundColor);
+		setForeground(StyleParameters.defaultTextColor);
 		setIcon(new CustomizedCheckBoxIcon(false));
 		setFocusPainted(false);
 		addActionListener(new CustomizedListener());
+		setFont(StyleParameters.defaultImportantFont);
 	}
 
 	private class CustomizedCheckBoxIcon implements Icon {
@@ -29,10 +31,7 @@ public class CustomizedCheckBox extends JCheckBox {
 
 		public void paintIcon(Component component, Graphics g, int x, int y) {
 
-			AbstractButton abstractButton = (AbstractButton)component;
-			ButtonModel buttonModel = abstractButton.getModel();
-
-			g.setColor(new Color(100, 100, 100));
+			g.setColor(StyleParameters.defaultSelectedWidgetBackgroundColor);
 
 			g.drawRect(1, 1 + 10, 20,20);
 			if (checked)

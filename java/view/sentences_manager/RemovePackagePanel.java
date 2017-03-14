@@ -2,6 +2,7 @@ package view.sentences_manager;
 
 import model.SentencesManager;
 import view.DefaultGridPanel;
+import view.StyleParameters;
 import view.customized_widgets.CustomizedButton;
 import view.customized_widgets.CustomizedComboBox;
 
@@ -24,7 +25,7 @@ public class RemovePackagePanel extends DefaultGridPanel {
 		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
 		this.messageLabel = messageLabel;
-		setBackground(new Color(30, 30, 30));
+		setBackground(StyleParameters.defaultBackgroundColor);
 
 		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames().toArray());
 		removeSentenceButton = new CustomizedButton("Remove sentence");

@@ -11,6 +11,7 @@ import javax.swing.*;
 import controller.DefaultMouseListener;
 import model.SentencesManager;
 import view.DefaultGridPanel;
+import view.StyleParameters;
 import view.customized_widgets.*;
 
 
@@ -42,7 +43,7 @@ public class AddSentencePanel extends DefaultGridPanel {
 		this.messageLabel = messageLabel;
 		packageName = "";
 		ruleName = "-";
-		setBackground(new Color(30, 30, 30));
+		setBackground(StyleParameters.defaultBackgroundColor);
 
 		sentenceLabel = new CustomizedLabel("Sentence (add \"@\" where the wrong word is placed) : ");
 		sentenceField = new CustomizedTextField("", 30);

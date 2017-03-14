@@ -1,5 +1,7 @@
 package view.customized_widgets;
 
+import view.StyleParameters;
+
 import java.awt.Color;
 
 import javax.swing.BorderFactory;
@@ -14,15 +16,11 @@ public class CustomizedTextField extends JTextField {
 		initialize();
 	}
 
-	public CustomizedTextField(String text){
-		super(text);
-		initialize();
-	}
-
 	private void initialize() {
-		setCaretColor(new Color(255, 255, 255));
-		setForeground(new Color(255, 255, 255));
-		setBackground(new Color(75, 75, 75));
-		setBorder(BorderFactory.createLineBorder(new Color(30, 30, 30), 5));
+		setFont(StyleParameters.defaultNormalFont);
+		setCaretColor(StyleParameters.defaultTextColor);
+		setForeground(StyleParameters.defaultTextColor);
+		setBackground(StyleParameters.defaultWidgetBackgroundColor);
+		setBorder(BorderFactory.createLineBorder(StyleParameters.defaultBackgroundColor, 5));
 	}
 }

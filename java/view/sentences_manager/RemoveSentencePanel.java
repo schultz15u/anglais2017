@@ -5,6 +5,7 @@ import model.SentencesManager;
 import model.database.entries.RuleEntry;
 import model.database.entries.SentenceEntry;
 import view.DefaultGridPanel;
+import view.StyleParameters;
 import view.customized_widgets.CustomizedButton;
 import view.customized_widgets.CustomizedComboBox;
 import view.customized_widgets.CustomizedLabel;
@@ -34,7 +35,7 @@ public class RemoveSentencePanel extends DefaultGridPanel {
 		this.messageLabel = messageLabel;
 		packageName = "";
 		sentence = "";
-		setBackground(new Color(30, 30, 30));
+		setBackground(StyleParameters.defaultBackgroundColor);
 
 		sentenceChoiceLabel = new CustomizedLabel("Sentence to remove : ");
 		sentenceChoiceCombo = new CustomizedComboBox(sentencesManager.getSentenceNames(packageName).toArray());

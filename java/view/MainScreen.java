@@ -32,7 +32,7 @@ public class MainScreen extends JFrame {
 
 		super();
 		setTitle("Shake's Pear");
-		setMinimumSize(new Dimension(850, 500));
+		setMinimumSize(new Dimension(950, 500));
 		setSize(getMinimumSize());
 		setPreferredSize(getMinimumSize());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

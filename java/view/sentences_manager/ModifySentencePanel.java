@@ -5,6 +5,7 @@ import model.SentencesManager;
 import model.database.entries.RuleEntry;
 import model.database.entries.SentenceEntry;
 import view.DefaultGridPanel;
+import view.StyleParameters;
 import view.customized_widgets.*;
 
 import javax.swing.*;
@@ -44,7 +45,7 @@ public class ModifySentencePanel extends DefaultGridPanel {
 		this.messageLabel = messageLabel;
 		packageName = "";
 		ruleName = "-";
-		setBackground(new Color(30, 30, 30));
+		setBackground(StyleParameters.defaultBackgroundColor);
 
 		sentenceChoiceLabel = new CustomizedLabel("Sentence to modify : ");
 		sentenceChoiceCombo = new CustomizedComboBox(sentencesManager.getSentenceNames(packageName).toArray());

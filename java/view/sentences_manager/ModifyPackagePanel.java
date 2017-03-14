@@ -10,6 +10,7 @@ import javax.swing.*;
 
 import model.SentencesManager;
 import view.DefaultGridPanel;
+import view.StyleParameters;
 import view.customized_widgets.CustomizedButton;
 import view.customized_widgets.CustomizedComboBox;
 
@@ -33,7 +34,7 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
 		this.messageLabel = messageLabel;
-		setBackground(new Color(30, 30, 30));
+		setBackground(StyleParameters.defaultBackgroundColor);
 
 		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames().toArray());
 		packagesCombo.addActionListener(new PackagesComboListener());
@@ -65,7 +66,10 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		addComponent(removeSentenceButton, 2, 1, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 		addComponent(addSentencePanel, 0, 2, 3, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
 
-		addSentenceButton.setNormalColor(new Color(80, 80, 80));
+		addSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+		modifySentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+		removeSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+		addSentenceButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
 	}
 
 	public void update() {
@@ -120,10 +124,10 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 			modifySentencePanel.update();
 			removeSentencePanel.update();
 
-			addSentenceButton.setNormalColor(new Color(50, 50, 50));
-			modifySentenceButton.setNormalColor(new Color(50, 50, 50));
-			removeSentenceButton.setNormalColor(new Color(50, 50, 50));
-			addSentenceButton.setNormalColor(new Color(80, 80, 80));
+			addSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+			modifySentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+			removeSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+			addSentenceButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
 		}
 	}
 
@@ -138,10 +142,10 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 			modifySentencePanel.update();
 			removeSentencePanel.update();
 
-			addSentenceButton.setNormalColor(new Color(50, 50, 50));
-			modifySentenceButton.setNormalColor(new Color(50, 50, 50));
-			removeSentenceButton.setNormalColor(new Color(50, 50, 50));
-			modifySentenceButton.setNormalColor(new Color(80, 80, 80));
+			addSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+			modifySentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+			removeSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+			modifySentenceButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
 		}
 	}
 
@@ -156,10 +160,10 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 			modifySentencePanel.update();
 			removeSentencePanel.update();
 
-			addSentenceButton.setNormalColor(new Color(50, 50, 50));
-			modifySentenceButton.setNormalColor(new Color(50, 50, 50));
-			removeSentenceButton.setNormalColor(new Color(50, 50, 50));
-			removeSentenceButton.setNormalColor(new Color(80, 80, 80));
+			addSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+			modifySentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+			removeSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+			removeSentenceButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
 		}
 	}
 }
