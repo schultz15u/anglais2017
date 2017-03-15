@@ -1,8 +1,6 @@
 package view.sentences;
 
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -12,8 +10,6 @@ import java.util.List;
 
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
@@ -45,7 +41,7 @@ public class QuestionsPanel extends JPanel {
 		sentenceLabel.setFont(StyleParameters.defaultSentenceFont);
 		sentenceLabel.addMouseListener(new SentenceLabelListener());
 		
-		informationLabel = new CustomizedLabel("Informations");
+		informationLabel = new CustomizedLabel("");
 		ruleLabel = new CustomizedLabel("");
 		
 		nextButton = new CustomizedButton("Next sentence");

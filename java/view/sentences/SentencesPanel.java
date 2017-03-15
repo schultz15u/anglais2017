@@ -15,6 +15,7 @@ public class SentencesPanel extends DefaultGridPanel {
 	private Sentences sentences;
 	private SentencesHomePanel sentencesHomePanel;
 	private QuestionsPanel questionsPanel;
+	private SentencesEndPanel sentencesEndPanel;
 	private JPanel currentPanel;
 
 	public SentencesPanel(SentencesManager sentencesManager, boolean isMcq) {
@@ -50,5 +51,11 @@ public class SentencesPanel extends DefaultGridPanel {
 		sentences.initialize(sentencesManager, packageName);
 		questionsPanel.reset();
 		changePanel(questionsPanel);
+	}
+
+	public void goToEndPanel(String packageName) {
+
+		sentencesEndPanel.updateScore();
+		changePanel(sentencesEndPanel);
 	}
 }
