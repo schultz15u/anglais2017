@@ -24,6 +24,7 @@ public class SentencesHomePanel extends DefaultGridPanel {
 	private CustomizedLabel sentenceLabel;
 	private CustomizedButton nextButton;
 	private CustomizedComboBox packagesCombo;
+	private Sentences sentences;
 
 	private static String mcqMessage = "<html>For each sentence, you must choose the best answer.<br />Ready ?</html>";
 	private static String mistakesMessage = "<html>For each sentence, you have to click on the mistake.<br />Ready ?</html>";
@@ -59,6 +60,7 @@ public class SentencesHomePanel extends DefaultGridPanel {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
+			((SentencesPanel)getParent()).goToQuestionsPanel(packagesCombo.getSelectedItem().toString());
 		}
 	}
 }

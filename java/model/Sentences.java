@@ -18,28 +18,21 @@ public class Sentences {
 	private int score;
 	
 	public Sentences() {
-		sentences = null;
+		sentences = new ArrayList<>();
 		currentSentenceId = 0;
 		currentWrongWord = "";
 		score = 0;
 	}
 	
-	public void initialize() {		
-		try {
-			SentenceTable sentenceTable = new SentenceTable();
-			sentences = sentenceTable.getAll();
-		}
-		catch (SQLException e) {
-			e.printStackTrace();
-			sentences = null;
-		}
-		
+	public void initialize(SentencesManager sentencesManager, String packageName) {
+
+		sentences = sentencesManager.getSentences(packageName);
 		currentSentenceId = 0;
 		score = 0;
 		generateWrongWord();
 		
 		// Random sort of the sentences list
-		ArrayList<SentenceEntry> sentencesTemp = new ArrayList<SentenceEntry>();
+		ArrayList<SentenceEntry> sentencesTemp = new ArrayList<>();
 		while (sentences.size() > 0) {
 			int sentenceIdToTransfer = (int) (Math.random() * sentences.size());
 			sentencesTemp.add(sentences.get(sentenceIdToTransfer));

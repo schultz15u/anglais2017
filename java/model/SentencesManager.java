@@ -105,6 +105,29 @@ public class SentencesManager {
 		}
 	}
 
+	public List<SentenceEntry> getSentences(String packageName) {
+
+		try {
+			// Package retrieval
+			PackageTable packageTable = new PackageTable();
+			List<PackageEntry> packages = packageTable.getByProperty("name", () -> packageName, true);
+
+			if (packages.size() == 0) {
+				System.err.println("getSentences : package not found");
+				return new ArrayList<>();
+			}
+
+
+			// Sentence retrieval
+			SentenceTable sentenceTable = new SentenceTable();
+			return sentenceTable.getByProperty("pack", () -> packages.get(0).getIdPack(), true);
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			return new ArrayList<>();
+		}
+	}
+
 	public SentenceEntry getSentence(String packageName, String sentence) {
 
 		try {

@@ -2,6 +2,7 @@ package view;
 
 import model.Sentences;
 import model.SentencesManager;
+import view.sentences.QuestionsPanel;
 import view.sentences.SentencesPanel;
 import view.sentences_manager.SentencesManagerPanel;
 
@@ -13,22 +14,20 @@ public class MainPanel extends DefaultGridPanel {
 
 	MainMenuPanel mainMenuPanel;
 	SentencesManagerPanel sentenceManagerPanel;
-	Sentences sentences;
 	SentencesPanel mcqModePanel;
 	SentencesPanel mistakesModePanel;
 	JPanel currentPanel;
 
-	public MainPanel(Sentences sentences, SentencesManager sentencesManager) {
+	public MainPanel(SentencesManager sentencesManager) {
 
 		super();
 		setLayout(new GridBagLayout());
 		setBackground(StyleParameters.defaultBackgroundColor);
-		this.sentences = sentences;
 
 		mainMenuPanel = new MainMenuPanel(this);
 		sentenceManagerPanel = new SentencesManagerPanel(sentencesManager);
-		mcqModePanel = new SentencesPanel(sentences, true);
-		mistakesModePanel = new SentencesPanel(sentences, false);
+		mcqModePanel = new SentencesPanel(sentencesManager, true);
+		mistakesModePanel = new SentencesPanel(sentencesManager, false);
 		currentPanel = sentenceManagerPanel;
 
 		addComponent(mainMenuPanel, 0, 0, 1,  1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
@@ -53,7 +52,6 @@ public class MainPanel extends DefaultGridPanel {
 
 		if (currentPanel != mcqModePanel) {
 
-			sentences.initialize();
 			mcqModePanel.reset();
 			changePanel(mcqModePanel);
 		}
@@ -63,7 +61,6 @@ public class MainPanel extends DefaultGridPanel {
 
 		if (currentPanel != mistakesModePanel) {
 
-			sentences.initialize();
 			mistakesModePanel.reset();
 			changePanel(mistakesModePanel);
 		}

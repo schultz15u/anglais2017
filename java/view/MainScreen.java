@@ -24,7 +24,6 @@ import view.sentences_manager.SentencesManagerPanel;
 
 public class MainScreen extends JFrame {
 
-	Sentences sentences;
 	SentencesManager sentencesManager;
 	MainPanel panel;
 
@@ -38,9 +37,8 @@ public class MainScreen extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 
-		sentences = new Sentences();
 		sentencesManager = new SentencesManager();
-		panel = new MainPanel(sentences, sentencesManager);
+		panel = new MainPanel(sentencesManager);
 
 		add(panel);
 
@@ -60,7 +58,7 @@ public class MainScreen extends JFrame {
 	private boolean stateConnection = false;
 	private Sentences sentences;
 	private SentencesManager sentencesManager;
-	private SentencesPanel sentencesPanel;
+	private QuestionsPanel sentencesPanel;
 
 	CardLayout cl = new CardLayout();
 	JPanel content = new JPanel();
@@ -120,7 +118,7 @@ public class MainScreen extends JFrame {
 
 		sentencesManager = new SentencesManager();
 		JPanel sentencesManagerPanel = new SentencesManagerPanel(sentencesManager);
-		sentencesPanel = new SentencesPanel(this, sentences);
+		sentencesPanel = new QuestionsPanel(this, sentences);
 		// JPanel profil = new ProfileJPanel();
 		JPanel defaut = new JPanel();
 		JLabel bienvenue = new JLabel("Bienvenue sur Shake's Pear !");
