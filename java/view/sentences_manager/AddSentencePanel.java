@@ -4,19 +4,20 @@ import java.awt.Color;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
-import javax.swing.*;
+import javax.swing.JLabel;
 
 import model.SentencesManager;
 import view.DefaultGridPanel;
 import view.StyleParameters;
-import view.customized_widgets.*;
-
+import view.customized_widgets.CustomizedButton;
+import view.customized_widgets.CustomizedComboBox;
+import view.customized_widgets.CustomizedLabel;
+import view.customized_widgets.CustomizedTextArea;
+import view.customized_widgets.CustomizedTextField;
 
 public class AddSentencePanel extends DefaultGridPanel {
-	
+
 	private SentencesManager sentencesManager;
 	private CustomizedLabel sentenceLabel;
 	private CustomizedTextField sentenceField;
@@ -34,7 +35,7 @@ public class AddSentencePanel extends DefaultGridPanel {
 	private JLabel messageLabel;
 	private String packageName;
 	private String ruleName;
-	
+
 	public AddSentencePanel(SentencesManager sentencesManager, JLabel messageLabel) {
 
 		super();
@@ -56,7 +57,7 @@ public class AddSentencePanel extends DefaultGridPanel {
 		ruleDetailsLabel = new CustomizedLabel("Rule details : ");
 		ruleDetailsField = new CustomizedTextArea("", 5, 30);
 		ruleComboLabel = new CustomizedLabel("Existing rule : ");
-		ruleCombo = new CustomizedComboBox(sentencesManager.getRulesNames(packageName).toArray());
+		ruleCombo = new CustomizedComboBox(sentencesManager.getRulesNames(packageName));
 		ruleCombo.addActionListener(new RulesNamesListener());
 		validationButton = new CustomizedButton("Add");
 		validationButton.addActionListener(new ValidationListener());
@@ -84,7 +85,7 @@ public class AddSentencePanel extends DefaultGridPanel {
 	public void update() {
 
 		remove(ruleCombo);
-		ruleCombo = new CustomizedComboBox(sentencesManager.getRulesNames(packageName).toArray());
+		ruleCombo = new CustomizedComboBox(sentencesManager.getRulesNames(packageName));
 		ruleCombo.addActionListener(new RulesNamesListener());
 
 		addComponent(ruleCombo, 1, 5, 1, 1);
@@ -96,35 +97,43 @@ public class AddSentencePanel extends DefaultGridPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			JComboBox cb = (JComboBox) e.getSource();
+			CustomizedComboBox cb = (CustomizedComboBox) e.getSource();
 			ruleName = cb.getSelectedItem().toString();
 		}
 	}
-	
-	public class ValidationListener implements ActionListener
-	{
+
+	public class ValidationListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
-			if (sentenceField.getText().isEmpty() || correctAnswerField.getText().isEmpty() || wrongAnswersField.getText().isEmpty()
-					|| ((ruleNameField.getText().isEmpty() || ruleDetailsField.getText().isEmpty()) && ruleName.equals("-"))) {
+			if (sentenceField.getText().isEmpty() || correctAnswerField.getText().isEmpty()
+					|| wrongAnswersField.getText().isEmpty()
+					|| ((ruleNameField.getText().isEmpty() || ruleDetailsField.getText().isEmpty())
+							&& ruleName.equals("-"))) {
 				messageLabel.setText("One field is missing.");
 				messageLabel.setForeground(Color.red);
-			}
-			else if (sentenceField.getText().length() - sentenceField.getText().replace("@", "").length() == 0) {    // zero "@" in the sentence
+			} else if (sentenceField.getText().length() - sentenceField.getText().replace("@", "").length() == 0) { // zero
+																													// "@"
+																													// in
+																													// the
+																													// sentence
 				messageLabel.setText("The sentence must include one \"@\".");
 				messageLabel.setForeground(Color.red);
-			}
-			else if (sentenceField.getText().length() - sentenceField.getText().replace("@", "").length() > 1) {    // more than one "@" in the sentence
+			} else if (sentenceField.getText().length() - sentenceField.getText().replace("@", "").length() > 1) { // more
+																													// than
+																													// one
+																													// "@"
+																													// in
+																													// the
+																													// sentence
 				messageLabel.setText("The sentence must include only one \"@\".");
 				messageLabel.setForeground(Color.red);
-			}
-			else if (!sentencesManager.addSentence(sentenceField.getText(), correctAnswerField.getText(), wrongAnswersField.getText(),
-					!ruleName.equals("-") ? ruleName : ruleNameField.getText(), ruleDetailsField.getText(), packageName)) {
+			} else if (!sentencesManager.addSentence(sentenceField.getText(), correctAnswerField.getText(),
+					wrongAnswersField.getText(), !ruleName.equals("-") ? ruleName : ruleNameField.getText(),
+					ruleDetailsField.getText(), packageName)) {
 				messageLabel.setText("Error with database.");
 				messageLabel.setForeground(Color.red);
-			}
-			else {
+			} else {
 				messageLabel.setText("Sentence has been added.");
 				messageLabel.setForeground(Color.green);
 				sentenceField.setText("");

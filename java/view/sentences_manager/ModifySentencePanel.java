@@ -1,18 +1,22 @@
 package view.sentences_manager;
 
+import java.awt.Color;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JLabel;
+
 import model.SentencesManager;
 import model.database.entries.RuleEntry;
 import model.database.entries.SentenceEntry;
 import view.DefaultGridPanel;
 import view.StyleParameters;
-import view.customized_widgets.*;
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-
+import view.customized_widgets.CustomizedButton;
+import view.customized_widgets.CustomizedComboBox;
+import view.customized_widgets.CustomizedLabel;
+import view.customized_widgets.CustomizedTextArea;
+import view.customized_widgets.CustomizedTextField;
 
 public class ModifySentencePanel extends DefaultGridPanel {
 
@@ -37,7 +41,7 @@ public class ModifySentencePanel extends DefaultGridPanel {
 	private String ruleName;
 
 	public ModifySentencePanel(SentencesManager sentencesManager, JLabel messageLabel) {
-		
+
 		super();
 		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
@@ -47,7 +51,7 @@ public class ModifySentencePanel extends DefaultGridPanel {
 		setBackground(StyleParameters.defaultBackgroundColor);
 
 		sentenceChoiceLabel = new CustomizedLabel("Sentence to modify : ");
-		sentenceChoiceCombo = new CustomizedComboBox(sentencesManager.getSentenceNames(packageName).toArray());
+		sentenceChoiceCombo = new CustomizedComboBox(sentencesManager.getSentenceNames(packageName));
 		sentenceChoiceCombo.addActionListener(new SentenceChoiceListener());
 		sentenceLabel = new CustomizedLabel("Sentence (add \"@\" where the wrong word is placed) : ");
 		sentenceField = new CustomizedTextField("", 30);
@@ -60,7 +64,7 @@ public class ModifySentencePanel extends DefaultGridPanel {
 		ruleDetailsLabel = new CustomizedLabel("Rule details : ");
 		ruleDetailsField = new CustomizedTextArea("", 5, 30);
 		ruleComboLabel = new CustomizedLabel("Existing rule : ");
-		ruleCombo = new CustomizedComboBox(sentencesManager.getRulesNames(packageName).toArray());
+		ruleCombo = new CustomizedComboBox(sentencesManager.getRulesNames(packageName));
 		ruleCombo.addActionListener(new RulesNamesListener());
 		validationButton = new CustomizedButton("Update");
 		validationButton.addActionListener(new ValidationListener());
@@ -90,14 +94,12 @@ public class ModifySentencePanel extends DefaultGridPanel {
 
 	public void update() {
 
-
-
 		remove(sentenceChoiceCombo);
-		sentenceChoiceCombo = new CustomizedComboBox(sentencesManager.getSentenceNames(packageName).toArray());
+		sentenceChoiceCombo = new CustomizedComboBox(sentencesManager.getSentenceNames(packageName));
 		sentenceChoiceCombo.addActionListener(new SentenceChoiceListener());
 
 		remove(ruleCombo);
-		ruleCombo = new CustomizedComboBox(sentencesManager.getRulesNames(packageName).toArray());
+		ruleCombo = new CustomizedComboBox(sentencesManager.getRulesNames(packageName));
 		ruleCombo.addActionListener(new RulesNamesListener());
 
 		addComponent(sentenceChoiceCombo, 1, 0, 1, 1);
@@ -106,7 +108,7 @@ public class ModifySentencePanel extends DefaultGridPanel {
 		repaint();
 
 		if (sentenceChoiceCombo.getItemAt(0) != null)
-		updateFields(sentenceChoiceCombo.getItemAt(0).toString());
+			updateFields(sentenceChoiceCombo.getItemAt(0).toString());
 	}
 
 	private void updateFields(String sentenceName) {
@@ -132,7 +134,7 @@ public class ModifySentencePanel extends DefaultGridPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			JComboBox cb = (JComboBox) e.getSource();
+			CustomizedComboBox cb = (CustomizedComboBox) e.getSource();
 			updateFields(cb.getSelectedItem().toString());
 		}
 	}
@@ -141,37 +143,45 @@ public class ModifySentencePanel extends DefaultGridPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			JComboBox cb = (JComboBox) e.getSource();
+			CustomizedComboBox cb = (CustomizedComboBox) e.getSource();
 			ruleName = cb.getSelectedItem().toString();
 		}
 	}
-	
-	public class ValidationListener implements ActionListener
-	{
+
+	public class ValidationListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
 			System.out.println(ruleCombo.getSelectedItem());
-			if (sentenceField.getText().isEmpty() || correctAnswerField.getText().isEmpty() || wrongAnswersField.getText().isEmpty()
-					|| ((ruleNameField.getText().isEmpty() || ruleDetailsField.getText().isEmpty()) && ruleName.equals("-"))) {
+			if (sentenceField.getText().isEmpty() || correctAnswerField.getText().isEmpty()
+					|| wrongAnswersField.getText().isEmpty()
+					|| ((ruleNameField.getText().isEmpty() || ruleDetailsField.getText().isEmpty())
+							&& ruleName.equals("-"))) {
 				messageLabel.setText("One field is missing.");
 				messageLabel.setForeground(Color.red);
-			}
-			else if (sentenceField.getText().length() - sentenceField.getText().replace("@", "").length() == 0) {    // zero "@" in the sentence
+			} else if (sentenceField.getText().length() - sentenceField.getText().replace("@", "").length() == 0) { // zero
+																													// "@"
+																													// in
+																													// the
+																													// sentence
 				messageLabel.setText("The sentence must include one \"@\".");
 				messageLabel.setForeground(Color.red);
-			}
-			else if (sentenceField.getText().length() - sentenceField.getText().replace("@", "").length() > 1) {    // more than one "@" in the sentence
+			} else if (sentenceField.getText().length() - sentenceField.getText().replace("@", "").length() > 1) { // more
+																													// than
+																													// one
+																													// "@"
+																													// in
+																													// the
+																													// sentence
 				messageLabel.setText("The sentence must include only one \"@\".");
 				messageLabel.setForeground(Color.red);
-			}
-			else if (!sentencesManager.setSentence(sentenceField.getText(), correctAnswerField.getText(), wrongAnswersField.getText(),
-					!ruleName.equals("-") ? ruleName : ruleNameField.getText(), ruleDetailsField.getText(), packageName)) {
+			} else if (!sentencesManager.setSentence(sentenceField.getText(), correctAnswerField.getText(),
+					wrongAnswersField.getText(), !ruleName.equals("-") ? ruleName : ruleNameField.getText(),
+					ruleDetailsField.getText(), packageName)) {
 				messageLabel.setText("Error with database.");
 				messageLabel.setForeground(Color.red);
-			}
-			else {
+			} else {
 				messageLabel.setText("Sentence has been updated.");
 				messageLabel.setForeground(Color.green);
 				sentenceField.setText("");

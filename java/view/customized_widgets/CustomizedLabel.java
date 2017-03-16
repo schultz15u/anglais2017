@@ -1,13 +1,13 @@
 package view.customized_widgets;
 
-import view.StyleParameters;
+import javax.swing.BorderFactory;
+import javax.swing.JLabel;
 
-import javax.swing.*;
-import java.awt.*;
+import view.StyleParameters;
 
 public class CustomizedLabel extends JLabel {
 
-	public CustomizedLabel(String text){
+	public CustomizedLabel(String text) {
 		super(text);
 		setForeground(StyleParameters.defaultTextColor);
 		setBorder(BorderFactory.createLineBorder(StyleParameters.defaultBackgroundColor, 5));

@@ -1,20 +1,23 @@
 package view.sentences_manager;
 
-import com.sun.java.swing.plaf.windows.WindowsFileChooserUI;
+import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.LookAndFeel;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+
 import model.SentencesManager;
 import view.DefaultGridPanel;
 import view.StyleParameters;
 import view.customized_widgets.CustomizedButton;
 import view.customized_widgets.CustomizedComboBox;
-
-import javax.swing.*;
-import javax.swing.plaf.ColorUIResource;
-import javax.swing.text.Style;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
-
 
 public class RemovePackagePanel extends DefaultGridPanel {
 
@@ -25,14 +28,14 @@ public class RemovePackagePanel extends DefaultGridPanel {
 	private JLabel messageLabel;
 
 	public RemovePackagePanel(SentencesManager sentencesManager, JLabel messageLabel) {
-		
+
 		super();
 		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
 		this.messageLabel = messageLabel;
 		setBackground(StyleParameters.defaultBackgroundColor);
 
-		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames().toArray());
+		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames());
 		exportSentenceButton = new CustomizedButton("Export package");
 		exportSentenceButton.addActionListener(new ExportListener());
 		removeSentenceButton = new CustomizedButton("Remove package");
@@ -49,14 +52,14 @@ public class RemovePackagePanel extends DefaultGridPanel {
 
 	public void update() {
 		remove(packagesCombo);
-		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames().toArray());
+		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames());
 		addComponent(packagesCombo, 0, 0, 3, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 
 		revalidate();
 		repaint();
 	}
 
-	private class ExportListener implements ActionListener  {
+	private class ExportListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -79,7 +82,7 @@ public class RemovePackagePanel extends DefaultGridPanel {
 
 				File file = fileChooser.getSelectedFile();
 
-				if (!sentencesManager.exportPackage(packagesCombo.getSelectedItem().toString(), file.getAbsolutePath())) {
+				if (!sentencesManager.exportPackage(packagesCombo.getSelectedItem().toString(),	file.getAbsolutePath())) {
 					messageLabel.setText("Error with database.");
 					messageLabel.setForeground(Color.red);
 				}
@@ -91,11 +94,11 @@ public class RemovePackagePanel extends DefaultGridPanel {
 		}
 	}
 
-	private class RemoveListener implements ActionListener  {
+	private class RemoveListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (packagesCombo.getSelectedItem() == null || !sentencesManager.removePackage(packagesCombo.getSelectedItem().toString())) {
+			if (packagesCombo.getSelectedItem() == null	|| !sentencesManager.removePackage(packagesCombo.getSelectedItem().toString())) {
 				messageLabel.setText("Error with database.");
 				messageLabel.setForeground(Color.red);
 			}
@@ -103,7 +106,6 @@ public class RemovePackagePanel extends DefaultGridPanel {
 				messageLabel.setText("Package has been removed.");
 				messageLabel.setForeground(Color.green);
 			}
-
 
 			update();
 		}

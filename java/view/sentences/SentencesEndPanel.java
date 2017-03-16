@@ -1,17 +1,11 @@
 package view.sentences;
 
+import java.awt.GridBagConstraints;
+
 import model.Sentences;
-import model.SentencesManager;
 import view.DefaultGridPanel;
 import view.StyleParameters;
-import view.customized_widgets.CustomizedButton;
-import view.customized_widgets.CustomizedComboBox;
 import view.customized_widgets.CustomizedLabel;
-
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 
 public class SentencesEndPanel extends DefaultGridPanel {
 

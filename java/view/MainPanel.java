@@ -1,14 +1,13 @@
 package view;
 
-import model.Sentences;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
+import javax.swing.JPanel;
+
 import model.SentencesManager;
-import view.sentences.QuestionsPanel;
 import view.sentences.SentencesPanel;
 import view.sentences_manager.SentencesManagerPanel;
-
-import javax.swing.*;
-import java.awt.*;
-
 
 public class MainPanel extends DefaultGridPanel {
 
@@ -30,8 +29,8 @@ public class MainPanel extends DefaultGridPanel {
 		mistakesModePanel = new SentencesPanel(sentencesManager, false);
 		currentPanel = sentenceManagerPanel;
 
-		addComponent(mainMenuPanel, 0, 0, 1,  1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
-		addComponent(sentenceManagerPanel, 1, 0, 1,  1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(mainMenuPanel, 0, 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(sentenceManagerPanel, 1, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 	}
 
 	private void changePanel(JPanel newPanel) {

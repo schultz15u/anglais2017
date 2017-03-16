@@ -1,12 +1,13 @@
 package view.sentences_manager;
 
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 
-import javax.swing.*;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import model.SentencesManager;
 import view.DefaultGridPanel;
@@ -14,9 +15,8 @@ import view.StyleParameters;
 import view.customized_widgets.CustomizedButton;
 import view.customized_widgets.CustomizedComboBox;
 
-
 public class ModifyPackagePanel extends DefaultGridPanel {
-	
+
 	private SentencesManager sentencesManager;
 	private CustomizedComboBox packagesCombo;
 	private CustomizedButton addSentenceButton;
@@ -27,16 +27,16 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 	private RemoveSentencePanel removeSentencePanel;
 	private JPanel currentPanel;
 	private JLabel messageLabel;
-	
+
 	public ModifyPackagePanel(SentencesManager sentencesManager, JLabel messageLabel) {
-		
+
 		super();
 		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
 		this.messageLabel = messageLabel;
 		setBackground(StyleParameters.defaultBackgroundColor);
 
-		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames().toArray());
+		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames());
 		packagesCombo.addActionListener(new PackagesComboListener());
 		packagesCombo.setPreferredSize(new Dimension(packagesCombo.getWidth(), 40));
 		addSentenceButton = new CustomizedButton("Add sentence");
@@ -73,7 +73,7 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 
 	public void update() {
 		remove(packagesCombo);
-		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames().toArray());
+		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames());
 		packagesCombo.addActionListener(new PackagesComboListener());
 		packagesCombo.setPreferredSize(new Dimension(packagesCombo.getWidth(), 40));
 		addComponent(packagesCombo, 0, 0, 3, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
@@ -112,7 +112,7 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		}
 	}
 
-	private class AddSentenceListener implements ActionListener  {
+	private class AddSentenceListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -129,7 +129,7 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		}
 	}
 
-	private class ModifySentenceListener implements ActionListener  {
+	private class ModifySentenceListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -146,7 +146,7 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		}
 	}
 
-	private class RemoveSentenceListener implements ActionListener  {
+	private class RemoveSentenceListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
