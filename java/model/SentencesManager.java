@@ -2,10 +2,13 @@ package model;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sun.deploy.security.ruleset.Rule;
 import model.database.entries.PackageEntry;
 import model.database.entries.RuleEntry;
 import model.database.entries.SentenceEntry;
@@ -392,7 +395,7 @@ public class SentencesManager {
 			List<PackageEntry> packages = packageTable.getByProperty("name", () -> packageName, true);
 
 			if (packages.size() == 0) {
-				System.err.println("removeSentence : package not found");
+				System.err.println("exportPackage : package not found");
 				return false;
 			}
 
@@ -423,6 +426,67 @@ public class SentencesManager {
 			PrintWriter out = new PrintWriter(filePath);
 			out.println(fileContent);
 			out.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+
+		return true;
+	}
+
+	public boolean importPackage(String filePath) {
+
+		try {
+
+			List<String> fileLines = Files.readAllLines(Paths.get(filePath));
+			ArrayList<String[]> fileLinesDetails = new ArrayList<>();
+			for (String line : fileLines) {
+				fileLinesDetails.add(line.split("\\|"));
+			}
+
+			PackageTable packageTable = new PackageTable();
+			RuleTable ruleTable = new RuleTable();
+			SentenceTable sentenceTable = new SentenceTable();
+			PackageEntry packageEntry = null;
+
+			for (String[] details : fileLinesDetails) {
+
+				System.err.println(details.length);
+
+				if (details.length == 2 && packageEntry == null) {  // package
+
+					packageTable.insert(new PackageEntry(0, details[0], Boolean.parseBoolean(details[1])));
+					List<PackageEntry> packagesEntries = packageTable.getByProperty("name", () -> details[0], true);
+
+					if (packagesEntries.size() == 0) {
+						System.err.println("importPackage : package not found");
+						return false;
+					}
+					else {
+						packageEntry = packagesEntries.get(0);
+					}
+				}
+				else if (details.length == 2 && packageEntry != null) {   // rule
+
+					ruleTable.insert(new RuleEntry(0, details[0], details[1], packageEntry.getIdPack()));
+				}
+				else if (details.length == 4) {
+
+					List<RuleEntry> ruleEntries = ruleTable.getByProperty("name", () -> details[3], true);
+					RuleEntry ruleEntry = null;
+					for (RuleEntry entry : ruleEntries) {
+						if (entry.getPack() == packageEntry.getIdPack()) {
+							ruleEntry = entry;
+						}
+					}
+
+					if (ruleEntry == null)
+						System.out.println("importPackage : rule not found");
+					else
+						sentenceTable.insert(new SentenceEntry(0, details[0], details[1], details[2], ruleEntry.getIdRule(), packageEntry.getIdPack()));
+				}
+			}
 		}
 		catch (Exception e) {
 			e.printStackTrace();

@@ -35,6 +35,7 @@ public class MainPanel extends DefaultGridPanel {
 	}
 
 	private void changePanel(JPanel newPanel) {
+
 		remove(currentPanel);
 		currentPanel = newPanel;
 		addComponent(currentPanel, 1, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);

@@ -78,7 +78,6 @@ public class RemovePackagePanel extends DefaultGridPanel {
 			if (returnVal == JFileChooser.APPROVE_OPTION) {
 
 				File file = fileChooser.getSelectedFile();
-				System.out.println(file.getAbsolutePath());
 
 				if (!sentencesManager.exportPackage(packagesCombo.getSelectedItem().toString(), file.getAbsolutePath())) {
 					messageLabel.setText("Error with database.");
@@ -88,10 +87,6 @@ public class RemovePackagePanel extends DefaultGridPanel {
 					messageLabel.setText("Your package have been exported in " + file.getAbsolutePath());
 					messageLabel.setForeground(Color.green);
 				}
-			}
-			else {
-				messageLabel.setText("Error with disk access");
-				messageLabel.setForeground(Color.red);
 			}
 		}
 	}

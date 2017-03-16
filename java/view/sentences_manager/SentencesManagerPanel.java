@@ -19,6 +19,7 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 	private CustomizedButton createPackageButton;
 	private CustomizedButton modifyPackageButton;
 	private CustomizedButton removePackageButton;
+	private ImportPackagePanel importPackagePanel;
 	private CreatePackagePanel createPackagePanel;
 	private ModifyPackagePanel modifyPackagePanel;
 	private RemovePackagePanel removePackagePanel;
@@ -34,6 +35,7 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 
 		importPackageButton = new CustomizedButton("Import package");
 		importPackageButton.setPreferredSize(new Dimension(importPackageButton.getWidth(), 40));
+		importPackageButton.addActionListener(new ImportPackageListener());
 		createPackageButton = new CustomizedButton("Create package");
 		createPackageButton.addActionListener(new CreatePackageListener());
 		createPackageButton.setPreferredSize(new Dimension(createPackageButton.getWidth(), 40));
@@ -45,6 +47,7 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 		removePackageButton.setPreferredSize(new Dimension(removePackageButton.getWidth(), 40));
 		messageLabel = new JLabel("");
 
+		importPackagePanel = new ImportPackagePanel(sentencesManager, messageLabel);
 		createPackagePanel = new CreatePackagePanel(sentencesManager, messageLabel);
 		modifyPackagePanel = new ModifyPackagePanel(sentencesManager, messageLabel);
 		removePackagePanel = new RemovePackagePanel(sentencesManager, messageLabel);
@@ -71,6 +74,20 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 
 		revalidate();
 		repaint();
+	}
+
+	private class ImportPackageListener implements ActionListener  {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+
+			changePanel(importPackagePanel, GridBagConstraints.NONE);
+
+			importPackageButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
+			createPackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+			modifyPackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+			removePackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+		}
 	}
 	
 	private class CreatePackageListener implements ActionListener  {
