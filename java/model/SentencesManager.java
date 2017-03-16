@@ -1,5 +1,7 @@
 package model;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -380,5 +382,53 @@ public class SentencesManager {
 			e.printStackTrace();
 			return false;
 		}
+	}
+
+	public boolean exportPackage(String packageName, String filePath) {
+
+		try {
+			// Package retrieval
+			PackageTable packageTable = new PackageTable();
+			List<PackageEntry> packages = packageTable.getByProperty("name", () -> packageName, true);
+
+			if (packages.size() == 0) {
+				System.err.println("removeSentence : package not found");
+				return false;
+			}
+
+			// Creation of the file
+			StringBuilder fileContent = new StringBuilder(packages.get(0).getName() + "|" + packages.get(0).canBeModifiedOutside() + "\n");
+
+			RuleTable ruleTable = new RuleTable();
+			List<RuleEntry> rules = ruleTable.getByPack(packages.get(0).getIdPack());
+			for (RuleEntry rule : rules) {
+				fileContent.append(rule.getName() + "|" + rule.getDetail() + "\n");
+			}
+
+			SentenceTable sentenceTable = new SentenceTable();
+			List<SentenceEntry> sentences = sentenceTable.getByProperty("pack", () -> packages.get(0).getIdPack(), true);
+			for (SentenceEntry sentence : sentences) {
+
+				String ruleName = "";
+				for (RuleEntry rule : rules) {
+					if (rule.getIdRule() == sentence.getIdRule()) {
+						ruleName = rule.getName();
+						break;
+					}
+				}
+
+				fileContent.append(sentence.getDetail() + "|" + sentence.getPropOk() + "|" + sentence.getPropNo() + "|" + ruleName + "\n");
+			}
+
+			PrintWriter out = new PrintWriter(filePath);
+			out.println(fileContent);
+			out.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+
+		return true;
 	}
 }

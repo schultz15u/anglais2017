@@ -30,6 +30,6 @@ public class SentencesEndPanel extends DefaultGridPanel {
 	}
 
 	public void updateScore() {
-		sentenceLabel.setText("<html>Vous avez terminé ! Votre score : " + sentences.getScore() + "</html>");
+		sentenceLabel.setText("<html>Vous avez terminé !<br>Votre score : " + sentences.getScore() + "</html>");
 	}
 }

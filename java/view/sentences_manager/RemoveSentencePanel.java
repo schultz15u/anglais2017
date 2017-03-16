@@ -58,7 +58,7 @@ public class RemoveSentencePanel extends DefaultGridPanel {
 		sentenceChoiceCombo.addActionListener(new SentenceChoiceListener());
 
 		addComponent(sentenceChoiceCombo, 1, 0, 1, 1);
-		validate();
+		revalidate();
 		repaint();
 	}
 

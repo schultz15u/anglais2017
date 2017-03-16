@@ -17,6 +17,7 @@ import model.Sentences;
 import view.StyleParameters;
 import view.customized_widgets.CustomizedButton;
 import view.customized_widgets.CustomizedLabel;
+import view.customized_widgets.CustomizedRadioButton;
 
 
 public class QuestionsPanel extends JPanel {
@@ -29,7 +30,7 @@ public class QuestionsPanel extends JPanel {
 	private int sentenceIsCorrect; // 0 : no, 1 : yes, 2 : question have not been answered
 	private boolean isMcq = true;
 	private ButtonGroup radioGroup;
-	private List<JRadioButton> choicesRadio;
+	private List<CustomizedRadioButton> choicesRadio;
 
 	public QuestionsPanel(Sentences sentences, boolean isMcq) {
 		super();
@@ -40,7 +41,7 @@ public class QuestionsPanel extends JPanel {
 		sentenceLabel = new CustomizedLabel(sentences.getWrongSentence());
 		sentenceLabel.setFont(StyleParameters.defaultSentenceFont);
 		sentenceLabel.addMouseListener(new SentenceLabelListener());
-		
+
 		informationLabel = new CustomizedLabel("");
 		ruleLabel = new CustomizedLabel("");
 		
@@ -60,17 +61,22 @@ public class QuestionsPanel extends JPanel {
 	}
 	
 	public void reset() {
+
 		sentenceLabel.setText(sentences.getWrongSentence());
-		informationLabel.setText(sentences.isFinished() ? "Your score : " + sentences.getScore() : "");
+		informationLabel.setText("");
 		sentenceIsCorrect = 2;
 		nextButton.setVisible(false);
 		
 		goToNextQuestion();
+
+
+		if (sentences.isFinished() && getParent() != null)
+			((SentencesPanel)getParent()).goToEndPanel();
 	}
 	
 	public void goToNextQuestion() {
-		
-		informationLabel.setText(sentences.isFinished() ? "Your score : " + sentences.getScore() : "");
+
+		informationLabel.setText("");
 		sentenceIsCorrect = 2;
 		nextButton.setVisible(false);
 		ruleLabel.setText("");
@@ -80,11 +86,11 @@ public class QuestionsPanel extends JPanel {
 		}
 		else {
 			if (choicesRadio != null)
-				for (JRadioButton radio : choicesRadio)
+				for (CustomizedRadioButton radio : choicesRadio)
 					remove(radio);
 			
 			sentenceLabel.setText(sentences.getIncompleteWrongSentence());
-			choicesRadio = new ArrayList<JRadioButton>();
+			choicesRadio = new ArrayList<>();
 			
 			ArrayList<String> choices = sentences.getChoices();
 			radioGroup = new ButtonGroup();
@@ -92,8 +98,8 @@ public class QuestionsPanel extends JPanel {
 			int i = 1;
 			
 			for (String choice : choices) {
-				
-				JRadioButton radio = new JRadioButton(choice);
+
+				CustomizedRadioButton radio = new CustomizedRadioButton(choice);
 				radio.addActionListener(new ChoiceListener(radio));
 				
 				choicesRadio.add(radio);
@@ -104,6 +110,10 @@ public class QuestionsPanel extends JPanel {
 			revalidate();
 			repaint();
 		}
+
+
+		if (sentences.isFinished() && getParent() != null)
+			((SentencesPanel)getParent()).goToEndPanel();
 	}
 	
 	public class SentenceLabelListener implements MouseListener {

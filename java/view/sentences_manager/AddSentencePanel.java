@@ -88,7 +88,7 @@ public class AddSentencePanel extends DefaultGridPanel {
 		ruleCombo.addActionListener(new RulesNamesListener());
 
 		addComponent(ruleCombo, 1, 5, 1, 1);
-		validate();
+		revalidate();
 		repaint();
 	}
 

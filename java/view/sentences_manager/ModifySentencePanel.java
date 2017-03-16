@@ -102,7 +102,7 @@ public class ModifySentencePanel extends DefaultGridPanel {
 
 		addComponent(sentenceChoiceCombo, 1, 0, 1, 1);
 		addComponent(ruleCombo, 1, 6, 1, 1);
-		validate();
+		revalidate();
 		repaint();
 
 		if (sentenceChoiceCombo.getItemAt(0) != null)

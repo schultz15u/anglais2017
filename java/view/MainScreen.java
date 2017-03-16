@@ -13,9 +13,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 import model.Menu;
 import model.Sentences;
@@ -30,6 +28,7 @@ public class MainScreen extends JFrame {
 	public MainScreen() {
 
 		super();
+
 		setTitle("Shake's Pear");
 		setMinimumSize(new Dimension(950, 500));
 		setSize(getMinimumSize());

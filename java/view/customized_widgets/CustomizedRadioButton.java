@@ -7,9 +7,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CustomizedCheckBox extends JCheckBox {
+public class CustomizedRadioButton extends JRadioButton {
 
-	public CustomizedCheckBox(String text){
+	public CustomizedRadioButton(String text){
 		super(text);
 		setBackground(StyleParameters.defaultBackgroundColor);
 		setForeground(StyleParameters.defaultTextColor);
@@ -31,9 +31,9 @@ public class CustomizedCheckBox extends JCheckBox {
 
 			g.setColor(StyleParameters.defaultSelectedWidgetBackgroundColor);
 
-			g.drawRect(1, 1 + 10, 20,20);
+			g.drawOval(1, 1 + 10, 20,20);
 			if (checked)
-				g.fillRect(6, 6 + 10, 11,11);
+				g.fillOval(6, 6 + 10, 10,10);
 		}
 
 		public int getIconWidth() {

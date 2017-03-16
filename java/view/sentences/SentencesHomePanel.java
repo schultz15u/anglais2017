@@ -51,7 +51,7 @@ public class SentencesHomePanel extends DefaultGridPanel {
 		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames().toArray());
 		addComponent(packagesCombo, 0, 0, 3, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 
-		validate();
+		revalidate();
 		repaint();
 	}
 	

@@ -21,6 +21,8 @@ public class CustomizedButton extends JButton {
 	private Color newBackgroundColor;
 	private Timer timer;
 	private long startTime;
+	private int state;  // 0 : normal, 1 : selected, 2 : clicked
+	private boolean cursorIsOut;
 	
 	private static final int DELAY = 1;
 	private static final double ANIMATION_TIME = 200;
@@ -35,6 +37,8 @@ public class CustomizedButton extends JButton {
 		oldBackgroundColor = normalColor;
 		newBackgroundColor = oldBackgroundColor;
 		startTime = 0;
+		state = 0;
+		cursorIsOut = true;
 
 		setBackground(newBackgroundColor);
 		setForeground(StyleParameters.defaultTextColor);
@@ -80,27 +84,39 @@ public class CustomizedButton extends JButton {
 	}
 
 	public void setNormalColor(Color color) {
-		/*normalColor = color;
-		newBackgroundColor = color;
-		startTimer();*/
-
 
 		normalColor = color;
-		oldBackgroundColor = color;
-		newBackgroundColor = color;
-		setBackground(color);
+
+		if (state == 0) {
+
+			oldBackgroundColor = color;
+			newBackgroundColor = color;
+			setBackground(color);
+		}
 	}
 
 	public void setSelectedColor(Color color) {
+
 		selectedColor = color;
-		newBackgroundColor = color;
-		startTimer();
+
+		if (state == 1) {
+
+			oldBackgroundColor = color;
+			newBackgroundColor = color;
+			setBackground(color);
+		}
 	}
 
 	public void setClickedColor(Color color) {
+
 		clickedColor = color;
-		newBackgroundColor = color;
-		startTimer();
+
+		if (state == 2) {
+
+			oldBackgroundColor = color;
+			newBackgroundColor = color;
+			setBackground(color);
+		}
 	}
 	
 	private void startTimer() {
@@ -127,27 +143,45 @@ public class CustomizedButton extends JButton {
 
 		@Override
 		public void mouseEntered(MouseEvent arg0) {
+			state = 1;
+			stopTimer();
 			newBackgroundColor = selectedColor;
 			startTimer();
+			cursorIsOut = false;
 		}
 
 		@Override
 		public void mouseExited(MouseEvent arg0) {
+			state = 0;
+			stopTimer();
 			newBackgroundColor = normalColor;
 			startTimer();
+			cursorIsOut = true;
 		}
 
 		@Override
 		public void mousePressed(MouseEvent arg0) {
+			state = 2;
+			stopTimer();
 			newBackgroundColor = clickedColor;
 			startTimer();
 		}
 
 		@Override
 		public void mouseReleased(MouseEvent arg0) {
-			newBackgroundColor = selectedColor;
+
+			stopTimer();
+
+			if (cursorIsOut) {
+				state = 0;
+				newBackgroundColor = normalColor;
+			}
+			else {
+				state = 1;
+				newBackgroundColor = selectedColor;
+			}
+
 			startTimer();
 		}
-		
 	}
 }

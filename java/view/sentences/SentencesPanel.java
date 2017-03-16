@@ -27,6 +27,7 @@ public class SentencesPanel extends DefaultGridPanel {
 
 		sentencesHomePanel = new SentencesHomePanel(sentencesManager, isMcq);
 		questionsPanel = new QuestionsPanel(sentences, isMcq);
+		sentencesEndPanel = new SentencesEndPanel(sentences);
 		currentPanel = sentencesHomePanel;
 
 		addComponent(sentencesHomePanel, 0, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
@@ -53,7 +54,7 @@ public class SentencesPanel extends DefaultGridPanel {
 		changePanel(questionsPanel);
 	}
 
-	public void goToEndPanel(String packageName) {
+	public void goToEndPanel() {
 
 		sentencesEndPanel.updateScore();
 		changePanel(sentencesEndPanel);

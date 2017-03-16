@@ -40,7 +40,7 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 		modifyPackageButton = new CustomizedButton("Modify package");
 		modifyPackageButton.addActionListener(new ModifyPackageListener());
 		modifyPackageButton.setPreferredSize(new Dimension(modifyPackageButton.getWidth(), 40));
-		removePackageButton = new CustomizedButton("Remove package");
+		removePackageButton = new CustomizedButton("Other operations");
 		removePackageButton.addActionListener(new RemovePackageListener());
 		removePackageButton.setPreferredSize(new Dimension(removePackageButton.getWidth(), 40));
 		messageLabel = new JLabel("");
