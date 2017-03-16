@@ -1,12 +1,10 @@
 package model.database.tables;
 
-import model.database.entries.PackageEntry;
-import model.database.entries.RuleEntry;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
+
+import model.database.entries.PackageEntry;
 
 public class PackageTable extends GenericTable<PackageEntry> {
 

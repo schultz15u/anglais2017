@@ -35,7 +35,7 @@ public class RemovePackagePanel extends DefaultGridPanel {
 		this.messageLabel = messageLabel;
 		setBackground(StyleParameters.defaultBackgroundColor);
 
-		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames().toArray());
+		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames());
 		exportSentenceButton = new CustomizedButton("Export package");
 		exportSentenceButton.addActionListener(new ExportListener());
 		removeSentenceButton = new CustomizedButton("Remove package");
@@ -52,7 +52,7 @@ public class RemovePackagePanel extends DefaultGridPanel {
 
 	public void update() {
 		remove(packagesCombo);
-		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames().toArray());
+		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames());
 		addComponent(packagesCombo, 0, 0, 3, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 
 		revalidate();

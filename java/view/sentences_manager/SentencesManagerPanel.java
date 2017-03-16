@@ -1,20 +1,21 @@
 package view.sentences_manager;
 
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import model.SentencesManager;
+import view.DefaultGridPanel;
 import view.StyleParameters;
 import view.customized_widgets.CustomizedButton;
-import view.DefaultGridPanel;
-
 
 public class SentencesManagerPanel extends DefaultGridPanel {
-	
-	private SentencesManager sentencesManager;
+
 	private CustomizedButton importPackageButton;
 	private CustomizedButton createPackageButton;
 	private CustomizedButton modifyPackageButton;
@@ -24,11 +25,10 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 	private RemovePackagePanel removePackagePanel;
 	private JPanel currentPanel;
 	private JLabel messageLabel;
-	
+
 	public SentencesManagerPanel(SentencesManager sentencesManager) {
-		
+
 		super();
-		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
 		setBackground(StyleParameters.defaultBackgroundColor);
 
@@ -49,7 +49,7 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 		modifyPackagePanel = new ModifyPackagePanel(sentencesManager, messageLabel);
 		removePackagePanel = new RemovePackagePanel(sentencesManager, messageLabel);
 		currentPanel = createPackagePanel;
-		
+
 		addComponent(importPackageButton, 0, 0, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 		addComponent(createPackageButton, 1, 0, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 		addComponent(modifyPackageButton, 2, 0, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
@@ -72,8 +72,8 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 		revalidate();
 		repaint();
 	}
-	
-	private class CreatePackageListener implements ActionListener  {
+
+	private class CreatePackageListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -86,8 +86,8 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 			removePackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 		}
 	}
-	
-	private class ModifyPackageListener implements ActionListener  {
+
+	private class ModifyPackageListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -102,7 +102,7 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 		}
 	}
 
-	private class RemovePackageListener implements ActionListener  {
+	private class RemovePackageListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {

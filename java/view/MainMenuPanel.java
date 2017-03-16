@@ -1,13 +1,13 @@
 package view;
 
-import model.SentencesManager;
-import view.customized_widgets.CustomizedButton;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JPanel;
+
+import view.customized_widgets.CustomizedButton;
 
 public class MainMenuPanel extends DefaultGridPanel {
 
@@ -47,22 +47,22 @@ public class MainMenuPanel extends DefaultGridPanel {
 
 	@Override
 	public void setMaximumSize(Dimension dimension) {
-		super.setMaximumSize(new Dimension(150, (int)dimension.getHeight()));
+		super.setMaximumSize(new Dimension(150, (int) dimension.getHeight()));
 	}
 
 	@Override
 	public void setMinimumSize(Dimension dimension) {
-		super.setMinimumSize(new Dimension(150, (int)dimension.getHeight()));
+		super.setMinimumSize(new Dimension(150, (int) dimension.getHeight()));
 	}
 
 	@Override
 	public void setPreferredSize(Dimension dimension) {
-		super.setPreferredSize(new Dimension(150, (int)dimension.getHeight()));
+		super.setPreferredSize(new Dimension(150, (int) dimension.getHeight()));
 	}
 
 	@Override
 	public void setSize(Dimension dimension) {
-		super.setSize(new Dimension(150, (int)dimension.getHeight()));
+		super.setSize(new Dimension(150, (int) dimension.getHeight()));
 	}
 
 	private class SentenceManagerListener implements ActionListener {
