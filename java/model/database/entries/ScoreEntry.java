@@ -6,7 +6,7 @@ public class ScoreEntry {
 	private float score;
 	private int pack;
 
-	public ScoreEntry(int id, int score, int pack) {
+	public ScoreEntry(int id, float score, int pack) {
 		this.idScore = id;
 		this.score = score;
 		this.pack = pack;
@@ -42,7 +42,7 @@ public class ScoreEntry {
 
 	@Override
 	public String toString() {
-		return "RuleModel [idScore=" + idScore + ", score=" + score + ", pack=" + pack + "]";
+		return "ScoreModel [id_Score=" + idScore + ", score=" + score + ", pack=" + pack + "]";
 	}
 
 }

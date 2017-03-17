@@ -27,7 +27,7 @@ public class SentencesPanel extends DefaultGridPanel {
 
 		sentencesHomePanel = new SentencesHomePanel(sentencesManager, isMcq);
 		questionsPanel = new QuestionsPanel(sentences, isMcq);
-		sentencesEndPanel = new SentencesEndPanel(sentences);
+		sentencesEndPanel = new SentencesEndPanel(sentences, sentencesManager);
 		currentPanel = sentencesHomePanel;
 
 		addComponent(sentencesHomePanel, 0, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);

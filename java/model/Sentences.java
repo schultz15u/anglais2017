@@ -14,6 +14,7 @@ public class Sentences {
 	private int currentSentenceId;
 	private String currentWrongWord;
 	private int score;
+	private String packageName;
 
 	public Sentences() {
 		sentences = new ArrayList<>();
@@ -27,6 +28,7 @@ public class Sentences {
 		sentences = sentencesManager.getSentences(packageName);
 		currentSentenceId = 0;
 		score = 0;
+		this.packageName = packageName;
 		generateWrongWord();
 
 		// Random sort of the sentences list
@@ -38,6 +40,17 @@ public class Sentences {
 		}
 
 		sentences = sentencesTemp;
+	}
+
+	public String getPackageName() {
+		return packageName;
+	}
+
+	public int getSentencesCount() {
+
+		if (sentences != null)
+			return sentences.size();
+		return 0;
 	}
 
 	public boolean isFinished() {

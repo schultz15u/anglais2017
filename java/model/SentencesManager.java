@@ -10,9 +10,11 @@ import java.util.List;
 import com.sun.deploy.security.ruleset.Rule;
 import model.database.entries.PackageEntry;
 import model.database.entries.RuleEntry;
+import model.database.entries.ScoreEntry;
 import model.database.entries.SentenceEntry;
 import model.database.tables.PackageTable;
 import model.database.tables.RuleTable;
+import model.database.tables.ScoreTable;
 import model.database.tables.SentenceTable;
 
 public class SentencesManager {
@@ -474,6 +476,60 @@ public class SentencesManager {
 						sentenceTable.insert(new SentenceEntry(0, details[0], details[1], details[2], ruleEntry.getIdRule(), packageEntry.getIdPack()));
 				}
 			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+
+		return true;
+	}
+
+	public float getBestScore(String packageName) {
+
+		try {
+			// Package retrieval
+			PackageTable packageTable = new PackageTable();
+			List<PackageEntry> packages = packageTable.getByProperty("name", () -> packageName, true);
+
+			if (packages.size() == 0) {
+				System.err.println("getBestScore : package not found");
+				return -1;
+			}
+
+			// Best score retrieval
+			ScoreTable scoreTable = new ScoreTable();
+			List<ScoreEntry> scoresEntries = scoreTable.getByProperty("pack", () -> packages.get(0).getIdPack(), true);
+
+			float maximumScore = 0;
+			for (ScoreEntry entry : scoresEntries) {
+				if (maximumScore < entry.getScore())
+					maximumScore = entry.getScore();
+			}
+
+			return maximumScore;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
+	}
+
+	public boolean addScore(String packageName, float score) {
+		try {
+			// Package retrieval
+			PackageTable packageTable = new PackageTable();
+			List<PackageEntry> packages = packageTable.getByProperty("name", () -> packageName, true);
+
+			if (packages.size() == 0) {
+				System.err.println("addScore : package not found");
+				return false;
+			}
+
+
+			// Addition of the score
+			ScoreTable scoreTable = new ScoreTable();
+			scoreTable.insert(new ScoreEntry(0, score, packages.get(0).getIdPack()));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
