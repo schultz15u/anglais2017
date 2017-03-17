@@ -23,6 +23,13 @@ CREATE TABLE SENTENCE (
 	PRIMARY KEY (id_sen)
 );
 
+CREATE TABLE SCORE (
+	id_score INTEGER,
+	score FLOAT,
+	pack INTEGER,
+	PRIMARY KEY (id_score)
+);
+
 INSERT INTO PACKAGE(id_pack, name, can_be_modified_outside) VALUES (1, 'Default package 1', 1);
 INSERT INTO PACKAGE(id_pack, name, can_be_modified_outside) VALUES (2, 'Default package 2', 1);
 INSERT INTO RULE(id_rule, name, detail, pack) VALUES (1, 'Default rule 1', 'Details of the default rule 1', 1);

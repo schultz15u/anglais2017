@@ -44,6 +44,7 @@ public class SentencesPanel extends DefaultGridPanel {
 
 	public void reset() {
 
+		sentencesHomePanel.update();
 		changePanel(sentencesHomePanel);
 	}
 
