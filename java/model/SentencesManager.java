@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sun.deploy.security.ruleset.Rule;
 import model.database.entries.PackageEntry;
 import model.database.entries.RuleEntry;
 import model.database.entries.ScoreEntry;
@@ -83,8 +82,7 @@ public class SentencesManager {
 			}
 
 			return rulesNames;
-		}
-		catch (SQLException e) {
+		} catch (SQLException e) {
 
 			e.printStackTrace();
 			return new ArrayList<>();
@@ -467,7 +465,7 @@ public class SentencesManager {
 
 				System.err.println(details.length);
 
-				if (details.length == 2 && packageEntry == null) {  // package
+				if (details.length == 2 && packageEntry == null) { // package
 
 					packageTable.insert(new PackageEntry(0, details[0], Boolean.parseBoolean(details[1])));
 					List<PackageEntry> packagesEntries = packageTable.getByProperty("name", () -> details[0], true);
@@ -475,16 +473,13 @@ public class SentencesManager {
 					if (packagesEntries.size() == 0) {
 						System.err.println("importPackage : package not found");
 						return false;
-					}
-					else {
+					} else {
 						packageEntry = packagesEntries.get(0);
 					}
-				}
-				else if (details.length == 2 && packageEntry != null) {   // rule
+				} else if (details.length == 2 && packageEntry != null) { // rule
 
 					ruleTable.insert(new RuleEntry(0, details[0], details[1], packageEntry.getIdPack()));
-				}
-				else if (details.length == 4) {
+				} else if (details.length == 4) {
 
 					List<RuleEntry> ruleEntries = ruleTable.getByProperty("name", () -> details[3], true);
 					RuleEntry ruleEntry = null;
@@ -497,11 +492,11 @@ public class SentencesManager {
 					if (ruleEntry == null)
 						System.out.println("importPackage : rule not found");
 					else
-						sentenceTable.insert(new SentenceEntry(0, details[0], details[1], details[2], ruleEntry.getIdRule(), packageEntry.getIdPack()));
+						sentenceTable.insert(new SentenceEntry(0, details[0], details[1], details[2],
+								ruleEntry.getIdRule(), packageEntry.getIdPack()));
 				}
 			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}
@@ -532,8 +527,7 @@ public class SentencesManager {
 			}
 
 			return maximumScore;
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return -1;
 		}
@@ -550,12 +544,10 @@ public class SentencesManager {
 				return false;
 			}
 
-
 			// Addition of the score
 			ScoreTable scoreTable = new ScoreTable();
 			scoreTable.insert(new ScoreEntry(0, score, packages.get(0).getIdPack()));
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}

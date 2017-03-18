@@ -24,7 +24,8 @@ public class ConnectionManager {
 			connection = DriverManager.getConnection(protocol + name);
 			connection.setAutoCommit(true);
 			if (needCreation) {
-				creation();
+				creation("DataBase.sql");
+				creation("init_ok.sql");
 			}
 		} catch (SQLException | FileNotFoundException e) {
 			new File(name).deleteOnExit();
@@ -52,8 +53,8 @@ public class ConnectionManager {
 		}
 	}
 
-	private void creation() throws FileNotFoundException, SQLException {
-		Scanner s = new Scanner(new File("DataBase.sql"));
+	private void creation(String fichierBD) throws FileNotFoundException, SQLException {
+		Scanner s = new Scanner(new File(fichierBD));
 		String sql = "";
 		String curr = "";
 		while (s.hasNext()) {
