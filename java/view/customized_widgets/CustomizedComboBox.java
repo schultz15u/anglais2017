@@ -1,5 +1,6 @@
 package view.customized_widgets;
 
+import java.awt.*;
 import java.util.List;
 
 import javax.swing.BorderFactory;
@@ -18,6 +19,10 @@ public class CustomizedComboBox extends JComboBox<String> {
 		setFont(StyleParameters.defaultImportantFont);
 		setBorder(BorderFactory.createLineBorder(StyleParameters.defaultBackgroundColor, 5));
 		setFocusable(false);
+		setMinimumSize(new Dimension(345, 40));
+		setMaximumSize(new Dimension(345, 40));
+		setPreferredSize(new Dimension(345, 40));
+		setSize(new Dimension(345, 40));
 
 		UIManager.put("ComboBox.selectionBackground",
 				new ColorUIResource(StyleParameters.defaultSelectedWidgetBackgroundColor));

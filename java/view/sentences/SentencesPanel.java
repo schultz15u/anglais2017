@@ -26,7 +26,6 @@ public class SentencesPanel extends DefaultGridPanel {
 		this.sentencesManager = sentencesManager;
 		this.sentences = new Sentences();
 		this.mainMenuPanel = mainMenuPanel;
-		setBackground(StyleParameters.defaultBackgroundColor);
 
 		sentencesHomePanel = new SentencesHomePanel(sentencesManager, isMcq);
 		questionsPanel = new QuestionsPanel(sentences, isMcq);
@@ -36,10 +35,10 @@ public class SentencesPanel extends DefaultGridPanel {
 		addComponent(sentencesHomePanel, 0, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
 	}
 
-	private void changePanel(JPanel newPanel) {
+	private void changePanel(JPanel newPanel, int fill) {
 		remove(currentPanel);
 		currentPanel = newPanel;
-		addComponent(currentPanel, 0, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
+		addComponent(currentPanel, 0, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, fill);
 
 		revalidate();
 		repaint();
@@ -48,7 +47,7 @@ public class SentencesPanel extends DefaultGridPanel {
 	public void reset() {
 
 		sentencesHomePanel.update();
-		changePanel(sentencesHomePanel);
+		changePanel(sentencesHomePanel, GridBagConstraints.NONE);
 	}
 
 	public void goToQuestionsPanel(String packageName) {
@@ -56,13 +55,13 @@ public class SentencesPanel extends DefaultGridPanel {
 		sentences.initialize(sentencesManager, packageName);
 		questionsPanel.reset();
 		mainMenuPanel.reduce();
-		changePanel(questionsPanel);
+		changePanel(questionsPanel, GridBagConstraints.HORIZONTAL);
 	}
 
 	public void goToEndPanel() {
 
 		sentencesEndPanel.updateScore();
 		mainMenuPanel.increase();
-		changePanel(sentencesEndPanel);
+		changePanel(sentencesEndPanel, GridBagConstraints.NONE);
 	}
 }

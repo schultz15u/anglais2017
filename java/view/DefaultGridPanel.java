@@ -1,5 +1,8 @@
 package view;
 
+import view.customized_widgets.CustomizedLabel;
+import view.customized_widgets.CustomizedPanel;
+
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -7,7 +10,7 @@ import java.awt.Insets;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-public abstract class DefaultGridPanel extends JPanel {
+public abstract class DefaultGridPanel extends CustomizedPanel {
 
 	private Insets insets = new Insets(0, 0, 0, 0);
 

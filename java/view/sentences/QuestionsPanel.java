@@ -1,6 +1,6 @@
 package view.sentences;
 
-import java.awt.Dimension;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -14,13 +14,14 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
 import model.Sentences;
+import view.DefaultGridPanel;
 import view.StyleParameters;
 import view.customized_widgets.CustomizedButton;
 import view.customized_widgets.CustomizedLabel;
 import view.customized_widgets.CustomizedRadioButton;
 
 
-public class QuestionsPanel extends JPanel {
+public class QuestionsPanel extends DefaultGridPanel {
 
 	private CustomizedLabel sentenceLabel;
 	private CustomizedLabel informationLabel;
@@ -36,7 +37,6 @@ public class QuestionsPanel extends JPanel {
 		super();
 		this.sentences = sentences;
 		this.isMcq = isMcq;
-		setBackground(StyleParameters.defaultBackgroundColor);
 
 		sentenceLabel = new CustomizedLabel(sentences.getWrongSentence());
 		sentenceLabel.setFont(StyleParameters.defaultSentenceFont);
@@ -49,10 +49,10 @@ public class QuestionsPanel extends JPanel {
 		nextButton.addActionListener(new NextButtonListener());
 		
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		add(sentenceLabel);
-		add(informationLabel);
-		add(nextButton);
-		add(ruleLabel);
+		addComponent(sentenceLabel, 0, 0, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
+		addComponent(informationLabel, 0, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
+		addComponent(nextButton, 0, 2, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
+		addComponent(ruleLabel, 0, 3, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
 		
 		goToNextQuestion();
 		
@@ -62,7 +62,7 @@ public class QuestionsPanel extends JPanel {
 	
 	public void reset() {
 
-		sentenceLabel.setText(sentences.getWrongSentence());
+		sentenceLabel.setText("<html><center>" + sentences.getWrongSentence() + "</center><html>");
 		informationLabel.setText("");
 		sentenceIsCorrect = 2;
 		nextButton.setVisible(false);
@@ -82,14 +82,14 @@ public class QuestionsPanel extends JPanel {
 		ruleLabel.setText("");
 		
 		if (!isMcq) {
-			sentenceLabel.setText(sentences.getWrongSentence());
+			sentenceLabel.setText("<html><center>" + sentences.getWrongSentence() + "</center><html>");
 		}
 		else {
 			if (choicesRadio != null)
 				for (CustomizedRadioButton radio : choicesRadio)
 					remove(radio);
-			
-			sentenceLabel.setText(sentences.getIncompleteWrongSentence());
+
+			sentenceLabel.setText("<html><center>" + sentences.getIncompleteWrongSentence() + "</center><html>");
 			choicesRadio = new ArrayList<>();
 			
 			ArrayList<String> choices = sentences.getChoices();

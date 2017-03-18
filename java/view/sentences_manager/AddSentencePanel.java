@@ -44,7 +44,6 @@ public class AddSentencePanel extends DefaultGridPanel {
 		this.messageLabel = messageLabel;
 		packageName = "";
 		ruleName = "-";
-		setBackground(StyleParameters.defaultBackgroundColor);
 
 		sentenceLabel = new CustomizedLabel("Sentence (add \"@\" where the wrong word is placed) : ");
 		sentenceField = new CustomizedTextField("", 30);

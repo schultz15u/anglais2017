@@ -31,7 +31,6 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 
 		super();
 		setLayout(new GridBagLayout());
-		setBackground(StyleParameters.defaultBackgroundColor);
 
 		importPackageButton = new CustomizedButton("Import package");
 		importPackageButton.setPreferredSize(new Dimension(importPackageButton.getWidth(), 40));

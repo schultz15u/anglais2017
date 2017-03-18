@@ -32,7 +32,6 @@ public class RemoveSentencePanel extends DefaultGridPanel {
 		this.messageLabel = messageLabel;
 		packageName = "";
 		sentence = "";
-		setBackground(StyleParameters.defaultBackgroundColor);
 
 		sentenceChoiceLabel = new CustomizedLabel("Sentence to remove : ");
 		sentenceChoiceCombo = new CustomizedComboBox(sentencesManager.getSentenceNames(packageName));

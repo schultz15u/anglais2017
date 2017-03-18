@@ -1,7 +1,6 @@
 package view.sentences_manager;
 
-import java.awt.Color;
-import java.awt.GridBagLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -48,7 +47,6 @@ public class ModifySentencePanel extends DefaultGridPanel {
 		this.messageLabel = messageLabel;
 		packageName = "";
 		ruleName = "-";
-		setBackground(StyleParameters.defaultBackgroundColor);
 
 		sentenceChoiceLabel = new CustomizedLabel("Sentence to modify : ");
 		sentenceChoiceCombo = new CustomizedComboBox(sentencesManager.getSentenceNames(packageName));
@@ -70,7 +68,7 @@ public class ModifySentencePanel extends DefaultGridPanel {
 		validationButton.addActionListener(new ValidationListener());
 
 		addComponent(sentenceChoiceLabel, 0, 0, 1, 1);
-		addComponent(sentenceChoiceCombo, 1, 0, 1, 1);
+		addComponent(sentenceChoiceCombo, 1, 0, 1, 1, 0, 1);
 		addComponent(sentenceLabel, 0, 1, 1, 1);
 		addComponent(sentenceField, 1, 1, 1, 1);
 		addComponent(correctAnswerLabel, 0, 2, 1, 1);
@@ -82,7 +80,7 @@ public class ModifySentencePanel extends DefaultGridPanel {
 		addComponent(ruleDetailsLabel, 0, 5, 1, 1);
 		addComponent(ruleDetailsField.getScrollPane(), 1, 5, 1, 1);
 		addComponent(ruleComboLabel, 0, 6, 1, 1);
-		addComponent(ruleCombo, 1, 6, 1, 1);
+		addComponent(ruleCombo, 1, 6, 1, 1, 0, 1);
 		addComponent(validationButton, 0, 7, 2, 1);
 	}
 
@@ -102,8 +100,8 @@ public class ModifySentencePanel extends DefaultGridPanel {
 		ruleCombo = new CustomizedComboBox(sentencesManager.getRulesNames(packageName));
 		ruleCombo.addActionListener(new RulesNamesListener());
 
-		addComponent(sentenceChoiceCombo, 1, 0, 1, 1);
-		addComponent(ruleCombo, 1, 6, 1, 1);
+		addComponent(sentenceChoiceCombo, 1, 0, 1, 1, 0, 1);
+		addComponent(ruleCombo, 1, 6, 1, 1, 0, 1);
 		revalidate();
 		repaint();
 

@@ -1,15 +1,17 @@
 package view;
 
-import java.awt.Dimension;
+import java.awt.*;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 
 import model.SentencesManager;
 
 public class MainScreen extends JFrame {
 
 	SentencesManager sentencesManager;
+	private JLayeredPane lpane = new JLayeredPane();
 	MainPanel panel;
+	JPanel otherPanel;
 
 	public MainScreen() {
 

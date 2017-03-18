@@ -20,7 +20,7 @@ public class SentencesEndPanel extends DefaultGridPanel {
 	private CustomizedLabel sentenceLabel;
 	private CustomizedLabel knownRulesLabel;
 	private CustomizedLabel rulesToReviewLabel;
-	private CustomizedTextPane  knownRulesContentLabel;
+	private CustomizedTextPane knownRulesContentLabel;
 	private CustomizedTextPane  rulesToReviewContentLabel;
 	private SentencesManager sentencesManager;
 
@@ -29,7 +29,6 @@ public class SentencesEndPanel extends DefaultGridPanel {
 		super();
 		this.sentences = sentences;
 		this.sentencesManager = sentencesManager;
-		setBackground(StyleParameters.defaultBackgroundColor);
 
 		sentenceLabel = new CustomizedLabel("");
 		sentenceLabel.setBorder(BorderFactory.createLineBorder(StyleParameters.defaultBackgroundColor, 20));

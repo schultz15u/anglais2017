@@ -6,6 +6,7 @@ import java.awt.GridBagLayout;
 import javax.swing.JPanel;
 
 import model.SentencesManager;
+import view.rules.RulesPanel;
 import view.sentences.SentencesPanel;
 import view.sentences_manager.SentencesManagerPanel;
 
@@ -14,6 +15,7 @@ public class MainPanel extends DefaultGridPanel {
 	MainMenuPanel mainMenuPanel;
 	SentencesManagerPanel sentenceManagerPanel;
 	SentencesPanel mcqModePanel;
+	RulesPanel rulesPanel;
 	SentencesPanel mistakesModePanel;
 	JPanel currentPanel;
 
@@ -21,12 +23,12 @@ public class MainPanel extends DefaultGridPanel {
 
 		super();
 		setLayout(new GridBagLayout());
-		setBackground(StyleParameters.defaultBackgroundColor);
 
 		mainMenuPanel = new MainMenuPanel(this);
 		sentenceManagerPanel = new SentencesManagerPanel(sentencesManager);
 		mcqModePanel = new SentencesPanel(sentencesManager, true, mainMenuPanel);
 		mistakesModePanel = new SentencesPanel(sentencesManager, false, mainMenuPanel);
+		rulesPanel = new RulesPanel(sentencesManager);
 		currentPanel = sentenceManagerPanel;
 
 		addComponent(mainMenuPanel, 0, 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
@@ -54,6 +56,15 @@ public class MainPanel extends DefaultGridPanel {
 
 			mcqModePanel.reset();
 			changePanel(mcqModePanel);
+		}
+	}
+
+	public void showReadRulesPanel() {
+
+		if (currentPanel != mistakesModePanel) {
+
+			rulesPanel.reset();
+			changePanel(rulesPanel);
 		}
 	}
 

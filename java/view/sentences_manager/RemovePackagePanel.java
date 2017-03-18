@@ -33,7 +33,6 @@ public class RemovePackagePanel extends DefaultGridPanel {
 		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
 		this.messageLabel = messageLabel;
-		setBackground(StyleParameters.defaultBackgroundColor);
 
 		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames());
 		exportSentenceButton = new CustomizedButton("Export package");

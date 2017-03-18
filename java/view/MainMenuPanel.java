@@ -12,6 +12,7 @@ public class MainMenuPanel extends DefaultGridPanel {
 
 	CustomizedButton mcqModeButton;
 	CustomizedButton mistakesModeButton;
+	CustomizedButton readRulesButton;
 	CustomizedButton sentencesManagerButton;
 	JPanel emptyPanel;
 	MainPanel mainPanel;
@@ -42,18 +43,23 @@ public class MainMenuPanel extends DefaultGridPanel {
 		sentencesManagerButton = new CustomizedButton("Sentence manager");
 		sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 		sentencesManagerButton.addActionListener(new SentenceManagerListener());
+		readRulesButton = new CustomizedButton("Read rules");
+		readRulesButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+		readRulesButton.addActionListener(new ReadRulesListener());
 		emptyPanel = new JPanel();
 		emptyPanel.setBackground(getBackground());
 
 		addComponent(mcqModeButton, 0, 0, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
 		addComponent(mistakesModeButton, 0, 1, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
 		addComponent(sentencesManagerButton, 0, 2, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
+		addComponent(readRulesButton, 0, 3, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
 		addComponent(emptyPanel, 0, 10, 1, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
 
 
 		mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 		mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 		sentencesManagerButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+		readRulesButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 
 		startTime = 0;
 		widthModificationTimer = new Timer(DELAY, new ActionListener() {
@@ -130,6 +136,7 @@ public class MainMenuPanel extends DefaultGridPanel {
 			mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 			mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+			readRulesButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 		}
 	}
 
@@ -141,6 +148,7 @@ public class MainMenuPanel extends DefaultGridPanel {
 			mcqModeButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 			mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+			readRulesButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 
 		}
 	}
@@ -153,6 +161,19 @@ public class MainMenuPanel extends DefaultGridPanel {
 			mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 			mistakesModeButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+			readRulesButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+		}
+	}
+
+	private class ReadRulesListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			mainPanel.showReadRulesPanel();
+			mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+			mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+			readRulesButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 		}
 	}
 }

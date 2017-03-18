@@ -9,6 +9,7 @@ public class CustomizedLabel extends JLabel {
 
 	public CustomizedLabel(String text) {
 		super(text);
+		setBackground(StyleParameters.defaultBackgroundColor);
 		setForeground(StyleParameters.defaultTextColor);
 		setBorder(BorderFactory.createLineBorder(StyleParameters.defaultBackgroundColor, 5));
 		setFont(StyleParameters.defaultImportantFont);

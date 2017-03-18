@@ -25,7 +25,6 @@ public class SentencesHomePanel extends DefaultGridPanel {
 
 		super();
 		this.sentencesManager = sentencesManager;
-		setBackground(StyleParameters.defaultBackgroundColor);
 
 		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames());
 		sentenceLabel = new CustomizedLabel(isMcq ? mcqMessage : mistakesMessage);

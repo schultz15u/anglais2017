@@ -30,8 +30,7 @@ public class CreatePackagePanel extends DefaultGridPanel {
 		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
 		this.messageLabel = messageLabel;
-		setBackground(StyleParameters.defaultBackgroundColor);
-		
+
 		nameLabel = new CustomizedLabel("Package name : ");
 		nameField = new CustomizedTextField("", 30);
 		canBeModifyCheckBox = new CustomizedCheckBox("Package can be modified by someone else");

@@ -34,7 +34,6 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
 		this.messageLabel = messageLabel;
-		setBackground(StyleParameters.defaultBackgroundColor);
 
 		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames());
 		packagesCombo.addActionListener(new PackagesComboListener());

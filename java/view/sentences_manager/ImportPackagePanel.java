@@ -24,8 +24,7 @@ public class ImportPackagePanel extends DefaultGridPanel {
 		this.sentencesManager = sentencesManager;
 		setLayout(new GridBagLayout());
 		this.messageLabel = messageLabel;
-		setBackground(StyleParameters.defaultBackgroundColor);
-		
+
 		importButton = new CustomizedButton("Import a package");
 		importButton.addActionListener(new ImportListener());
 		
