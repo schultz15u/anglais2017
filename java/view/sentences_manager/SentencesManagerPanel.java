@@ -63,6 +63,23 @@ public class SentencesManagerPanel extends DefaultGridPanel {
 		createPackageButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
 		modifyPackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 		removePackageButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+
+		importPackageButton.setMaximumSize(new Dimension((int) importPackageButton.getPreferredSize().getWidth(), 40));
+		importPackageButton.setMinimumSize(new Dimension((int) importPackageButton.getPreferredSize().getWidth(), 40));
+		importPackageButton.setPreferredSize(new Dimension((int) importPackageButton.getPreferredSize().getWidth(), 40));
+		importPackageButton.setSize(new Dimension((int) importPackageButton.getPreferredSize().getWidth(), 40));
+		createPackageButton.setMaximumSize(new Dimension((int) createPackageButton.getPreferredSize().getWidth(), 40));
+		createPackageButton.setMinimumSize(new Dimension((int) createPackageButton.getPreferredSize().getWidth(), 40));
+		createPackageButton.setPreferredSize(new Dimension((int) createPackageButton.getPreferredSize().getWidth(), 40));
+		createPackageButton.setSize(new Dimension((int) createPackageButton.getPreferredSize().getWidth(), 40));
+		modifyPackageButton.setMaximumSize(new Dimension((int) modifyPackageButton.getPreferredSize().getWidth(), 40));
+		modifyPackageButton.setMinimumSize(new Dimension((int) modifyPackageButton.getPreferredSize().getWidth(), 40));
+		modifyPackageButton.setPreferredSize(new Dimension((int) modifyPackageButton.getPreferredSize().getWidth(), 40));
+		modifyPackageButton.setSize(new Dimension((int) modifyPackageButton.getPreferredSize().getWidth(), 40));
+		removePackageButton.setMaximumSize(new Dimension((int) removePackageButton.getPreferredSize().getWidth(), 40));
+		removePackageButton.setMinimumSize(new Dimension((int) removePackageButton.getPreferredSize().getWidth(), 40));
+		removePackageButton.setPreferredSize(new Dimension((int) removePackageButton.getPreferredSize().getWidth(), 40));
+		removePackageButton.setSize(new Dimension((int) removePackageButton.getPreferredSize().getWidth(), 40));
 	}
 
 	private void changePanel(JPanel newPanel, int fill) {

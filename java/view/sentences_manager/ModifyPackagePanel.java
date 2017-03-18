@@ -6,8 +6,8 @@ import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
+import javax.swing.event.ListDataListener;
 
 import model.SentencesManager;
 import view.DefaultGridPanel;
@@ -37,7 +37,6 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 
 		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames());
 		packagesCombo.addActionListener(new PackagesComboListener());
-		packagesCombo.setPreferredSize(new Dimension(packagesCombo.getWidth(), 40));
 		addSentenceButton = new CustomizedButton("Add sentence");
 		addSentenceButton.addActionListener(new AddSentenceListener());
 		addSentenceButton.setPreferredSize(new Dimension(addSentenceButton.getWidth(), 40));
@@ -54,9 +53,9 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		currentPanel = addSentencePanel;
 
 		if (packagesCombo.getSelectedItem() != null) {
-			addSentencePanel.setPackageName(packagesCombo.getItemAt(0).toString());
-			modifySentencePanel.setPackageName(packagesCombo.getItemAt(0).toString());
-			removeSentencePanel.setPackageName(packagesCombo.getItemAt(0).toString());
+			addSentencePanel.setPackageName(packagesCombo.getItemAt(0));
+			modifySentencePanel.setPackageName(packagesCombo.getItemAt(0));
+			removeSentencePanel.setPackageName(packagesCombo.getItemAt(0));
 		}
 
 		addComponent(packagesCombo, 0, 0, 3, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
@@ -68,14 +67,38 @@ public class ModifyPackagePanel extends DefaultGridPanel {
 		addSentenceButton.setNormalColor(StyleParameters.defaultWidgetBackgroundColor);
 		modifySentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 		removeSentenceButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+
+		packagesCombo.setMaximumSize(new Dimension((int) packagesCombo.getPreferredSize().getWidth(), 40));
+		packagesCombo.setMinimumSize(new Dimension((int) packagesCombo.getPreferredSize().getWidth(), 40));
+		packagesCombo.setPreferredSize(new Dimension((int) packagesCombo.getPreferredSize().getWidth(), 40));
+		packagesCombo.setSize(new Dimension((int) packagesCombo.getPreferredSize().getWidth(), 40));
+
+		addSentenceButton.setMaximumSize(new Dimension((int) addSentenceButton.getPreferredSize().getWidth(), 40));
+		addSentenceButton.setMinimumSize(new Dimension((int) addSentenceButton.getPreferredSize().getWidth(), 40));
+		addSentenceButton.setPreferredSize(new Dimension((int) addSentenceButton.getPreferredSize().getWidth(), 40));
+		addSentenceButton.setSize(new Dimension((int) addSentenceButton.getPreferredSize().getWidth(), 40));
+		modifySentenceButton.setMaximumSize(new Dimension((int) modifySentenceButton.getPreferredSize().getWidth(), 40));
+		modifySentenceButton.setMinimumSize(new Dimension((int) modifySentenceButton.getPreferredSize().getWidth(), 40));
+		modifySentenceButton.setPreferredSize(new Dimension((int) modifySentenceButton.getPreferredSize().getWidth(), 40));
+		modifySentenceButton.setSize(new Dimension((int) modifySentenceButton.getPreferredSize().getWidth(), 40));
+		removeSentenceButton.setMaximumSize(new Dimension((int) removeSentenceButton.getPreferredSize().getWidth(), 40));
+		removeSentenceButton.setMinimumSize(new Dimension((int) removeSentenceButton.getPreferredSize().getWidth(), 40));
+		removeSentenceButton.setPreferredSize(new Dimension((int) removeSentenceButton.getPreferredSize().getWidth(), 40));
+		removeSentenceButton.setSize(new Dimension((int) removeSentenceButton.getPreferredSize().getWidth(), 40));
 	}
 
 	public void update() {
+
 		remove(packagesCombo);
 		packagesCombo = new CustomizedComboBox(sentencesManager.getPackagesNames());
 		packagesCombo.addActionListener(new PackagesComboListener());
 		packagesCombo.setPreferredSize(new Dimension(packagesCombo.getWidth(), 40));
 		addComponent(packagesCombo, 0, 0, 3, 1, 1, 0.05, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+
+		packagesCombo.setMaximumSize(new Dimension((int) packagesCombo.getPreferredSize().getWidth(), 40));
+		packagesCombo.setMinimumSize(new Dimension((int) packagesCombo.getPreferredSize().getWidth(), 40));
+		packagesCombo.setPreferredSize(new Dimension((int) packagesCombo.getPreferredSize().getWidth(), 40));
+		packagesCombo.setSize(new Dimension((int) packagesCombo.getPreferredSize().getWidth(), 40));
 
 		revalidate();
 		repaint();

@@ -32,7 +32,10 @@ public class MainMenuPanel extends DefaultGridPanel {
 		this.mainPanel = mainPanel;
 		width = 200;
 		isOpened = true;
-		setPreferredSize(new Dimension(200, (int) getPreferredSize().getHeight()));
+		setMaximumSize(new Dimension((int)width, (int) getPreferredSize().getHeight()));
+		setMinimumSize(new Dimension((int)width, (int) getPreferredSize().getHeight()));
+		setPreferredSize(new Dimension((int)width, (int) getPreferredSize().getHeight()));
+		setSize(new Dimension((int)width, (int) getPreferredSize().getHeight()));
 
 		mcqModeButton = new CustomizedButton("MCQ mode");
 		mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
