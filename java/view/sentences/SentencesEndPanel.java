@@ -58,7 +58,8 @@ public class SentencesEndPanel extends DefaultGridPanel {
 		String rulesToReviewRender = "";
 
 		for (String rule : knownRules)
-			knownRulesRender += rule + "\n";
+			if (!rulesToReview.contains(rule))
+				knownRulesRender += rule + "\n";
 		for (String rule : rulesToReview)
 			rulesToReviewRender += rule + "\n";
 

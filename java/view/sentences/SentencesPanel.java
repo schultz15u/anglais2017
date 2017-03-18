@@ -53,16 +53,16 @@ public class SentencesPanel extends DefaultGridPanel {
 
 	public void goToQuestionsPanel(String packageName) {
 
-		mainMenuPanel.reduce();
 		sentences.initialize(sentencesManager, packageName);
 		questionsPanel.reset();
+		mainMenuPanel.reduce();
 		changePanel(questionsPanel);
 	}
 
 	public void goToEndPanel() {
 
-		mainMenuPanel.increase();
 		sentencesEndPanel.updateScore();
+		mainMenuPanel.increase();
 		changePanel(sentencesEndPanel);
 	}
 }

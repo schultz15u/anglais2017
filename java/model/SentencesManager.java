@@ -77,7 +77,9 @@ public class SentencesManager {
 			for (SentenceEntry sentenceEntry : sentencesEntries) {
 
 				RuleEntry rule = ruleTable.getById(sentenceEntry.getIdRule());
-				rulesNames.add(rule.getName());
+
+				if (!rulesNames.contains(rule.getName()))
+					rulesNames.add(rule.getName());
 			}
 
 			return rulesNames;

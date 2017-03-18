@@ -10,9 +10,9 @@ import view.customized_widgets.CustomizedButton;
 
 public class MainMenuPanel extends DefaultGridPanel {
 
-	CustomizedButton sentencesManagerButton;
 	CustomizedButton mcqModeButton;
 	CustomizedButton mistakesModeButton;
+	CustomizedButton sentencesManagerButton;
 	JPanel emptyPanel;
 	MainPanel mainPanel;
 
@@ -33,26 +33,27 @@ public class MainMenuPanel extends DefaultGridPanel {
 		isOpened = true;
 		setPreferredSize(new Dimension(200, (int) getPreferredSize().getHeight()));
 
-		sentencesManagerButton = new CustomizedButton("Sentence manager");
-		sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
-		sentencesManagerButton.addActionListener(new SentenceManagerListener());
 		mcqModeButton = new CustomizedButton("MCQ mode");
 		mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 		mcqModeButton.addActionListener(new McqModeListener());
 		mistakesModeButton = new CustomizedButton("Mistakes mode");
 		mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 		mistakesModeButton.addActionListener(new MistakesModeListener());
+		sentencesManagerButton = new CustomizedButton("Sentence manager");
+		sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+		sentencesManagerButton.addActionListener(new SentenceManagerListener());
 		emptyPanel = new JPanel();
 		emptyPanel.setBackground(getBackground());
 
-		addComponent(sentencesManagerButton, 0, 0, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
-		addComponent(mcqModeButton, 0, 1, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
-		addComponent(mistakesModeButton, 0, 2, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
+		addComponent(mcqModeButton, 0, 0, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
+		addComponent(mistakesModeButton, 0, 1, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
+		addComponent(sentencesManagerButton, 0, 2, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
 		addComponent(emptyPanel, 0, 10, 1, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
 
-		sentencesManagerButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+
 		mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 		mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+		sentencesManagerButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 
 		startTime = 0;
 		widthModificationTimer = new Timer(DELAY, new ActionListener() {
@@ -126,9 +127,9 @@ public class MainMenuPanel extends DefaultGridPanel {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			mainPanel.showSentencesManagerPanel();
-			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 			mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 			mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 		}
 	}
 
@@ -137,9 +138,9 @@ public class MainMenuPanel extends DefaultGridPanel {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			mainPanel.showMcqModePanel();
-			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 			mcqModeButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 			mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 
 		}
 	}
@@ -149,9 +150,9 @@ public class MainMenuPanel extends DefaultGridPanel {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			mainPanel.showMistakesModePanel();
-			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 			mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 			mistakesModeButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
+			sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 		}
 	}
 }
