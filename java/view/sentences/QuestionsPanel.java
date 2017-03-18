@@ -125,11 +125,11 @@ public class QuestionsPanel extends JPanel {
 				int index = event.getX() / characterWidth;	// ID of the clicked character
 
 				if (sentences.characterIsFromWrongWord(index)) {
-					informationLabel.setText("Correct !");
+					informationLabel.setText("<html>Correct !<br>Good sentence : " + sentences.getCorrectSentence() + "</html>");
 					sentenceIsCorrect = 1;
 				}
 				else {
-					informationLabel.setText("Wrong !");
+					informationLabel.setText("<html>Wrong !<br>Good sentence : " + sentences.getCorrectSentence() + "</html>");
 					sentenceIsCorrect = 0;
 				}
 
@@ -180,11 +180,11 @@ public class QuestionsPanel extends JPanel {
 			if (sentenceIsCorrect == 2 && isMcq) {
 
 				if (sentences.getCorrectWord().equals(button.getText())) {
-					informationLabel.setText("Correct !");
+					informationLabel.setText("<html>Correct !<br>Good sentence : " + sentences.getCorrectSentence() + "</html>");
 					sentenceIsCorrect = 1;
 				}
 				else {
-					informationLabel.setText("Wrong !");
+					informationLabel.setText("<html>Wrong !<br>Good sentence : " + sentences.getCorrectSentence() + "</html>");
 					sentenceIsCorrect = 0;
 				}
 

@@ -67,6 +67,28 @@ public class SentencesManager {
 		}
 	}
 
+	public List<String> getRulesNames(List<SentenceEntry> sentencesEntries) {
+
+		try {
+
+			List<String> rulesNames = new ArrayList<>();
+			RuleTable ruleTable = new RuleTable();
+
+			for (SentenceEntry sentenceEntry : sentencesEntries) {
+
+				RuleEntry rule = ruleTable.getById(sentenceEntry.getIdRule());
+				rulesNames.add(rule.getName());
+			}
+
+			return rulesNames;
+		}
+		catch (SQLException e) {
+
+			e.printStackTrace();
+			return new ArrayList<>();
+		}
+	}
+
 	public RuleEntry getRule(int ruleId) {
 
 		try {

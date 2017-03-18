@@ -11,6 +11,7 @@ import model.database.tables.RuleTable;
 public class Sentences {
 
 	private List<SentenceEntry> sentences;
+	private List<Boolean> answersAreCorrect;
 	private int currentSentenceId;
 	private String currentWrongWord;
 	private int score;
@@ -26,6 +27,10 @@ public class Sentences {
 	public void initialize(SentencesManager sentencesManager, String packageName) {
 
 		sentences = sentencesManager.getSentences(packageName);
+		answersAreCorrect = new ArrayList<>();
+		for (int i = 0; i < sentences.size(); ++i)
+			answersAreCorrect.add(false);
+
 		currentSentenceId = 0;
 		score = 0;
 		this.packageName = packageName;
@@ -96,6 +101,7 @@ public class Sentences {
 	}
 
 	public ArrayList<String> getChoices() {
+
 		ArrayList<String> sortedChoices = new ArrayList<String>();
 
 		if (!isFinished()) {
@@ -117,7 +123,22 @@ public class Sentences {
 		return score;
 	}
 
+	public List<String> getRulesNames(SentencesManager sentencesManager, boolean forGoodAnswers) {
+
+		ArrayList<SentenceEntry> sentencesEntries = new ArrayList<>();
+
+		for (int i = 0; i < sentences.size(); ++i) {
+
+			if (answersAreCorrect.get(i).equals(forGoodAnswers)) {
+				sentencesEntries.add(sentences.get(i));
+			}
+		}
+
+		return sentencesManager.getRulesNames(sentencesEntries);
+	}
+
 	public boolean characterIsFromWrongWord(int characterId) {
+
 		if (!isFinished()) {
 			int wrongWordFirstIndex = sentences.get(currentSentenceId).getDetail().split("@")[0].length();
 			int wrongWordLastIndex = wrongWordFirstIndex + currentWrongWord.length() - 1;
@@ -129,15 +150,18 @@ public class Sentences {
 	}
 
 	public void validateSentence(boolean answerIsCorrect) {
+
 		if (answerIsCorrect) {
 			++score;
 		}
 
+		answersAreCorrect.set(currentSentenceId, answerIsCorrect);
 		++currentSentenceId;
 		generateWrongWord();
 	}
 
 	private void generateWrongWord() {
+
 		if (!isFinished()) {
 			String[] badChoices = sentences.get(currentSentenceId).getPropNo().split(",");
 			int badChoiceId = (int) (Math.random() * badChoices.length);
