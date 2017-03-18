@@ -3,6 +3,7 @@ package view.sentences;
 import model.Sentences;
 import model.SentencesManager;
 import view.DefaultGridPanel;
+import view.MainMenuPanel;
 import view.StyleParameters;
 
 import javax.swing.*;
@@ -13,16 +14,18 @@ public class SentencesPanel extends DefaultGridPanel {
 
 	private SentencesManager sentencesManager;
 	private Sentences sentences;
+	private MainMenuPanel mainMenuPanel;
 	private SentencesHomePanel sentencesHomePanel;
 	private QuestionsPanel questionsPanel;
 	private SentencesEndPanel sentencesEndPanel;
 	private JPanel currentPanel;
 
-	public SentencesPanel(SentencesManager sentencesManager, boolean isMcq) {
+	public SentencesPanel(SentencesManager sentencesManager, boolean isMcq, MainMenuPanel mainMenuPanel) {
 
 		super();
 		this.sentencesManager = sentencesManager;
 		this.sentences = new Sentences();
+		this.mainMenuPanel = mainMenuPanel;
 		setBackground(StyleParameters.defaultBackgroundColor);
 
 		sentencesHomePanel = new SentencesHomePanel(sentencesManager, isMcq);
@@ -50,6 +53,7 @@ public class SentencesPanel extends DefaultGridPanel {
 
 	public void goToQuestionsPanel(String packageName) {
 
+		mainMenuPanel.reduce();
 		sentences.initialize(sentencesManager, packageName);
 		questionsPanel.reset();
 		changePanel(questionsPanel);
@@ -57,6 +61,7 @@ public class SentencesPanel extends DefaultGridPanel {
 
 	public void goToEndPanel() {
 
+		mainMenuPanel.increase();
 		sentencesEndPanel.updateScore();
 		changePanel(sentencesEndPanel);
 	}

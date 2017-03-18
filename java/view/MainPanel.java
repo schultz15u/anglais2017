@@ -25,8 +25,8 @@ public class MainPanel extends DefaultGridPanel {
 
 		mainMenuPanel = new MainMenuPanel(this);
 		sentenceManagerPanel = new SentencesManagerPanel(sentencesManager);
-		mcqModePanel = new SentencesPanel(sentencesManager, true);
-		mistakesModePanel = new SentencesPanel(sentencesManager, false);
+		mcqModePanel = new SentencesPanel(sentencesManager, true, mainMenuPanel);
+		mistakesModePanel = new SentencesPanel(sentencesManager, false, mainMenuPanel);
 		currentPanel = sentenceManagerPanel;
 
 		addComponent(mainMenuPanel, 0, 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);

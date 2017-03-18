@@ -1,11 +1,10 @@
 package view;
 
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 
 import view.customized_widgets.CustomizedButton;
 
@@ -17,11 +16,22 @@ public class MainMenuPanel extends DefaultGridPanel {
 	JPanel emptyPanel;
 	MainPanel mainPanel;
 
+	Timer widthModificationTimer;
+	private long startTime;
+	double width;
+	boolean isOpened;
+
+	private static final int DELAY = 1;
+	private static final int ANIMATION_TIME = 500;
+
 	public MainMenuPanel(MainPanel mainPanel) {
 
 		super();
 		setBackground(StyleParameters.mainMenuNormalButtonColor);
 		this.mainPanel = mainPanel;
+		width = 200;
+		isOpened = true;
+		setPreferredSize(new Dimension(200, (int) getPreferredSize().getHeight()));
 
 		sentencesManagerButton = new CustomizedButton("Sentence manager");
 		sentencesManagerButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
@@ -43,26 +53,72 @@ public class MainMenuPanel extends DefaultGridPanel {
 		sentencesManagerButton.setNormalColor(StyleParameters.mainMenuActiveButtonColor);
 		mcqModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
 		mistakesModeButton.setNormalColor(StyleParameters.mainMenuNormalButtonColor);
+
+		startTime = 0;
+		widthModificationTimer = new Timer(DELAY, new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				if (isOpened) {
+
+					width = 200 * (double)(System.nanoTime() - startTime) / ANIMATION_TIME / 1000000;
+				}
+				else {
+
+					width = 200 - 200 * (double)(System.nanoTime() - startTime) / ANIMATION_TIME / 1000000;
+				}
+
+				setMaximumSize(new Dimension((int)width, (int) getPreferredSize().getHeight()));
+				setMinimumSize(new Dimension((int)width, (int) getPreferredSize().getHeight()));
+				setPreferredSize(new Dimension((int)width, (int) getPreferredSize().getHeight()));
+				setSize(new Dimension((int)width, (int) getPreferredSize().getHeight()));
+				revalidate();
+				repaint();
+
+				if (width <= 0 || width >= 200)
+					stopTimer();
+			}
+		});
+	}
+
+	private void startTimer() {
+		startTime = System.nanoTime();
+		widthModificationTimer.start();
+	}
+
+	private void stopTimer() {
+		widthModificationTimer.stop();
+	}
+
+	public void reduce() {
+		isOpened = false;
+		startTimer();
+	}
+
+	public void increase() {
+		isOpened = true;
+		startTimer();
 	}
 
 	@Override
 	public void setMaximumSize(Dimension dimension) {
-		super.setMaximumSize(new Dimension(150, (int) dimension.getHeight()));
+		super.setMaximumSize(new Dimension((int)width, (int) dimension.getHeight()));
 	}
 
 	@Override
 	public void setMinimumSize(Dimension dimension) {
-		super.setMinimumSize(new Dimension(150, (int) dimension.getHeight()));
+		super.setMinimumSize(new Dimension((int)width, (int) dimension.getHeight()));
 	}
 
 	@Override
 	public void setPreferredSize(Dimension dimension) {
-		super.setPreferredSize(new Dimension(150, (int) dimension.getHeight()));
+		super.setPreferredSize(new Dimension((int)width, (int) dimension.getHeight()));
 	}
 
 	@Override
 	public void setSize(Dimension dimension) {
-		super.setSize(new Dimension(150, (int) dimension.getHeight()));
+		super.setSize(new Dimension((int)width, (int) dimension.getHeight()));
 	}
 
 	private class SentenceManagerListener implements ActionListener {
