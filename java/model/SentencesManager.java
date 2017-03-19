@@ -388,7 +388,7 @@ public class SentencesManager {
 			SentenceTable sentenceTable = new SentenceTable();
 			List<SentenceEntry> sentencesEntries = sentenceTable.getByProperty("detail", () -> sentence, true);
 			SentenceEntry sentenceEntry = null;
-			System.err.println(sentence);
+			System.err.println("=>" + sentence);
 
 			for (SentenceEntry entry : sentencesEntries) {
 				if (entry.getPack() == packageId) {

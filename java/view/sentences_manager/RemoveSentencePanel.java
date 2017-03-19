@@ -42,6 +42,9 @@ public class RemoveSentencePanel extends DefaultGridPanel {
 		addComponent(sentenceChoiceLabel, 0, 0, 1, 1);
 		addComponent(sentenceChoiceCombo, 1, 0, 1, 1);
 		addComponent(validationButton, 0, 1, 2, 1);
+
+		if (sentenceChoiceCombo.getSelectedItem() != null)
+			sentence = sentenceChoiceCombo.getSelectedItem().toString();
 	}
 
 	public void setPackageName(String packageName) {
@@ -55,6 +58,9 @@ public class RemoveSentencePanel extends DefaultGridPanel {
 		remove(sentenceChoiceCombo);
 		sentenceChoiceCombo = new CustomizedComboBox(sentencesManager.getSentenceNames(packageName));
 		sentenceChoiceCombo.addActionListener(new SentenceChoiceListener());
+
+		if (sentenceChoiceCombo.getSelectedItem() != null)
+			sentence = sentenceChoiceCombo.getSelectedItem().toString();
 
 		addComponent(sentenceChoiceCombo, 1, 0, 1, 1);
 		revalidate();

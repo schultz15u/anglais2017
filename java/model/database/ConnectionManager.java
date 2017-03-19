@@ -25,11 +25,11 @@ public class ConnectionManager {
 			connection.setAutoCommit(true);
 			if (needCreation) {
 				creation("DataBase.sql");
-				creation("1_tenses.sql");
+				/*creation("1_tenses.sql");
 				creation("3_modals.sql");
 				creation("4_linking_verbs.sql");
 				creation("5_verb_complementation.sql");
-				creation("22_presentation.sql");
+				creation("22_presentation.sql");*/
 			}
 		} catch (SQLException | FileNotFoundException e) {
 			new File(name).deleteOnExit();
