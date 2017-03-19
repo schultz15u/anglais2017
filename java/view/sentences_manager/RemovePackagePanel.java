@@ -47,6 +47,7 @@ public class RemovePackagePanel extends DefaultGridPanel {
 		removeSentenceButton.setNormalColor(new Color(255, 0, 0));
 		removeSentenceButton.setSelectedColor(new Color(255, 80, 80));
 		removeSentenceButton.setClickedColor(new Color(255, 160, 160));
+		removeSentenceButton.setForeground(Color.WHITE);
 	}
 
 	public void update() {

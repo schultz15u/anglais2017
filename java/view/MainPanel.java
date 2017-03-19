@@ -13,6 +13,7 @@ import view.sentences_manager.SentencesManagerPanel;
 public class MainPanel extends DefaultGridPanel {
 
 	MainMenuPanel mainMenuPanel;
+	HomePanel homePanel;
 	SentencesManagerPanel sentenceManagerPanel;
 	SentencesPanel mcqModePanel;
 	RulesPanel rulesPanel;
@@ -24,15 +25,16 @@ public class MainPanel extends DefaultGridPanel {
 		super();
 		setLayout(new GridBagLayout());
 
+		homePanel = new HomePanel();
 		mainMenuPanel = new MainMenuPanel(this);
 		sentenceManagerPanel = new SentencesManagerPanel(sentencesManager);
 		mcqModePanel = new SentencesPanel(sentencesManager, true, mainMenuPanel);
 		mistakesModePanel = new SentencesPanel(sentencesManager, false, mainMenuPanel);
 		rulesPanel = new RulesPanel(sentencesManager);
-		currentPanel = sentenceManagerPanel;
+		currentPanel = homePanel;
 
 		addComponent(mainMenuPanel, 0, 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
-		addComponent(sentenceManagerPanel, 1, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(homePanel, 1, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 	}
 
 	private void changePanel(JPanel newPanel) {
@@ -74,6 +76,14 @@ public class MainPanel extends DefaultGridPanel {
 
 			mistakesModePanel.reset();
 			changePanel(mistakesModePanel);
+		}
+	}
+
+	public void showHomePanel() {
+
+		if (currentPanel != homePanel) {
+
+			changePanel(homePanel);
 		}
 	}
 }
