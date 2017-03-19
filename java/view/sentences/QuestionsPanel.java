@@ -109,11 +109,11 @@ public class QuestionsPanel extends DefaultGridPanel {
 
 				if (sentences.characterIsFromWrongWord(index)) {
 					informationLabel.setText("<html><center>Bad answer</center><br>Good sentence : <i>" + sentences.getCorrectSentence().replaceAll("colorToChange", "red") + "</i>");
-					sentenceIsCorrect = 1;
+					sentenceIsCorrect = 0;
 				}
 				else {
 					informationLabel.setText("<html><center>Well done !</center><br>Good sentence : <i>" + sentences.getCorrectSentence().replaceAll("colorToChange", "green") + "</i>");
-					sentenceIsCorrect = 0;
+					sentenceIsCorrect = 1;
 				}
 
 				informationLabel.setText(informationLabel.getText() + "<br><br>Rule : " + sentences.getRuleName() + "<br><br><p style='padding-left: 20px;'><i>" + sentences.getRule().replaceAll("\n", "<br>") + "</i></p></html>");
@@ -163,11 +163,11 @@ public class QuestionsPanel extends DefaultGridPanel {
 			if (sentenceIsCorrect == 2 && isMcq) {
 
 				if (sentences.getCorrectWord().equals(button.getText())) {
-					informationLabel.setText("<html><center>Bad answer</center><br>Good sentence : <i>" + sentences.getCorrectSentence().replaceAll("colorToChange", "red") + "</i>");
+					informationLabel.setText("<html><center>Well done !</center><br>Good sentence : <i>" + sentences.getCorrectSentence().replaceAll("colorToChange", "green") + "</i>");
 					sentenceIsCorrect = 1;
 				}
 				else {
-					informationLabel.setText("<html><center>Well done !</center><br>Good sentence : <i>" + sentences.getCorrectSentence().replaceAll("colorToChange", "green") + "</i>");
+					informationLabel.setText("<html><center>Bad answer</center><br>Good sentence : <i>" + sentences.getCorrectSentence().replaceAll("colorToChange", "red") + "</i>");
 					sentenceIsCorrect = 0;
 				}
 
