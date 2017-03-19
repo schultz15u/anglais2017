@@ -141,8 +141,15 @@ public class ModifySentencePanel extends DefaultGridPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+
+			String oldRuleName = ruleName;
 			CustomizedComboBox cb = (CustomizedComboBox) e.getSource();
 			ruleName = cb.getSelectedItem().toString();
+
+			if (ruleName.equals("-") && !oldRuleName.equals("-")) {
+				ruleNameField.setText(oldRuleName);
+				ruleDetailsField.setText(sentencesManager.getRuleDetails(packageName, oldRuleName));
+			}
 		}
 	}
 
@@ -155,31 +162,27 @@ public class ModifySentencePanel extends DefaultGridPanel {
 			if (sentenceField.getText().isEmpty() || correctAnswerField.getText().isEmpty()
 					|| wrongAnswersField.getText().isEmpty()
 					|| ((ruleNameField.getText().isEmpty() || ruleDetailsField.getText().isEmpty())
-							&& ruleName.equals("-"))) {
+					&& ruleName.equals("-"))) {
 				messageLabel.setText("One field is missing.");
 				messageLabel.setForeground(Color.red);
-			} else if (sentenceField.getText().length() - sentenceField.getText().replace("@", "").length() == 0) { // zero
-																													// "@"
-																													// in
-																													// the
-																													// sentence
+			}
+			else if (sentenceField.getText().length() - sentenceField.getText().replace("@", "").length() == 0) {
+				// zero "@" in the sentence
 				messageLabel.setText("The sentence must include one \"@\".");
 				messageLabel.setForeground(Color.red);
-			} else if (sentenceField.getText().length() - sentenceField.getText().replace("@", "").length() > 1) { // more
-																													// than
-																													// one
-																													// "@"
-																													// in
-																													// the
-																													// sentence
+			}
+			else if (sentenceField.getText().length() - sentenceField.getText().replace("@", "").length() > 1) {
+				// more than one "@" in the sentence
 				messageLabel.setText("The sentence must include only one \"@\".");
 				messageLabel.setForeground(Color.red);
-			} else if (!sentencesManager.setSentence(sentenceField.getText(), correctAnswerField.getText(),
+			}
+			else if (!sentencesManager.setSentence(sentenceField.getText(), correctAnswerField.getText(),
 					wrongAnswersField.getText(), !ruleName.equals("-") ? ruleName : ruleNameField.getText(),
 					ruleDetailsField.getText(), packageName)) {
 				messageLabel.setText("Error with database.");
 				messageLabel.setForeground(Color.red);
-			} else {
+			}
+			else {
 				messageLabel.setText("Sentence has been updated.");
 				messageLabel.setForeground(Color.green);
 				sentenceField.setText("");

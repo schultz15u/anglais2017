@@ -248,6 +248,46 @@ public class SentencesManager {
 		return true;
 	}
 
+	public String getRuleDetails(String packageName, String ruleName) {
+
+		try {
+			// Package retrieval
+			int packageId = 0;
+			PackageTable packageTable = new PackageTable();
+			List<PackageEntry> packages = packageTable.getByProperty("name", () -> packageName, true);
+
+			if (packages.size() > 0)
+				packageId = packages.get(0).getIdPack();
+			else {
+				System.err.println("setSentence : package not found");
+				return "";
+			}
+
+			// Rule retrieval
+			RuleTable ruleTable = new RuleTable();
+			List<RuleEntry> rules = ruleTable.getByProperty("name", () -> ruleName, true);
+			RuleEntry ruleEntry = null;
+
+			for (RuleEntry entry : rules) {
+				if (entry.getPack() == packageId) {
+					ruleEntry = entry;
+					break;
+				}
+			}
+
+			if (ruleEntry == null) {
+				System.err.println("getRuleDetails : rule not found");
+				return "";
+			}
+
+			return ruleEntry.getDetail();
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			return "";
+		}
+	}
+
 	/*
 	 * sentence : with @
 	 */
@@ -282,6 +322,11 @@ public class SentencesManager {
 					ruleEntry = entry;
 					break;
 				}
+			}
+
+			if (ruleDetails.length() > 0) {
+				ruleEntry.setDetail(ruleDetails);
+				ruleTable.update(ruleEntry);
 			}
 
 			// Sentence creation

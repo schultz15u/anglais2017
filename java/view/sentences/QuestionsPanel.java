@@ -8,10 +8,7 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.BoxLayout;
-import javax.swing.ButtonGroup;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
+import javax.swing.*;
 
 import model.Sentences;
 import view.DefaultGridPanel;
@@ -25,7 +22,6 @@ public class QuestionsPanel extends DefaultGridPanel {
 
 	private CustomizedLabel sentenceLabel;
 	private CustomizedLabel informationLabel;
-	private CustomizedLabel ruleLabel;
 	private CustomizedButton nextButton;
 	private Sentences sentences;
 	private int sentenceIsCorrect; // 0 : no, 1 : yes, 2 : question have not been answered
@@ -38,40 +34,26 @@ public class QuestionsPanel extends DefaultGridPanel {
 		this.sentences = sentences;
 		this.isMcq = isMcq;
 
-		sentenceLabel = new CustomizedLabel(sentences.getWrongSentence());
+		sentenceLabel = new CustomizedLabel(sentences.getWrongSentence(), (int)Component.CENTER_ALIGNMENT);
 		sentenceLabel.setFont(StyleParameters.defaultSentenceFont);
 		sentenceLabel.addMouseListener(new SentenceLabelListener());
-
-		informationLabel = new CustomizedLabel("");
-		ruleLabel = new CustomizedLabel("");
-		
+		informationLabel = new CustomizedLabel("", (int)Component.CENTER_ALIGNMENT);
+		informationLabel.setBorder(BorderFactory.createLineBorder(StyleParameters.defaultBackgroundColor, 20));
 		nextButton = new CustomizedButton("Next sentence");
 		nextButton.addActionListener(new NextButtonListener());
 		
-		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		addComponent(sentenceLabel, 0, 0, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
-		addComponent(informationLabel, 0, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
-		addComponent(nextButton, 0, 2, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
-		addComponent(ruleLabel, 0, 3, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
+		addComponent(sentenceLabel, 0, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(informationLabel, 0, 1, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(nextButton, 0, 2, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
 		
 		goToNextQuestion();
 		
 		setVisible(true);
-		setPreferredSize(new Dimension(750, 500));
 	}
 	
 	public void reset() {
-
-		sentenceLabel.setText("<html><center>" + sentences.getWrongSentence() + "</center><html>");
-		informationLabel.setText("");
-		sentenceIsCorrect = 2;
-		nextButton.setVisible(false);
 		
 		goToNextQuestion();
-
-
-		if (sentences.isFinished() && getParent() != null)
-			((SentencesPanel)getParent()).goToEndPanel();
 	}
 	
 	public void goToNextQuestion() {
@@ -79,17 +61,16 @@ public class QuestionsPanel extends DefaultGridPanel {
 		informationLabel.setText("");
 		sentenceIsCorrect = 2;
 		nextButton.setVisible(false);
-		ruleLabel.setText("");
 		
 		if (!isMcq) {
-			sentenceLabel.setText("<html><center>" + sentences.getWrongSentence() + "</center><html>");
+			sentenceLabel.setText("<html>" + sentences.getWrongSentence() + "</html>");
 		}
 		else {
 			if (choicesRadio != null)
 				for (CustomizedRadioButton radio : choicesRadio)
 					remove(radio);
 
-			sentenceLabel.setText("<html><center>" + sentences.getIncompleteWrongSentence() + "</center><html>");
+			sentenceLabel.setText("<html><center>" + sentences.getIncompleteWrongSentence() + "</center></html>");
 			choicesRadio = new ArrayList<>();
 			
 			ArrayList<String> choices = sentences.getChoices();
@@ -117,23 +98,25 @@ public class QuestionsPanel extends DefaultGridPanel {
 	}
 	
 	public class SentenceLabelListener implements MouseListener {
+
 		@Override
 		public void mouseClicked(MouseEvent event) {
 			
 			if (sentenceIsCorrect == 2 && !isMcq) {
+
 				int characterWidth = sentenceLabel.getWidth() / sentenceLabel.getText().length();
 				int index = event.getX() / characterWidth;	// ID of the clicked character
 
 				if (sentences.characterIsFromWrongWord(index)) {
-					informationLabel.setText("<html>Correct !<br>Good sentence : " + sentences.getCorrectSentence() + "</html>");
+					informationLabel.setText("<html><center>Bad answer</center><br>Good sentence : <i>" + sentences.getCorrectSentence().replaceAll("colorToChange", "red") + "</i>");
 					sentenceIsCorrect = 1;
 				}
 				else {
-					informationLabel.setText("<html>Wrong !<br>Good sentence : " + sentences.getCorrectSentence() + "</html>");
+					informationLabel.setText("<html><center>Well done !</center><br>Good sentence : <i>" + sentences.getCorrectSentence().replaceAll("colorToChange", "green") + "</i>");
 					sentenceIsCorrect = 0;
 				}
 
-				ruleLabel.setText("Rule : " + sentences.getRule());
+				informationLabel.setText(informationLabel.getText() + "<br><br>Rule : " + sentences.getRuleName() + "<br><br><p style='padding-left: 20px;'><i>" + sentences.getRule().replaceAll("\n", "<br>") + "</i></p></html>");
 				nextButton.setVisible(true);
 			}
 		}
@@ -180,15 +163,15 @@ public class QuestionsPanel extends DefaultGridPanel {
 			if (sentenceIsCorrect == 2 && isMcq) {
 
 				if (sentences.getCorrectWord().equals(button.getText())) {
-					informationLabel.setText("<html>Correct !<br>Good sentence : " + sentences.getCorrectSentence() + "</html>");
+					informationLabel.setText("<html><center>Bad answer</center><br>Good sentence : <i>" + sentences.getCorrectSentence().replaceAll("colorToChange", "red") + "</i>");
 					sentenceIsCorrect = 1;
 				}
 				else {
-					informationLabel.setText("<html>Wrong !<br>Good sentence : " + sentences.getCorrectSentence() + "</html>");
+					informationLabel.setText("<html><center>Well done !</center><br>Good sentence : <i>" + sentences.getCorrectSentence().replaceAll("colorToChange", "green") + "</i>");
 					sentenceIsCorrect = 0;
 				}
 
-				ruleLabel.setText("Rule : " + sentences.getRule());
+				informationLabel.setText(informationLabel.getText() + "<br><br>Rule : " + sentences.getRuleName() + "<br><br><i>" + sentences.getRule() + "</i></html>");
 				nextButton.setVisible(true);
 			}
 		}

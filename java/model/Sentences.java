@@ -75,6 +75,19 @@ public class Sentences {
 		}
 	}
 
+	public String getRuleName() {
+
+		try {
+			RuleTable ruleTable = new RuleTable();
+			RuleEntry ruleModel = ruleTable.getById(sentences.get(currentSentenceId).getIdRule());
+
+			return ruleModel.getName();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "";
+		}
+	}
+
 	public String getIncompleteWrongSentence() {
 		if (!isFinished())
 			return sentences.get(currentSentenceId).getDetail().replaceAll("@", "---");
@@ -96,7 +109,7 @@ public class Sentences {
 	public String getCorrectSentence() {
 		if (!isFinished())
 			return sentences.get(currentSentenceId).getDetail().replaceAll("@",
-					sentences.get(currentSentenceId).getPropOk());
+					"<span style='color:colorToChange'>" + sentences.get(currentSentenceId).getPropOk() + "</span>");
 		return "";
 	}
 
