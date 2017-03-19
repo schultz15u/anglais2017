@@ -63,7 +63,7 @@ public class MainMenuPanel extends DefaultGridPanel {
 		addComponent(logoButton, 0, 0, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
 		addComponent(mcqModeButton, 0, 1, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
 		addComponent(mistakesModeButton, 0, 2, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
-		addComponent(readRulesButton, 0, 3, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
+		//addComponent(readRulesButton, 0, 3, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
 		addComponent(sentencesManagerButton, 0, 4, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
 		addComponent(exitButton, 0, 5, 1, 1, 1, 0.1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);
 		addComponent(emptyPanel, 0, 10, 1, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.BOTH);

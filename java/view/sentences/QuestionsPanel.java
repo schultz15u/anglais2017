@@ -28,6 +28,8 @@ public class QuestionsPanel extends DefaultGridPanel {
 	private ButtonGroup radioGroup;
 	private List<CustomizedRadioButton> choicesRadio;
 	private CustomizedPanel panel;
+	private CustomizedButton exitButton;
+
 
 	public QuestionsPanel(Sentences sentences, boolean isMcq) {
 		super();
@@ -47,12 +49,18 @@ public class QuestionsPanel extends DefaultGridPanel {
 		nextButton.addActionListener(new NextButtonListener());
 		panel = new CustomizedPanel();
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+		exitButton = new CustomizedButton("Exit");
+		exitButton.addActionListener(new ExitListener());
+		exitButton.setMinimumSize(new Dimension(100, exitButton.getMinimumSize().height));
+		exitButton.setMaximumSize(new Dimension(100, exitButton.getMaximumSize().height));
+		exitButton.setPreferredSize(new Dimension(100, exitButton.getPreferredSize().height));
 
-		addComponent(sentenceLabel, 0, 0, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.NONE);
-		addComponent(informationScrollPane, 0, 1, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		addComponent(exitButton, 1, 0, 1, 1, 0, 0, GridBagConstraints.NORTHEAST, GridBagConstraints.NONE);
+		addComponent(sentenceLabel, 0, 1, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.NONE);
+		addComponent(informationScrollPane, 0, 2, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 		if (!isMcq)
-			addComponent(nextButton, 0, 2, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
-		addComponent(panel, 1, 0, 1, 3, 0.2, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
+			addComponent(nextButton, 0, 3, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
+		addComponent(panel, 1, 1, 1, 3, 0.2, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
 
 		goToNextQuestion();
 		setVisible(true);
@@ -94,8 +102,6 @@ public class QuestionsPanel extends DefaultGridPanel {
 			
 			ArrayList<String> choices = sentences.getChoices();
 			radioGroup = new ButtonGroup();
-			
-			int i = 1;
 			
 			for (String choice : choices) {
 
@@ -207,6 +213,14 @@ public class QuestionsPanel extends DefaultGridPanel {
 				informationScrollPane.setPreferredSize(new Dimension(informationScrollPane.getPreferredSize().width, 200));
 				informationScrollPane.setSize(new Dimension(informationScrollPane.getSize().width, 200));
 			}
+		}
+	}
+
+	public class ExitListener implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			((SentencesPanel)getParent()).goToEndPanel();
 		}
 	}
 }

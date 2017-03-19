@@ -55,7 +55,7 @@ public class SentencesPanel extends DefaultGridPanel {
 		sentences.initialize(sentencesManager, packageName);
 		questionsPanel.reset();
 		mainMenuPanel.reduce();
-		changePanel(questionsPanel, GridBagConstraints.HORIZONTAL);
+		changePanel(questionsPanel, GridBagConstraints.BOTH);
 	}
 
 	public void goToEndPanel() {

@@ -191,7 +191,7 @@ public abstract class GenericTable<T> {
 	}
 
 	private T getUniqueResult(List<T> tmp) throws SQLException {
-		if (tmp != null && tmp.size() == 1) {
+		if (tmp != null && tmp.size() >= 1) {
 			return tmp.get(0);
 		} else {
 			throw new SQLException("Invalid number of results");
