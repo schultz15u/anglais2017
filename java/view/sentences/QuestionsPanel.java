@@ -15,6 +15,7 @@ import view.DefaultGridPanel;
 import view.StyleParameters;
 import view.customized_widgets.CustomizedButton;
 import view.customized_widgets.CustomizedLabel;
+import view.customized_widgets.CustomizedPanel;
 import view.customized_widgets.CustomizedRadioButton;
 
 
@@ -28,6 +29,7 @@ public class QuestionsPanel extends DefaultGridPanel {
 	private boolean isMcq = true;
 	private ButtonGroup radioGroup;
 	private List<CustomizedRadioButton> choicesRadio;
+	private CustomizedPanel panel;
 
 	public QuestionsPanel(Sentences sentences, boolean isMcq) {
 		super();
@@ -41,13 +43,15 @@ public class QuestionsPanel extends DefaultGridPanel {
 		informationLabel.setBorder(BorderFactory.createLineBorder(StyleParameters.defaultBackgroundColor, 20));
 		nextButton = new CustomizedButton("Next sentence");
 		nextButton.addActionListener(new NextButtonListener());
+		panel = new CustomizedPanel();
+		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 		
 		addComponent(sentenceLabel, 0, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
 		addComponent(informationLabel, 0, 1, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
-		addComponent(nextButton, 0, 2, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
+		//addComponent(nextButton, 0, 2, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
+		addComponent(panel, 1, 0, 1, 3, 0.2, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
 		
 		goToNextQuestion();
-		
 		setVisible(true);
 	}
 	
@@ -68,7 +72,8 @@ public class QuestionsPanel extends DefaultGridPanel {
 		else {
 			if (choicesRadio != null)
 				for (CustomizedRadioButton radio : choicesRadio)
-					remove(radio);
+					panel.remove(radio);
+			panel.remove(nextButton);
 
 			sentenceLabel.setText("<html><center>" + sentences.getIncompleteWrongSentence() + "</center></html>");
 			choicesRadio = new ArrayList<>();
@@ -85,8 +90,10 @@ public class QuestionsPanel extends DefaultGridPanel {
 				
 				choicesRadio.add(radio);
 				radioGroup.add(radio);
-				add(radio, i++);
+				panel.add(radio);
 			}
+
+			panel.add(nextButton);
 
 			revalidate();
 			repaint();

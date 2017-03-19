@@ -115,18 +115,20 @@ public class Sentences {
 
 	public ArrayList<String> getChoices() {
 
-		ArrayList<String> sortedChoices = new ArrayList<String>();
+		ArrayList<String> sortedChoices = new ArrayList<>();
 
 		if (!isFinished()) {
-			String[] choices = (getCorrectWord() + "," + sentences.get(currentSentenceId).getPropNo()).split(",");
-			ArrayList<String> choicesList = new ArrayList<String>(Arrays.asList(choices));
+			String[] choices = (sentences.get(currentSentenceId).getPropNo()).split(",");
+			ArrayList<String> choicesList = new ArrayList<>(Arrays.asList(choices));
 
-			for (int i = 0; i < choices.length; ++i) {
+			for (int i = 0; i < choices.length && sortedChoices.size() < 4; ++i) {
 				int index = (int) (Math.random() * choicesList.size());
 
 				sortedChoices.add(choicesList.get(index));
 				choicesList.remove(index);
 			}
+
+			sortedChoices.add((int) (Math.random() * (sortedChoices.size() + 1)), getCorrectWord());
 		}
 
 		return sortedChoices;
