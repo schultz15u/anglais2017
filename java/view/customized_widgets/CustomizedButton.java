@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
+import java.net.URL;
 
 import javax.swing.*;
 
@@ -29,11 +31,20 @@ public class CustomizedButton extends JButton {
 	
 	public CustomizedButton(String text){
 		super(text);
+		initialize();
+	}
+
+	public CustomizedButton(URL im){
+		super(new ImageIcon(im));
+		initialize();
+	}
+
+	public void initialize() {
 
 		normalColor = StyleParameters.defaultWidgetBackgroundColor;
 		selectedColor = StyleParameters.defaultSelectedWidgetBackgroundColor;
 		clickedColor = StyleParameters.defaultClickedWidgetBackgroundColor;
-		
+
 		oldBackgroundColor = normalColor;
 		newBackgroundColor = oldBackgroundColor;
 		startTime = 0;
@@ -43,44 +54,44 @@ public class CustomizedButton extends JButton {
 		setBackground(newBackgroundColor);
 		setForeground(StyleParameters.defaultTextColor);
 		setFocusPainted(false);
-        setContentAreaFilled(false);
-        setOpaque(true);
+		setContentAreaFilled(false);
+		setOpaque(true);
 		setFont(StyleParameters.defaultImportantFont);
 		addMouseListener(new ButtonListener());
 		setBorderPainted(false);
-		
+
 		timer = new Timer(DELAY, new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+
 				long time = (System.nanoTime() - startTime) / 1000000;
 				int r = (int)getGrayLevel(0, oldBackgroundColor.getRed(), ANIMATION_TIME, newBackgroundColor.getRed(), time);
 				int g = (int)getGrayLevel(0, oldBackgroundColor.getGreen(), ANIMATION_TIME, newBackgroundColor.getGreen(), time);
 				int b = (int)getGrayLevel(0, oldBackgroundColor.getBlue(), ANIMATION_TIME, newBackgroundColor.getBlue(), time);
-				
+
 				setBackground(new Color(Math.max(Math.min(r, 255), 0), Math.max(Math.min(g, 255), 0), Math.max(Math.min(b, 255), 0)));
 				repaint();
-				
+
 				if (oldBackgroundColor.getRed() > newBackgroundColor.getRed() && getBackground().getRed() <= newBackgroundColor.getRed()
-					|| oldBackgroundColor.getRed() < newBackgroundColor.getRed() && getBackground().getRed() >= newBackgroundColor.getRed()
-					|| oldBackgroundColor.getGreen() > newBackgroundColor.getGreen() && getBackground().getGreen() <= newBackgroundColor.getGreen()
-					|| oldBackgroundColor.getGreen() < newBackgroundColor.getGreen() && getBackground().getGreen() >= newBackgroundColor.getGreen()
-					|| oldBackgroundColor.getBlue() > newBackgroundColor.getBlue() && getBackground().getBlue() <= newBackgroundColor.getBlue()
-					|| oldBackgroundColor.getBlue() < newBackgroundColor.getBlue() && getBackground().getBlue() >= newBackgroundColor.getBlue())
+						|| oldBackgroundColor.getRed() < newBackgroundColor.getRed() && getBackground().getRed() >= newBackgroundColor.getRed()
+						|| oldBackgroundColor.getGreen() > newBackgroundColor.getGreen() && getBackground().getGreen() <= newBackgroundColor.getGreen()
+						|| oldBackgroundColor.getGreen() < newBackgroundColor.getGreen() && getBackground().getGreen() >= newBackgroundColor.getGreen()
+						|| oldBackgroundColor.getBlue() > newBackgroundColor.getBlue() && getBackground().getBlue() <= newBackgroundColor.getBlue()
+						|| oldBackgroundColor.getBlue() < newBackgroundColor.getBlue() && getBackground().getBlue() >= newBackgroundColor.getBlue())
 				{
 					oldBackgroundColor = newBackgroundColor;
 					stopTimer();
-				}                
-            }
-			
+				}
+			}
+
 			private double getGrayLevel(double time1, double grayLevel1, double time2, double grayLevel2, double time) {
 				double A = (grayLevel2 - grayLevel1) / (time2 - time1);
 				double B = grayLevel1 - A * time1;
-				
+
 				return A * time + B;
 			}
-        });
+		});
 	}
 
 	public void setNormalColor(Color color) {
