@@ -1,5 +1,45 @@
-
-INSERT INTO RULE(id_rule, name, detail, pack) VALUES (1, 'Unit 1: Present continuous and present simple 1', '<details need to be done>', 1);
+INSERT INTO PACKAGE(id_pack, name, can_be_modified_outside) VALUES (1, 'Tenses', 1);
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (1, 'Unit 1: Present continuous and present simple 1', 
+'We use the present simple to describe things that are always true, or situations that exist now and,
+as far as we know, will go on indefinitely:
+� It takes me five minutes to get to school.
+� Trees grow more quickly in summer than in winter. � Liz plays the violin brilliantly.
+To talk about particular actions or events that have begun but have not ended at the time of
+speaking, we use the present continuous:
+� The car isn''t starting again.
+� ''Who are you phoning?'' ''I''m trying to get through to Joan.''
+� The shop is so inefficient that many customers are taking their business elsewhere.
+We often use time expressions such as at the moment, at present, currently, just, and still to
+emphasise that the action or event is happening now:
+� ''Have you done the shopping?'' Tm just going.''
+Notice that the action or event may not be going on at the time of speaking:
+� The police are talking to a number of people about the robbery.
+We use the present simple to talk about habits or things that happen on a regular basis:
+� I leave work at 5.30 most days.
+� Each July we go to Turkey for a holiday.
+However, when we describe repeated actions or events that are happening at or around the time
+of speaking, we use the present continuous:
+� Why are you jumping up and down?
+� I''m hearing a lot of good reports about your work these days.
+We can use the present continuous or the present simple to describe something that we regularly
+do at a particular time. Compare:
+� We usually watch the news on TV at 9.00. (= we start watching at 9.00)
+� We''re usually watching the news on TV at 9.00. (= we''re already watching at 9.00)
+We use the present continuous to imply that a situation is or may be temporary. Compare:
+� Banks lend money to make a profit, (this is what usually happens)
+� Banks are lending more money (these days) to encourage businesses to expand, (implies a
+temporary arrangement)
+� She teaches Maths in a school in Bonn, (a permanent arrangement)
+� She''s teaching Maths in a school in Bonn, (implies that this is not, or may not be, permanent)
+We often use the present simple with verbs that perform the action they describe:
+� I admit I can''t see as well as I used to. (= an admission)
+� I refuse to believe that he didn''t know the car was stolen. (= a refusal)
+Other verbs like this (sometimes called performative verbs) include accept, acknowledge, advise,
+apologise, assume, deny, guarantee, hope, inform, predict, promise, recommend, suggest,
+suppose, warn.
+We can use modals with performative verbs to make what we say more tentative or polite:.
+� I would advise you to arrive two hours before the flight leaves.
+� I''m afraid I have to inform you that your application for funding has been turned down.', 1);
 INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (1, 'I @ people should be allowed to vote at the age of 16.', 'think', 'appear,expect,fit,have,measure', 1, 1);
 INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (2, '<b>A</b>: What did you think of Professor Welch''s lecture?<br /><b>B</b>: I @ I didn''t understand a word!', 'confess', 'am confessing', 1, 1);
 INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (3, 'I @ you all for doing so well in your final examinations.', 'congratulate', 'am congratulating', 1, 1);
@@ -10,6 +50,1074 @@ INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (7,
 INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (8, 'Police @ that the robbers may already have left the country.', 'believe', 'are believing', 1, 1);
 INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (9, '<b>A</b>: What''s that noise?<br /><b>B</b>: You @ things. There''s no one else in the house.', 'are imagining', 'imagine', 1, 1);
 INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (10, 'I''m terrified of flying, so I @ going by car or boat.', 'prefer', 'am preferring', 1, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (2, 'Unit 2: Present continuous and present simple 2', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (11, 'Will the new wardrobe fit through the front door, I @?', 'wonder', 'always arrives,is always arriving,goes,is going,usually work,am usually working,generally put,am generally putting,borrows,is forever borrowing,am wondering', 2, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (12, 'My train @ on time, so I''m very happy with the service.', 'always arrives', 'is always arriving,goes,is going,usually work,am usually working,generally put,am generally putting,borrows,is forever borrowing,wonder,am wondering', 2, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (13, 'I @ an extra duvet on my bed in really cold weather.', 'generally put', 'always arrives,is always arriving,goes,is going,usually work,am usually working,am generally putting,borrows,is forever borrowing,wonder,am wondering', 2, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (14, 'This road @ all the way to Barcelona.', 'goes', 'always arrives,is always arriving,is going,usually work,am usually working,generally put,am generally putting,borrows,is forever borrowing,wonder,am wondering1', 2, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (15, 'I find I @ best early in the morning before everyone arrives.', 'usually work', 'always arrives,is always arriving,goes,is going,am usually working,generally put,am generally putting,borrows,is forever borrowing,wonder,am wondering', 2, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (16, 'Whenever he @ money, he always pays it back straight away.', 'borrows', 'always arrives,is always arriving,goes,is going,usually work,am usually working,generally put,am generally putting,is forever borrowing,wonder,am wondering', 2, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (3, 'Unit 3: Past simple and present perfect', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (17, 'I''ve never heard Ken criticise anyone since I @ him.', 'have known', 'knew', 3, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (18, 'You know, that''s the first time you @ you like my cooking.', 'have said', 'say', 3, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (19, 'It''s the first time he @ to school on his own, so he''s a bit nervous.', 'has walked', 'walked', 3, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (20, 'Since he''s worked here, he @ a day off through illness.', 'has never had', 'never had', 3, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (21, 'If Lipman doesn’t recover from his injury, it will be the first time he @ playing at Wimbledon in the last decade.', 'has missed', 'missed', 3, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (22, 'It''s the first time I @ Mr Brennan shout at anyone since he started teaching at the school.', 'have heard', 'heard', 3, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (4, 'Unit 4: Past continuous and past simple', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (23, 'Chris @ going to the dentist when he was a child.', 'hated', 'was hating', 4, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (24, 'I @ the window when it started to rain.', 'quickly closed', 'was quickly closing', 4, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (25, 'You could tell that Gina didn''t really want to leave. She @ until the last minute before she got on to the train.', 'waited', 'was waiting', 4, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (26, 'Here is the news. The Finance Minister @ huge cuts in spending on education.', 'has announced', 'announced', 3, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (5, 'Unit 5: Past perfect and past simple', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (27, 'I went to the fridge to get some milk, but someone @ it all.', 'had drunk', 'drank}', 5, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (28, 'When it was time to go home I found that someone @ my bicycle.', 'had stolen', 'stolez', 5, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (29, 'When she said the famous Oliver Barnsley would be at the meeting, I had to admit that I @ of him.', 'had never heard', 'never heard', 5, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (30, 'Adam said that he @ skiing for over 20 years, but he was still a lot better than me.', 'hadn''t been', 'didn''t go', 5, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (31, 'She apologised for talking so much and explained that she @ to anyone in days.', 'hadn''t spoken', 'didn''t speak', 5, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (32, 'After driving for another few miles, we realised that we @ the wrong road.', 'had taken', 'took', 5, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (7, 'Unit 7: Past perfect continuous, past perfect and past continuous', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (33, 'Even though I @ his story before, I still found it really funny.', 'had heard', 'had been hearing', 7, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (34, 'I knew that he @ as soon as I saw him.', 'had been sleeping', 'had slept', 7, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (35, 'I @ a bath when the phone rang, so I couldn''t answer it.', 'had been having', 'had had', 7, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (36, 'We @ together a couple of times before the performance.', 'had only rehearsed', 'had only been rehearsing', 7, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (37, 'The bridge @ quite safe when we started to walk across it, but by the time we reached the middle it started to sway and creak.', 'had seemed', 'had been seeming', 7, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (8, 'Unit 8: Present and past time: review', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (38, 'Mike writes @', 'to his parents whenever he gets the chance.', 'a book about his life as an explorer.', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (39, 'We’ve run out of petrol and the nearest garage @', 'is about five miles away.', 'was closed.', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (40, 'Karlsson was winning the golf match @', 'until it was abandoned because of bad weather.', 'three years in a row.', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (41, 'My parents spend @', 'some time in Italy every year.', 'this summer with their friends in Sweden.', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (42, 'I’ve seen <i>Slumdog Millionaire</i> six times @', 'and I’m going to see it again tonight.', 'before I bought the DVD.', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (43, 'The river is flowing @', 'very fast because of all the recent rain.', 'through the centre of town.', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (44, 'The concert finished @', 'just as I got there.', 'by the time I arrived.', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (45, 'Diana ran @', 'all the way back home.', 'when she broke her leg.', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (46, 'He drank three pints of milk @ but still wanted some more.', 'this morning', 'already', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (47, 'Jack has lived in a caravan @', 'ever since he went to university.', 'while his new house was being built.', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (48, 'It was the third time Fatimah @ her homework that week.', 'had forgotten', 'had been forgetting', 7, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (49, 'The necklace @ to my grandmother, so I was very upset when I lost it.', 'had belonged', 'had been belonging', 7, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (50, 'I''d like to get a decorator in to repaint my house but it @ a lot of money.', 'costs', 'is costing', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (51, 'I @ you before. Don''t use my laptop without my permission!', 'have told', 'have been telling', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (52, 'The cost of living @ enormously ever since the Socialist Party came to power.', 'has increased', 'increased', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (53, 'David @ a huge breakfast but was still feeling hungry.', 'had eaten', 'had been eating', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (54, 'I @ to a conference in Singapore in 2001, but haven''t been back since then.', 'went', 'have been', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (55, 'I didn''t see the banana skin because I @ a big box.', 'was carrying', 'carried', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (56, 'They had been repairing the bridge @', 'when I last tried to drive across it.', 'and cars could now cross it safely.', 8, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (57, 'They had been flying for 20 minutes @', 'when the engine caught fire.', 'and then landed back at the same airfield.', 8, 1);
+
+
+INSERT INTO PACKAGE(id_pack, name, can_be_modified_outside) VALUES (2, 'The future', 2);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (9, 'Unit 9: <i>Will</i> and <i>be going to</i>', '<details need to be done>', 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (58, '<b>A</b>: I''d better be going home now.<br /><b>B</b>: OK. I@ see you tomorrow.', '''ll', '''m going to', 9, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (59, 'There''s no point in giving Catherine cabbage &#8211; she @ eat it.', 'won''t', 'isn''t going to', 9, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (60, 'I @ octopus before, and I wasn''t sure I would like it.', 'hadn''t eaten', 'didn''t eat', 8, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (61, 'You could stay with my parents when you go to London. They@ love having you there.', '''ll', '''re going to', 9, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (62, '<b>A</b>: I don''t know what to do with my cat while I''m on holiday.<br /><b>B</b>: I@ look after it for you, if you like.', '''ll', '''m going to', 9, 2);
+
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (63, 'Why don''t you ask Hannah to help. I''m sure she @ mind.', 'won''t', 'isn''t going to', 9, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (64, '<b>A</b>: My history course is really boring. I''m going to ask the college if I can do French instead.<br /><b>B</b>: I''ve already tried. They @ let you change.', 'won''t', 'aren''t going to', 9, 2);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (10, 'Unit 10: Present simple and present continuous for the future', '<details need to be done>', 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (65, 'I''ll be home until about eleven o''clock in case you @ to contact me.', 'need', 'begin,blow,call,compete,hear,hold,join,practise,remember,stop,succeed', 10, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (66, 'We @ over in Bangkok for a few days on our way to Sydney.', 'stop', 'begin,blow,call,compete,hear,hold,join,need,practise,remember,succeed', 10, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (67, 'Text me as soon as you @ anything from the hospital.', 'hear', 'begin,blow,call,compete,hold,join,need,practise,remember,stop,succeed', 10, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (68, 'Mr Weatherup waited until the children were quiet and then said, ''You mustn''t start running until I @ my whistle.''', 'blow', 'begin,call,compete,hear,hold,join,need,practise,remember,stop,succeed', 10, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (69, 'The sky''s getting very dark. Looks like we@ a thunderstorm before the end of the day.', '''re going to have', '''re having', 10, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (70, 'It is thought that the world population @ to 8 billion by 2030.', 'will rise', 'is rising', 10, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (71, 'The heavy rain forecast for tonight @ to dangerous driving conditions.', 'is going to lead', 'is leading', 10, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (72, 'The lizard looks pretty frightening but it @ you.', 'won''t harm', 'isn''t harming', 10, 2);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (11, 'Unit 11: Future continuous and future perfect (continuous)', '<details need to be done>', 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (73, '<b>A</b>: I wonder if your dad would give us a lift?<br /><b>B</b>: I @ him, but he''s really busy at the moment.', 'will ask', 'will happen,will be happening,will be helping,will help,will be moving,will move,will be asking,will be introducing,will introduce,will be seeing,will see', 11, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (74, '<b>A</b>: I''ve got a terrible headache.<br /><b>B</b>: Why don''t you put on some sunglasses? I''m sure that @.', 'will help', 'will happen,will be happening,will be helping,will be moving,will move,will be asking,will ask,will be introducing,will introduce,will be seeing,will see', 11, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (75, 'What @ if I accidentally drop the test tube?', 'will happen', 'will be happening,will be helping,will help,will be moving,will move,will be asking,will ask,will be introducing,will introduce,will be seeing,will see', 11, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (76, 'The new road @ eight lanes.', 'will have', 'is having', 10, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (77, 'That tree@ down unless you cut some of the bigger branches off.', '''s going to fall', '''s falling', 10, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (78, 'Sebastian Vettel @ into first place in the drivers'' championship if he wins the Italian Grand Prix this weekend.', 'will move', 'will happen,will be happening,will be helping,will help,will be moving,will be asking,will ask,will be introducing,will introduce,will be seeing,will see', 11, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (79, '<b>A</b>: I don''t think I want to go to the party – I won''t know anyone.<br /><b>B</b>: I''m sure Stella @ you to her friends if you want.', 'will introduce', 'will happen,will be happening,will be helping,will help,will be moving,will move,will be asking,will ask,will be introducing,will be seeing,will see', 11, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (80, 'Please go in. The doctor @ you now.', 'will see', 'will happen,will be happening,will be helping,will help,will be moving,will move,will be asking,will ask,will be introducing,will introduce,will be seeing', 11, 2);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (12, 'Unit 12: <i>Be to</i> + infinitive; <i>be about to</i> + infinitive', '<details need to be done>', 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (81, 'I''ve planted a few daffodils, but I''m hoping that in a few years they @ and cover the whole area.', 'will spread', 'are to spread', 12, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (82, 'We''d better go in. The concert @ .', 'is about to start', 'is to start', 12, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (83, 'If we @ the life cycle in the oceans, monitoring of fish stocks is vital.', 'are to understand', 'will understand', 12, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (84, 'I @ the bus when someone grabbed me by the arm.', 'was just about to get on', 'was just to get on', 12, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (85, 'If she @ her house in Rome, she needs to reduce the price she is asking for it.', 'is to sell', 'sells', 12, 2);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (13, 'Unit 13: Other ways of talking about the future', '<details need to be done>', 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (86, 'David has worked hard all year, so he @ do well in his exams.', 'is sure to', 'is due to', 13, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (87, 'The government @ announce its controversial plans for higher education at a press conference this afternoon.', 'is set to', 'is bound to', 13, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (88, 'He became seriously ill just as he @ to start a new job in Paris.', 'was due', 'was on the point', 13, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (89, 'Sales had fallen and the company was on the verge @ .', 'of closing down', 'to close down', 13, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (90, 'They say it @ take another three years to complete the building.', 'will', 'shall', 13, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (91, 'She will be able to buy a nice flat in town if she @ her house in the country.', 'sells', 'is to sell', 12, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (92, 'Hewson will need to play much better than he did today if he @ Murdoch in the next round of the competition.', 'is to beat', 'beats', 12, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (93, 'When the rainy season arrives, the reservoirs @ very quickly.', 'will fill up', 'are to fill up', 12, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (94, 'The newspapers suggested last week that the president @ resign.', 'was bound to', 'was on the point of', 13, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (95, 'I @ ''hello'' when I realised it wasn''t Richard after all.', 'was about to say', 'was on the brink of saying', 13, 2);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (96, 'I guarantee that you @ never regret buying this car.', 'will', 'shall', 13, 2);
+
+
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (15, 'Unit 15: <i>Can</i>, <i>could</i>, <i>be able to</i> and <i>be allowed to</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (97, 'The new dam @ result in the loss of water for villages further down the river.', 'could', 'can', 15, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (98, 'On a clear day you @ see five towns from the top of this hill.', 'can', 'could', 15, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (99, 'Take your umbrella with you. It said there @ be heavy rain today.', 'could', 'can', 15, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (100, 'My grandfather has difficulty walking and @ walk up stairs any more.', 'can''t', 'couldn''t', 15, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (101, 'The prisoner @ speak to the reporters briefly before being led away.', 'was allowed to', 'could', 15, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (102, 'I hadn''t seen my brother for years and I @ hardly wait for his train to arrive.', 'could', 'can', 15, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (103, 'We generally take our cat on holiday with us because it @ be difficult to find someone to look after it.', 'can', 'could', 15, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (104, 'Climate change @ mean an increased risk of diseases carried by mosquitoes.', 'could', 'can', 15, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (16, 'Unit 16: <i>Will</i>, <i>would</i> and <i>used to</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (105, 'In my first job I @ in a tiny village school on the south coast.', 'used to teach', 'would teach', 16, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (17, 'Unit 17: <i>May</i> and <i>might</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (106, 'Termites construct earth mounds which @ measure several metres across.', 'may', 'might', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (107, 'But I often wonder what life is now like in the village. Most of the teachers I worked with were older than me at the time, so they @. ...', 'will have retired', 'will retire', 16, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (108, 'Despite these problems, I @ to stay there, but my contract came to an end and I moved to a new job. ...', 'would have loved', 'will have loved', 16, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (109, 'I @ a computer or even many textbooks, and ...', 'didn''t use to have', 'wouldn''t have', 16, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (110, 'The resources at the school @ quite basic, though. ...', 'used to be', 'would be', 16, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (111, 'Many people today @ a lot to live the life I had in those days. ...', 'would give', 'used to give', 16, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (112, 'During my three years there I @ in a house in the village, and ...', 'used to live', 'would live', 16, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (113, 'A bear came into our garden last winter. It @ for food during a heavy snowfall.', 'might have been looking', 'may be seeing,might have seen,might have been waiting,may be waiting,might be looking', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (114, 'Alicia says she''s thinking of emigrating. @ it really be that she''d leave her job and family?', 'Could', 'May', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (115, '@ I take one of those rather nice-looking cakes?', 'May', 'Might', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (116, '<b>A</b>: I keep getting a red rash on my back.<br /><b>B</b>: @ you have a food allergy?', 'Could', 'May', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (117, '@ I begin by saying how grateful I am to have been given the opportunity to address you this evening.', 'May', 'Might', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (118, 'Before the new law was introduced, people @ be stopped and searched in the street by police simply for looking suspicious.', 'might', 'may', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (119, '<b>A</b>: I wonder how my boss found out I was thinking of leaving.<br /><b>B</b>: @ he have overheard you telling someone?', 'Could', 'May', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (120, 'As recently as 2005 farmers @ be forced off their land by the government without compensation.', 'might', 'may', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (121, '<b>A</b>: We''ll never get to the station on time with all this traffic.<br /><b>B</b>: @ we catch the 4:35 train instead?', 'Could', 'Might', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (122, '<b>A</b>: I''m sorry, we''ve sold out of her latest novel.<br /><b>B</b>: @ to have more copies in soon?', 'Are you likely', 'May you', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (123, '@ parents do more to help their children learn to read?', 'Could', 'Might', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (124, '@ there be a connection between asthma and pollution from cars?', 'Could', 'May', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (125, 'Sarah looked so different that I @ past without recognising her if she hadn’t said ‘hello’.', 'might have walked', 'may have been walking,might have married,might be marrying,might have met,might have been meeting', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (126, '<b>A</b>: I wonder why Bruno was standing alone by the fountain last night.<br /><b>B</b>: I suppose he @ his girlfriend there.', 'might have been meeting', 'may have been walking,might have walked,might have married,might be marrying,might have met', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (127, 'I couldn’t remember where I’d seen George before. I think I @ him ten years ago at a conference in Prague.', 'might have met', 'may have been walking,might have walked,might have married,might be marrying,might have been meeting', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (128, 'With the increase in manufacturing output, we @ the beginning of an economic recovery.', 'may be seeing', 'might have seen,might have been waiting,may be waiting,might be looking,might have been looking', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (129, 'I’ll take something to read when I go for my appointment at the hospital. I @ for a few hours before I see the doctor.', 'may be waiting', 'may be seeing,might have seen,might have been waiting,might be looking,might have been looking', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (130, 'They are making a lot of people redundant at my company, so I @ for a new job fairly soon.', 'might be looking', 'may be seeing,might have seen,might have been waiting,may be waiting,might have been looking', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (131, 'When I got home, Matthew was sitting on my doorstep playing a game on his mobile. It looked like he @ there for ages.', 'might have been waiting', 'may be seeing,might have seen,may be waiting,might be looking,might have been looking', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (132, 'Anyone who was outside at ten o’clock last night @ a greenish glow in the sky.', 'might have seen', 'may be seeing,might have been waiting,may be waiting,might be looking,might have been looking', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (133, 'I’ve heard a rumour that Martha @ Carlo when she goes to Italy next month.', 'might be marrying', 'may have been walking,might have walked,might have married,might have met,might have been meeting', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (134, 'People have appealed to anyone who @ in the hills at the time of the accident to contact them.', 'may have been walking', 'might have walked,might have married,might be marrying,might have met,might have been meeting', 17, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (135, 'Historians believe that Prince Willem @ the Countess in order to increase trading links between their two countries.', 'might have married', 'may have been walking,might have walked,might be marrying,might have met,might have been meeting', 17, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (18, 'Unit 18: <i>Must</i> and <i>have</i> (<i>got</i>) <i>to</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (136, 'If the company is going to expand it would @ employ more people.', 'have to', 'have got to', 18, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (137, 'I hate wearing a suit. @ wear one for the wedding?', 'Have I got to', 'Must I', 18, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (138, '@ sing as we''re walking along the street? I find it really embarrassing.', 'Do you have to', 'Must you', 18, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (19, 'Unit 19: <i>Need(n''t)</i>, <i>don’t need to</i> and <i>don''t have to</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (139, 'Modern art @ understood to be appreciated.', 'doesn''t need to be', 'needn''t be', 19, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (140, 'Just because a car is small @ mean that it isn''t powerful.', 'needn''t', 'mustn''t', 19, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (141, 'Her husband is a chef, so she never @ do any cooking.', 'has to', 'has got to', 18, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (142, 'He@ get a good grade in his maths exam to get a university place.', '''s got to', '''s to', 18, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (143, '@ book tickets when you went to the cinema?', 'Did you have to', 'Had you got to', 18, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (144, 'If you want people to trust you, you@ tell the truth.', '''ve got to', '''ve to', 18, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (145, 'A lot of people speak English in Warsaw, so you @ speak Polish to get by.', 'don''t have to', 'mustn''t', 19, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (146, 'The facilities are so good that guests @ leave the hotel for anything, except sightseeing.', 'needn''t', 'mustn''t', 19, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (147, 'For this recipe the herbs @ / <B>needn''t </b> be fresh; you could use dried ones instead.', 'don''t need to', 'needn''t', 19, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (148, 'The council @ be allowed to get away with closing the main library.', 'mustn''t', 'don''t have to', 19, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (149, 'You @ children of your own to be a good teacher.', 'don''t need to have', 'needn''t have', 19, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (150, 'I''ve rented the room until the end of August, so I @ leave until then.', 'don''t have to', 'mustn''t', 19, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (151, 'Examination results @ be released to students before 12.00 on Friday 13th June.', 'mustn''t', 'needn''t', 19, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (20, 'Unit 20: <i>Should</i>, <i>ought to</i> and <i>had better</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (152, 'Local people @ have been consulted before the power station was built.', 'should', 'had better', 20, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (153, 'Fire doors in the building @ be kept closed at all times.', 'should', 'ought to', 20, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (154, '<b>A</b>: When I woke up this morning I found I had big red spots all over my body.<br /><b>B</b>: I @ go and see the doctor if I were you.', 'should', 'ought to', 20, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (155, 'I really @ stay at home and do my homework, but it''s such a beautiful day that I''m going to the beach instead.', 'should', 'shall', 20, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (156, 'My wife is ill, so I @ be taking the next few days off work.', 'shall', 'should', 20, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (157, '<b>A</b>: Please come in and take a seat.<br /><b>B</b>: Thanks. Where @ I sit?', 'should', 'ought', 20, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (158, 'Children @ be encouraged to do more sport out of school.', 'ought to', 'had better', 20, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (159, '<b>A</b>: Hannah moves house next week, doesn''t she?<br /><b>B</b>: Yes, she @ be really busy packing.', 'must', 'should', 20, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (21, 'Unit 21: Linking verbs: <i>be</i>, <i>appear</i>, <i>seem</i>; <i>become</i>, <i>get</i>, etc.', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (160, 'You''ll pass your driving test easily. Don''t @ worked up about it.', 'get', 'become', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (161, 'Oh, no, the window''s broken! Dad will @ mad.', 'go', 'become', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (162, 'You could tell he was really embarrassed, because his face @ bright red.', 'turned', 'became', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (163, 'It rained during September and the grapes @ mouldy before we had a chance to pick them.', 'went', 'got', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (164, 'The spider bite @ infected and I had to take antibiotics.', 'got', 'turned', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (165, 'Hard-copy newspapers will eventually @ irrelevant as people increasingly get their news from the Internet.', 'become', 'get', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (166, 'When I saw him 20 years later, he''d @ completely bald.', 'gone', 'got', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (167, 'The work on the bridge was slow at the beginning, but now they seem @ making good progress.', 'to be', '(to be)', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (168, 'Richard suggested going by boat. It seemed @ a good idea until the sea started to get rough.', '(to be)', 'to be', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (169, 'The garden appears @ much more overgrown than when I was here last year.', '(to be)', 'to be', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (170, 'At first I thought it was a kangaroo, but it turned out @ a large dog.', 'to be', '(to be)', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (171, 'After I had flu, I found that I quickly @ tired when I did any exercise.', 'got', 'became', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (172, 'She decided to @ a doctor after she had taken care of her father when he was seriously ill.', 'become', 'get', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (173, 'The test questions started off easy, but they @ difficult pretty quickly.', 'got', 'became', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (174, 'His eye was swollen and beginning to @ blue.', 'turn', 'become', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (175, 'As I walked along the dark street, I @ aware that someone was following me.', 'became', 'got', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (176, 'Mr Robinson seems @ a very kind man.', '(to be)', 'to be', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (177, 'She appears @ running the company very effectively.', 'to be', '(to be)', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (178, 'Mr Khan''s problem turned out @ more serious than he had first thought.', '(to be)', 'to be', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (179, 'Although the bird hit the window hard, it still appeared @ alive.', 'to be', '(to be)', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (180, 'Speed cameras have proved @ highly effective in reducing road accidents along this road.', '(to be)', 'to be', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (181, 'Under the floorboards I found what appeared @ an old wooden jewellery box.', 'to be', '(to be)', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (182, 'I thought he was concentrating on the lecture with his eyes closed, but he turned out @ asleep.', 'to be', '(to be)', 21, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (183, 'The car looked @ in excellent condition, so I was very happy to buy it.', '(to be)', 'to be', 21, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (23, 'Unit 23: Forming passive sentences 2: verb + -<i>ing</i> or <i>to-infinitive</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (184, 'Trees @ to the ground by the fierce storm.', 'were sent crashing', 'were asked providing,was asked to provide,was expected raising,was expected to raise,was found to wander,was found wandering,was required learning,was required to learn,was seen to try,was seen trying,was understood owing,was understood to owe,were asked providing,were heard approaching,were heard to approach,were kept to wait,were kept waiting,were sent to crash,were told leaving,were told to leave', 23, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (185, 'Mr Johnson @ thousands of pounds when he disappeared.', 'was understood to owe', 'were asked providing,was asked to provide,was expected raising,was expected to raise,was found to wander,was found wandering,was required learning,was required to learn,was seen to try,was seen trying,was understood owing,were asked providing,were heard approaching,were heard to approach,were kept to wait,were kept waiting,were sent crashing,were sent to crash,were told leaving,were told to leave', 23, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (186, 'Before I could start the job in Warsaw, I @ Polish.', 'was required to learn', 'were asked providing,was asked to provide,was expected raising,was expected to raise,was found to wander,was found wandering,was required learning,was seen to try,was seen trying,was understood owing,was understood to owe,were asked providing,were heard approaching,were heard to approach,were kept to wait,were kept waiting,were sent crashing,were sent to crash,were told leaving,were told to leave', 23, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (187, 'Students @ the exhibition for free.', 'were allowed to enter', 'were allowed entering', 23, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (188, 'The painting @ an early work by Picasso.', 'was shown to be', 'was shown being', 23, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (189, 'Footsteps @ the front door along the driveway.', 'were heard approaching', 'were asked providing,was asked to provide,was expected raising,was expected to raise,was found to wander,was found wandering,was required learning,was required to learn,was seen to try,was seen trying,was understood owing,was understood to owe,were asked providing,were heard to approach,were kept to wait,were kept waiting,were sent crashing,were sent to crash,were told leaving,were told to leave', 23, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (190, 'The boys were making a lot of noise in the library, and they @.', 'were told to leave', 'were asked providing,was asked to provide,was expected raising,was expected to raise,was found to wander,was found wandering,was required learning,was required to learn,was seen to try,was seen trying,was understood owing,was understood to owe,were asked providing,were heard approaching,were heard to approach,were kept to wait,were kept waiting,were sent crashing,were sent to crash,were told leaving', 23, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (191, 'The girl @ through the forest just a few kilometres from her home.', 'was found wandering', 'were asked providing,was asked to provide,was expected raising,was expected to raise,was found to wander,was required learning,was required to learn,was seen to try,was seen trying,was understood owing,was understood to owe,were asked providing,were heard approaching,were heard to approach,were kept to wait,were kept waiting,were sent crashing,were sent to crash,were told leaving,were told to leave', 23, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (192, 'When I opened the bank account, I @ proof of my identity.', 'was asked to provide', 'were asked providing,was expected raising,was expected to raise,was found to wander,was found wandering,was required learning,was required to learn,was seen to try,was seen trying,was understood owing,was understood to owe,were asked providing,were heard approaching,were heard to approach,were kept to wait,were kept waiting,were sent crashing,were sent to crash,were told leaving,were told to leave', 23, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (193, 'We @ outside the solicitor''s office for over two hours.', 'were kept waiting', 'were asked providing,was asked to provide,was expected raising,was expected to raise,was found to wander,was found wandering,was required learning,was required to learn,was seen to try,was seen trying,was understood owing,was understood to owe,were asked providing,were heard approaching,were heard to approach,were kept to wait,were sent crashing,were sent to crash,were told leaving,were told to leave', 23, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (194, 'The event @ more than £50,000 for charity.', 'was expected to raise', 'were asked providing,was asked to provide,was expected raising,was found to wander,was found wandering,was required learning,was required to learn,was seen to try,was seen trying,was understood owing,was understood to owe,were asked providing,were heard approaching,were heard to approach,were kept to wait,were kept waiting,were sent crashing,were sent to crash,were told leaving,were told to leave', 23, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (195, 'He @ to break into a number of cars in the car park.', 'was seen trying', 'were asked providing,was asked to provide,was expected raising,was expected to raise,was found to wander,was found wandering,was required learning,was required to learn,was seen to try,was understood owing,was understood to owe,were asked providing,were heard approaching,were heard to approach,were kept to wait,were kept waiting,were sent crashing,were sent to crash,were told leaving,were told to leave', 23, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (24, 'Unit 24: Using passives', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (196, 'As their use becomes increasingly widespread, analysts now @ that by 2025, ...', 'predict', 'access,advance,allow,become,carry,conduct,download,hold,manufacture,use,weigh', 24, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (197, 'Today''s smartphones are multi-functional and @ users to make calls, send texts, take photos, and so on.', 'allow', 'access,advance,become,carry,conduct,download,hold,manufacture,predict,use,weigh', 24, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (25, 'Unit 25: Reporting with passives; <i>It is said that …</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (198, 'The building was @ to be used as the college library.', 'intended', 'decided', 25, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (199, 'His personal wealth was @ to be $60 million.', 'estimated', 'announced', 25, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (200, 'It has been @ that I should avoid eating dairy products.', 'recommended', 'reminded', 25, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (201, 'It has recently been @ why the airport was closed.', 'revealed', 'said', 25, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (202, 'The storms are @ to be one of the consequences of climate change.', 'assumed', 'suggested', 25, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (203, 'It has been @ that chewing gum can seriously damage children’s teeth.', 'shown', 'warned', 25, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (204, 'The car is @ to be the safest ever built.', 'claimed', 'proposed', 25, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (205, 'It is now @ how the accident happened.', 'understood', 'said', 25, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (206, 'It was @ that the bacteria in the meat was not killed during cooking.', 'found', 'told', 25, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (207, 'It has been @ that emergency aid will be sent to the flooded areas.', 'agreed', 'reassured', 25, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (208, 'When it was @ why taxes had to be raised, I had no objections.', 'explained', 'acknowledged', 25, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (209, 'No additional money will be invested in the factory until it has been @ whether it is being run efficiently.', 'established', 'believed', 25, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (26, 'Unit 26: <i>Wh</i>-questions with <i>who</i>, <i>whom</i>, <i>which</i>, <i>how</i> and <i>whose</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (210, 'I like the balloons outside the house. @ birthday is it?', 'Whose', 'Who''s', 26, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (211, 'I hear your uncle had a bad fall. @ is he feeling now?', 'How', 'What', 26, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (212, '@ of the courses did you find most interesting?', 'Which', 'What', 26, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (213, '@ did you wish to speak to?', 'Who', 'Whom', 26, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (214, '<b>A</b>: I''ve got five sisters: Amy, Beryl, Cathy, Dora and Eva.<br /><b>B</b>: @ ones are older than you?', 'Which', 'Who', 26, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (215, '@ should I address my complaint?', 'To whom', 'Whom', 26, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (216, '<b>A</b>: I''m going to see Orlando Bloom''s new film.<br /><b>B</b>: @ is it called?', 'What', 'How', 26, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (217, '@ the man in the photograph?', 'Who''s', 'Whose', 26, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (218, 'You see those two men standing next to Sarah? @ is her boyfriend?', 'Which', 'Who', 26, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (219, '<b>A</b>: I''m going to climb in through the bedroom window.<br /><b>B</b>: @ if someone sees you?', 'What', 'How', 26, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (220, '@ needs more time to finish the test?', 'Who', 'Whom', 26, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (221, '@ of you wants coffee?', 'Which', 'Who', 26, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (27, 'Unit 27: Negative questions; echo questions; questions with <i>that-clauses</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (222, '<b>A</b>: Oh, no. I''ve swallowed my chewing gum.<br /><b>B</b>: @', 'You''ve done what?', 'You''ve done how much?', 27, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (223, '<b>A</b>: It''s 30 kilometres to the nearest shop.<br /><b>B</b>: @', 'It''s how far?', 'It''s how much?', 27, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (224, '<b>A</b>: Debbie’s doing golf studies at college.<br /><b>B</b>: @', 'What''s she doing?', 'Which is she doing?', 27, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (225, '<b>A</b>: Eric''s going out with Nicki.<br /><b>B</b>: @', 'He''s going out with who?', 'He''s going out with whom?', 27, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (226, '<b>A</b>: Darren and Alice have bought a caravan.<br /><b>B</b>: @', 'They''ve bought what?', 'They did what?', 27, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (227, '<b>A</b>: I''m going from Oslo to Helsinki on a tandem.<br /><b>B</b>: @', 'You''re going how?', 'On a what?', 27, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (228, '<b>A</b>: I''m going to Dodoma next week.<br /><b>B</b>: @', 'You''re going where?', 'You''re going to what?', 27, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (229, '<b>A</b>: I won''t be back until December.<br /><b>B</b>: @', 'Back when?', 'Back how?', 27, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (230, '<b>A</b>: It''ll take 17 hours to get to Moscow.<br /><b>B</b>: @', 'It''ll take how long?', 'It''ll take how much?', 27, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (231, '<b>A</b>: They''re living in Dornoch.<br /><b>B</b>: @', 'They''re living where?', 'They''re living with whom?', 27, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (232, '<b>A</b>: Dad! The dog''s eaten my dinner!<br /><b>B</b>: @', 'It''s done what?', 'It ate how much?', 27, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (233, '<b>A</b>: My motorbike cost €40,000.<br /><b>B</b>: @', 'It cost how much?', 'It did what?', 27, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (28, 'Unit 28: Verbs, objects and complements', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (234, 'Although they like working for the company, most people at the meeting considered @ unreasonable.', 'the new contracts', 'the bar,the car,clothes,the dishes,itself,their hand,novels,the orangutan,the phone,traffic,the windows', 28, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (235, 'When the war began, the country declared @ neutral.', 'itself', 'the bar,the car,clothes,the dishes,the new contracts,their hand,novels,the orangutan,the phone,traffic,the windows', 28, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (236, 'The new restrictions on parking should decrease @ near the old town centre.', 'traffic', 'the bar,the car,clothes,the dishes,itself,the new contracts,their hand,novels,the orangutan,the phone,the windows', 28, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (29, 'Unit 29: Verb + two objects', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (237, 'Shall I make a cup of coffee @ you?', 'for', 'to', 29, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (238, 'I can’t reach the screwdriver. Can you hand it @ me?', 'to', 'for', 29, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (239, 'Both the children wanted some chocolate, so I broke @ in half.', 'the bar', 'the car,clothes,the dishes,itself,the new contracts,their hand,novels,the orangutan,the phone,traffic,the windows', 28, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (240, 'Early naturalists believed @ capable of swimming over long distances.', 'the orangutan', 'the bar,the car,clothes,the dishes,itself,the new contracts,their hand,novels,the phone,traffic,the windows', 28, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (241, 'As it was starting to feel cold, I shut @ and turned on the heating.', 'the windows', 'the bar,the car,clothes,the dishes,itself,the new contracts,their hand,novels,the orangutan,the phone,traffic', 28, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (242, 'I''ve got a guidebook on Crete that you can borrow. Just wait here and I''ll get it @ you.', 'for', 'to', 29, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (243, 'Aleksi reported the theft of his e-book reader @ the police.', 'to', 'for', 29, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (244, 'There''s a parcel waiting for me at the post office. Can you collect it @ me on your way home?', 'for', 'to', 29, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (245, 'My parents lent me the money for the car and I paid it back @ them over a period of a year.', 'to', 'for', 29, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (246, 'The vase was slightly damaged so they sold it @ me half price.', 'to', 'for', 29, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (247, 'I cooked a special meal @ Ann on her birthday.', 'for', 'to', 29, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (248, 'My headphones were broken but Hanna was able to repair them @ me.', 'for', 'to', 29, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (249, 'The people at the gallery might be interested in selling your paintings. Why don''t you show some of your work @ them?', 'to', 'for', 29, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (250, 'That''s Professor Jenkins over there. I''ll introduce you @ her if you like.', 'to', 'for', 29, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (251, 'Beth had sprained her wrist and I had to write out her homework @ her.', 'for', 'to', 29, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (31, 'Unit 31: Verb + -<i>ing</i> forms and infinitives 2', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (252, 'The owners have agreed @ the painting to us for a very reasonable price.', 'to sell', 'to,at,for,on | to increase,to bring,to crash,to accept,to miss,to be removed,to remain,to come,to take', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (253, 'My brother works really hard. I keep on @ him {{c1::to take}} a holiday, but he doesn''t listen.', 'at', 'to,for,on | to increase,to bring,to crash,to accept,to miss,to be removed,to remain,to come,to sell,to take', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (254, 'I''ve arranged @ the plumber {{c1::to come}} at 9 o''clock tomorrow morning.', 'for', 'to,at,on | to increase,to bring,to crash,to accept,to miss,to be removed,to remain,to come,to sell,to take', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (255, 'A software problem caused the computer @.', 'to crash', 'to,at,for,on | to increase,to bring,to accept,to miss,to be removed,to remain,to come,to sell,to take', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (256, 'He motioned @ the waiter {{c1::to bring}} the bill.', 'to', 'at,for,on | to increase,to bring,to crash,to accept,to miss,to be removed,to remain,to come,to sell,to take', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (257, 'As the car skidded round the corner, she yelled @ him to {{c1::slow down}}.', 'at', 'to,for,on | slow down,to cough', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (258, 'She nearly laughed when she saw his new shirt, but pretended @ instead. She didn''t want to embarrass him.', 'to cough', 'to,at,for,on | slow down', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (259, 'I asked her how old she was, but she said she @ her age.', 'preferred not to reveal', 'didn''t prefer to reveal', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (260, 'Have you seen my mobile anywhere? It @.', 'appears to have vanished', 'appears to vanish', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (261, 'She was very angry with me and @ it.', 'didn''t try to conceal', 'tried not to conceal', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (262, 'As the afternoon got hotter, he @ to walk home.', 'regretted having decided', 'regretted to have decided', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (263, 'We get so many phone calls from people trying to sell us things, that we''ve asked @ our number {{c1::to be removed}} from the telephone directory.', 'for', 'to,at,on | to increase,to bring,to crash,to accept,to miss,to be removed,to remain,to come,to sell,to take', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (264, 'A leg injury forced him @ the match against Argentina.', 'to miss', 'to,at,for,on | to increase,to bring,to crash,to accept,to be removed,to remain,to come,to sell,to take', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (265, 'The police appealed @ the crowd {{c1::to remain}} calm but leave the area immediately.', 'to', 'at,for,on | to increase,to bring,to crash,to accept,to miss,to be removed,to remain,to come,to sell,to take', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (266, 'She could not @ either Hannah or Annie before.', 'recall having met', 'recall to have met', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (267, 'He has a car but he @ all the way to Marseilles, and caught the train instead.', 'chose not to drive', 'didn''t choose to drive', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (268, 'Mr Howe is unwell and @ the meeting.', 'is not able to attend', 'is not able to have attended', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (269, 'Although I lived near the sea as a child, I @ until I was in my teens.', 'didn''t learn to swim', 'learnt not to swim', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (270, 'He @ over 50 novels, but only 20 now survive.', 'is said to have written', 'is said to write', 31, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (271, 'She has been quite seriously ill, but now @ completely.', 'seems to have recovered', 'seems having recovered', 31, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (33, 'Unit 33: Reporting statements: <i>that-clauses</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (272, 'Jack @ the road was going to be closed for the rest of the day.', 'mentioned', 'grumbled', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (273, 'Dr Gao @ that the files could easily be downloaded.', 'showed', 'convinced', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (274, 'Scientists @ the loss of communication with the satellite to be the result of computing problems.', 'believe', 'explain', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (275, 'I @ you were looking unhappy. Is there something wrong?', 'noticed', 'observed', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (276, 'He @ that we should take off our shoes before going in.', 'requested', 'reminded', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (277, 'Companies today demand @ their employees that they should be punctual, efficient and well-trained.', 'of', 'to,with', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (278, 'I complained @ my neighbour that his trees were damaging my house.', 'to', 'of,with', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (279, 'She strongly disagreed @ the proposal that the sports field should be sold.', 'with', 'of,to', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (280, 'We were able to report @ our shareholders that profits increased by over 50% in the last year.', 'to', 'of,with', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (281, '<b>A</b>: Do you want to come over for dinner on Friday?<br /><b>B</b>: Thanks. I''ll check @ Sam that we''re free then.', 'with', 'of,to', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (282, 'They indicated @ Hamilton that there was a problem with the car and that he should stop immediately.', 'to', 'of,with', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (283, 'The Defence Minister @ that no requests for more troops had been made.', 'stressed', 'assured', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (284, 'The police @ the theft to be the work of an organised gang.', 'presume', 'suggest', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (285, 'He @ it takes even longer to get to work now the new bridge is finished.', 'says', 'argues', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (286, 'Ahmad @ that the ferry would be leaving on time.', 'guaranteed', 'told', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (287, 'We agree with @ there has been insufficient investment in the rail system.', 'the report''s main conclusion that', 'the report''s main conclusion', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (288, 'Economists @ the recent rise in consumer spending to be unexpected.', 'have acknowledged', 'have emphasised', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (289, 'She @ the painting to be genuine.', 'assumed', 'promised', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (290, 'Surely you all agree @ me that this is the best thing to do.', 'with', 'of,to', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (291, 'Safety officers recommended @ the company that new fire escapes should be built.', 'to', 'of,with', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (292, 'As I was going into hospital, my brother joked @ me that I should count all my fingers and toes before I left.', 'with', 'of,to', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (293, 'The teacher explained @ the students that the examination would be two hours long.', 'to', 'of,with', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (294, 'He confessed @ the police that he had stolen the money.', 'to', 'of,with', 33, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (295, 'I mentioned @ the waiter that my soup was cold.', 'to', 'of,with', 33, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (35, 'Unit 35: Tense choice in reporting', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (296, 'When it was announced that the space mission @ Mars there were celebrations all over the country.', 'had reached', 'reached', 35, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (297, 'Most teachers agree that children @ best in small classes.', 'learn', 'learnt', 35, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (298, 'When they @ my studio, they asked whether my paintings were for sale.', 'visited', 'visit', 35, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (299, 'Anna whispered to me that she @ sick and left the room.', 'was feeling', 'is feeling', 35, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (300, 'Scientists believe that bees @ by recognising landmarks in their local area.', 'navigate', 'navigated', 35, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (301, 'Sophia insisted that we @ before, although I''m sure I remember speaking to her at Lee''s house a few years ago.', 'hadn''t met', 'didn''t meet', 35, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (36, 'Unit 36: Reporting offers, suggestions, orders, intentions, etc.', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (302, 'He insisted @.', 'that his parents came along, too', 'his parents to come along, too', 36, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (303, 'I suggest @.', 'that you complain to your boss', 'you to complain to your boss', 36, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (304, 'He refused @.', 'to admit to being wrong', 'that he would admit to being wrong', 36, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (305, 'The judge ordered @.', 'that the money should be repaid immediately', 'to repay the money immediately', 36, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (306, 'When I leave school I want @.', 'to train to be a nurse', 'that I should train to be a nurse', 36, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (307, 'She volunteered @.', 'to help with the arrangements for the wedding', 'helping with the arrangements for the wedding', 36, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (308, 'He suggested @.', 'meeting on the bridge at nine o''clock', 'to meet on the bridge at nine o''clock', 36, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (309, 'She offered @.', 'to take me on a tour of the city', 'that she would take me on a tour of the city', 36, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (37, 'Unit 37: Modal verbs in reporting', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (310, 'I enquired where I @ hand in the form.', 'should', 'would', 37, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (311, 'She thought she @ be able to get a flight to Marseilles, but there weren''t any seats left.', 'would', 'will', 37, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (312, 'Caroline says that she @ be arriving at about 6:30.', 'will', 'would', 37, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (313, 'Terry said he thought I @ be cold in such a thin dress.', 'must', 'had to', 37, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (314, 'She claimed that she @ see us in the crowd, even though we were waving and shouting.', 'couldn''t', 'can''t', 37, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (315, 'He told me that he @ never forget our time together.', 'would', 'shall', 37, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (316, 'The doctor told me that I @ eat for 24 hours before the operation.', 'mustn''t', 'didn''t have to', 37, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (39, 'Unit 39: <i>Should</i> in <i>that-clauses</i>; the present subjunctive', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (317, 'It is vital that the witness to the murder @ come forward as soon as possible.', '(should)', 'should', 39, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (318, 'I am anxious that Mr Wang’s visit @ not be postponed.', 'should', '(should)', 39, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (319, 'I am amazed that he @ think of such a thing.', 'should', '(should)', 39, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (320, 'It was never intended that she @ work in Toronto permanently.', '(should)', 'should', 39, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (321, 'We are disappointed that the strike @ not have been resolved at the meeting.', 'should', '(should)', 39, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (322, 'It is imperative that the government @ work closely with its European partners.', '(should)', 'should', 39, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (323, 'We were astounded that the school @ employ someone with his criminal record.', 'should', '(should)', 39, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (324, 'I suggest that you @ avoid driving through the centre of town.', '(should)', 'should', 39, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (40, 'Unit 40: Agreement between subject and verb 1', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (325, 'A survey of the opinions of students @ that the majority are very satisfied with our online language courses.', 'shows', 'show', 40, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (326, 'What we have to discover @ the causes of the infection before we can develop a vaccine.', 'are', 'is', 40, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (327, 'To work in his garden @ one of the great pleasures in his life.', 'was', 'were', 40, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (328, 'Mr Toubon proposed that the law @ be changed immediately.', '(should)', 'should', 39, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (329, 'I was upset that she @ leave without saying goodbye.', 'should', '(should)', 39, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (330, 'We insist that the money @ be available to all students in financial difficulties.', '(should)', 'should', 39, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (331, 'It was inconceivable that the twins @ be sent to separate schools.', '(should)', 'should', 39, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (332, 'That the attack was part of some co-ordinated plot to destabilise the government now @ certain.', 'seems', 'seem', 40, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (333, 'What interests researchers at the Institute of Technology @ the potential applications of newly-invented plastics.', 'are', 'is', 40, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (334, 'The next round of meetings between the countries in the trading organisation @ place in six months'' time.', 'takes', 'take', 40, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (335, 'The streets nearest to the town centre @ to be closed to traffic during the weekend.', 'are', 'is', 40, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (336, 'What I really like about the town @ the main square.', 'is', 'are', 40, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (337, 'Whatever attacked her as she walked through the jungle @ scared off as we arrived in the clearing.', 'was', 'were', 40, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (338, 'What remains of the Roman temple today @ small sections of the outer wall.', 'are', 'is', 40, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (339, 'The decline in sales of new cars during the recent period of economic difficulty @ hit the company hard.', 'has', 'have', 40, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (340, 'What gave me the idea for the novel @ a story that one of my children told me.', 'was', 'were', 40, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (41, 'Unit 41: Agreement between subject and verb 2', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (341, 'Becky is leaving at the end of the week and some of her office colleagues @ organising a party for her.', 'are', 'is,has,have', 41, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (342, 'Each region of the country @ its own independent government.', 'has', 'is,are,have', 41, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (343, 'A lot of the information in the report @ taken directly from the Internet.', 'is', 'are,has,have', 41, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (344, 'A number of today''s international flights from the airport @ been cancelled.', 'have', 'is,are,has', 41, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (345, 'Either the president or his political advisers @ made a big mistake in announcing the tax increases just before the election.', 'have', 'has', 41, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (346, 'Francesca and her mother @ going to Majorca for a week.', 'are', 'is', 41, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (347, 'Although they were operating in difficult conditions, there @ few signs of discontent among the troops.', 'were', 'was', 41, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (348, 'The vote revealed that a majority of the members of the board of directors @ in favour of selling the company.', 'are', 'is,has,have', 41, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (349, 'The job in the factory is quite boring, but none of the work @ difficult.', 'is', 'are,has,have', 41, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (350, 'The number of people in the country who regularly play tennis @ fallen substantially in the last ten years.', 'has', 'is,are,have', 41, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (351, 'I used to write programs on my PC and plenty of my friends who did the same thing now @ good jobs in the IT industry.', 'have', 'is,are,has', 41, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (42, 'Unit 42: Agreement between subject and verb 3', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (352, 'Statistics @ that more people are buying digital books and fewer buying printed ones.', 'show', 'shows', 42, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (353, 'A strike has been called because staff @ that bosses went back on a deal to increase rates of pay.', 'claim', 'claims', 42, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (354, 'Five dollars @ a lot to pay for just a cup of coffee.', 'is', 'are', 42, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (355, 'Although the house isn''t very attractive, its beautiful surroundings @ up for it.', 'make', 'makes', 42, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (356, 'Neither my wife nor my children @ about my plan to buy a yacht.', 'know', 'knows', 41, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (357, 'There @ a very good online chat yesterday about the health service.', 'was', 'were', 41, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (358, 'Law and medicine @ increasingly popular university subjects.', 'are', 'is', 41, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (359, 'Either a uniform or a dinner jacket @ to be worn for the ceremony.', 'is', 'are', 41, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (360, 'Research has found that over 30% of children under the age of six @ overweight.', 'are', 'is', 42, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (361, 'Her lecture highlighted the important part that mathematics @ in our lives.', 'plays', 'play', 42, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (362, 'Some people may be entitled to a refund on their local taxes, although the criteria for eligibility @ complicated.', 'are', 'is', 42, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (363, 'Only a few miles @ the two armies.', 'divides', 'divide', 42, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (364, 'It is now easy to order goods on the Internet, but the means of delivering these goods @ to be improved.', 'has', 'have', 42, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (44, 'Unit 44: <i>A</i> / <i>an</i> and <i>one</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (365, 'He''s got @ HND in structural engineering. (HND = Higher National Diploma)', 'an', 'a', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (366, 'This trip to the Andes is @ once-in-a-lifetime opportunity.', 'a', 'an', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (367, 'I''ve always considered her @ honest person.', 'an', 'a', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (368, 'We''ve got @ eucalyptus tree in the garden.', 'a', 'an', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (369, 'We met again through @ happy coincidence.', 'a', 'an', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (370, 'It will take @ hour or so to get there.', 'an', 'a', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (371, 'It was often very cold during the years I spent in Sweden, and @ winter the temperatures fell to around -30°C during the day.', 'one', 'a', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (372, 'I try to go running at least three times @ week.', 'a', 'one', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (373, 'Although she is in her twenties, she still talks like @ young child.', 'a', 'one', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (374, 'This is Joy. She''s @ cousin of my husband’s.', 'a', 'one', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (375, 'Animals used to come out of the jungle into the village. @ morning I woke up to see a tiger walking across my garden.', 'One', 'A', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (376, 'We are funding @ ongoing programme of reforestation in Nepal.', 'an', 'a', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (377, 'We''re organising @ 18th birthday party for Marco.', 'an', 'a', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (378, 'A consultant was brought in to do @ SWOT analysis of the company. (SWOT = Strengths, Weaknesses, Opportunities, Threats)', 'a', 'an', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (379, 'My MP3 player has @ FM radio.', 'an', 'a', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (380, 'It would be @ honour to carry the Olympic torch.', 'an', 'a', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (381, 'Parr International is setting up @ UK office in Bristol.', 'a', 'an', 44, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (45, 'Unit 45: <i>A</i> / <i>an</i>, <i>the</i> and zero article 1', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (382, 'Although hunters and birdwatchers have different motives, both groups seek the same end result &#8211; @ that is fit for wildlife.', 'a countryside', 'the countryside', 45, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (383, '@ was so noisy that everyone in the building had to wear ear protectors.', 'The machinery', 'Machinery', 45, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (384, 'We had a day out at @ .', 'the seaside', 'a seaside', 45, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (385, 'In answering each question, tick @ box only.', 'one', 'a', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (386, 'I have to go to Paris on business for @ day or two next week.', 'a', 'one', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (387, 'She smiled and tilted her head a little to @ side.', 'one', 'a', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (388, 'I''d like to get @ new bike, but I can''t afford it.', 'a', 'one', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (389, 'There''s no way of avoiding tax in this country. The authorities catch up with you @ way or another.', 'one', 'a', 44, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (390, 'The durian is @ large, fleshy {{c1::fruit}} tasting a bit like a cross between a mango and a pineapple.', 'a', '– | speech,business,competition,fruit', 45, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (391, '... at which @ is expanding, are around 12 billion years ago.', 'the universe', 'universe', 45, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (392, 'Estimates of the date of @, based on the rate ...', 'the Big Bang', 'a Big Bang', 45, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (393, 'The weapons found recently belong to @ which is best forgotten.', 'a past', 'the past', 45, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (394, 'I think @ is the best way of waking up in the morning.', 'a cold shower', 'the cold shower', 45, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (395, 'He is remembered chiefly as a composer for @, for which he wrote 17 concertos.', 'the violin', 'a violin', 45, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (396, 'The study of history helps us to understand what is happening in @.', 'the present', 'a present', 45, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (46, 'Unit 46: <i>A</i> / <i>an</i>, <i>the</i> and zero article 2', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (397, 'When she leaves school she''s going to train to be @ accountant.', 'an', '&#8211,', 46, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (398, 'He made @ controversial {{c1::speech}} criticising the government''s new laws on immigration.', 'a', '– | competition,property,business,speech,success', 45, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (399, 'She runs @ small {{c1::business}} selling home-made yogurt and ice cream.', 'a', '– | competition,property,business,speech,success', 45, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (400, 'I used to go to school with David Beckham - not @ David Beckham ...', 'the', 'a', 46, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (401, 'She has a number of cars including @ Ferrari.', 'a', '&#8211', 46, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (402, 'He was married to @ novelist Elizabeth Jane Howard from 1965 to 1983.', 'the', '&#8211,', 46, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (403, 'The Duke''s younger brother, @ flamboyant Archduke Otto, once appeared at the theatre wearing a suit made of yellow silk.', 'the', 'a', 46, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (404, 'Murad drives much too fast. He likes to think of himself as @ Sebastian Vettel.', 'a', 'the', 46, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (405, 'The book is over 200 years old and was first bought by @ William Budge. I''ve no idea who he was, but you can see he wrote his name and the date inside the cover.', 'a', 'the', 46, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (406, '@ Campbells have a flat in Paris in the same building ...', 'The', '&#8211,', 46, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (47, 'Unit 47: <i>A</i> / <i>an</i>, <i>the</i> and zero article 3', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (407, 'We were given @ on choosing the right university course.', 'advice', 'computers,experience,flowers,information,problems', 47, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (408, 'He always gives me @ on my birthday.', 'flowers', 'advice,computers,experience,information,problems', 47, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (409, 'The new guide provides @ on all hotels and other accommodation in the city.', 'information', 'advice,computers,experience,flowers,problems', 47, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (410, 'If the government increases its borrowing now, that could cause @ in the future.', 'problems', 'advice,computers,experience,flowers,information', 47, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (48, 'Unit 48: <i>Some</i> and <i>any</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (411, '@ of the tennis club have voted overwhelmingly to limit membership to people over the age of 18.', 'Members', 'Some members', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (412, '@ include such complicated images that they take ages to download.', 'Some websites', 'Websites', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (413, 'Without @, animal and plant life couldn''t exist.', 'water', 'some water', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (414, '@ grow best in shady areas.', 'Some plants', 'Plants', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (415, 'I tapped @ on my laptop, but nothing appeared on the screen.', 'some keys', 'keys', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (416, 'He doesn''t seem to care about possessions, and @ means absolutely nothing to him.', 'money', 'some money', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (417, 'When I thanked Pat for her help she just said, ''That''s what @ are for.''', 'friends', 'some friends', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (418, 'Although the weather should be fine in most parts of the country, @ will have rain overnight.', 'some areas', 'areas', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (419, 'When I was at college I shared a house with @ I didn''t like very much.', 'someone', 'anything,somewhere,some,anyone,anywhere,something,any', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (420, 'When Samuels was questioned by the police about the robbery at Frasers, he claimed that he hadn''t been @ near the shop at the time.', 'anywhere', 'someone,anything,somewhere,some,anyone,something,any', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (421, 'Matilda was very embarrassed. I''ve never seen @ go so red in my life.', 'anyone', 'someone,anything,somewhere,some,anywhere,something,any', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (422, 'Jean won''t come on holiday with us if we don''t go @ hot and by the sea.', 'somewhere', 'someone,anything,some,anyone,anywhere,something,any', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (423, '<b>A</b>: Emil says he didn''t take your iPod.<br /><b>B</b>: Surely he can''t deny @ that he knows I saw him do.', 'something', 'someone,anything,somewhere,some,anyone,anywhere,any', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (424, 'The youth orchestra is supposed to be open to people between the ages of 14 and 25, but hardly @ under 18 gets in.', 'anyone', 'someone,anything,somewhere,some,anywhere,something,any', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (425, 'He knew more about democracy than @ politician of his time.', 'any', 'someone,anything,somewhere,some,anyone,anywhere,something', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (426, 'I get very nervous before @ exams, but not when I feel I''ve done enough revision.', 'some', 'someone,anything,somewhere,anyone,anywhere,something,any', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (427, 'My older brother is @ who rarely gets annoyed.', 'someone', 'anything,somewhere,some,anyone,anywhere,something,any', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (428, 'There were no maps of the area, so we had to find our way without @ more than a compass.', 'anything', 'someone,somewhere,some,anyone,anywhere,something,any', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (429, 'He spoke very quietly so it was impossible to hear @ he said.', 'anything', 'someone,somewhere,some,anyone,anywhere,something,any', 48, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (430, 'I can''t get the car started, so @ obviously isn''t working properly.', 'something', 'someone,anything,somewhere,some,anyone,anywhere,any', 48, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (50, 'Unit 50: <i>Much</i> (<i>of</i>), <i>many</i> (<i>of</i>), <i>a lot of</i>, <i>lots (of), etc.</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (431, 'The newly-formed Radical Party looks likely to win @ votes in the forthcoming election.', 'a substantial number of', 'lots of', 50, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (432, 'He lost @ his money when the company went bust.', 'a lot of', 'plenty of', 50, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (433, 'In the 17th century, Trinidad was geographically and politically isolated, and @ its trade was done with England and with other Caribbean countries.', 'much of', 'a lot of', 50, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (434, 'The scientists claim that they have @ experimental data to support their findings.', 'a large amount of', 'lots of', 50, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (435, '@ people were injured when the building collapsed, but amazingly no one was killed.', 'A lot of', 'Plenty of', 50, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (436, 'I was nervous in the exam and made @ silly mistakes.', 'far too many', 'many too many', 50, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (437, 'They had to spend @ thousands of dollars repairing the church roof.', 'many', 'a lot of', 50, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (438, 'I drank @ coffee during the evening and had difficulty sleeping.', 'far too much', 'lots too much', 50, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (51, 'Unit 51: <i>All</i> (<i>of</i>), <i>whole</i>, <i>every</i>, <i>each</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (439, 'I picked the little ones up, one under @ arm, and carried them off to the bath.', 'each', 'every', 51, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (440, 'The crowds lined @ side of the river to watch the boats go past.', 'each', 'every', 51, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (441, 'Her injuries are serious, but we have @ reason to believe that she will make a full recovery.', 'every', 'each', 51, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (442, 'The museum owns work by virtually @ major post-war Swedish artist.', 'every', 'each', 51, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (443, 'The boys asked for some chocolate, so I broke the bar up and gave them @ a piece.', 'each', 'every', 51, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (444, 'You can make more than one online application for tickets, but @ should be submitted separately.', 'each', 'every', 51, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (445, 'I used to eat fish and chips almost @ lunchtime in the canteen.', 'every', 'each', 51, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (446, 'She passed @ single exam with the highest marks possible.', 'every', 'each', 51, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (447, 'I generally go to the dentist @ six months.', 'every', 'each', 51, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (52, 'Unit 52: <i>Few</i>, <i>little</i>, <i>less</i>, <i>fewer</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (448, 'The church was built by monks from the eastern Mediterranean in the fifth century, and @ has changed in it since then.', 'little', 'a,what,her,these,their,the | few', 52, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (449, 'It is claimed that the new car will cause @ pollution.', 'less', 'fewer', 52, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (450, 'A smartphone that sells for $300 in the shops might actually cost @ $100 to manufacture.', 'less than', 'fewer than', 52, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (451, 'Buckland remained the home of Sir Francis Drake until his death, although the house now @ traces of his residence there.', 'reveals few', 'doesn''t reveal many', 52, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (452, 'I finished the third level of the game, with only @ seconds left.', 'a few', 'few', 52, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (453, 'The company was forced to cut the number of staff by @ 60%.', 'no less than', 'no fewer than', 52, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (454, 'Research has shown that businesses have @ a 50% chance of surviving the first five years.', 'less than', 'fewer than', 52, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (455, 'Many aircraft designs @ since the 1960s.', 'have changed little', 'haven''t changed much', 52, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (456, '<b>A</b>: Haven''t you finished the ironing yet?<br /><b>B</b>: Nearly. There''s @ to do.', 'only a little more', 'little', 52, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (53, 'Unit 53: Relative pronouns', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (457, 'I''m not very keen on the food @ they serve here.', '(that)', 'that', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (458, 'It''s a kind of safety valve @ opens automatically when the pressure gets too high.', 'which', '(which)', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (459, 'We live @ a mile from school, so the children walk unless it''s raining heavily.', 'less than', 'fewer than', 52, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (460, 'I''ll get some more biscuits when I go shopping. There @ left in the packet.', 'aren''t many', 'are few', 52, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (461, 'I''m sure I''m not the only person @ is dissatisfied with the new version of the software.', 'who', '(who)', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (462, 'There''s an art exhibition in Paris @ I''d like to go to next week.', '(which)', 'which', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (463, 'He is very honest and someone @ I would be happy to do business with.', '(who)', 'who', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (464, 'He''s got a new job @ involves designing apps for businesses.', 'that', '(that)', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (465, 'I''ve got three cousins in Canada @ I''ve never met before.', '(who)', 'who', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (466, 'The book comes with a CD-ROM @ includes additional exercises.', 'which', '(which)', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (467, 'Brita works for a charity @ helps people to set up small businesses in developing countries.', 'that', '(that)', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (468, 'The weather forecast @ I heard this morning said it’s going to rain all day.', '(that)', 'that', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (469, 'She gave me one of the flowers @ she was holding.', '(which)', 'which', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (470, 'Branca has a friend @ works at the Uffizi Gallery in Florence.', 'who', '(who)', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (471, 'She paid back all the money @ she owed me. / She paid back all the money {{c1::-}} she owed me.', 'that', '&#8211', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (472, 'My youngest brother, @ I haven''t seen for over 20 years, lives in South Africa.', 'who', '&#8211,', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (473, 'My yacht, @ I bought two years ago, is moored in the harbour a few miles from here.', 'which', 'that', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (474, 'The gym @ I go to is closing down. / The gym {{c1::-}} I go to is closing down.', 'which', '&#8211', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (475, 'I''ve just got some really good news, but you''re the only person @ I can tell.', 'that', 'who', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (476, 'In my view, this e-book reader is the best @ can be bought at the moment.', 'that', 'which', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (477, 'Although his book on the dinosaurs is interesting, it contains little @ adds to our understanding of why they died out.', 'that', '&#8211', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (478, '<b>A</b>: Who are you going with?<br /><b>B</b>: Just some people @ I know from work.', 'that', 'who', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (479, 'When Hannah died, she left all @ she owned to her two granddaughters.', 'that', 'which', 53, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (480, 'I hadn''t thought about the problem before. It was just something @ occurred to me this morning.', 'which', '&#8211', 53, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (56, 'Unit 56: Other ways of adding information to noun phrases 1: additional noun phrases, etc.', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (481, 'The speech was given by Alice Goodyear, Professor of Astronomy @ at the University of Wolverton {{c1::-}}.', ', and Director of the Space Research Centre,', ', the South African side,,, namely paranoid schizophrenia,,, or the scientific study of the blood,,, that is, the consumers of goods and services,', 56, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (482, 'Because of his mental illness @ the prisoner was taken to a secure hospital {{c1::-}}.', ', namely paranoid schizophrenia,', ', the South African side,,, or the scientific study of the blood,,, that is, the consumers of goods and services,,, and Director of the Space Research Centre,', 56, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (483, 'The actor @ Antonio Ritter is perhaps best known for playing Leon {{c1::-}} in the sitcom <i>Three Friends</i>.', 'and comedian', ', that is, a kind of mobile home,,, namely 37.7° C,, one of the first jet aircraft,,, the site of some prehistoric cave paintings,', 56, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (484, 'Haematology @ made great advances with the development {{c1::-}} of the electron microscope.', ', or the scientific study of the blood,', ', the South African side,,, namely paranoid schizophrenia,,, that is, the consumers of goods and services,,, and Director of the Space Research Centre,', 56, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (58, 'Unit 58: Participle clauses with adverbial meaning 1', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (485, '@ got a university degree, I found it difficult to get a job.', 'Not having', 'Having not', 58, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (486, '@ to have been asked to give a speech at the wedding, Ed was able to relax and enjoy himself.', 'Relieved not', 'Not relieved', 58, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (487, '@ to listen to their conversation, I took out my mobile and started texting.', 'Pretending not', 'Not pretending', 58, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (488, '@ to wait any longer, she went up to the receptionist and demanded to see the doctor immediately.', 'Not prepared', 'Prepared not', 58, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (489, '@ to walk home alone in the dark, I asked Helen if she could give me a lift.', 'Preferring not', 'Not preferring', 58, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (490, '@ able to speak Italian, I had to depend on Giovanni when I went to Florence.', 'Not being', 'Being not', 58, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (491, '@ to go anywhere near the dogs, she stayed well away from them.', 'Warned not', 'Not warned', 58, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (492, '@ to be distracted by his mobile ringing, James went on with his story.', 'Determined not', 'Not determined', 58, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (493, '@ even to take his coat off, he came in through the front door and sat down in front of the TV.', 'Not pausing', 'Pausing not', 58, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (494, '@ too well, she decided to leave work early.', 'Not feeling', 'Feeling not', 58, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (495, '@ to wake the children, she crept quietly down the stairs.', 'Trying not', 'Not trying', 58, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (496, '@ satisfied with her playing, she decided to get some advice from a golf professional.', 'Not being', 'Being not', 58, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (61, 'Unit 61: <i>One</i> and <i>ones</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (497, 'The boy arranged his toy cars in order, with the biggest @ at the front.', '(ones)', 'one,ones,(one)', 61, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (498, 'There are 25 classrooms in the school, each @ with an interactive whiteboard.', '(one)', 'one,ones,(ones)', 61, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (499, 'There are a number of side effects of the medicine, the main @ being nausea and weight gain.', 'ones', 'one,(one),(ones)', 61, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (500, 'I''ll wear my old shoes while I''m walking to the party, and when I get there I''ll change into some smarter @.', 'ones', 'one,(one),(ones)', 61, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (501, 'There have been a lot of accidents on this section of road recently, and in the most serious @ three people were killed.', '(one)', 'one,ones,(ones)', 61, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (502, 'Can you get some more apples when you go shopping? Those @ I bought on Saturday tasted awful.', '(ones)', 'one,ones,(one)', 61, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (503, 'I think this updated translation app is even better than the last @.', '(one)', 'one,ones,(ones)', 61, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (504, 'He''s got a job in a post office – the @ near the art gallery.', 'one', 'ones,(one),(ones)', 61, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (505, 'When I opened up the box of chocolates, I found that every @ had got a nut inside – and I don''t like nuts!', 'one', 'ones,(one),(ones)', 61, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (62, 'Unit 62: <i>So</i> and <i>not</i> as substitutes for clauses, etc.', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (506, '<b>A</b>: It would be hard to find a new job if you left the company now, wouldn''t it?<br /><b>B</b>: Yes, I admit @.', 'it would be', 'so', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (507, '<b>A</b>: I hope the train will be on time today.<br /><b>B</b>: I''m sure @.', 'it will', 'so', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (508, '<b>A</b>: Are you sure the bridge is safe to cross?<br /><b>B</b>: I''m certain @ .', 'it is', 'so', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (509, 'I''m looking for a new scanner, but there are hundreds of different kinds advertised online and I don''t know <br />which @ to buy.', '(one)', 'one,ones,(ones)', 61, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (510, 'The point you''ve raised is a very important @.', 'one', 'ones,(one),(ones)', 61, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (511, 'I like your blue dress, but I''m not sure about the green @ though.', '(one)', 'one,ones,(ones)', 61, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (512, '<b>A</b>: Is there any more work to be finished today after this?<br /><b>B</b>: I certainly @ .', 'hope not', 'don’t hope so', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (513, '‘Are you going to live with us forever, Aunt Elena?’ asked Aisha. ‘I @ dear,’ replied Elena.', 'don’t expect so', 'expect not', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (514, '<b>A</b>: You must have made a mistake.<br /><b>B</b>: I @.', 'don''t believe so', 'believe not', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (515, '<b>A</b>: Can we eat these berries?<br /><b>B</b>: My dad @, as they might be poisonous.', 'said not to', 'didn''t say so', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (516, '<b>A</b>: Emma''s offered to let me stay in her flat.<br /><b>B</b>: I knew @.', 'she would', 'so', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (517, '<b>A</b>: These proposals are completely unrealistic in my opinion.<br /><b>B</b>: Yes, I agree @.', 'that they are', 'so', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (518, '<b>A</b>: I think there''s too much confusing information on your website.<br /><b>B</b>: Yes, I accept @.', 'that there is', 'so', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (519, '<b>A</b>: Do you think the government will increase pensions this year?<br /><b>B</b>: I @.', 'suspect not', 'don’t suspect so', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (520, '<b>A</b>: Is there any danger of the river flooding?<br /><b>B</b>: I @.', 'shouldn’t think so', 'should think not', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (521, 'I hoped Richard would have finished work by now, but it @.', 'seems not', 'doesn’t seem so', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (522, '<b>A</b>: I wonder if Vasiliki downloaded that film last night. <br /><br /><b>B</b>: I @. Her broadband isn’t good enough.', 'wouldn’t imagine so', 'would imagine not', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (523, '<b>A</b>: Is there nothing we can do to help her?<br /><b>B</b>: I’m @.', 'afraid not', 'not afraid so', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (524, '<b>A</b>: You know how disorganised Helen is. Surely you don’t expect her to remember the meeting? <br /><br /><b>B</b>: No, I @.', 'don’t suppose so', 'suppose not', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (525, '<b>A</b>: Our Internet server is down, so I don’t think we can play online tonight.<br /><b>B</b>: I @.', 'guess not', 'don’t guess so', 62, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (526, '<b>A</b>: Do you think he heard what I said?<br /><b>B</b>: It @.', 'doesn’t appear so', 'appears not', 62, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (64, 'Unit 64: More on leaving out words after auxiliary verbs', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (527, '<b>A</b>: Is Matt qualified in IT?<br /><b>B</b>: @.', 'I''m sure he is', 'I do, too,I am, too,I suppose she might do,I suppose she might have done,I thought you were,I thought you did,Yes, of course he did,Yes, of course he was,I''m sure he will,Yes, you have,Yes, you do', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (528, '<b>A</b>: Do you think Carla will give us a lift?<br /><b>B</b>: @.', 'I suppose she might do', 'I do, too,I am, too,I suppose she might have done,I thought you were,I thought you did,Yes, of course he did,Yes, of course he was,I''m sure he is,I''m sure he will,Yes, you have,Yes, you do', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (529, '<b>A</b>: Was your father at your wedding?<br /><b>B</b>: @.', 'Yes, of course he was', 'I do, too,I am, too,I suppose she might do,I suppose she might have done,I thought you were,I thought you did,Yes, of course he did,I''m sure he is,I''m sure he will,Yes, you have,Yes, you do', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (530, '<b>A</b>: I''m not going to Pete''s party.<br /><b>B</b>: @.', 'I thought you were', 'I do, too,I am, too,I suppose she might do,I suppose she might have done,I thought you did,Yes, of course he did,Yes, of course he was,I''m sure he is,I''m sure he will,Yes, you have,Yes, you do', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (531, '<b>A</b>: Betty might have gone without us.<br /><b>B</b>: @.', 'I suppose she might have done', 'I do, too,I am, too,I suppose she might do,I thought you were,I thought you did,Yes, of course he did,Yes, of course he was,I''m sure he is,I''m sure he will,Yes, you have,Yes, you do', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (532, '<b>A</b>: I come to the gym at least once a week.<br /><b>B</b>: @.', 'I do, too', 'I am, too,I suppose she might do,I suppose she might have done,I thought you were,I thought you did,Yes, of course he did,Yes, of course he was,I''m sure he is,I''m sure he will,Yes, you have,Yes, you do', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (533, '<b>A</b>: Will this big suitcase fit into your car?<br /><b>B</b>: Yes, it @ .', 'should do', 'should be', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (534, '<b>A</b>: Do you think Steve will join Twitter?<br /><b>B</b>: @.', 'I''m sure he will', 'I do, too,I am, too,I suppose she might do,I suppose she might have done,I thought you were,I thought you did,Yes, of course he did,Yes, of course he was,I''m sure he is,Yes, you have,Yes, you do', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (535, '<b>A</b>: Did Krishen pass his driving test?<br /><b>B</b>: @.', 'Yes, of course he did', 'I do, too,I am, too,I suppose she might do,I suppose she might have done,I thought you were,I thought you did,Yes, of course he was,I''m sure he is,I''m sure he will,Yes, you have,Yes, you do', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (536, '<b>A</b>: No carrots for me, thanks, I don''t like them.<br /><b>B</b>: @.', 'I thought you did', 'I do, too,I am, too,I suppose she might do,I suppose she might have done,I thought you were,Yes, of course he did,Yes, of course he was,I''m sure he is,I''m sure he will,Yes, you have,Yes, you do', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (537, '<b>A</b>: I haven''t been to Margot''s house before.<br /><b>B</b>: @.', 'Yes, you have', 'I do, too,I am, too,I suppose she might do,I suppose she might have done,I thought you were,I thought you did,Yes, of course he did,Yes, of course he was,I''m sure he is,I''m sure he will,Yes, you do', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (538, '<b>A</b>: Has it stopped raining yet?<br /><b>B</b>: No, I don''t think it @.', 'has', 'has done', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (539, '<b>A</b>: You really ought to upload your photos.<br /><b>B</b>: Yes, I @ some time.', 'must do', 'do', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (540, '<b>A</b>: Misaki''s exam is worrying her a lot.<br /><b>B</b>: Yes, I suppose it @.', 'would do', 'did', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (541, 'I''ve never been to Nepal myself, but I know people who @.', 'have done', 'are', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (542, 'The findings of the study are surprising, and more significant than even the researchers hoped they @.', 'would be', 'would', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (543, '<b>A</b>: What does this mean?<br /><b>B</b>: I don''t know. I don''t speak German very well.<br /><b>A</b>: Someone told me you @.', 'did', 'had', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (544, '<b>A</b>: Kate''s been crying, hasn''t she?<br /><b>B</b>: Yes, I think she @.', 'has', 'has done', 64, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (545, '<b>A</b>: I''m really annoyed with Robert.<br /><b>B</b>: I thought you @ .', 'might be', 'did', 64, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (65, 'Unit 65: Leaving out <i>to</i>-<i>infinitives</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (546, 'Everyone else climbed up the rock face easily, but I was afraid @.', '(to)', 'to,to be', 65, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (547, 'I was suspicious of him, although I had no real reason @.', 'to be', 'to,(to)', 65, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (548, 'You can contact me on Facebook if you need @.', 'to', 'to be,(to)', 65, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (549, '<b>A</b>: Will you be able to get the work finished by Friday?<br /><b>B</b>: I''ll certainly try @.', '(to)', 'to,to be', 65, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (550, 'Not everyone pays local tax. Only those who earn more than £15,000 a year are expected @.', 'to', 'to be,(to)', 65, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (551, 'I''m sure he''s not as wealthy as he claims @.', 'to be', 'to,(to)', 65, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (552, 'Carl is much more relaxed than he used @.', 'to be', 'to,(to)', 65, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (553, '<b>A</b>: Luka says he isn''t going to host the webinar after all.<br /><b>B</b>: But he agreed @!', '(to)', 'to', 65, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (554, 'I tried to lift the box, but I wasn''t able @.', 'to', '(to)', 65, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (555, 'I was going to introduce myself to Mr Kennedy, but I never got the chance @.', '(to)', 'to,to be', 65, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (556, '<b>A</b>: Will you go to the opera when you''re in Milan?<br /><b>B</b>: We hope @.', 'to', 'to be,(to)', 65, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (557, 'The work was more expensive than it was supposed @.', 'to be', 'to,(to)', 65, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (66, 'Unit 66: Position of adjectives', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (558, 'When I asked why she hadn''t been to see me, there was an @ silence at the other end of the telephone.', 'embarrassed', 'ashamed', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (559, 'The @ boy was taken to hospital.', 'injured', 'ill', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (560, 'The @ baby looked very peaceful.', 'sleeping', 'asleep', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (561, 'Her @ parents hugged her as she came through the door.', 'delighted', 'glad', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (562, 'Crossing the road near the school is dangerous and @ have complained to the police.', 'concerned parents', 'parents concerned', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (563, 'The hotel has comfortable rooms and @.', 'considerate staff', 'staff considerate', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (564, 'She was a @ to do well in her examinations.', 'student determined', 'determined student', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (565, 'It is important that new swimming instructors get @.', 'proper training', 'training proper', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (566, 'When I asked him how to play cricket he gave an @ that I didn''t understand.', 'involved explanation', 'explanation involved', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (567, 'A few birds seemed to be the only @ creatures in the dark forest.', 'living', 'alive', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (568, 'The @ hacker responsible for getting into the government computer system has been convicted.', 'lone', 'alone', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (569, 'When I complained, the @ shop assistant gave me my money back.', 'apologetic', 'sorry', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (570, 'It''s hard to decide between these two smartphones particularly when they have very @ features.', 'similar', 'alike', 66, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (67, 'Unit 67: Gradable and non-gradable adjectives 1', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (571, 'I wrote some notes about the meeting while it was @ fresh in my mind.', 'reasonably', 'mainly', 67, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (572, 'I''ve always found him to be exceptionally @.', 'friendly', 'perfect', 67, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (573, 'The restaurants in the street are @ vegetarian.', 'exclusively', 'extremely', 67, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (574, 'The new computer network is fully @.', 'operational', 'busy', 67, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (575, 'She is @ influential in the present government.', 'hugely', 'utterly', 67, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (576, 'Her work is almost @ outside New Zealand.', 'unknown', 'unpopular', 67, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (577, 'I found the coffee slightly @.', 'strong', ' terrible', 67, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (578, 'I bought a @ for 25 years.', 'watch guaranteed', 'guaranteed watch', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (579, 'You''ll get dirty doing the work, so please come in @.', 'suitable clothes', 'clothes suitable', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (580, 'The audience was disappointingly small. The only @ were relatives of the performers.', 'people present', 'present people', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (581, 'The crash wasn''t her fault, it was just an @.', 'unfortunate accident', 'accident unfortunate', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (582, 'He gave a @ to appeal to the more conservative members of the party.', 'speech calculated', 'calculated speech', 66, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (583, 'The bottle was @ empty.', 'practically', 'a bit', 67, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (584, 'He was @ popular on Facebook.', 'immensely', 'entirely', 67, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (585, 'He''s an extremely @ student.', 'clever', 'ideal', 67, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (586, 'The vegetables sold in the shop are primarily @.', 'homegrown', 'tasty', 67, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (587, 'The processes in the factory are @ automated.', 'largely', 'rather', 67, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (68, 'Unit 68: Gradable and non-gradable adjectives 2', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (588, 'It was lovely and @ in the swimming pool so she dived straight in.', 'warm', 'empty', 68, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (589, 'The food looked nice and @, and I was looking forward to dinner.', 'fresh', 'exciting', 68, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (590, 'The sitting room looked lovely and @, with a log fire and thick rugs.', 'cosy', 'decent', 68, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (591, 'Pavel got up nice and @ to check his exam results online.', 'early', 'handsome', 68, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (592, 'After her long bath she was feeling good and @.', 'relaxed', 'beautiful', 68, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (593, 'The library was nice and @ and I was able to get a lot of reading done.', 'quiet', 'interesting', 68, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (594, 'I''ll join Twitter when I''m good and @ and not before.', 'ready', 'rich', 68, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (595, 'You should be able to pack books in this box; it seems good and @.', 'strong', 'big', 68, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (596, 'He broke the chair good and @ when he sat on it.', 'proper', 'totally', 68, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (69, 'Unit 69: Participle adjectives and compound adjectives', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (597, 'The @ are over 200 million years old.', 'fossils found', 'found fossils', 69, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (598, 'The course is very popular, but we are only able to accept 20 of the @.', 'people applying', 'applying people', 69, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (599, 'The company has a webpage for recording complaints and any @.', 'action taken', 'taken action', 69, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (600, 'The hotel room is €80 a night per person with @.', 'breakfast provided', 'provided breakfast', 69, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (601, 'The accident was my fault and I offered to pay for any @.', 'damage caused', 'caused damage', 69, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (602, 'The price came to $120 with @.', 'tax included', 'included tax', 69, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (70, 'Unit 70: Adjectives + <i>to-infinitive</i>, <i>-ing</i>, <i>that-clause</i>, <i>wh-clause</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (603, 'We''ve been busy @ the house all weekend.', 'decorating', 'to decorate', 70, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (604, 'I''d be willing @ him if he asked me nicely.', 'to help', 'helping', 70, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (605, 'I''m very curious @ why she gave up running.', 'to know', 'knowing', 70, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (606, 'I wasn''t sure @ next.', 'where to go', 'going', 70, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (607, 'I felt guilty @ so much in a country where so many people are living in poverty.', 'earning', 'to earn', 70, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (608, 'Paola was confident @ the online competition.', 'that she would win', 'to win', 70, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (609, 'I felt bad @ him that his work wasn''t good enough.', 'telling', 'to tell', 70, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (610, 'I was positive @ my keys on the kitchen table.', 'that I had left', 'to leave', 70, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (71, 'Unit 71: Adjectives and adverbs', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (611, 'When the doorbell rang Jack @ got out of his chair and went to the door.', 'slowly', 'slow', 71, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (612, 'These beautiful T-shirts are @ made from recycled plastic.', 'cheaply', 'cheap', 71, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (613, 'The children were obviously pleased to see Mark and jumped around him @.', 'in a lively manner', 'livelily', 71, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (614, 'Opinions were @ split between the boys and girls in the class.', 'cleanly', 'clean', 71, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (615, 'When she told me what was in the pasta sauce, I stopped eating @ .', 'in surprise', 'surprisedly', 71, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (616, '''We haven''t got to go shopping again, have we?'' he asked @.', 'in a bored fashion', 'boredly', 71, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (617, 'I think he talks <B>loud</b> / @ because he''s a bit deaf.', 'loudly', 'loud', 71, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (618, 'He never complained himself, but @ he got other people to make complaints for him.', 'in a cowardly way', 'cowardlily', 71, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (619, 'She had a nasty fall, but @ got up and carried on running.', 'quickly', 'quick', 71, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (72, 'Unit 72: Adjectives and adverbs: comparative and superlative forms', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (620, 'In the daylight, the curtains actually looked @ than purple.', 'more red', 'redder', 72, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (621, 'We missed the 5:30, so we had to catch a @ train.', 'later', 'more late', 72, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (622, 'The operation was @ than I''d expected it to be.', 'more painful', 'painfuler', 72, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (623, 'No one was @ than me when they got married.', 'more pleased', 'pleaseder', 72, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (624, 'His speech only lasted half an hour, but it felt much @.', 'longer', 'more long', 72, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (625, '<b>A</b>: Did you enjoy yourself?<br /><b>B</b>: I couldn''t have had a @ day, thank you.', 'nicer', 'more nice', 72, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (626, 'The content of your webpage is OK, but a lot of the points are a little vague. You need to make it @.', 'more direct', 'directer', 72, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (627, 'It''s going to take ages to get to the station. Can''t you go any @?', 'faster', 'more fast', 72, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (628, 'I''d always thought online conferencing wouldn''t work very well, but I couldn''t have been @.', 'more wrong', 'wronger', 72, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (73, 'Unit 73: Comparative phrases and clauses', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (629, 'Although the tennis club now has over a hundred members, five years ago it had @ 20 and very nearly closed down.', 'as few as', 'as little as,as much as,as many as', 73, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (630, 'Some of the college''s online courses have @ three students who log on regularly.', 'as few as', 'as little as,as much as,as many as', 73, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (631, 'The report found that some of the money given to schools, @ half in some cases, is being wasted.', 'as much as', 'as few as,as little as,as many as', 73, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (632, 'Although the operation is complex, with new technology it can now be carried out in @ ten minutes.', 'as little as', 'as many as', 73, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (633, 'I get @ 50 spam emails every day.', 'as many as', 'as little as', 73, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (74, 'Unit 74: Position of adverbs 1', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (634, 'I was surprised when she began @ to Philippe.', 'speaking French fluently', 'fluently speaking French', 74, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (635, 'He @ to finish the work before the end of the day.', 'quickly tried', 'tried quickly', 74, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (636, 'I @, but there were always other people around.', 'wanted to speak to David privately', 'privately wanted to speak to David', 74, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (637, 'It started @ so we decided to go home.', 'to rain heavily', 'heavily to rain', 74, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (638, 'I @ for buses.', 'simply hate queuing', 'hate queuing simply', 74, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (639, 'It is thought that there may be only ten elephants in the whole country, although the number could be @ five.', 'as few as', 'as little as,as much as,as many as', 73, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (640, 'Some modern medical implants now measure @ a millimetre in length.', 'as little as', 'as few as,as much as,as many as', 73, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (641, 'The roots of the old tree spread out @ 30 metres in all directions and damaged nearby buildings.', 'as much as', 'as few as,as little as,as many as', 73, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (642, 'Have you seen the queue for the exhibition? There must be @ 500 people waiting to get in.', 'as many as', 'as few as,as little as,as much as', 73, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (643, 'Restaurants in the city have increased their prices by @ 50% over the last year as rents have risen.', 'as much as', 'as few as,as little as,as many as', 73, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (644, 'The company has announced that it will cut @ 10,000 jobs worldwide as demand for computers has fallen.', 'as many as', 'as few as,as little as,as much as', 73, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (645, 'Because of the collapse in property prices in the area, people are having to sell their houses for @ a third of what they paid for them.', 'as little as', 'as few as,as much as,as many as', 73, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (646, 'He started @ towards the door.', 'walking hurriedly', 'hurriedly walking', 74, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (647, 'He had always wanted to @ and at last he got his chance.', 'sing opera professionally', 'professionally sing opera', 74, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (648, 'I have @ going to Paris until later in the year.', 'reluctantly put off', 'put off reluctantly', 74, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (649, 'There had been so many telesales calls that morning that I @ when Carl called.', 'nearly didn''t answer', 'didn''t answer nearly', 74, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (650, 'I don''t remember @.', 'seeing Jonathan recently', 'recently seeing Jonathan', 74, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (651, 'He @ and said he''d been driving carefully.', 'totally denied causing the accident', 'denied causing the accident totally', 74, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (652, 'Be very careful how you wash those glasses. They''re very delicate and tend @.', 'to break easily', 'easily to break', 74, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (75, 'Unit 75: Position of adverbs 2', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (653, 'There''s no need to be nervous at the interview. @ and I''m sure you''ll get the job.', 'Just act naturally', 'Naturally, just act', 75, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (654, '@ in more than 60 plants.', 'Caffeine occurs naturally', 'Naturally, caffeine occurs', 75, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (655, '@, but she had difficulty remembering much about the accident as it was such a long time ago.', 'Helena tried to answer his questions honestly', 'Honestly, Helena tried to answer his questions', 75, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (656, 'Look at all the litter in the park. @ so thoughtless.', 'Honestly, some people are', 'Some people are honestly', 75, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (657, '@ at him as he walked past.', 'A police officer looked curiously', 'Curiously, a police officer looked', 75, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (658, '@ not in the top five most popular sports in the country.', 'Curiously, football is', 'Football is curiously', 75, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (659, '@ about her time as Ambassador to the United Nations.', 'In her autobiography she writes frankly', 'Frankly, in her autobiography she writes', 75, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (660, '@ totally ridiculous.', 'Frankly, I think his suggestion is', 'I think his suggestion is frankly', 75, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (661, 'The new road will be built through areas of natural beauty. @ to this.', 'Clearly, some people will object', 'Some people will object clearly', 75, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (662, 'It is said that politicians are only interested in power. @ for all politicians.', 'Clearly, this is not the case', 'This is not clearly the case', 75, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (663, '@ in watching the tennis match. He just spent the time reading the newspaper or browsing the Internet on his mobile.', 'Plainly, Karim wasn''t interested', 'Karim wasn’t interested plainly', 75, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (664, 'The room had no pictures on the wall and @.', 'was plainly furnished', 'plainly was furnished', 75, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (76, 'Unit 76: Adverbs of place, indefinite frequency and time', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (665, '<b>a</b> At lunchtime I generally go running in the park.<br /><b>b</b> I generally go running in the park at lunchtime.<p>@</p>', 'both are correct', 'b is correct', 76, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (666, '<b>a</b> Monthly she gets paid.<br /><b>b</b> She gets paid monthly.<p>@</p>', 'b is correct', 'both are correct', 76, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (667, '<b>a</b> Fortnightly he had to see his doctor.<br /><b>b</b> He had to see his doctor fortnightly.<p>@</p>', 'b is correct', 'both are correct', 76, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (668, '<b>a</b> In January I''m going skiing again <br /><b>b</b> I''m going skiing again in January.<p>@</p>', 'both are correct', 'b is correct', 76, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (669, '<b>a</b> Every hour another 10,000 babies are born.<br /><b>b</b> Another 10,000 babies are born every hour.<p>@</p>', 'both are correct', 'b is correct', 76, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (670, '<b>a</b> On Tuesday she starts her new job.<br /><b>b</b> She starts her new job on Tuesday.<p>@</p>', 'both are correct', 'b is correct', 76, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (671, '<b>a</b> Hourly I have to take the medicine. <br /><b>b</b> I have to take the medicine hourly.<p>@</p>', 'b is correct', 'both are correct', 76, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (672, '<b>a</b> Weekly I phone my grandparents.<br /><b>b</b> I phone my grandparents weekly.<p>@</p>', 'b is correct', 'both are correct', 76, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (673, '<b>a</b> On 15th July it''s my brother''s birthday. <br /><b>b</b> It''s my brother''s birthday on 15th July.<p>@</p>', 'both are correct', 'b is correct', 76, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (674, '<b>a</b> Seven days a week he plays computer games.<br /><b>b</b> He plays computer games seven days a week.<p>@</p>', 'both are correct', 'b is correct', 76, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (675, '<b>a</b> Annually the Cannes Film Festival is held. <br /><b>b</b> The Cannes Film Festival is held annually.<p>@</p>', 'b is correct', 'both are correct', 76, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (676, '<b>a</b> Daily the museum is open.<br /><b>b</b> The museum is open daily.<p>@</p>', 'b is correct', 'both are correct', 76, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (78, 'Unit 78: Comment adverbs and viewpoint adverbs', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (677, 'The strong wind knocked over the tree and it hit the car. There was no one in it, @.', 'luckily', 'seriously,kindly', 78, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (77, 'Unit 77: Degree adverbs and focus adverbs', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (678, 'Diego said he wanted to be a doctor @ before he started school.', 'even', 'only', 77, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (679, 'Paul rarely comes to visit. We @ see him about once a year.', 'only', 'even', 77, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (680, 'I''ve tried everything to repair my printer. I''ve @ taken it apart and put it back together again, but it still doesn''t work.', 'even', 'only', 77, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (681, 'My father has lost a lot of weight recently, and @ his wrists are thin.', 'even', 'only', 77, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (682, 'You can''t use credit cards at the shop, and @ cash or debit cards are accepted.', 'only', 'even', 77, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (683, 'Some have claimed that online gaming can negatively affect children''s brain development, but @ more research will determine whether this is true.', 'only', 'even', 77, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (684, 'Martina hated most vegetables when she was young. She would @ eat peas and carrots.', 'only', 'even', 77, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (685, 'Gary hates walking and he @ drives down the road to buy a newspaper in the morning.', 'even', 'only', 77, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (686, 'The turnout at the last election was disappointing, with @ 20% of the electorate bothering to vote.', 'only', 'even', 77, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (687, 'Carmen was wearing very bright clothes, and @ her shoes were yellow.', 'even', 'only', 77, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (688, 'I ached all over after running the marathon – @ my fingers hurt.', 'even', 'only', 77, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (689, 'My car was a real bargain. I @ paid £500 for it.', 'only', 'even', 77, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (690, 'Even though the recording was made over 50 years ago, the quality of sound on the downloads is @ good.', 'surprisingly', 'presumably,rightly', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (691, '@, the most expensive time to fly in Europe is during the summer holiday season.', 'Generally', 'Seriously,Definitely', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (692, 'I''d like to go walking in the Alps but I''m just not fit enough, @.', 'sadly', 'certainly,wisely', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (693, 'Olivia thought, @, that she didn''t need a visa to get into the United States, so when she arrived at the airport they wouldn''t let her in.', 'wrongly', 'definitely,frankly', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (694, 'Carla knew that the suggestion was ridiculous, but @ she kept her thoughts to herself.', 'wisely', 'certainly,probably', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (695, 'Bill had a major heart attack. @, he would have died if he hadn''t got to the hospital so quickly.', 'Undoubtedly', 'Generally,Wrongly', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (696, '<b>A</b>: What did you think of the film?<br /><b>B</b>: @, I was disappointed after such brilliant reviews.', 'Frankly', 'Certainly,Unbelievably', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (697, 'They were @ the best Greek olives I had ever tasted.', 'definitely', 'presumably,rightly', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (698, '<b>A</b>: The company needs to save at least a million dollars in the next year. <br /><br /><b>B</b>: So that means jobs are going to be lost, @?', 'presumably', 'certainly,wisely', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (699, 'When I got home I realised I didn''t have my keys. @, I''d left them inside on the kitchen table.', 'Stupidly', 'Generously,Seriously', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (700, 'All mobile phones made by the company in the last year have been recalled for safety checks. @, there''s a danger they might catch fire.', 'Apparently', 'Generally,Carelessly', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (701, 'The last ice age may have ended over 10,000 years ago, but @ it was a relatively recent event.', 'from a historical point of view', 'in statistical terms,it is unlikely to be a success,grammatically speaking,it is very diverse', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (702, 'In informal English we often use ''less'' before plural nouns, but @ ''fewer'' is correct.', 'grammatically speaking', 'in statistical terms,it is unlikely to be a success,from a historical point of view,it is very diverse', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (703, 'Even though the parties are seen as political opponents, ideologically, @.', 'there is little difference between their two leaders', 'physically,as far as agriculture is concerned,by the new road,it is very simple', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (704, 'The park has been badly damaged from an environmental point of view @.', 'by the new road', 'physically,as far as agriculture is concerned,there is little difference between their two leaders,it is very simple', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (705, 'She says she''s feeling tired all the time, but @ the doctors can''t find anything wrong with her.', 'physically', 'as far as agriculture is concerned,there is little difference between their two leaders,by the new road,it is very simple', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (706, 'Last year''s hot summer was excellent for the tourist industry, but @ it was a disaster.', 'as far as agriculture is concerned', 'physically,there is little difference between their two leaders,by the new road,it is very simple', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (707, 'While the applications of the new process are ambitious, in technological terms, @.', 'it is very simple', 'physically,as far as agriculture is concerned,there is little difference between their two leaders,by the new road', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (708, 'The great value of the Internet, @, is that it gives easy access to information.', 'from an educational point of view', 'the most important development of the last 50 years', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (709, 'The Hubble telescope was, as far as astronomy is concerned, @.', 'the most important development of the last 50 years', 'from an educational point of view', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (710, 'While the new app will attract a lot of media attention, commercially speaking, @.', 'it is unlikely to be a success', 'in statistical terms,from a historical point of view,grammatically speaking,it is very diverse', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (711, 'People often think that there is a connection between hair colour and eye colour but @ there is no relationship between them.', 'in statistical terms', 'it is unlikely to be a success,from a historical point of view,grammatically speaking,it is very diverse', 78, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (712, 'Over the last 100 years many immigrants have moved to the country so that today, culturally, @.', 'it is very diverse', 'in statistical terms,it is unlikely to be a success,from a historical point of view,grammatically speaking', 78, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (79, 'Unit 79: Adverbial clauses of time', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (713, 'I waited @ it stopped raining and then went for a walk.', 'until', 'before', 79, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (714, 'Cook the onions @ they are soft.', 'until', 'before', 79, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (715, 'It''s important to test drive a car @ you buy it.', 'before', 'after', 79, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (716, 'She was left to rule the country alone @ the king''s death in 1072.', 'after', 'before', 79, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (717, 'She washed her hands @ the smell of the garlic had gone.', 'until', 'before', 79, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (718, 'The exhibition runs @ the end of January next year.', 'until', 'before', 79, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (719, 'Your hands have got paint all over them! Make sure you wash them @ dinner.', 'before', 'after', 79, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (80, 'Unit 80: Giving reasons: <i>as</i>, <i>because</i>, etc.; <i>for</i> and <i>with</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (720, '@ as {{c1::so many of our employees now cycle to work}}.', 'We have had to build bigger bike sheds', 'So many of our employees now cycle to work', 80, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (721, '@ inasmuch as {{c1::he hadn''t had a pay rise for five years}}.', 'Laurie felt that he had been poorly treated by the company', 'He hadn''t had a pay rise for five years', 80, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (722, '@ in that {{c1::both were set in Russia in the 2000s}}.', 'There are similarities between the two novels', 'Both were set in Russia in the 2000s', 80, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (723, '@, since {{c1::the organisation has little money to spend on full-time staff}}.', 'Most of the aid workers are volunteers', 'The organisation has little money to spend on full-time staff', 80, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (724, '@, seeing as {{c1::you''ve eaten most of it already}}?', 'Why don''t you have the rest of the cake', 'You''ve eaten most of it already', 80, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (725, '@, seeing that {{c1::it was getting so late}}.', 'I decided to go home', 'It was getting so late', 80, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (726, '@ because {{c1::I was the youngest in the family}}.', 'My brothers and sisters never asked for my opinion', 'I was the youngest in the family', 80, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (727, '@ as {{c1::the path looked steep and dangerous}}.', 'I insisted on holding the children''s hands', 'the path looked steep and dangerous', 80, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (728, 'After the party we went clubbing and danced @ three in the morning.', 'until', 'before', 79, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (729, 'Maybe she didn''t call @ she was too busy.', 'because', 'because of,due to,owing to', 80, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (730, 'We were very disappointed @ so few people came to the school concert.', 'because', 'because of,due to,owing to', 80, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (731, '@ in that {{c1::error rates will decrease}}.', 'Voice recognition software will become much more sophisticated', 'Error rates will decrease', 80, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (732, '@ since {{c1::I was the heaviest}}.', 'I was asked to sit at the back of the boat', 'I was the heaviest', 80, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (733, '@, seeing that {{c1::she used to be a nurse}}.', 'When Susanna was ill I called Petra for advice', 'She used to be a nurse', 80, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (734, '@ because {{c1::she said that she was thirsty}}.', 'I gave her something to drink', 'She said that she was thirsty', 80, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (735, 'She didn''t like living on the main road @ it was so noisy.', 'because', 'because of,due to,owing to', 80, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (736, 'The coach arrived 40 minutes late @ the driver lost his way.', 'because', 'because of,due to,owing to', 80, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (81, 'Unit 81: Purposes and results: <i>in order to</i>, <i>so as to</i>, etc.', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (737, 'I didn''t want to eat any lunch because @.', 'I had such a big breakfast', 'I had such big breakfast', 81, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (738, 'The tin opener is designed @.', 'such that it can be used by left- or right-handed people', 'such as it can be used by left- or right-handed people', 81, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (739, 'I left the keys out so that @.', 'I wouldn''t forget them', 'I won''t forget them', 81, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (740, 'I put my son on my shoulders in order that @.', 'he could see better', 'he can see better', 81, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (741, 'The footpath is signposted @.', 'in such a way as to make it very easy to follow', 'in such as to make it very easy to follow', 81, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (742, 'I cut the cake into small pieces so that @.', 'there would be enough for everyone', 'to have enough for everyone', 81, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (743, 'During the winter, chains are put on car tyres in order that @.', 'they grip the road better in the ice and snow', 'they gripped the road better in the ice and snow', 81, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (744, 'The wind farm has been located in @.', 'such a way that it can''t be seen from the nearby town', 'such way that it can''t be seen from the nearby town', 81, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (745, 'A public meeting about the proposed new power station is being held in order @.', 'to gather local opinion', 'that to gather local opinion', 81, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (746, 'The windows are made of tinted glass so that @.', 'it is not too bright during the summer', 'it was not too bright during the summer', 81, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (747, 'Dimitra gave me the door code in order @.', 'that I could get in when she wasn''t at home', 'I could get in when she wasn''t at home', 81, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (748, 'I packed my suitcase the night before so that @.', 'I wouldn''t have to rush in the morning', 'I won''t have to rush in the morning', 81, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (82, 'Unit 82: Contrasts: <i>although</i> and <i>though</i>; <i>even though</i> / <i>if</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (749, '@, the climbers continued to the summit of the mountain.', 'Though exhausted', 'Though exhausting', 82, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (750, '@ she saw him every day at work, she didn''t know his name.', 'Even though', 'Even if', 82, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (751, '@ by the Romans, the town''s main historical monument is a Spanish fortress.', 'Although founded', 'Although founding', 82, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (752, 'He''s decided not to go to college next year @ he passes all his exams.', 'even if', 'even though', 82, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (753, '@ I''m pretty fit, I couldn''t keep up with Yasemin as we went uphill.', 'While', 'Whereas', 82, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (754, '@ Rashid for the post of web manager, I think he still needs more training.', 'Although recommending', 'Although recommended', 82, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (755, 'I sometimes stayed with my sister, @ I had an apartment in the city.', 'even though', 'even if', 82, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (756, '@ we catch the 5:30 train, we won''t be able to get to London for the start of the concert.', 'Even if', 'Even though', 82, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (757, 'The company has announced record profits this year, @ its worldwide sales fell.', 'even though', 'even if', 82, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (758, 'One night, @ home, she saw smoke coming from an office window.', 'while walking', 'while walked', 82, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (759, '@ she was born in Brazil, she hasn''t lived there for over 20 years.', 'Although', 'Whereas', 82, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (760, 'Many thousands of people will die as a result of the drought @ food aid arrives soon.', 'even if', 'even though', 82, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (83, 'Unit 83: <i>If</i> 1', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (761, '@ the generosity of her grandparents, Karina could not have afforded to go to college.', 'Were it not for', 'Was it not for', 83, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (762, 'We will have to pay for an extra night if we @ the hotel room by twelve.', 'haven''t left', 'left', 83, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (763, 'If I@ home by eleven, I''ll have to catch the bus soon.', '''m going to get', 'get', 83, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (764, 'If the camera on this smartphone @ as much as the manufacturers claim, I might buy one.', 'has improved', 'improve', 83, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (765, 'If anyone @ for me, say I''ve gone for lunch.', 'asks', 'asked', 83, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (766, 'The company would have gone bankrupt years ago if @ the skills of the finance director.', 'it were not for', 'were not for', 83, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (767, 'If there @ a power cut, a back-up generator provides electricity for the hospital.', 'is', 'was', 83, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (768, 'You will be able to get a full refund if your flight @ cancelled.', 'is', 'was', 83, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (769, 'If we @ a son, we''re going to call him Oliver.', 'have', 'have had', 83, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (770, 'If it @ the support I had from all my friends, I don''t know what I''d have done.', 'wasn''t for', 'wasn''t', 83, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (771, '@ the bad weather, we would have set off for the mountains today.', 'If it had not been for', 'If hadn''t it been for', 83, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (772, 'If the door @ locked, it means they''re not in.', 'is', 'will be', 83, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (84, 'Unit 84: <i>If</i> 2', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (773, 'Some plants die if their roots @.', 'freeze', 'will freeze', 84, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (774, 'If my grandmother @ today, she would be shocked to see what has happened to the city centre.', 'was alive', 'happened to be alive', 84, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (775, 'Don''t believe her if she @ you she''s too busy to help.', 'tells', 'will tell', 84, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (776, 'If I @ to look after it well, can I have a rabbit as a pet?', 'promise', 'will promise', 84, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (777, 'If you @ any nice melons at the market, will you buy a couple?', 'see', 'will see', 84, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (778, 'If I @ of dogs, I wouldn''t want to be a vet.', 'was scared', 'happened to be scared', 84, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (86, 'Unit 86: <i>If</i> … <i>not</i> and <i>unless</i>; <i>if</i> and <i>whether</i>; etc.', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (779, '@ hand in your homework, will you get into trouble?', 'If you don''t', 'Unless you don''t', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (780, 'How long will it take to get there @ on the motorway?', 'if we don''t go', 'unless we go', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (781, 'He would be happier @ things so seriously.', 'if he didn''t take', 'unless he took', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (782, 'The match will have to be cancelled <B>if it doesn''t stop</b> / @ snowing.', 'unless it stops', 'if it doesn''t stop', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (783, 'It will be really surprising @ have rain soon.', 'if we don''t', 'unless we', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (784, 'I''ll be flying to Madrid @ get a ticket. If that happens, I''ll go by train.', 'unless I can''t', 'if I can''t', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (785, 'It must be established @ or not using mobile phones can cause cancer.', 'whether', 'if / whether', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (786, 'She looked to see @ Callum was online.', 'if / whether', 'whether', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (787, 'When he told me he''d won the lottery, I didn''t know @ to believe him.', 'whether', 'if / whether', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (788, 'We talked a lot about @ she should go to college or try to get a job.', 'whether', 'if / whether', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (789, 'I have to choose @ to take geography or history next year.', 'whether', 'if / whether', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (790, 'It is not known @ he shares his brother''s views.', 'if / whether', 'whether', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (791, 'I thought about cooking rabbit for dinner but I didn''t know @ you''d eat it.', 'if / whether', 'whether', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (792, 'We were a bit concerned as to @ we would be able to pay the bill.', 'whether', 'if / whether', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (793, '@ trust him, why did you give him the job?', 'If you don''t', 'Unless you', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (794, 'He asked @ we could meet to talk about his ideas.', 'if / whether', 'whether', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (795, 'It is irrelevant @ the President himself gave the order.', 'whether', 'if / whether', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (796, 'A decision on @ the power station will be built is to be taken later this year.', 'whether', 'if / whether', 86, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (797, 'I began to wonder @ she had heard me or not.', 'if / whether', 'whether', 86, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (87, 'Unit 87: Connecting ideas in a sentence and between sentences', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (798, 'The police had been unable to find sufficient evidence against her and, @, {{c1::the trial could not go ahead}}.', 'therefore', 'if so,yet,in any case,assuming,on the other hand,meanwhile,whenever,soon,so that,until,whereas | after four in the morning,she began to smile,electricity is very expensive,the trial could not go ahead,he was never seen again,cut the chicken into small pieces,I enjoyed badminton,she passes her exams,it looked strangely familiar,Majorca is the place for you,I''m going to sneeze,the others wouldn''t hear', 87, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (88, 'Unit 88: Prepositions of position and movement', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (799, 'Ivy leaned @ the balcony and shouted to her friends below.', 'over', 'along,through,across', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (800, 'The river is the main transportation route in the region, with many ancient cities @ its banks.', 'along', 'over,through,across', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (801, 'Come @ the main entrance to the building and my office is second on the left.', 'through', 'along,over,across', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (802, 'A survey of schoolteachers @ the European Union found a wide variety of working conditions.', 'across', 'along,over,through', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (803, 'She threw the ball high @ my head and there was no way I could catch it.', 'over', 'along,through,across', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (804, 'If you are approaching the city from the north @ the Pacific Highway, follow signs to the Western Suburbs.', 'along', 'over,through,across', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (805, 'His ambition was to sail single-handed @ the Atlantic Ocean.', 'across', 'along,over,through', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (806, 'We drove @ the road for a few kilometres, and then turned off down a dirt track.', 'along', 'over,through,across', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (807, 'He enjoyed the peace and quiet as he walked @ the trees.', 'through', 'along,over,across', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (808, 'There are members of the Society of Chemists right @ the world.', 'across', 'along,over,through', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (809, 'She could see smoke coming up @ the floorboards as she went into the room.', 'through', 'over', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (810, 'He leapt @ the fence and landed in a muddy puddle on the other side.', 'over', 'through', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (811, 'The castle stands on a hill and the town stretches out @ it.', 'below', 'under', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (812, 'When the sun goes @ the horizon the solar panels can’t be used to recharge the batteries.', 'below', 'under', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (813, 'I didn''t feel safe in the hotel and I kept my wallet @ my pillow at night.', 'under', 'below', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (814, 'The floor seemed to sway @ her feet.', 'beneath', 'above', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (815, 'Most of the trees have been cut down from the hills @ the town.', 'above', 'over', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (816, 'She put her hand @ her phone so that Bruno couldn''t see what she was texting.', 'over', 'above', 88, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (817, 'I spilt coffee @ my keyboard.', 'over', 'above', 88, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (89, 'Unit 89: <i>Between</i> and <i>among</i>', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (818, 'My car broke down on the E15 @ junctions 15 and 16.', 'between', 'among', 89, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (819, 'It is claimed that there are rebel soldiers @ the refugees in the camp.', 'among', 'between', 89, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (820, 'They have to finish @ the top three teams to qualify for the next round of the competition.', 'among', 'between', 89, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (821, 'Shining a torch @ the floorboards, she could see into the cellar below.', 'between', 'among', 89, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (822, 'We spent hours in an elevator that got stuck @ floors.', 'between', 'among', 89, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (823, 'The rare map was @ many other documents found hidden in a barn after the war.', 'among', 'between', 89, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (824, 'He put the whistle @ his lips and blew hard.', 'between', 'among', 89, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (825, 'The great thing about my new job is that I''m working @ people who are highly motivated.', 'among', 'between', 89, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (826, 'I saw my friends Craig and Bryan at the airport @ the passengers waiting in the check-in queue.', 'among', 'between', 89, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (827, 'There were strips of paper sticking out @ the pages in the book.', 'between', 'among', 89, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (828, 'The app can be used to work out how far it is @ cities anywhere in the world.', 'between', 'among', 89, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (829, 'The cat leapt down from the tree @ the birds, and they all flew away.', 'among', 'between', 89, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (90, 'Unit 90: Prepositions of time', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (830, 'The German economy had rapidly recovered @ the end of 1936.', 'by', 'until', 90, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (831, 'She ran an online business @ two years ago when it was forced to close down.', 'until', 'by', 90, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (832, '<b>A</b>: Do you think Donna will still be angry with me?<br /><b>B</b>: No, I''m sure she''ll have forgotten @ now.', 'by', 'until', 90, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (833, 'Not @ the mid-2000s did he actually own a mobile phone.', 'until', 'by', 90, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (834, 'The delays on the trains will go on @ at least next October.', 'until', 'by', 90, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (835, 'If I''m not out of the house @ 7:30, I''m usually late for work.', 'by', 'until', 90, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (836, 'The party was defeated in the election of 1922 and not re-elected @ 1946.', 'until', 'by', 90, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (837, 'My daughter has started asking me lots of question about what I do at the college, which is odd because @ now she''s never shown any interest in my work.', 'until', 'by', 90, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (838, 'Applications for the post must be received @ 15th July.', 'by', 'until', 90, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (839, 'I need the car repaired @ the end of the week as I''m driving to Glasgow on Saturday.', 'by', 'until', 90, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (840, 'There was a large spider in the bathroom so she wouldn''t go in @ her father got rid of it.', 'until', 'by', 90, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (841, 'The number of tigers thought to be in the region had fallen to 20 @ the year 2012.', 'by', 'until', 90, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (91, 'Unit 91: Talking about exceptions', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (842, 'She couldn''t remember anything about the attacker @ he was wearing a red jacket.', 'except', 'except for,besides', 91, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (843, 'She didn''t talk much about her time in Antarctica @ to say that conditions were difficult.', 'except', 'except for,besides', 91, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (844, '@ its beautiful beaches, the island is famous for its great food and hospitality.', 'Besides', 'Except,Except for', 91, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (845, 'Visitors are not allowed into the gardens @ on Sundays.', 'except', 'except for,besides', 91, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (846, 'The island is very unpleasant to drive around because, @ the heavy traffic, the roads are narrow and winding.', 'besides', 'except,except for', 91, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (847, 'I''d be happy to give you a lift @ that I''m not going to work tomorrow.', 'except', 'except for,besides', 91, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (92, 'Unit 92: Prepositions after verbs', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (848, 'All he really cares @ is making money, and he never thinks of other people.', 'about', 'of,with', 92, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (849, 'I didn''t have a ticket for the match, but nobody asked @ one so I just went straight in.', 'for', 'with,of', 92, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (850, 'Robert and I usually have very different views on politics, but I found myself agreeing @ much of what he said.', 'with', 'of,for', 92, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (851, 'Environmental campaigners have argued @ a decision on building a new nuclear power station to be delayed.', 'for', 'on,with', 92, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (852, 'When I''m away from home I try to Skype every night and talk @ my family.', 'with', 'about,of', 92, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (853, '<b>A</b>: What does Alan do?<br /><b>B</b>: He cares @ children who have a physical disability.', 'for', 'about,of', 92, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (854, 'I first learnt @ Amanda''s illness when I bumped into her sister in town.', 'of', 'for,on', 92, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (855, 'Naomi was in a very bad mood and started to argue @ anyone who spoke to her.', 'with', 'about,for', 92, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (856, 'I''m terrified of flying and I''d like my sister to come with me when I go to Brazil next month. I know it''s a lot to ask @ her, but she has agreed.', 'of', 'about,for', 92, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (93, 'Unit 93: Prepositions after nouns', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (857, '... the government had no real control @ the actions of Minecorp.', 'over', 'for', 93, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (858, '... However, the Ramblers'' Society expressed their dissatisfaction @ the minister''s response, and claimed that ...', 'with', 'for', 93, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (859, '... Minecorp had always shown great respect @ the environment. ...', 'for', 'on', 93, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (860, '... She added that there would be minimal impact @ wildlife in the area and that ...', 'on', 'over', 93, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (861, '... Minecorp would take full responsibility @ repairing any footpaths damaged. ...', 'for', 'to', 93, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (862, '... However, she denied the Society''s statement that there would be no access @ an area of ten square kilometres around the mine, and said that ...', 'to', 'with', 93, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (863, '... inevitably there would have to be some restrictions @ access to the area for safety reasons. ...', 'on', 'at', 93, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (864, '... She did, however, show some sympathy @ the views of the Ramblers'' Society and said that ...', 'with', 'over', 93, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (865, '... the expansion will make a major contribution @ the economy of the region. ...', 'to', 'at', 93, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (866, '... to demands @ the expansion to be suspended. However, the Minister of Energy, Celia Jensen, has argued that ...', 'for', 'on', 93, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (867, '... Minecorp coal mine in the Southern National Park. The threat @ footpaths in the area has led ...', 'to', 'th', 93, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (868, 'The influential Ramblers'' Society have expressed their anger @ the planned expansion of a ...', 'at', 'to', 93, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (94, 'Unit 94: Two- and three-word verbs: word order', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (869, 'The plane was delayed, so I didn''t check @ until after midnight.', 'into my hotel', 'my hotel into', 94, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (870, 'I didn''t believe Oliver''s story. I''m sure he made @.', 'it up', 'up it', 94, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (871, 'Mr Curtis used to order @ in a very rude way until they all threatened to resign.', 'his employees about', 'about his employees', 94, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (872, 'It''s impossible to shut @ when he starts talking about football.', 'my father up', 'up my father', 94, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (873, 'Sophie had left her CDs all over the back seat, so I gathered @ and put them back in their box.', 'them up', 'up them', 94, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (874, 'He just flicked @ and said: ''I don''t agree with it.''', 'through the report', 'the report through', 94, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (875, 'Kathy takes @ in that they both have red hair.', 'after her brother', 'her brother after', 94, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (876, 'Don''t forget to pull @ when you go out.', 'the door to', 'to the door', 94, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (877, 'I tried @, but none of them were as good as my mother''s.', 'out several recipes for apple pie that I found online', 'several recipes for apple pie that I found online out', 94, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (95, 'Unit 95: <i>There is</i>, <i>there was</i>, etc.', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (878, 'There @ no excuses for the horrible things she said about me.', 'are', 'is', 95, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (879, 'There @ yogurt and cereals for breakfast and as much coffee and tea as you wanted.', 'was', 'were', 95, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (880, 'There @ a text message on my phone from Dr Watson.', 'was', 'were', 95, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (881, 'There are thousands of visitors to the gardens each year @ a lot of money to the village.', 'who bring in', 'bring in', 95, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (882, 'There was an old hat on the table @ to my grandfather.', 'which belonged', 'belonged', 95, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (883, 'There @ maps and paintings all over the walls of the hall.', 'were', 'was', 95, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (884, 'There @ only about 30 tortoises left on the whole island in the early 1980s.', 'were', 'was', 95, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (885, 'There @ a loud bang and some flashes of light before flames started pouring from the windows of the house.', 'was', 'were', 95, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (886, 'There @ considerable evidence to suggest that the disease is spread by mosquitoes.', 'is', 'are', 95, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (887, 'There @ four hotels and a casino along this part of the beach.', 'are', 'is', 95, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (97, 'Unit 97: <i>It</i> ... 2', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (888, '@ calling me at work as I''ll be in meetings all day.', 'It''s no use', 'There''s no use', 97, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (889, 'Many jobs are likely to be lost in the reorganisation, but the company says @.', 'there''s no alternative', 'it''s no alternative', 97, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (890, 'John says he wants to buy my house, but @ of my accepting his offer.', 'there''s no question', 'it''s no question', 97, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (891, '@ possible to buy some types of light bulbs in the EU.', 'It is no longer', 'There is no longer', 97, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (892, 'The new Porsche is very expensive, but @ it''s a fantastic car.', 'there''s no denying', 'it''s no denying', 97, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (893, '@ to learn that Mr Khan had resigned.', 'It was no surprise', 'There was no surprise', 97, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (894, '@ that she earns over £250,000 a year.', 'It''s no secret', 'There''s no secret', 97, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (895, 'Walter won''t be able to help you, so @ in contacting him.', 'there''s no point', 'it''s no point', 97, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (896, '@ to change any money as US dollars are accepted in most hotels and shops.', 'There is no need', 'It is no need', 97, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (897, '@ that most universities are found in cities.', 'It is no accident', 'There is no accident', 97, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (898, '@ of getting to sleep as the hotel was so noisy.', 'There was no hope', 'It was no hope', 97, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (899, 'I knew @ trying to teach Alec how to play chess – he just wasn''t interested.', 'it was no good', 'there was no good', 97, 1);
+
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (99, 'Unit 99: Inversion 1', '<details need to be done>', 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (900, '@ Hugo Morales and his girlfriend. Did you know they''re getting married?', 'There go', 'Go there', 99, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (901, 'The other day I was sitting in the park reading the newspaper, when @ this policeman and ordered me to leave.', 'up came', 'came up', 99, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (902, 'The starter fired his pistol, and @ the runners.', 'away went', 'here went', 99, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (903, 'The demonstrators are starting to advance on the parliament building, but @ the police to prevent them getting any nearer.', 'here come', 'come here', 99, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (904, 'This rabbit was sitting next to a rabbit hole. When my dog barked, @ the rabbit, followed closely by my dog.', 'down went', 'out went', 99, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (905, 'I sent off my membership form, and @ my first monthly magazine.', 'back came', 'back went', 99, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (906, '@ the doorbell again. Can you get it this time?', 'There goes', 'Here goes', 99, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (907, 'When Mr Napier took over the company, @ all the old computers and new ones were bought.', 'out went', 'along came', 99, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (908, 'I opened my bedroom window last night and @ this big bat.', 'in flew', 'there flew', 99, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (909, 'I was crossing the bridge when there was a sudden gust of wind and @ my hat.', 'away flew', 'flew away', 99, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (910, 'I''m so hungry ... Oh, good. @ breakfast.', 'Here comes', 'There goes', 99, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (911, 'When CDs came onto the market they were incredibly popular, but then @ music downloads and no one buys CDs any more.', 'along came', 'along went', 99, 1);*/
+
 
 INSERT INTO RULE(id_rule, name, detail, pack) VALUES (2, 'Unit 2: Present continuous and present simple 2', '<details need to be done>', 1);
 INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (11, 'Will the new wardrobe fit through the front door, I @?', 'wonder', 'always arrives,is always arriving,goes,is going,usually work,am usually working,generally put,am generally putting,borrows,is forever borrowing,am wondering', 2, 1);
@@ -1070,4 +2178,4 @@ INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (90
 INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (908, 'I opened my bedroom window last night and @ this big bat.', 'in flew', 'there flew', 99, 1);
 INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (909, 'I was crossing the bridge when there was a sudden gust of wind and @ my hat.', 'away flew', 'flew away', 99, 1);
 INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (910, 'I''m so hungry ... Oh, good. @ breakfast.', 'Here comes', 'There goes', 99, 1);
-INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (911, 'When CDs came onto the market they were incredibly popular, but then @ music downloads and no one buys CDs any more.', 'along came', 'along went', 99, 1);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (911, 'When CDs came onto the market they were incredibly popular, but then @ music downloads and no one buys CDs any more.', 'along came', 'along went', 99, 1);*/

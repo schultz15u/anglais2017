@@ -1,16 +1,13 @@
 package view.rules;
 
+import java.awt.GridBagConstraints;
+
+import javax.swing.JPanel;
+
 import model.Sentences;
 import model.SentencesManager;
 import view.DefaultGridPanel;
 import view.MainMenuPanel;
-import view.sentences.QuestionsPanel;
-import view.sentences.SentencesEndPanel;
-import view.sentences.SentencesHomePanel;
-
-import javax.swing.*;
-import java.awt.*;
-
 
 public class RulesPanel extends DefaultGridPanel {
 
@@ -48,21 +45,21 @@ public class RulesPanel extends DefaultGridPanel {
 
 	public void reset() {
 
-		//rulesHomePanel.update();
+		// rulesHomePanel.update();
 		changePanel(rulesHomePanel);
 	}
 
 	public void goToQuestionsPanel(String packageName) {
 
 		sentences.initialize(sentencesManager, packageName);
-		//readingEndPanel.reset();
+		// readingEndPanel.reset();
 		mainMenuPanel.reduce();
 		changePanel(readingEndPanel);
 	}
 
 	public void goToEndPanel() {
 
-		//readingEndPanel.updateScore();
+		// readingEndPanel.updateScore();
 		mainMenuPanel.increase();
 		changePanel(readingEndPanel);
 	}

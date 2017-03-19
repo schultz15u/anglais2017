@@ -1,14 +1,12 @@
 package view;
 
-import view.customized_widgets.CustomizedLabel;
-import view.customized_widgets.CustomizedPanel;
-
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 import javax.swing.JComponent;
-import javax.swing.JPanel;
+
+import view.customized_widgets.CustomizedPanel;
 
 public abstract class DefaultGridPanel extends CustomizedPanel {
 

@@ -61,7 +61,7 @@ public class ConnectionManager {
 			sql = "";
 			curr = "";
 			while (s.hasNext() && !curr.contains(";")) {
-				curr = s.nextLine();
+				curr = s.nextLine() + "\n";
 				sql += curr;
 			}
 			curr = curr.trim();

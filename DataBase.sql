@@ -30,5 +30,3 @@ CREATE TABLE SCORE (
 	PRIMARY KEY (id_score)
 );
 
-INSERT INTO PACKAGE(id_pack, name, can_be_modified_outside) VALUES (1, 'Default package 1', 1);
-INSERT INTO PACKAGE(id_pack, name, can_be_modified_outside) VALUES (2, 'Default package 2', 1);
