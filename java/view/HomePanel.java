@@ -19,7 +19,7 @@ public class HomePanel extends DefaultGridPanel {
 		super();
 
 		textLabel = new CustomizedLabel("<html><p style='width: 500px'>Welcome !<br><br>" +
-				"Shake’s Pear is an application to learn or improve your english.<br>" +
+				"Shake S'Pear is an application to learn or improve your english.<br>" +
 				"First of all you have on your left two trainings modes: MCQ and mistakes.<br>" +
 				"Secondly you have the possibility to read all the rules in order to learn them.<br>" +
 				"Thirdly you have the sentence manager which allows you to create, modify and also delete package, rules and sentences.<br>" +

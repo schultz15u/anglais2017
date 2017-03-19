@@ -13,16 +13,14 @@ import javax.swing.*;
 import model.Sentences;
 import view.DefaultGridPanel;
 import view.StyleParameters;
-import view.customized_widgets.CustomizedButton;
-import view.customized_widgets.CustomizedLabel;
-import view.customized_widgets.CustomizedPanel;
-import view.customized_widgets.CustomizedRadioButton;
+import view.customized_widgets.*;
 
 
 public class QuestionsPanel extends DefaultGridPanel {
 
 	private CustomizedLabel sentenceLabel;
 	private CustomizedLabel informationLabel;
+	private CustomizedScrollPane informationScrollPane;
 	private CustomizedButton nextButton;
 	private Sentences sentences;
 	private int sentenceIsCorrect; // 0 : no, 1 : yes, 2 : question have not been answered
@@ -41,16 +39,21 @@ public class QuestionsPanel extends DefaultGridPanel {
 		sentenceLabel.addMouseListener(new SentenceLabelListener());
 		informationLabel = new CustomizedLabel("", (int)Component.CENTER_ALIGNMENT);
 		informationLabel.setBorder(BorderFactory.createLineBorder(StyleParameters.defaultBackgroundColor, 20));
+		JPanel informationPanel = new JPanel();
+		informationPanel.add(informationLabel);
+		informationLabel.setMaximumSize(new Dimension(500, Integer.MAX_VALUE));
+		informationScrollPane = new CustomizedScrollPane(informationPanel);
 		nextButton = new CustomizedButton("Next sentence");
 		nextButton.addActionListener(new NextButtonListener());
 		panel = new CustomizedPanel();
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-		
-		addComponent(sentenceLabel, 0, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
-		addComponent(informationLabel, 0, 1, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
-		//addComponent(nextButton, 0, 2, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
+
+		addComponent(sentenceLabel, 0, 0, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.NONE);
+		addComponent(informationScrollPane, 0, 1, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+		if (!isMcq)
+			addComponent(nextButton, 0, 2, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
 		addComponent(panel, 1, 0, 1, 3, 0.2, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
-		
+
 		goToNextQuestion();
 		setVisible(true);
 	}
@@ -65,9 +68,20 @@ public class QuestionsPanel extends DefaultGridPanel {
 		informationLabel.setText("");
 		sentenceIsCorrect = 2;
 		nextButton.setVisible(false);
+		informationScrollPane.setVisible(false);
 		
 		if (!isMcq) {
-			sentenceLabel.setText("<html>" + sentences.getWrongSentence() + "</html>");
+
+			String string = sentences.getWrongSentence();
+			int offset = 0;
+			for (int i = 50; i < string.length(); i += 50) {
+				System.out.println(i + " / " + string.length() + " / " + offset);
+				string = string.substring(0, i + offset) + "<br>" + string.substring(i + offset, string.length());
+				offset+=4;
+			}
+
+
+			sentenceLabel.setText("<html><p style='width:700px'>" + string + "</p></html>");
 		}
 		else {
 			if (choicesRadio != null)
@@ -75,7 +89,7 @@ public class QuestionsPanel extends DefaultGridPanel {
 					panel.remove(radio);
 			panel.remove(nextButton);
 
-			sentenceLabel.setText("<html><center>" + sentences.getIncompleteWrongSentence() + "</center></html>");
+			sentenceLabel.setText("<html><center style='width:500px'>" + sentences.getIncompleteWrongSentence() + "</center></html>");
 			choicesRadio = new ArrayList<>();
 			
 			ArrayList<String> choices = sentences.getChoices();
@@ -111,10 +125,10 @@ public class QuestionsPanel extends DefaultGridPanel {
 			
 			if (sentenceIsCorrect == 2 && !isMcq) {
 
-				int characterWidth = sentenceLabel.getWidth() / sentenceLabel.getText().length();
-				int index = event.getX() / characterWidth;	// ID of the clicked character
+				int characterWidth = 16;
+				int index = event.getX() / characterWidth + 50 * (event.getY() / 40);	// ID of the clicked character
 
-				if (sentences.characterIsFromWrongWord(index)) {
+				if (!sentences.characterIsFromWrongWord(index)) {
 					informationLabel.setText("<html><center>Bad answer</center><br>Good sentence : <i>" + sentences.getCorrectSentence().replaceAll("colorToChange", "red") + "</i>");
 					sentenceIsCorrect = 0;
 				}
@@ -123,8 +137,14 @@ public class QuestionsPanel extends DefaultGridPanel {
 					sentenceIsCorrect = 1;
 				}
 
-				informationLabel.setText(informationLabel.getText() + "<br><br>Rule : " + sentences.getRuleName() + "<br><br><p style='padding-left: 20px;'><i>" + sentences.getRule().replaceAll("\n", "<br>") + "</i></p></html>");
+				informationLabel.setText(informationLabel.getText() + "<br><br>Rule : " + sentences.getRuleName() + "<br><br><p style='padding-left: 20px'><i>" + sentences.getRule().replaceAll("\n", "<br>") + "</i></p></html>");
 				nextButton.setVisible(true);
+				informationScrollPane.setVisible(true);
+				//informationLabel.setPreferredSize(new Dimension(informationScrollPane.getWidth(), informationLabel.getPreferredSize().height));
+				informationScrollPane.setMinimumSize(new Dimension(informationScrollPane.getMinimumSize().width, 200));
+				informationScrollPane.setMaximumSize(new Dimension(informationScrollPane.getMaximumSize().width, 200));
+				informationScrollPane.setPreferredSize(new Dimension(informationScrollPane.getPreferredSize().width, 200));
+				informationScrollPane.setSize(new Dimension(informationScrollPane.getSize().width, 200));
 			}
 		}
 
@@ -178,8 +198,14 @@ public class QuestionsPanel extends DefaultGridPanel {
 					sentenceIsCorrect = 0;
 				}
 
-				informationLabel.setText(informationLabel.getText() + "<br><br>Rule : " + sentences.getRuleName() + "<br><br><i>" + sentences.getRule() + "</i></html>");
+				informationLabel.setText(informationLabel.getText() + "<br><br>Rule : " + sentences.getRuleName() + "<br><br><p style='padding-left: 20px'><i>" + sentences.getRule().replaceAll("\n", "<br>") + "</i></p></html>");
 				nextButton.setVisible(true);
+				informationScrollPane.setVisible(true);
+				//informationLabel.setPreferredSize(new Dimension(informationScrollPane.getWidth(), informationLabel.getPreferredSize().height));
+				informationScrollPane.setMinimumSize(new Dimension(informationScrollPane.getMinimumSize().width, 200));
+				informationScrollPane.setMaximumSize(new Dimension(informationScrollPane.getMaximumSize().width, 200));
+				informationScrollPane.setPreferredSize(new Dimension(informationScrollPane.getPreferredSize().width, 200));
+				informationScrollPane.setSize(new Dimension(informationScrollPane.getSize().width, 200));
 			}
 		}
 	}
