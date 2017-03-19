@@ -1,7 +1,7 @@
 INSERT INTO PACKAGE(id_pack, name, can_be_modified_outside) VALUES (22, 'Presentation package', 22);
 
 
-INSERT INTO RULE(id_rule, name, detail, pack) VALUES (1, 'Unit 1: Present continuous and present simple 1', 
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (101, 'Unit 1: Present continuous and present simple 1', 
 'We use the present simple to describe things that are always true, or situations that exist now and,
 as far as we know, will go on indefinitely:
 - It takes me five minutes to get to school.
@@ -41,9 +41,9 @@ apologise, assume, deny, guarantee, hope, inform, predict, promise, recommend, s
 suppose, warn.
 We can use modals with performative verbs to make what we say more tentative or polite:.
 - I would advise you to arrive two hours before the flight leaves.
-- I''m afraid I have to inform you that your application for funding has been turned down.', 1);
+- I''m afraid I have to inform you that your application for funding has been turned down.', 22);
 
-INSERT INTO RULE(id_rule, name, detail, pack) VALUES (31, 'Unit 31: Verb + -ing', 'Some verbs must have an object before an -ing form:
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (131, 'Unit 31: Verb + -ing', 'Some verbs must have an object before an -ing form:
 - The police found the man climbing the wall.
 - She overheard them talking about the
 closure of the factory.
@@ -89,9 +89,9 @@ a bare infinitive
 	 I noticed him throw a sweet wrapper on the floor, so I asked him to pick it up.
 	suggests that we watch, hear, etc. the whole action from its start to its finish
 	 I watched him climb through the window, and then I called the police.'
-, 5);
+, 22);
 
-INSERT INTO RULE(id_rule, name, detail, pack) VALUES (15, 'Unit 15: Can, could, be able to and be allowed to', 'When we say that someone or something has or doesn''t have the ability to do something, we can
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (115, 'Unit 15: Can, could, be able to and be allowed to', 'When we say that someone or something has or doesn''t have the ability to do something, we can
 use can(''t) (or cannot) (for the present) or could(n''t) (for the past):
 - He can analyse people''s handwriting. - We can''t afford to pay the bill.
 - Anita could speak three languages before she was six.
@@ -132,9 +132,9 @@ a - If the snow carries on like this, very few people will be able to get to the
 - - When the new road is built, I''ll be able to drive to work in under half an hour.
 However, when we make a decision now about something in the future, we use can:
 - You can go home when you''ve finished writing your composition.
-- Perhaps we can meet next week.', 3);
+- Perhaps we can meet next week.', 22);
 
-INSERT INTO RULE(id_rule, name, detail, pack) VALUES (16, 'Unit 16: Will, would and used to', 'We can use will (for the present) and would (for the past) to talk about characteristic behaviour or
+INSERT INTO RULE(id_rule, name, detail, pack) VALUES (116, 'Unit 16: Will, would and used to', 'We can use will (for the present) and would (for the past) to talk about characteristic behaviour or
 habits, or about things that are or were always true:
 - Every day Dan will come home from work and turn on the TV.
 - During the war, people would eat all kinds of things that we don''t eat now.
@@ -175,12 +175,12 @@ are also used, although this question form is now rare:
 - There used not to be so much traffic, {more likely is There didn''t use to be...)
 - Used you to go to university with the Evans brothers? {more likely is Did you use to...?)
 Notice that nowadays very few people use used to in tags:
-- He used to play cricket for Australia, didn''t he? {rather than ..., usedn''t he?)', 3);
+- He used to play cricket for Australia, didn''t he? {rather than ..., usedn''t he?)', 22);
 
 
 
-INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (2, 'What did you think of Professor Welch''s lecture? I @ I didn''t understand a word!', 'confess', 'am confessing', 1, 1);
-INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (7, 'Apparently Daniel @ going back to live in Spain.', 'is considering', 'considers', 1, 1);
-INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (259, 'I asked her how old she was, but she said she @ her age.', 'preferred not to reveal', 'didn''t prefer to reveal', 31, 5);
-INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (98, 'On a clear day you @ see five towns from the top of this hill.', 'can', 'could', 15, 3);
-INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (105, 'In my first job I @ in a tiny village school on the south coast.', 'used to teach', 'would teach', 16, 3);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (1002, 'What did you think of Professor Welch''s lecture? I @ I didn''t understand a word!', 'confess', 'am confessing', 101, 22);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (1007, 'Apparently Daniel @ going back to live in Spain.', 'is considering', 'considers', 101, 22);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (10259, 'I asked her how old she was, but she said she @ her age.', 'preferred not to reveal', 'didn''t prefer to reveal', 131, 22);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (1098, 'On a clear day you @ see five towns from the top of this hill.', 'can', 'could', 115,22);
+INSERT INTO SENTENCE(id_sen, detail, prop_ok, prop_no, id_rule, pack) VALUES (10105, 'In my first job I @ in a tiny village school on the south coast.', 'used to teach', 'would teach', 116, 22);

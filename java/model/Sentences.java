@@ -158,7 +158,7 @@ public class Sentences {
 			int wrongWordFirstIndex = sentences.get(currentSentenceId).getDetail().split("@")[0].length();
 			int wrongWordLastIndex = wrongWordFirstIndex + currentWrongWord.length() - 1;
 
-			return characterId >= wrongWordFirstIndex - 1 && characterId <= wrongWordLastIndex + 1;
+			return characterId >= wrongWordFirstIndex && characterId <= wrongWordLastIndex;
 		}
 
 		return false;
