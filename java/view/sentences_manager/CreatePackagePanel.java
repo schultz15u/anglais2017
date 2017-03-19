@@ -39,7 +39,7 @@ public class CreatePackagePanel extends DefaultGridPanel {
 		
 		addComponent(nameLabel, 0, 0, 1, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.NONE);
 		addComponent(nameField, 1, 0, 1, 1, 1,1, GridBagConstraints.NORTH, GridBagConstraints.NONE);
-		addComponent(canBeModifyCheckBox, 0, 1, 2, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.NONE);
+		//addComponent(canBeModifyCheckBox, 0, 1, 2, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.NONE);
 		addComponent(validationButton, 0, 2, 2, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.NONE);
 	}
 
