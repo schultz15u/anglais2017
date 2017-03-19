@@ -1,6 +1,7 @@
 package model;
 
 import java.io.PrintWriter;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.SQLException;
@@ -455,12 +456,12 @@ public class SentencesManager {
 
 			// Creation of the file
 			StringBuilder fileContent = new StringBuilder(
-					packages.get(0).getName() + "|" + packages.get(0).canBeModifiedOutside() + "\n");
+					packages.get(0).getName() + "|" + packages.get(0).canBeModifiedOutside() + "~");
 
 			RuleTable ruleTable = new RuleTable();
 			List<RuleEntry> rules = ruleTable.getByPack(packages.get(0).getIdPack());
 			for (RuleEntry rule : rules) {
-				fileContent.append(rule.getName() + "|" + rule.getDetail() + "\n");
+				fileContent.append(rule.getName() + "|" + rule.getDetail() + "~");
 			}
 
 			SentenceTable sentenceTable = new SentenceTable();
@@ -477,7 +478,7 @@ public class SentencesManager {
 				}
 
 				fileContent.append(sentence.getDetail() + "|" + sentence.getPropOk() + "|" + sentence.getPropNo() + "|"
-						+ ruleName + "\n");
+						+ ruleName + "~");
 			}
 
 			PrintWriter out = new PrintWriter(filePath);
@@ -495,7 +496,7 @@ public class SentencesManager {
 
 		try {
 
-			List<String> fileLines = Files.readAllLines(Paths.get(filePath));
+			String[] fileLines = /*Files.readAllLines(Paths.get(filePath))*/ new String(Files.readAllBytes(Paths.get(filePath)), Charset.defaultCharset()).split("~");
 			ArrayList<String[]> fileLinesDetails = new ArrayList<>();
 			for (String line : fileLines) {
 				fileLinesDetails.add(line.split("\\|"));
