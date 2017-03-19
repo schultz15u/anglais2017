@@ -29,6 +29,7 @@ public class ConnectionManager {
 				creation("3_modals.sql");
 				creation("4_linking_verbs.sql");
 				creation("5_verb_complementation.sql");
+				creation("22_presentation.sql");
 			}
 		} catch (SQLException | FileNotFoundException e) {
 			new File(name).deleteOnExit();
