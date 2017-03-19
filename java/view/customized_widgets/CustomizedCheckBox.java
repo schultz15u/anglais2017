@@ -29,7 +29,7 @@ public class CustomizedCheckBox extends JCheckBox {
 
 		public void paintIcon(Component component, Graphics g, int x, int y) {
 
-			g.setColor(StyleParameters.defaultSelectedWidgetBackgroundColor);
+			g.setColor(StyleParameters.defaultTextColor);
 
 			g.drawRect(1, 1 + 10, 20,20);
 			if (checked)
